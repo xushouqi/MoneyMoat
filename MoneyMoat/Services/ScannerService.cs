@@ -38,7 +38,7 @@ namespace MoneyMoat.Services
                 ScannerSubscription subscription = new ScannerSubscription();
                 subscription.ScanCode = scanCode.ToString();
                 subscription.Instrument = secType.ToString();
-                subscription.LocationCode = secType.ToString() + ".US.MAJOR";
+                subscription.LocationCode = secType.ToString() + ".US";
                 subscription.StockTypeFilter = filter.ToString();
                 subscription.NumberOfRows = count;
 

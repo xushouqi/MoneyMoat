@@ -117,10 +117,13 @@ namespace MoneyMoat.Services
             //RequestSymbols("IGG");
             //m_historicalService.RequestEarliestDataPoint("MOMO", ExchangeEnum.ISLAND);
             //m_fundamentalService.RequestFundamentals("MOMO", ExchangeEnum.ISLAND, FundamentalsReportEnum.ReportsFinStatements);
-            m_fundamentalService.RequestFundamentals("MOMO", ExchangeEnum.ISLAND, FundamentalsReportEnum.ReportsOwnership);
+            //m_fundamentalService.RequestFundamentals("MOMO", ExchangeEnum.ISLAND, FundamentalsReportEnum.ReportsOwnership);
 
             //m_scannerService.RequestParameters();
-            //m_scannerService.AddRequest(ScanCodeEnum.HOT_BY_VOLUME, SecTypeEnum.STK, StockTypeFilterEnum.ADR, 10);
+            //m_scannerService.AddRequest(ScanCodeEnum.TOP_PERC_GAIN, SecTypeEnum.STK, StockTypeFilterEnum.ADR, 10);
+
+            DateTime endTime = DateTime.Now;
+            m_historicalService.AddRequest("MOMO", ExchangeEnum.ISLAND, endTime, "3 W", "1 day", WhatToShowEnum.MIDPOINT, false);
         }
 
 
