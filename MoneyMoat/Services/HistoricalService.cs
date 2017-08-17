@@ -16,9 +16,8 @@ namespace MoneyMoat.Services
     class HistoricalService
     {
         private readonly ILogger m_logger;
-        protected readonly IBClient ibClient;
-        protected Dictionary<int, string> m_reqIds;
-        protected int activeReqId = 0;
+        private readonly IBClient ibClient;
+        private int activeReqId = 0;
 
         public HistoricalService(IBClient ibclient,
                         ILogger<IBManager> logger)
@@ -31,8 +30,20 @@ namespace MoneyMoat.Services
 
         public void RequestEarliestDataPoint(string symbol, ExchangeEnum exchange)
         {
-            var contract = Common.GetStockContract(symbol, exchange);
-            ibClient.ClientSocket.reqHeadTimestamp(Common.GetReqId(symbol), contract, "TRADES", 1, 1);
+            if (activeReqId == 0)
+            {
+                activeReqId = Common.GetReqId(symbol);
+                var contract = Common.GetStockContract(symbol, exchange);
+                ibClient.ClientSocket.reqHeadTimestamp(activeReqId, contract, "TRADES", 1, 1);
+            }
+        }
+        public void CancelHeadTimestamp()
+        {
+            if (activeReqId > 0)
+            {
+                ibClient.ClientSocket.cancelHeadTimestamp(activeReqId);
+                activeReqId = 0;
+            }
         }
         private void HandleEarliestDataPoint(HeadTimestampMessage message)
         {

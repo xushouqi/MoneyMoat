@@ -9,6 +9,31 @@ namespace MoneyMoat.Types
         ISLAND,
         NYSE,
     }
+    public enum SecTypeEnum
+    {
+        STK,
+        OPT,
+        FUT,
+        CASH,
+        FUND,
+        IND,
+        NEWS,
+        CFD,
+    }
+    public enum StockTypeFilterEnum
+    {
+        ALL,
+        //Corporation
+        CORP,
+        //American Depositary Receipt
+        ADR,
+        //Exchange Traded Fund
+        ETF,
+        //Real Estate Investment Trust
+        REIT,
+        //Closed End Fund
+        CEF,
+    }
 
     public enum FYActualEnum
     {
@@ -63,9 +88,55 @@ namespace MoneyMoat.Types
 
     public enum FundamentalsReportEnum
     {
+        ReportsOwnership,
         ReportSnapshot,
         ReportsFinSummary,
         ReportsFinStatements,
-        RESC
+        RESC,
+        CalendarReport
     }
+
+    public enum ScanCodeEnum
+    {
+        LOW_OPT_VOL_PUT_CALL_RATIO,
+        HIGH_OPT_IMP_VOLAT_OVER_HIST,
+        LOW_OPT_IMP_VOLAT_OVER_HIST,
+        HIGH_OPT_IMP_VOLAT,
+        TOP_OPT_IMP_VOLAT_GAIN,
+        TOP_OPT_IMP_VOLAT_LOSE,
+        HIGH_OPT_VOLUME_PUT_CALL_RATIO,
+        LOW_OPT_VOLUME_PUT_CALL_RATIO,
+        OPT_VOLUME_MOST_ACTIVE,
+        HOT_BY_OPT_VOLUME,
+        HIGH_OPT_OPEN_INTEREST_PUT_CALL_RATIO,
+        LOW_OPT_OPEN_INTEREST_PUT_CALL_RATIO,
+        TOP_PERC_GAIN,
+        MOST_ACTIVE,
+        TOP_PERC_LOSE,
+        HOT_BY_VOLUME,
+        HOT_BY_PRICE,
+        TOP_TRADE_COUNT,
+        TOP_TRADE_RATE,
+        TOP_PRICE_RANGE,
+        HOT_BY_PRICE_RANGE,
+        TOP_VOLUME_RATE,
+        LOW_OPT_IMP_VOLAT,
+        OPT_OPEN_INTEREST_MOST_ACTIVE,
+        NOT_OPEN,
+        HALTED,
+        TOP_OPEN_PERC_GAIN,
+        TOP_OPEN_PERC_LOSE,
+        HIGH_OPEN_GAP,
+        LOW_OPEN_GAP,
+        HIGH_VS_13W_HL,
+        LOW_VS_13W_HL,
+        HIGH_VS_26W_HL,
+        LOW_VS_26W_HL,
+        HIGH_VS_52W_HL,
+        LOW_VS_52W_HL,
+        HIGH_SYNTH_BID_REV_NAT_YIELD,
+        LOW_SYNTH_BID_REV_NAT_YIELD
+    }
+
+
 }

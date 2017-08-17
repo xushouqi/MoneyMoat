@@ -23,9 +23,8 @@ namespace MoneyMoat.Services
              + "FullExcessLiquidity,LookAheadNextChange,LookAheadInitMarginReq ,LookAheadMaintMarginReq,LookAheadAvailableFunds,LookAheadExcessLiquidity,HighestSeverity,DayTradesRemaining,Leverage";
 
         private readonly ILogger m_logger;
-        protected readonly IBClient ibClient;
-        protected Dictionary<int, string> m_reqIds;
-        protected int activeReqId = 0;
+        private readonly IBClient ibClient;
+        private int activeReqId = 0;
 
         public AccountService(IBClient ibclient,
                         ILogger<IBManager> logger)
@@ -34,11 +33,24 @@ namespace MoneyMoat.Services
             ibClient = ibclient;
 
             ibClient.AccountSummary += HandleAccountSummary;
+            ibClient.AccountSummaryEnd += reqId => { m_logger.LogInformation("AccountSummaryEnd. " + reqId + "\r\n"); activeReqId = 0; };
         }
 
         public void RequestAccountSummery()
         {
-            ibClient.ClientSocket.reqAccountSummary(ACCOUNT_SUMMARY_ID, "All", ACCOUNT_SUMMARY_TAGS);
+            if (activeReqId == 0)
+            {
+                activeReqId = ACCOUNT_SUMMARY_ID;
+                ibClient.ClientSocket.reqAccountSummary(activeReqId, "All", ACCOUNT_SUMMARY_TAGS);
+            }
+        }
+        public void CancelAccountSummary()
+        {
+            if (activeReqId > 0)
+            {
+                ibClient.ClientSocket.cancelAccountSummary(activeReqId);
+                activeReqId = 0;
+            }
         }
         private void HandleAccountSummary(AccountSummaryMessage summaryMessage)
         {

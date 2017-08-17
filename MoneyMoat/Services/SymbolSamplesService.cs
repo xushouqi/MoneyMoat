@@ -12,9 +12,8 @@ namespace MoneyMoat.Services
     class SymbolSamplesService
     {
         private readonly ILogger m_logger;
-        protected readonly IBClient ibClient;
-        protected Dictionary<int, string> m_reqIds;
-        protected int activeReqId = 0;
+        private readonly IBClient ibClient;
+        private int activeReqId = 0;
 
         public SymbolSamplesService(IBClient ibclient,
                         ILogger<IBManager> logger)
@@ -27,7 +26,7 @@ namespace MoneyMoat.Services
 
         public void RequestSymbols(string pattern)
         {
-            ibClient.ClientSocket.reqMatchingSymbols(Common.GetReqId(pattern), pattern);
+            ibClient.ClientSocket.reqMatchingSymbols(Common.GetReqId(pattern), pattern);                        
         }
         private void HandleSymbolSamplesData(SymbolSamplesMessage dataMessage)
         {

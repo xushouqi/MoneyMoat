@@ -15,11 +15,9 @@ namespace MoneyMoat.Services
 {
     class FundamentalService
     {
-
         private readonly ILogger m_logger;
-        protected readonly IBClient ibClient;
-        protected Dictionary<int, string> m_reqIds;
-        protected int activeReqId = 0;
+        private readonly IBClient ibClient;
+        private int activeReqId = 0;
 
         public FundamentalService(IBClient ibclient,
                         ILogger<IBManager> logger)
@@ -69,6 +67,12 @@ namespace MoneyMoat.Services
                 {
                     var ser = new YAXSerializer(typeof(RESC));
                     var obj = (RESC)ser.Deserialize(message.Data);
+                    var test = obj;
+                }
+                else if (ftype == FundamentalsReportEnum.ReportsOwnership)
+                {
+                    var ser = new YAXSerializer(typeof(OwnershipDetails));
+                    var obj = (OwnershipDetails)ser.Deserialize(message.Data);
                     var test = obj;
                 }
 

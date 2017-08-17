@@ -54,6 +54,7 @@ namespace MoneyMoat
             services.AddSingleton<SymbolSamplesService>();
             services.AddSingleton<FundamentalService>();
             services.AddSingleton<HistoricalService>();
+            services.AddSingleton<ScannerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

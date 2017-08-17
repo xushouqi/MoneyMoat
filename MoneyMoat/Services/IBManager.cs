@@ -27,6 +27,7 @@ namespace MoneyMoat.Services
         protected readonly FundamentalService m_fundamentalService;
         protected readonly AccountService m_accountService;
         protected readonly HistoricalService m_historicalService;
+        protected readonly ScannerService m_scannerService;
 
 
         private const int CONTRACT_ID_BASE = 60000000;
@@ -38,6 +39,7 @@ namespace MoneyMoat.Services
                         FundamentalService fundamentalService,
                         AccountService accountService,
                         HistoricalService historicalService,
+                        ScannerService scannerService,
                         ILogger<IBManager> logger,
                         IOptions<AppSettings> commonoptions)
         {
@@ -48,6 +50,7 @@ namespace MoneyMoat.Services
             m_fundamentalService = fundamentalService;
             m_accountService = accountService;
             m_historicalService = historicalService;
+            m_scannerService = scannerService;
 
             ibClient.Error += ibClient_Error;
             ibClient.ConnectionClosed += ibClient_ConnectionClosed;
@@ -113,10 +116,11 @@ namespace MoneyMoat.Services
             //RequestAccountSummery();
             //RequestSymbols("IGG");
             //m_historicalService.RequestEarliestDataPoint("MOMO", ExchangeEnum.ISLAND);
-            m_fundamentalService.RequestFundamentals("MOMO", ExchangeEnum.ISLAND, FundamentalsReportEnum.ReportsFinStatements);
-            //RequestFundamentals("MOMO", FundamentalsReportEnum.ReportsFinSummary);
-            //RequestFundamentals("MOMO", FundamentalsReportEnum.ReportSnapshot);
-            //RequestFundamentals("MOMO", FundamentalsReportEnum.RESC);
+            //m_fundamentalService.RequestFundamentals("MOMO", ExchangeEnum.ISLAND, FundamentalsReportEnum.ReportsFinStatements);
+            m_fundamentalService.RequestFundamentals("MOMO", ExchangeEnum.ISLAND, FundamentalsReportEnum.ReportsOwnership);
+
+            //m_scannerService.RequestParameters();
+            //m_scannerService.AddRequest(ScanCodeEnum.HOT_BY_VOLUME, SecTypeEnum.STK, StockTypeFilterEnum.ADR, 10);
         }
 
 
