@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyMoat", "MoneyMoat\MoneyMoat.csproj", "{A34FBD4C-9AB4-4576-BF38-4807BF814C58}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyModels", "MoneyModels\MoneyModels.csproj", "{95183061-C8BA-46BD-BF71-29E4F1133282}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpAPI", "CSharpAPI\CSharpAPI.csproj", "{C9BF9314-F2B7-4E0E-93FC-C798D869D58E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A34FBD4C-9AB4-4576-BF38-4807BF814C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34FBD4C-9AB4-4576-BF38-4807BF814C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34FBD4C-9AB4-4576-BF38-4807BF814C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34FBD4C-9AB4-4576-BF38-4807BF814C58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95183061-C8BA-46BD-BF71-29E4F1133282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95183061-C8BA-46BD-BF71-29E4F1133282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95183061-C8BA-46BD-BF71-29E4F1133282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95183061-C8BA-46BD-BF71-29E4F1133282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9BF9314-F2B7-4E0E-93FC-C798D869D58E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9BF9314-F2B7-4E0E-93FC-C798D869D58E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9BF9314-F2B7-4E0E-93FC-C798D869D58E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9BF9314-F2B7-4E0E-93FC-C798D869D58E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
