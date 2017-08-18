@@ -9,10 +9,12 @@ namespace MoneyMoat.Messages
 {
     class FundamentalsMessage
     {
+        public int ReqId { get; private set; }
         private string data;
         
-        public FundamentalsMessage(string data)
+        public FundamentalsMessage(int reqId, string data)
         {
+            ReqId = reqId;
             Data = data;
         }
 

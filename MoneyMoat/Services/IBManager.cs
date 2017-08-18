@@ -23,7 +23,7 @@ namespace MoneyMoat.Services
         protected EReader m_ereader;
         private bool IsConnected = false;
 
-        protected readonly SymbolSamplesService m_symbolSampleService;
+        protected readonly SymbolService m_symbolSampleService;
         protected readonly FundamentalService m_fundamentalService;
         protected readonly AccountService m_accountService;
         protected readonly HistoricalService m_historicalService;
@@ -35,7 +35,7 @@ namespace MoneyMoat.Services
         private const int FUNDAMENTALS_ID = CONTRACT_ID_BASE + 2;
 
         public IBManager(IBClient ibclient,
-                        SymbolSamplesService symbolService,
+                        SymbolService symbolService,
                         FundamentalService fundamentalService,
                         AccountService accountService,
                         HistoricalService historicalService,
@@ -52,23 +52,39 @@ namespace MoneyMoat.Services
             m_historicalService = historicalService;
             m_scannerService = scannerService;
 
-            ibClient.Error += ibClient_Error;
+            ibClient.Error += ibClient_Error;            
             ibClient.ConnectionClosed += ibClient_ConnectionClosed;
             ibClient.CurrentTime += ibClient_CurrentTime;
             ibClient.NextValidId += ibClient_NextValidId;
         }
 
-        void ibClient_Error(int id, int errorCode, string str, Exception ex)
+        void ibClient_Error(int reqId, int errorCode, string str, Exception ex)
         {
             if (ex != null)
-                m_logger.LogError("ibClient_Error: id={0}, code={1}, {2}\n {3}\n {4}", id, errorCode, str, ex.Message, ex.StackTrace);
+                m_logger.LogError("ibClient_Error: id={0}, code={1}, {2}\n {3}\n {4}", reqId, errorCode, str, ex.Message, ex.StackTrace);
             else
-                m_logger.LogError("ibClient_Error: id={0}, code={1}, {2}", id, errorCode, str);
+                m_logger.LogError("ibClient_Error: id={0}, code={1}, {2}", reqId, errorCode, str);
+
+            if (!ibClient.ClientSocket.IsConnected())
+            {
+                Task.Delay(1000).Wait();
+                Connect();
+            }
+            else
+                m_onError = true;
         }
+
+        bool m_onError = false;
         void ibClient_ConnectionClosed()
         {
             IsConnected = false;
             m_logger.LogInformation("ibClient_ConnectionClosed");
+
+            if (m_onError)
+            {
+                m_onError = false;
+                Connect();
+            }
         }
         void ibClient_CurrentTime(long time)
         {
@@ -113,17 +129,20 @@ namespace MoneyMoat.Services
 
         public void Test()
         {
+            m_fundamentalService.UpdateAllStocksFundamentals().Wait();
+            //m_symbolSampleService.UpdateSymbolsFromSina().Wait();
+
             //RequestAccountSummery();
-            //RequestSymbols("IGG");
-            //m_historicalService.RequestEarliestDataPoint("MOMO", ExchangeEnum.ISLAND);
-            //m_fundamentalService.RequestFundamentals("MOMO", ExchangeEnum.ISLAND, FundamentalsReportEnum.ReportsFinStatements);
-            //m_fundamentalService.RequestFundamentals("MOMO", ExchangeEnum.ISLAND, FundamentalsReportEnum.ReportsOwnership);
+            //m_symbolSampleService.RequestSymbols("601011");
+            //m_historicalService.RequestEarliestDataPoint("601011", ExchangeEnum.SHSE);
+            //m_fundamentalService.RequestFundamentals("BABA", ExchangeEnum.NYSE, FundamentalsReportEnum.ReportsFinSummary);
+            //m_fundamentalService.RequestFundamentals("601011", ExchangeEnum.SHSE, FundamentalsReportEnum.ReportsFinStatements);
 
             //m_scannerService.RequestParameters();
-            //m_scannerService.AddRequest(ScanCodeEnum.TOP_PERC_GAIN, SecTypeEnum.STK, StockTypeFilterEnum.ADR, 10);
+            //m_scannerService.AddRequest(ScanCodeEnum.HIGH_VS_13W_HL, SecTypeEnum.STK, StockTypeFilterEnum.ALL, 10);
 
             DateTime endTime = DateTime.Now;
-            m_historicalService.AddRequest("MOMO", ExchangeEnum.ISLAND, endTime, "3 W", "1 day", WhatToShowEnum.MIDPOINT, false);
+            //m_historicalService.AddRequest("MOMO", ExchangeEnum.ISLAND, endTime, "3 W", "1 day", WhatToShowEnum.MIDPOINT, false);
         }
 
 

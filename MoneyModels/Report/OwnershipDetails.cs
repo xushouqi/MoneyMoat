@@ -8,10 +8,9 @@ namespace MoneyModels
     {
         [YAXAttributeForClass]
         public string ownerId { get; set; }
-        public int type { get; set; }
+        public string type { get; set; }
         public string name { get; set; }
-        public int quantity { get; set; }
-        public string currency { get; set; }
+        public string quantity { get; set; }
 
         [YAXAttributeFor("quantity")]
         public DateTime asofDate { get; set; }
@@ -19,13 +18,7 @@ namespace MoneyModels
 
     public class OwnershipDetails
     {
-        public int floatShares { get; set; }
-
-
-        //[YAXDictionary(EachPairName = "Owner", KeyName = "ownerId",
-        //          SerializeKeyAs = YAXNodeTypes.Attribute, SerializeValueAs = YAXNodeTypes.Element)]
-        //[YAXCollection(YAXCollectionSerializationTypes.RecursiveWithNoContainingElement)]
-        //public Dictionary<string, Owner> Owners { get; set; }
+        public Int64 floatShares { get; set; }
 
         [YAXCollection(YAXCollectionSerializationTypes.RecursiveWithNoContainingElement, EachElementName = "Owner")]
         public List<Owner> OwnerList { get; set; }
@@ -41,7 +34,7 @@ namespace MoneyModels
                     for (int i = 0; i < OwnerList.Count; i++)
                     {
                         var data = OwnerList[i];
-                        m_owner_db[data.ownerId] = data;
+                        //m_owner_db[data.ownerId] = data;
                     }
                 }
                 return m_owner_db;

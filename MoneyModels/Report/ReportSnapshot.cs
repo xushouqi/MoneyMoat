@@ -16,7 +16,7 @@ namespace MoneyModels
             public DateTime LatestAvailableAnnual { get; set; }
             public DateTime LatestAvailableInterim { get; set; }
 
-            public int Employees { get; set; }
+            public Int64 Employees { get; set; }
             public float SharesOut { get; set; }
 
             [YAXAttributeFor("ReportingCurrency")]
@@ -40,9 +40,9 @@ namespace MoneyModels
                 [YAXAttributeFor(".")]
                 public string type { get; set; }
                 [YAXAttributeFor(".")]
-                public int order { get; set; }
+                public Int64 order { get; set; }
                 [YAXAttributeFor(".")]
-                public int reported { get; set; }
+                public Int64 reported { get; set; }
                 [YAXAttributeFor(".")]
                 public string code { get; set; }
                 [YAXValueForClass]
@@ -81,13 +81,13 @@ namespace MoneyModels
         public class Forecast
         {
             [YAXAttributeFor(".")]
-            public int CurFiscalYear { get; set; }
+            public Int64 CurFiscalYear { get; set; }
             [YAXAttributeFor(".")]
-            public int CurFiscalYearEndMonth { get; set; }
+            public Int64 CurFiscalYearEndMonth { get; set; }
             [YAXAttributeFor(".")]
-            public int CurInterimEndCalYear { get; set; }
+            public Int64 CurInterimEndCalYear { get; set; }
             [YAXAttributeFor(".")]
-            public int CurInterimEndMonth { get; set; }
+            public Int64 CurInterimEndMonth { get; set; }
             [YAXAttributeFor(".")]
             public string EarningsBasis { get; set; }
 

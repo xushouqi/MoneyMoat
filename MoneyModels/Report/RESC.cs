@@ -35,11 +35,11 @@ namespace MoneyModels
                 public class FYPeriod
                 {
                     [YAXAttributeForClass]
-                    public int endCalYear { get; set; }
+                    public Int64 endCalYear { get; set; }
                     [YAXAttributeForClass]
-                    public int endMonth { get; set; }
+                    public Int64 endMonth { get; set; }
                     [YAXAttributeForClass]
-                    public int fYear { get; set; }
+                    public Int64 fYear { get; set; }
                     [YAXAttributeForClass]
                     public string periodType { get; set; }
 
@@ -51,11 +51,6 @@ namespace MoneyModels
 
             [YAXCollection(YAXCollectionSerializationTypes.Recursive, EachElementName = "FYActual")]
             public List<FYActual> FYActuals { get; set; }
-
-            //[YAXDictionary(EachPairName = "FYActual", KeyName = "type",
-            //          SerializeKeyAs = YAXNodeTypes.Attribute, SerializeValueAs = YAXNodeTypes.Content)]
-            //[YAXCollection(YAXCollectionSerializationTypes.Recursive)]
-            //public Dictionary<string, FYActual> FYActuals { get; set; }
         }
         public ActualsData Actuals { get; set; }
 
@@ -71,11 +66,11 @@ namespace MoneyModels
                 public class FYPeriod
                 {
                     [YAXAttributeForClass]
-                    public int endCalYear { get; set; }
+                    public Int64 endCalYear { get; set; }
                     [YAXAttributeForClass]
-                    public int endMonth { get; set; }
+                    public Int64 endMonth { get; set; }
                     [YAXAttributeForClass]
-                    public int fYear { get; set; }
+                    public Int64 fYear { get; set; }
                     [YAXAttributeForClass]
                     public string periodType { get; set; }
 
@@ -131,17 +126,11 @@ namespace MoneyModels
                 {
                     [YAXAttributeForClass]
                     public string set { get; set; }
-                    //[YAXAttributeForClass]
-                    //public string desc { get; set; } = "";
-                    //[YAXAttributeForClass]
-                    //public int code { get; set; }
 
                     public class ConsOpValueData
                     {
                         [YAXAttributeForClass]
                         public string type { get; set; }
-                        //[YAXAttributeForClass]
-                        //public string unit { get; set; }
 
                         [YAXDictionary(EachPairName = "ConsValue", KeyName = "dateType",
                                   SerializeKeyAs = YAXNodeTypes.Attribute, SerializeValueAs = YAXNodeTypes.Content)]

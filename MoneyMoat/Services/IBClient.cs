@@ -427,7 +427,7 @@ namespace MoneyMoat.Services
             var tmp = FundamentalData;
 
             if (tmp != null)
-                tmp(new FundamentalsMessage(data));
+                tmp(new FundamentalsMessage(reqId, data));
         }
 
         public event Action<HistoricalDataMessage> HistoricalData;

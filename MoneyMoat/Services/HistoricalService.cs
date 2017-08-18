@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
@@ -9,37 +10,44 @@ using MoneyMoat.Messages;
 using MoneyMoat.Types;
 using MoneyModels;
 using IBApi;
-using YAXLib;
+using MoneyModels;
 
 namespace MoneyMoat.Services
 {
-    class HistoricalService
+    class HistoricalService : IBServiceBase<string>
     {
         public const int HISTORICAL_ID_BASE = 30000000;
 
         private readonly ILogger m_logger;
-        private readonly IBClient ibClient;
         private int activeReqId = 0;
 
         public HistoricalService(IBClient ibclient,
-                        ILogger<IBManager> logger)
+                        ILogger<IBManager> logger) : base(ibclient)
         {
             m_logger = logger;
-            ibClient = ibclient;
 
             ibClient.HeadTimestamp += HandleEarliestDataPoint;
             ibClient.HistoricalData += HandleHistoricalData;
             ibClient.HistoricalDataEnd += HandleHistoricalDataEnd;
         }
 
-        public void RequestEarliestDataPoint(string symbol, ExchangeEnum exchange)
+        public async Task<string> RequestEarliestDataPointAsync(string symbol, string exchange)
         {
-            if (activeReqId == 0)
-            {
-                activeReqId = Common.GetReqId(symbol);
-                var contract = Common.GetStockContract(symbol, exchange);
-                ibClient.ClientSocket.reqHeadTimestamp(activeReqId, contract, "TRADES", 1, 1);
-            }
+            var reqId = Common.GetReqId(symbol);
+            var contract = Common.GetStockContract(symbol, exchange);
+            ibClient.ClientSocket.reqHeadTimestamp(reqId, contract, "TRADES", 1, 1);
+            return await SendRequestAsync(reqId);
+        }
+
+        private void HandleEarliestDataPoint(HeadTimestampMessage message)
+        {
+            string symbol = string.Empty;
+
+            m_results[message.ReqId] = message.HeadTimestamp;
+            HandleResponse(message.ReqId);
+
+            Console.WriteLine("HandleEarliestDataPoint: {0}={1}",
+                 symbol, message.HeadTimestamp);
         }
         public void CancelHeadTimestamp()
         {
@@ -47,15 +55,6 @@ namespace MoneyMoat.Services
             {
                 ibClient.ClientSocket.cancelHeadTimestamp(activeReqId);
                 activeReqId = 0;
-            }
-        }
-        private void HandleEarliestDataPoint(HeadTimestampMessage message)
-        {
-            string symbol = string.Empty;
-            if (Common.CheckValidReqId(message.ReqId, out symbol))
-            {
-                m_logger.LogInformation("HandleEarliestDataPoint: {0}={1}",
-                     symbol, message.HeadTimestamp);
             }
         }
 
@@ -115,7 +114,7 @@ namespace MoneyMoat.Services
                 for (int i = 0; i < historicalData.Count; i++)
                 {
                     var data = historicalData[i];
-                    m_logger.LogInformation("HistoricalData: {0}, Date={1}, Open={2}, Close={3}, Count={4}, HasGaps={5}, High={6}, Low={7}, Volume={8}, Wap={9}", 
+                    Console.WriteLine("HistoricalData: {0}, Date={1}, Open={2}, Close={3}, Count={4}, HasGaps={5}, High={6}, Low={7}, Volume={8}, Wap={9}", 
                         symbol, data.Date, data.Open, data.Close, data.Count, data.HasGaps, data.High, data.Low, data.Volume, data.Wap);
                 }
             }

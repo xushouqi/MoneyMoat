@@ -15,6 +15,7 @@ using Pomelo.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql;
 using MoneyMoat.Services;
 using IBApi;
+using Foundatio.Caching;
 
 namespace MoneyMoat
 {
@@ -42,16 +43,21 @@ namespace MoneyMoat
             services.Configure<AppSettings>(Configuration);
 
             string connstr = Configuration.GetConnectionString("MySQL");
-            //services.AddDbContext<MoneyDbContext>(opt =>
-            //        opt.UseMySql(connstr), ServiceLifetime.Scoped);
+            services.AddDbContext<MoatDbContext>(opt =>
+                    opt.UseMySql(connstr), ServiceLifetime.Scoped);
 
             // Add framework services.
             services.AddMvc();
 
+            //缓存cache
+            services.AddSingleton<ICacheClient, InMemoryCacheClient>();
+            //注册数据仓库（生成代码）
+            services.AddRepositoryService(Environment, Configuration);
+
             services.AddSingleton(new IBClient(new EReaderMonitorSignal()));
             services.AddSingleton<IBManager>();
             services.AddSingleton<AccountService>();
-            services.AddSingleton<SymbolSamplesService>();
+            services.AddSingleton<SymbolService>();
             services.AddSingleton<FundamentalService>();
             services.AddSingleton<HistoricalService>();
             services.AddSingleton<ScannerService>();
@@ -62,16 +68,15 @@ namespace MoneyMoat
         {
             loggerFactory
                 .AddConsole(Configuration.GetSection("Logging"))
-                .AddDebug()
+                //.AddDebug()
                 .AddNLog();
 
             app.UseMvc();
 
-            System.Threading.Thread.Sleep(500);
+            var services = app.ApplicationServices;
+            var settings = services.GetRequiredService<IOptions<AppSettings>>().Value;
 
-            var settings = app.ApplicationServices.GetRequiredService<IOptions<AppSettings>>().Value;
-            var ibManager = app.ApplicationServices.GetRequiredService<IBManager>();
-
+            var ibManager = (IBManager)services.GetService(typeof(IBManager));
             ibManager.Connect();
             ibManager.Test();
         }

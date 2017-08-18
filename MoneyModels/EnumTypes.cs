@@ -1,13 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MoneyMoat.Types
+﻿
+namespace MoneyModels
 {
+    public enum CurrencyEnum
+    {
+        USD,
+        HKD,
+        CNY,
+        EUR
+    }
     public enum ExchangeEnum
     {
         ISLAND,
         NYSE,
+        SEHK,
+        SHSE,
+        SZSE,
     }
     public enum SecTypeEnum
     {
@@ -93,7 +100,7 @@ namespace MoneyMoat.Types
         ReportsFinSummary,
         ReportsFinStatements,
         RESC,
-        CalendarReport
+        //CalendarReport
     }
 
     public enum ScanCodeEnum

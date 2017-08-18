@@ -13,73 +13,108 @@ using YAXLib;
 
 namespace MoneyMoat.Services
 {
-    class FundamentalService
+    class FundamentalService : IBServiceBase<string>
     {
         private readonly ILogger m_logger;
-        private readonly IBClient ibClient;
-        private int activeReqId = 0;
+        private readonly IRepository<Stock> m_repoStock;
 
         public FundamentalService(IBClient ibclient,
-                        ILogger<IBManager> logger)
+                        IRepository<Stock> repoStock,
+                        ILogger<IBManager> logger) : base(ibclient)
         {
             m_logger = logger;
-            ibClient = ibclient;
+            m_repoStock = repoStock;
 
             ibClient.FundamentalData += HandleFundamentalsData;
         }
 
-        private Dictionary<string, FundamentalsReportEnum> m_fundamentalReqs = new Dictionary<string, FundamentalsReportEnum>();
-        public void RequestFundamentals(string symbol, ExchangeEnum exchange, FundamentalsReportEnum ftype)
+        public async Task UpdateAllStocksFundamentals()
         {
-            if (m_fundamentalReqs.Count == 0)
+            var stocklist = m_repoStock.GetAll();
+            for (int i = 0; i < stocklist.Count; i++)
             {
-                m_fundamentalReqs[symbol] = ftype;
-
-                var contract = Common.GetStockContract(symbol, exchange);
-                ibClient.ClientSocket.reqFundamentalData(Common.GetReqId(symbol), contract, ftype.ToString(), new List<TagValue>());
+                var stock = stocklist[i];
+                List<Task<string>> tasklist = new List<Task<string>>();
+                foreach (FundamentalsReportEnum ftype in Enum.GetValues(typeof(FundamentalsReportEnum)))
+                {
+                    Task<string> task = RequestAndParseFundamentalsAsync(stock.Symbol, stock.Exchange, ftype);
+                    tasklist.Add(task);
+                }
+                await Task.WhenAll(tasklist.ToArray());
+                for (int t = 0; t < tasklist.Count; t++)
+                {
+                    var data = tasklist[t].Result;
+                }
             }
         }
-        private void HandleFundamentalsData(FundamentalsMessage message)
+
+        private void ParseFundamentalData(string symbol, FundamentalsReportEnum ftype, string data)
         {
-            foreach (var item in m_fundamentalReqs)
+            if (!string.IsNullOrEmpty(data) && data.Length > 100)
             {
-                string symbol = item.Key;
-                var ftype = item.Value;
                 m_logger.LogInformation("HandleFundamentalsData: {0}: {1}", symbol, ftype.ToString());
+
+                string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Fundamentals", symbol, ftype.ToString() + ".xml");
+                Common.WriteFile(filepath, data);
 
                 if (ftype == FundamentalsReportEnum.ReportsFinStatements)
                 {
                     var ser = new YAXSerializer(typeof(ReportsFinStatements));
-                    var obj = (ReportsFinStatements)ser.Deserialize(message.Data);
+                    var obj = (ReportsFinStatements)ser.Deserialize(data);
                 }
                 else if (ftype == FundamentalsReportEnum.ReportsFinSummary)
                 {
                     var ser = new YAXSerializer(typeof(FinancialSummary));
-                    var obj = (FinancialSummary)ser.Deserialize(message.Data);
+                    var obj = (FinancialSummary)ser.Deserialize(data);
                 }
                 else if (ftype == FundamentalsReportEnum.ReportSnapshot)
                 {
                     var ser = new YAXSerializer(typeof(ReportSnapshot));
-                    var obj = (ReportSnapshot)ser.Deserialize(message.Data);
+                    var obj = (ReportSnapshot)ser.Deserialize(data);
                     var test = obj;
                 }
                 else if (ftype == FundamentalsReportEnum.RESC)
                 {
                     var ser = new YAXSerializer(typeof(RESC));
-                    var obj = (RESC)ser.Deserialize(message.Data);
+                    var obj = (RESC)ser.Deserialize(data);
                     var test = obj;
                 }
                 else if (ftype == FundamentalsReportEnum.ReportsOwnership)
                 {
                     var ser = new YAXSerializer(typeof(OwnershipDetails));
-                    var obj = (OwnershipDetails)ser.Deserialize(message.Data);
+                    var obj = (OwnershipDetails)ser.Deserialize(data);
                     var test = obj;
                 }
-
-                string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Fundamentals", symbol, ftype.ToString() + ".xml");
-                Common.WriteFile(filepath, message.Data);
-                break;
             }
         }
+
+        public async Task<string> RequestAndParseFundamentalsAsync(string symbol, string exchange, FundamentalsReportEnum ftype)
+        {
+            var data = await RequestFundamentalsAsync(symbol, exchange.ToString(), ftype);
+            if (!string.IsNullOrEmpty(data))
+            {
+                ParseFundamentalData(symbol, ftype, data);
+                return data;
+            }
+            else
+                return "";
+        }
+        public async Task<string> RequestFundamentalsAsync(string symbol, ExchangeEnum exchange, FundamentalsReportEnum ftype)
+        {
+            return await RequestFundamentalsAsync(symbol, exchange.ToString(), ftype);
+        }
+        public async Task<string> RequestFundamentalsAsync(string symbol, string exchange, FundamentalsReportEnum ftype)
+        {
+            int reqId = Common.GetReqId(symbol);
+            var contract = Common.GetStockContract(symbol, exchange);
+            ibClient.ClientSocket.reqFundamentalData(reqId, contract, ftype.ToString(), new List<TagValue>());
+            return await SendRequestAsync(reqId);
+        }
+        private void HandleFundamentalsData(FundamentalsMessage message)
+        {
+            m_results[message.ReqId] = message.Data;
+            HandleResponse(message.ReqId);
+        }
+
     }
 }

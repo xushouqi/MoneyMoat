@@ -17,11 +17,11 @@ namespace MoneyModels
 
             [YAXAttributeFor(".")]
             [YAXSerializeAs("Order")]
-            public int IssueOrder { get; set; }
+            public Int64 IssueOrder { get; set; }
 
             //[YAXAttributeFor(".")]
             //[YAXSerializeAs("ID")]
-            //public int IssueID { get; set; }
+            //public Int64 IssueID { get; set; }
 
             [YAXAttributeFor(".")]
             [YAXSerializeAs("Desc")]
@@ -37,10 +37,10 @@ namespace MoneyModels
 
             public string Exchange { get; set; }
 
-            public string GlobalListingType { get; set; }
+            //public string GlobalListingType { get; set; }
 
-            [YAXAttributeFor("GlobalListingType")]
-            public float SharesPerListing { get; set; }
+            //[YAXAttributeFor("GlobalListingType")]
+            //public float SharesPerListing { get; set; }
 
 
             [YAXDictionary(EachPairName = "IssueID", KeyName = "Type",
