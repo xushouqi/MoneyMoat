@@ -41,9 +41,15 @@ namespace MoneyModels
         //Closed End Fund
         CEF,
     }
-
-    public enum FYActualEnum
+    public enum PeriodTypeEnum
     {
+        Q,
+        A
+    }
+    public enum FYTypeEnum
+    {
+        //Net Asset Value, 净资产价值法，目前地产行业的主流估值方法
+        NAV,
         //资本支出，为了获得固定资产，或为了延长固定资产耐用年限而流出的费用        
         CAPEX,
         //盈利

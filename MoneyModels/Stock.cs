@@ -34,5 +34,9 @@ namespace MoneyModels
 
         public DateTime EarliestDate { get; set; }
 
+        public Int64 SharesOut { get; set; }
+        public int CommonShareholders { get; set; }
+        public int Employees { get; set; }
+        public float MarketCap { get; set; }
     }
 }

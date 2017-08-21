@@ -63,7 +63,7 @@ namespace MoneyModels
                 [YAXAttributeForClass]
                 public string unit { get; set; }
 
-                public class FYPeriod
+                public class FYPeriodWithConsEstimate
                 {
                     [YAXAttributeForClass]
                     public Int64 endCalYear { get; set; }
@@ -89,7 +89,7 @@ namespace MoneyModels
                 }
 
                 [YAXCollection(YAXCollectionSerializationTypes.RecursiveWithNoContainingElement, EachElementName = "FYPeriod")]
-                public List<FYPeriod> FYPeriods { get; set; }
+                public List<FYPeriodWithConsEstimate> FYPeriods { get; set; }
             }
 
             [YAXCollection(YAXCollectionSerializationTypes.Recursive, EachElementName = "FYEstimate")]

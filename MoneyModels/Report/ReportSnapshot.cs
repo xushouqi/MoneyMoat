@@ -16,8 +16,9 @@ namespace MoneyModels
             public DateTime LatestAvailableAnnual { get; set; }
             public DateTime LatestAvailableInterim { get; set; }
 
-            public Int64 Employees { get; set; }
+            public int Employees { get; set; }
             public float SharesOut { get; set; }
+            public int CommonShareholders { get; set; }
 
             [YAXAttributeFor("ReportingCurrency")]
             [YAXSerializeAs("Code")]

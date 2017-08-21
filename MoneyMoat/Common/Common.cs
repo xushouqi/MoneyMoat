@@ -36,6 +36,11 @@ namespace MoneyMoat
             return result;
         }
 
+        public static string GetFundamentalFilePath(string symbol, FundamentalsReportEnum ftype)
+        {
+            string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Fundamentals", symbol, ftype.ToString() + ".xml");
+            return filepath;
+        }
         public static void WriteFile(string filepath, string content)
         {
             string path = filepath.Substring(0, filepath.LastIndexOf(@"\"));
@@ -51,6 +56,17 @@ namespace MoneyMoat
                 sw.Write(content);
             }
             Console.WriteLine("Write ClientFile: " + filepath);
+        }
+        public static async Task<string> ReadFile(string filepath)
+        {
+            string content = string.Empty;
+            string path = filepath.Substring(0, filepath.LastIndexOf(@"\"));
+            if (File.Exists(filepath))
+            {
+                content = await File.ReadAllTextAsync(filepath, System.Text.Encoding.UTF8);
+            }
+            Console.WriteLine("Read ClientFile: " + filepath);
+            return content;
         }
 
         private static int activeReqId = 0;

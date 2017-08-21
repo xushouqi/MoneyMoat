@@ -21,7 +21,9 @@ namespace MoneyMoat
         Task<TEntity[]> WhereToArray(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
         Task<List<TEntity>> WhereToList(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
         Task<bool> Add(TEntity data);
+        bool AddNoCacheNotSave(TEntity data);
         Task<bool> AddNoCache(TEntity data);
+        Task<bool> SaveChangesAsync();
         Task<bool> Update(TEntity data);
         Task<bool> Remove(TEntity data);
         Task<bool> Remove(int id);

@@ -15,11 +15,17 @@ namespace MoneyMoat
         public static IServiceCollection AddRepositoryService(this IServiceCollection services, IHostingEnvironment env, IConfigurationRoot config)
         {
 
-			services.AddScoped<IRepository<Stock>>(sp =>
+            services.AddScoped<IRepository<Stock>>(sp =>
             {
                 var icache = sp.GetRequiredService<ICacheClient>();
                 var context = sp.GetRequiredService<MoatDbContext>();
                 return new Repository<Stock, MoatDbContext>(context, context.Stocks, icache);
+            });
+            services.AddScoped<IRepository<Financal>>(sp =>
+            {
+                var icache = sp.GetRequiredService<ICacheClient>();
+                var context = sp.GetRequiredService<MoatDbContext>();
+                return new Repository<Financal, MoatDbContext>(context, context.Financals, icache);
             });
 
             return services;

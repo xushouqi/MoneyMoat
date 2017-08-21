@@ -51,7 +51,7 @@ namespace MoneyMoat.Services
             m_accountService = accountService;
             m_historicalService = historicalService;
             m_scannerService = scannerService;
-
+            
             ibClient.Error += ibClient_Error;            
             ibClient.ConnectionClosed += ibClient_ConnectionClosed;
             ibClient.CurrentTime += ibClient_CurrentTime;
@@ -65,15 +65,19 @@ namespace MoneyMoat.Services
             else
                 m_logger.LogError("ibClient_Error: id={0}, code={1}, {2}", reqId, errorCode, str);
 
-            if (!ibClient.ClientSocket.IsConnected())
+            if (m_needReconnect)
             {
-                Task.Delay(1000).Wait();
-                Connect();
+                if (!ibClient.ClientSocket.IsConnected())
+                {
+                    Task.Delay(1000).Wait();
+                    Connect();
+                }
+                else
+                    m_onError = true;
             }
-            else
-                m_onError = true;
         }
 
+        bool m_needReconnect = false;
         bool m_onError = false;
         void ibClient_ConnectionClosed()
         {
@@ -109,6 +113,7 @@ namespace MoneyMoat.Services
                     ibClient.ClientId = 1;
                     ibClient.ClientSocket.eConnect(host, port, ibClient.ClientId);
                     IsConnected = true;
+                    m_needReconnect = true;
 
                     m_ereader = new EReader(ibClient.ClientSocket, ibClient.Signal);
                     m_ereader.Start();
@@ -129,6 +134,8 @@ namespace MoneyMoat.Services
 
         public void Test()
         {
+            //m_fundamentalService.RequestAndParseFundamentalsAsync("ATAI", ExchangeEnum.ISLAND.ToString(), FundamentalsReportEnum.RESC).Wait();
+            //m_fundamentalService.DoUpdateStockFundamentals("ATAI", ExchangeEnum.ISLAND.ToString()).Wait();
             m_fundamentalService.UpdateAllStocksFundamentals().Wait();
             //m_symbolSampleService.UpdateSymbolsFromSina().Wait();
 

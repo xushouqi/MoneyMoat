@@ -120,6 +120,17 @@ namespace MoneyMoat
             await m_context.SaveChangesAsync();
             return ret;
         }
+        public bool AddNoCacheNotSave(TEntity data)
+        {
+            data.TryUpdateTime();
+            Datas.Add(data);
+            return true;
+        }
+        public async Task<bool> SaveChangesAsync()
+        {
+            await m_context.SaveChangesAsync();
+            return true;
+        }
         public async Task<bool> AddNoCache(TEntity data)
         {
             data.TryUpdateTime();
