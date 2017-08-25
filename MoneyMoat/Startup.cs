@@ -44,10 +44,14 @@ namespace MoneyMoat
 
             string connstr = Configuration.GetConnectionString("MySQL");
             services.AddDbContext<MoatDbContext>(opt =>
-                    opt.UseMySql(connstr), ServiceLifetime.Scoped);
+                    opt.UseMySql(connstr), ServiceLifetime.Singleton);
+            services.AddDbContext<TestDbContext>(opt =>
+                    opt.UseMySql(connstr), ServiceLifetime.Singleton);
 
             // Add framework services.
             services.AddMvc();
+
+            services.AddSingleton<CommonManager>();
 
             //缓存cache
             services.AddSingleton<ICacheClient, InMemoryCacheClient>();
@@ -68,7 +72,7 @@ namespace MoneyMoat
         {
             loggerFactory
                 .AddConsole(Configuration.GetSection("Logging"))
-                //.AddDebug()
+                .AddDebug()
                 .AddNLog();
 
             app.UseMvc();

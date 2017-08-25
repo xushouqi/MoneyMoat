@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFinancialStatements Major="1" Minor="0" Revision="1">
+<CoIDs>
+<CoID Type="RepNo">A0296</CoID>
+<CoID Type="CompanyName">Abaxis Inc</CoID>
+<CoID Type="IRSNo">770213001</CoID>
+<CoID Type="CIKNo">0000881890</CoID>
+</CoIDs>
+<Issues>
+<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+<IssueID Type="Name">Ordinary Shares</IssueID>
+<IssueID Type="Ticker">ABAX</IssueID>
+<IssueID Type="CUSIP">002567105</IssueID>
+<IssueID Type="ISIN">US0025671050</IssueID>
+<IssueID Type="RIC">ABAX.O</IssueID>
+<IssueID Type="SEDOL">2011550</IssueID>
+<IssueID Type="DisplayRIC">ABAX.OQ</IssueID>
+<IssueID Type="InstrumentPI">287613</IssueID>
+<IssueID Type="QuotePI">7645745</IssueID>
+<Exchange Code="NASD" Country="USA">NASDAQ</Exchange>
+</Issue>
+</Issues>
+<CoGeneralInfo>
+<CoStatus Code="1">Active</CoStatus>
+<CoType Code="EQU">Equity Issue</CoType>
+<LastModified>2017-08-11</LastModified>
+<LatestAvailableAnnual>2017-03-31</LatestAvailableAnnual>
+<LatestAvailableInterim>2017-06-30</LatestAvailableInterim>
+<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+<MostRecentExchange Date="2017-08-10">1.0</MostRecentExchange>
+</CoGeneralInfo>
+<StatementInfo>
+<COAType Code="IND">Industry</COAType>
+<BalanceSheetDisplay Code="CUR">Differentiates</BalanceSheetDisplay>
+<CashFlowMethod Code="IND">Indirect</CashFlowMethod>
+</StatementInfo>
+<Notes>
+<CFAAvailability Code="1" />
+<IAvailability Code="1" />
+<ISIAvailability Code="1" />
+<BSIAvailability Code="1" />
+<CFIAvailability Code="1" />
+</Notes>
+<FinancialStatements>
+<COAMap>
+<mapItem coaItem="SREV" statementType="INC" lineID="100" precision="1">Revenue</mapItem>
+<mapItem coaItem="SORE" statementType="INC" lineID="300" precision="1">Other Revenue, Total</mapItem>
+<mapItem coaItem="RTLR" statementType="INC" lineID="310" precision="1">Total Revenue</mapItem>
+<mapItem coaItem="SCOR" statementType="INC" lineID="360" precision="1">Cost of Revenue, Total</mapItem>
+<mapItem coaItem="SGRP" statementType="INC" lineID="370" precision="1">Gross Profit</mapItem>
+<mapItem coaItem="SSGA" statementType="INC" lineID="550" precision="1">Selling/General/Admin. Expenses, Total</mapItem>
+<mapItem coaItem="ERAD" statementType="INC" lineID="560" precision="1">Research &amp; Development</mapItem>
+<mapItem coaItem="SDPR" statementType="INC" lineID="600" precision="1">Depreciation/Amortization</mapItem>
+<mapItem coaItem="SINN" statementType="INC" lineID="671" precision="1">Interest Exp.(Inc.),Net-Operating, Total</mapItem>
+<mapItem coaItem="SUIE" statementType="INC" lineID="740" precision="1">Unusual Expense (Income)</mapItem>
+<mapItem coaItem="SOOE" statementType="INC" lineID="820" precision="1">Other Operating Expenses, Total</mapItem>
+<mapItem coaItem="ETOE" statementType="INC" lineID="830" precision="1">Total Operating Expense</mapItem>
+<mapItem coaItem="SOPI" statementType="INC" lineID="840" precision="1">Operating Income</mapItem>
+<mapItem coaItem="SNIN" statementType="INC" lineID="911" precision="1">Interest Inc.(Exp.),Net-Non-Op., Total</mapItem>
+<mapItem coaItem="NGLA" statementType="INC" lineID="920" precision="1">Gain (Loss) on Sale of Assets</mapItem>
+<mapItem coaItem="SONT" statementType="INC" lineID="1270" precision="1">Other, Net</mapItem>
+<mapItem coaItem="EIBT" statementType="INC" lineID="1280" precision="1">Net Income Before Taxes</mapItem>
+<mapItem coaItem="TTAX" statementType="INC" lineID="1290" precision="1">Provision for Income Taxes</mapItem>
+<mapItem coaItem="TIAT" statementType="INC" lineID="1300" precision="1">Net Income After Taxes</mapItem>
+<mapItem coaItem="CMIN" statementType="INC" lineID="1310" precision="1">Minority Interest</mapItem>
+<mapItem coaItem="CEIA" statementType="INC" lineID="1320" precision="1">Equity In Affiliates</mapItem>
+<mapItem coaItem="CGAP" statementType="INC" lineID="1330" precision="1">U.S. GAAP Adjustment</mapItem>
+<mapItem coaItem="NIBX" statementType="INC" lineID="1340" precision="1">Net Income Before Extra. Items</mapItem>
+<mapItem coaItem="STXI" statementType="INC" lineID="1390" precision="1">Total Extraordinary Items</mapItem>
+<mapItem coaItem="NINC" statementType="INC" lineID="1400" precision="1">Net Income</mapItem>
+<mapItem coaItem="SANI" statementType="INC" lineID="1460" precision="1">Total Adjustments to Net Income</mapItem>
+<mapItem coaItem="CIAC" statementType="INC" lineID="1470" precision="1">Income Available to Com Excl ExtraOrd</mapItem>
+<mapItem coaItem="XNIC" statementType="INC" lineID="1480" precision="1">Income Available to Com Incl ExtraOrd</mapItem>
+<mapItem coaItem="SDAJ" statementType="INC" lineID="1520" precision="1">Dilution Adjustment</mapItem>
+<mapItem coaItem="SDNI" statementType="INC" lineID="1530" precision="1">Diluted Net Income</mapItem>
+<mapItem coaItem="SDWS" statementType="INC" lineID="1540" precision="2">Diluted Weighted Average Shares</mapItem>
+<mapItem coaItem="SDBF" statementType="INC" lineID="1550" precision="3">Diluted EPS Excluding ExtraOrd Items</mapItem>
+<mapItem coaItem="DDPS1" statementType="INC" lineID="1570" precision="3">DPS - Common Stock Primary Issue</mapItem>
+<mapItem coaItem="VDES" statementType="INC" lineID="1770" precision="3">Diluted Normalized EPS</mapItem>
+<mapItem coaItem="ACSH" statementType="BAL" lineID="10" precision="1">Cash</mapItem>
+<mapItem coaItem="ACAE" statementType="BAL" lineID="20" precision="1">Cash &amp; Equivalents</mapItem>
+<mapItem coaItem="ASTI" statementType="BAL" lineID="30" precision="1">Short Term Investments</mapItem>
+<mapItem coaItem="SCSI" statementType="BAL" lineID="40" precision="1">Cash and Short Term Investments</mapItem>
+<mapItem coaItem="AACR" statementType="BAL" lineID="70" precision="1">Accounts Receivable - Trade, Net</mapItem>
+<mapItem coaItem="ATRC" statementType="BAL" lineID="100" precision="1">Total Receivables, Net</mapItem>
+<mapItem coaItem="AITL" statementType="BAL" lineID="180" precision="1">Total Inventory</mapItem>
+<mapItem coaItem="APPY" statementType="BAL" lineID="190" precision="1">Prepaid Expenses</mapItem>
+<mapItem coaItem="SOCA" statementType="BAL" lineID="260" precision="1">Other Current Assets, Total</mapItem>
+<mapItem coaItem="ATCA" statementType="BAL" lineID="270" precision="1">Total Current Assets</mapItem>
+<mapItem coaItem="APTC" statementType="BAL" lineID="520" precision="1">Property/Plant/Equipment, Total - Gross</mapItem>
+<mapItem coaItem="ADEP" statementType="BAL" lineID="530" precision="1">Accumulated Depreciation, Total</mapItem>
+<mapItem coaItem="APPN" statementType="BAL" lineID="540" precision="1">Property/Plant/Equipment, Total - Net</mapItem>
+<mapItem coaItem="AGWI" statementType="BAL" lineID="570" precision="1">Goodwill, Net</mapItem>
+<mapItem coaItem="AINT" statementType="BAL" lineID="600" precision="1">Intangibles, Net</mapItem>
+<mapItem coaItem="SINV" statementType="BAL" lineID="690" precision="1">Long Term Investments</mapItem>
+<mapItem coaItem="ALTR" statementType="BAL" lineID="710" precision="1">Note Receivable - Long Term</mapItem>
+<mapItem coaItem="SOLA" statementType="BAL" lineID="780" precision="1">Other Long Term Assets, Total</mapItem>
+<mapItem coaItem="ATOT" statementType="BAL" lineID="880" precision="1">Total Assets</mapItem>
+<mapItem coaItem="LAPB" statementType="BAL" lineID="890" precision="1">Accounts Payable</mapItem>
+<mapItem coaItem="LPBA" statementType="BAL" lineID="900" precision="1">Payable/Accrued</mapItem>
+<mapItem coaItem="LAEX" statementType="BAL" lineID="910" precision="1">Accrued Expenses</mapItem>
+<mapItem coaItem="LSTD" statementType="BAL" lineID="1120" precision="1">Notes Payable/Short Term Debt</mapItem>
+<mapItem coaItem="LCLD" statementType="BAL" lineID="1130" precision="1">Current Port. of  LT Debt/Capital Leases</mapItem>
+<mapItem coaItem="SOCL" statementType="BAL" lineID="1220" precision="1">Other Current liabilities, Total</mapItem>
+<mapItem coaItem="LTCL" statementType="BAL" lineID="1230" precision="1">Total Current Liabilities</mapItem>
+<mapItem coaItem="LLTD" statementType="BAL" lineID="1240" precision="1">Long Term Debt</mapItem>
+<mapItem coaItem="LCLO" statementType="BAL" lineID="1250" precision="1">Capital Lease Obligations</mapItem>
+<mapItem coaItem="LTTD" statementType="BAL" lineID="1260" precision="1">Total Long Term Debt</mapItem>
+<mapItem coaItem="STLD" statementType="BAL" lineID="1270" precision="1">Total Debt</mapItem>
+<mapItem coaItem="SBDT" statementType="BAL" lineID="1300" precision="1">Deferred Income Tax</mapItem>
+<mapItem coaItem="LMIN" statementType="BAL" lineID="1310" precision="1">Minority Interest</mapItem>
+<mapItem coaItem="SLTL" statementType="BAL" lineID="1370" precision="1">Other Liabilities, Total</mapItem>
+<mapItem coaItem="LTLL" statementType="BAL" lineID="1380" precision="1">Total Liabilities</mapItem>
+<mapItem coaItem="SRPR" statementType="BAL" lineID="1410" precision="1">Redeemable Preferred Stock, Total</mapItem>
+<mapItem coaItem="SPRS" statementType="BAL" lineID="1460" precision="1">Preferred Stock - Non Redeemable, Net</mapItem>
+<mapItem coaItem="SCMS" statementType="BAL" lineID="1490" precision="1">Common Stock, Total</mapItem>
+<mapItem coaItem="QPIC" statementType="BAL" lineID="1500" precision="1">Additional Paid-In Capital</mapItem>
+<mapItem coaItem="QRED" statementType="BAL" lineID="1510" precision="1">Retained Earnings (Accumulated Deficit)</mapItem>
+<mapItem coaItem="QTSC" statementType="BAL" lineID="1520" precision="1">Treasury Stock - Common</mapItem>
+<mapItem coaItem="QEDG" statementType="BAL" lineID="1530" precision="1">ESOP Debt Guarantee</mapItem>
+<mapItem coaItem="QUGL" statementType="BAL" lineID="1540" precision="1">Unrealized Gain (Loss)</mapItem>
+<mapItem coaItem="SOTE" statementType="BAL" lineID="1590" precision="1">Other Equity, Total</mapItem>
+<mapItem coaItem="QTLE" statementType="BAL" lineID="1600" precision="1">Total Equity</mapItem>
+<mapItem coaItem="QTEL" statementType="BAL" lineID="1610" precision="1">Total Liabilities &amp; Shareholders' Equity</mapItem>
+<mapItem coaItem="QTCO" statementType="BAL" lineID="1660" precision="2">Total Common Shares Outstanding</mapItem>
+<mapItem coaItem="QTPO" statementType="BAL" lineID="1770" precision="2">Total Preferred Shares Outstanding</mapItem>
+<mapItem coaItem="STBP" statementType="BAL" lineID="1980" precision="3">Tangible Book Value per Share, Common Eq</mapItem>
+<mapItem coaItem="ONET" statementType="CAS" lineID="10" precision="1">Net Income/Starting Line</mapItem>
+<mapItem coaItem="SDED" statementType="CAS" lineID="40" precision="1">Depreciation/Depletion</mapItem>
+<mapItem coaItem="SAMT" statementType="CAS" lineID="80" precision="1">Amortization</mapItem>
+<mapItem coaItem="OBDT" statementType="CAS" lineID="90" precision="1">Deferred Taxes</mapItem>
+<mapItem coaItem="SNCI" statementType="CAS" lineID="170" precision="1">Non-Cash Items</mapItem>
+<mapItem coaItem="SOCF" statementType="CAS" lineID="470" precision="1">Changes in Working Capital</mapItem>
+<mapItem coaItem="OTLO" statementType="CAS" lineID="480" precision="1">Cash from Operating Activities</mapItem>
+<mapItem coaItem="SCEX" statementType="CAS" lineID="520" precision="1">Capital Expenditures</mapItem>
+<mapItem coaItem="SICF" statementType="CAS" lineID="670" precision="1">Other Investing Cash Flow Items, Total</mapItem>
+<mapItem coaItem="ITLI" statementType="CAS" lineID="680" precision="1">Cash from Investing Activities</mapItem>
+<mapItem coaItem="SFCF" statementType="CAS" lineID="730" precision="1">Financing Cash Flow Items</mapItem>
+<mapItem coaItem="FCDP" statementType="CAS" lineID="760" precision="1">Total Cash Dividends Paid</mapItem>
+<mapItem coaItem="FPSS" statementType="CAS" lineID="880" precision="1">Issuance (Retirement) of Stock, Net</mapItem>
+<mapItem coaItem="FPRD" statementType="CAS" lineID="970" precision="1">Issuance (Retirement) of Debt, Net</mapItem>
+<mapItem coaItem="FTLF" statementType="CAS" lineID="980" precision="1">Cash from Financing Activities</mapItem>
+<mapItem coaItem="SFEE" statementType="CAS" lineID="990" precision="1">Foreign Exchange Effects</mapItem>
+<mapItem coaItem="SNCC" statementType="CAS" lineID="1000" precision="1">Net Change in Cash</mapItem>
+<mapItem coaItem="SCIP" statementType="CAS" lineID="1040" precision="1">Cash Interest Paid</mapItem>
+<mapItem coaItem="SCTP" statementType="CAS" lineID="1050" precision="1">Cash Taxes Paid</mapItem>
+</COAMap>
+<AnnualPeriods>
+<FiscalPeriod Type="Annual" EndDate="2017-03-31" FiscalYear="2017">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2017-03-31</StatementDate>
+<AuditorName Code="BPLL">BPM LLP</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2017-05-30">10-K</Source>
+</FPHeader>
+<lineItem coaCode="SREV">227.220000</lineItem>
+<lineItem coaCode="RTLR">227.220000</lineItem>
+<lineItem coaCode="SCOR">101.375000</lineItem>
+<lineItem coaCode="SGRP">125.845000</lineItem>
+<lineItem coaCode="SSGA">61.563700</lineItem>
+<lineItem coaCode="ERAD">19.794300</lineItem>
+<lineItem coaCode="ETOE">182.733000</lineItem>
+<lineItem coaCode="SOPI">44.487000</lineItem>
+<lineItem coaCode="SNIN">6.625000</lineItem>
+<lineItem coaCode="EIBT">51.112000</lineItem>
+<lineItem coaCode="TTAX">18.333000</lineItem>
+<lineItem coaCode="TIAT">32.779000</lineItem>
+<lineItem coaCode="NIBX">32.779000</lineItem>
+<lineItem coaCode="STXI">-0.063000</lineItem>
+<lineItem coaCode="NINC">32.716000</lineItem>
+<lineItem coaCode="CIAC">32.779000</lineItem>
+<lineItem coaCode="XNIC">32.716000</lineItem>
+<lineItem coaCode="SDAJ">0.000000</lineItem>
+<lineItem coaCode="SDNI">32.716000</lineItem>
+<lineItem coaCode="SDWS">22.797000</lineItem>
+<lineItem coaCode="SDBF">1.437860</lineItem>
+<lineItem coaCode="DDPS1">0.520000</lineItem>
+<lineItem coaCode="VDES">1.437860</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2017-03-31</StatementDate>
+<AuditorName Code="BPLL">BPM LLP</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2017-05-30">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">91.332000</lineItem>
+<lineItem coaCode="ASTI">51.561000</lineItem>
+<lineItem coaCode="SCSI">142.893000</lineItem>
+<lineItem coaCode="AACR">40.568000</lineItem>
+<lineItem coaCode="ATRC">40.568000</lineItem>
+<lineItem coaCode="AITL">39.010000</lineItem>
+<lineItem coaCode="APPY">4.997000</lineItem>
+<lineItem coaCode="SOCA">5.710000</lineItem>
+<lineItem coaCode="ATCA">233.178000</lineItem>
+<lineItem coaCode="APTC">78.591000</lineItem>
+<lineItem coaCode="ADEP">-44.331000</lineItem>
+<lineItem coaCode="APPN">34.260000</lineItem>
+<lineItem coaCode="AINT">1.171000</lineItem>
+<lineItem coaCode="SINV">25.021000</lineItem>
+<lineItem coaCode="SOLA">12.016000</lineItem>
+<lineItem coaCode="ATOT">305.646000</lineItem>
+<lineItem coaCode="LAPB">7.517000</lineItem>
+<lineItem coaCode="LAEX">20.612000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">5.314000</lineItem>
+<lineItem coaCode="LTCL">33.443000</lineItem>
+<lineItem coaCode="LLTD">0.278000</lineItem>
+<lineItem coaCode="LTTD">0.278000</lineItem>
+<lineItem coaCode="STLD">0.278000</lineItem>
+<lineItem coaCode="SBDT">0.234000</lineItem>
+<lineItem coaCode="SLTL">5.467000</lineItem>
+<lineItem coaCode="LTLL">39.422000</lineItem>
+<lineItem coaCode="SPRS">0.000000</lineItem>
+<lineItem coaCode="SCMS">135.932000</lineItem>
+<lineItem coaCode="QRED">130.304000</lineItem>
+<lineItem coaCode="SOTE">-0.012000</lineItem>
+<lineItem coaCode="QTLE">266.224000</lineItem>
+<lineItem coaCode="QTEL">305.646000</lineItem>
+<lineItem coaCode="QTCO">22.540000</lineItem>
+<lineItem coaCode="STBP">11.759230</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2017-03-31</StatementDate>
+<AuditorName Code="BPLL">BPM LLP</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2017-05-30">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ONET">32.716000</lineItem>
+<lineItem coaCode="SDED">7.340000</lineItem>
+<lineItem coaCode="OBDT">-1.319000</lineItem>
+<lineItem coaCode="SNCI">6.288000</lineItem>
+<lineItem coaCode="SCTP">16.901000</lineItem>
+<lineItem coaCode="SOCF">-11.873000</lineItem>
+<lineItem coaCode="OTLO">33.152000</lineItem>
+<lineItem coaCode="SCEX">-10.171000</lineItem>
+<lineItem coaCode="SICF">-5.732000</lineItem>
+<lineItem coaCode="ITLI">-15.903000</lineItem>
+<lineItem coaCode="SFCF">-1.904000</lineItem>
+<lineItem coaCode="FCDP">-11.715000</lineItem>
+<lineItem coaCode="FPSS">0.000000</lineItem>
+<lineItem coaCode="FTLF">-13.619000</lineItem>
+<lineItem coaCode="SFEE">-0.621000</lineItem>
+<lineItem coaCode="SNCC">3.009000</lineItem>
+</Statement>
+</FiscalPeriod>
+<FiscalPeriod Type="Annual" EndDate="2016-03-31" FiscalYear="2016">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2016-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2016-05-31">10-K</Source>
+</FPHeader>
+<lineItem coaCode="SREV">218.901000</lineItem>
+<lineItem coaCode="RTLR">218.901000</lineItem>
+<lineItem coaCode="SCOR">95.649000</lineItem>
+<lineItem coaCode="SGRP">123.252000</lineItem>
+<lineItem coaCode="SSGA">59.210000</lineItem>
+<lineItem coaCode="ERAD">17.688000</lineItem>
+<lineItem coaCode="ETOE">172.547000</lineItem>
+<lineItem coaCode="SOPI">46.354000</lineItem>
+<lineItem coaCode="SNIN">0.793000</lineItem>
+<lineItem coaCode="EIBT">47.147000</lineItem>
+<lineItem coaCode="TTAX">16.073000</lineItem>
+<lineItem coaCode="TIAT">31.074000</lineItem>
+<lineItem coaCode="NIBX">31.074000</lineItem>
+<lineItem coaCode="STXI">0.556000</lineItem>
+<lineItem coaCode="NINC">31.630000</lineItem>
+<lineItem coaCode="CIAC">31.074000</lineItem>
+<lineItem coaCode="XNIC">31.630000</lineItem>
+<lineItem coaCode="SDAJ">0.000000</lineItem>
+<lineItem coaCode="SDNI">31.630000</lineItem>
+<lineItem coaCode="SDWS">22.883000</lineItem>
+<lineItem coaCode="SDBF">1.357950</lineItem>
+<lineItem coaCode="DDPS1">0.440000</lineItem>
+<lineItem coaCode="VDES">1.357950</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2016-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2016-05-31">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">88.323000</lineItem>
+<lineItem coaCode="ASTI">41.474000</lineItem>
+<lineItem coaCode="SCSI">129.797000</lineItem>
+<lineItem coaCode="AACR">35.148000</lineItem>
+<lineItem coaCode="ATRC">35.148000</lineItem>
+<lineItem coaCode="AITL">35.131000</lineItem>
+<lineItem coaCode="APPY">6.351000</lineItem>
+<lineItem coaCode="SOCA">5.771000</lineItem>
+<lineItem coaCode="ATCA">212.198000</lineItem>
+<lineItem coaCode="APTC">66.344000</lineItem>
+<lineItem coaCode="ADEP">-39.502000</lineItem>
+<lineItem coaCode="APPN">26.842000</lineItem>
+<lineItem coaCode="AINT">1.324000</lineItem>
+<lineItem coaCode="SINV">25.163000</lineItem>
+<lineItem coaCode="SOLA">5.853000</lineItem>
+<lineItem coaCode="ATOT">271.380000</lineItem>
+<lineItem coaCode="LAPB">7.292000</lineItem>
+<lineItem coaCode="LAEX">17.742000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">4.138000</lineItem>
+<lineItem coaCode="LTCL">29.172000</lineItem>
+<lineItem coaCode="LLTD">0.379000</lineItem>
+<lineItem coaCode="LTTD">0.379000</lineItem>
+<lineItem coaCode="STLD">0.379000</lineItem>
+<lineItem coaCode="SBDT">0.384000</lineItem>
+<lineItem coaCode="SLTL">5.133000</lineItem>
+<lineItem coaCode="LTLL">35.068000</lineItem>
+<lineItem coaCode="SPRS">0.000000</lineItem>
+<lineItem coaCode="SCMS">127.016000</lineItem>
+<lineItem coaCode="QRED">109.303000</lineItem>
+<lineItem coaCode="SOTE">-0.007000</lineItem>
+<lineItem coaCode="QTLE">236.312000</lineItem>
+<lineItem coaCode="QTEL">271.380000</lineItem>
+<lineItem coaCode="QTCO">22.408000</lineItem>
+<lineItem coaCode="STBP">10.486790</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2016-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2016-05-31">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ONET">31.630000</lineItem>
+<lineItem coaCode="SDED">6.697000</lineItem>
+<lineItem coaCode="OBDT">1.317000</lineItem>
+<lineItem coaCode="SNCI">10.045000</lineItem>
+<lineItem coaCode="SCTP">19.927000</lineItem>
+<lineItem coaCode="SOCF">-21.633000</lineItem>
+<lineItem coaCode="OTLO">28.056000</lineItem>
+<lineItem coaCode="SCEX">-5.185000</lineItem>
+<lineItem coaCode="SICF">-15.052000</lineItem>
+<lineItem coaCode="ITLI">-20.237000</lineItem>
+<lineItem coaCode="SFCF">-3.629000</lineItem>
+<lineItem coaCode="FCDP">-9.970000</lineItem>
+<lineItem coaCode="FPSS">-13.028000</lineItem>
+<lineItem coaCode="FTLF">-26.627000</lineItem>
+<lineItem coaCode="SFEE">0.116000</lineItem>
+<lineItem coaCode="SNCC">-18.692000</lineItem>
+</Statement>
+</FiscalPeriod>
+<FiscalPeriod Type="Annual" EndDate="2015-03-31" FiscalYear="2015">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2015-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2015-06-01">10-K</Source>
+</FPHeader>
+<lineItem coaCode="SREV">202.593000</lineItem>
+<lineItem coaCode="RTLR">202.593000</lineItem>
+<lineItem coaCode="SCOR">93.623000</lineItem>
+<lineItem coaCode="SGRP">108.970000</lineItem>
+<lineItem coaCode="SSGA">58.339000</lineItem>
+<lineItem coaCode="ERAD">16.327000</lineItem>
+<lineItem coaCode="SUIE">0.000000</lineItem>
+<lineItem coaCode="ETOE">168.289000</lineItem>
+<lineItem coaCode="SOPI">34.304000</lineItem>
+<lineItem coaCode="SNIN">-1.262000</lineItem>
+<lineItem coaCode="EIBT">33.042000</lineItem>
+<lineItem coaCode="TTAX">12.239000</lineItem>
+<lineItem coaCode="TIAT">20.803000</lineItem>
+<lineItem coaCode="NIBX">20.803000</lineItem>
+<lineItem coaCode="STXI">6.528000</lineItem>
+<lineItem coaCode="NINC">27.331000</lineItem>
+<lineItem coaCode="CIAC">20.803000</lineItem>
+<lineItem coaCode="XNIC">27.331000</lineItem>
+<lineItem coaCode="SDAJ">0.000000</lineItem>
+<lineItem coaCode="SDNI">27.331000</lineItem>
+<lineItem coaCode="SDWS">22.787000</lineItem>
+<lineItem coaCode="SDBF">0.912930</lineItem>
+<lineItem coaCode="DDPS1">0.400000</lineItem>
+<lineItem coaCode="VDES">0.912930</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2015-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2015-06-01">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">107.015000</lineItem>
+<lineItem coaCode="ASTI">26.109000</lineItem>
+<lineItem coaCode="SCSI">133.124000</lineItem>
+<lineItem coaCode="AACR">29.015000</lineItem>
+<lineItem coaCode="ATRC">29.015000</lineItem>
+<lineItem coaCode="AITL">36.179000</lineItem>
+<lineItem coaCode="APPY">2.893000</lineItem>
+<lineItem coaCode="SOCA">8.650000</lineItem>
+<lineItem coaCode="ATCA">209.861000</lineItem>
+<lineItem coaCode="APTC">61.834000</lineItem>
+<lineItem coaCode="ADEP">-34.518000</lineItem>
+<lineItem coaCode="APPN">27.316000</lineItem>
+<lineItem coaCode="AINT">1.491000</lineItem>
+<lineItem coaCode="SINV">26.864000</lineItem>
+<lineItem coaCode="SOLA">3.532000</lineItem>
+<lineItem coaCode="ATOT">269.064000</lineItem>
+<lineItem coaCode="LAPB">7.277000</lineItem>
+<lineItem coaCode="LAEX">20.898000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">13.110000</lineItem>
+<lineItem coaCode="LTCL">41.285000</lineItem>
+<lineItem coaCode="LLTD">0.480000</lineItem>
+<lineItem coaCode="LTTD">0.480000</lineItem>
+<lineItem coaCode="STLD">0.480000</lineItem>
+<lineItem coaCode="SBDT">0.310000</lineItem>
+<lineItem coaCode="SLTL">6.795000</lineItem>
+<lineItem coaCode="LTLL">48.870000</lineItem>
+<lineItem coaCode="SPRS">0.000000</lineItem>
+<lineItem coaCode="SCMS">132.559000</lineItem>
+<lineItem coaCode="QRED">87.643000</lineItem>
+<lineItem coaCode="SOTE">-0.008000</lineItem>
+<lineItem coaCode="QTLE">220.194000</lineItem>
+<lineItem coaCode="QTEL">269.064000</lineItem>
+<lineItem coaCode="QTCO">22.539000</lineItem>
+<lineItem coaCode="STBP">9.703310</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2015-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2015-06-01">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ONET">27.331000</lineItem>
+<lineItem coaCode="SDED">8.486000</lineItem>
+<lineItem coaCode="OBDT">-3.954000</lineItem>
+<lineItem coaCode="SNCI">3.544000</lineItem>
+<lineItem coaCode="SCTP">15.888000</lineItem>
+<lineItem coaCode="SOCF">0.989000</lineItem>
+<lineItem coaCode="OTLO">36.396000</lineItem>
+<lineItem coaCode="SCEX">-6.077000</lineItem>
+<lineItem coaCode="SICF">16.170000</lineItem>
+<lineItem coaCode="ITLI">10.093000</lineItem>
+<lineItem coaCode="SFCF">-2.065000</lineItem>
+<lineItem coaCode="FCDP">-9.006000</lineItem>
+<lineItem coaCode="FPSS">0.109000</lineItem>
+<lineItem coaCode="FTLF">-10.962000</lineItem>
+<lineItem coaCode="SFEE">-2.101000</lineItem>
+<lineItem coaCode="SNCC">33.426000</lineItem>
+</Statement>
+</FiscalPeriod>
+<FiscalPeriod Type="Annual" EndDate="2014-03-31" FiscalYear="2014">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="RES">Restated Normal</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2015-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2015-06-01">10-K</Source>
+</FPHeader>
+<lineItem coaCode="SREV">162.031000</lineItem>
+<lineItem coaCode="RTLR">162.031000</lineItem>
+<lineItem coaCode="SCOR">78.081000</lineItem>
+<lineItem coaCode="SGRP">83.950000</lineItem>
+<lineItem coaCode="SSGA">46.075000</lineItem>
+<lineItem coaCode="ERAD">13.647000</lineItem>
+<lineItem coaCode="SUIE">0.000000</lineItem>
+<lineItem coaCode="ETOE">137.803000</lineItem>
+<lineItem coaCode="SOPI">24.228000</lineItem>
+<lineItem coaCode="SNIN">0.994000</lineItem>
+<lineItem coaCode="EIBT">25.222000</lineItem>
+<lineItem coaCode="TTAX">8.993000</lineItem>
+<lineItem coaCode="TIAT">16.229000</lineItem>
+<lineItem coaCode="NIBX">16.229000</lineItem>
+<lineItem coaCode="STXI">-2.044000</lineItem>
+<lineItem coaCode="NINC">14.185000</lineItem>
+<lineItem coaCode="CIAC">16.229000</lineItem>
+<lineItem coaCode="XNIC">14.185000</lineItem>
+<lineItem coaCode="SDNI">14.185000</lineItem>
+<lineItem coaCode="SDWS">22.575000</lineItem>
+<lineItem coaCode="SDBF">0.718890</lineItem>
+<lineItem coaCode="VDES">0.718890</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="CLA">Reclassified Normal</UpdateType>
+<StatementDate>2015-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2015-06-01">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">73.589000</lineItem>
+<lineItem coaCode="ASTI">29.102000</lineItem>
+<lineItem coaCode="SCSI">102.691000</lineItem>
+<lineItem coaCode="AACR">27.253000</lineItem>
+<lineItem coaCode="ATRC">27.253000</lineItem>
+<lineItem coaCode="AITL">26.583000</lineItem>
+<lineItem coaCode="APPY">2.347000</lineItem>
+<lineItem coaCode="SOCA">6.938000</lineItem>
+<lineItem coaCode="ATCA">165.812000</lineItem>
+<lineItem coaCode="APTC">54.505000</lineItem>
+<lineItem coaCode="ADEP">-30.314000</lineItem>
+<lineItem coaCode="APPN">24.191000</lineItem>
+<lineItem coaCode="AINT">1.200000</lineItem>
+<lineItem coaCode="SINV">21.137000</lineItem>
+<lineItem coaCode="SOLA">5.040000</lineItem>
+<lineItem coaCode="ATOT">217.380000</lineItem>
+<lineItem coaCode="LAPB">5.525000</lineItem>
+<lineItem coaCode="LAEX">7.456000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">4.278000</lineItem>
+<lineItem coaCode="LTCL">17.259000</lineItem>
+<lineItem coaCode="LLTD">0.581000</lineItem>
+<lineItem coaCode="LTTD">0.581000</lineItem>
+<lineItem coaCode="STLD">0.581000</lineItem>
+<lineItem coaCode="SBDT">0.000000</lineItem>
+<lineItem coaCode="SLTL">5.624000</lineItem>
+<lineItem coaCode="LTLL">23.464000</lineItem>
+<lineItem coaCode="SPRS">0.000000</lineItem>
+<lineItem coaCode="SCMS">124.603000</lineItem>
+<lineItem coaCode="QRED">69.318000</lineItem>
+<lineItem coaCode="SOTE">-0.005000</lineItem>
+<lineItem coaCode="QTLE">193.916000</lineItem>
+<lineItem coaCode="QTEL">217.380000</lineItem>
+<lineItem coaCode="QTCO">22.308000</lineItem>
+<lineItem coaCode="STBP">8.638870</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2014-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2014-05-30">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ONET">14.185000</lineItem>
+<lineItem coaCode="SDED">7.427000</lineItem>
+<lineItem coaCode="OBDT">-0.785000</lineItem>
+<lineItem coaCode="SNCI">5.519000</lineItem>
+<lineItem coaCode="SCTP">4.943000</lineItem>
+<lineItem coaCode="SOCF">9.226000</lineItem>
+<lineItem coaCode="OTLO">35.572000</lineItem>
+<lineItem coaCode="SCEX">-5.554000</lineItem>
+<lineItem coaCode="SICF">-7.804000</lineItem>
+<lineItem coaCode="ITLI">-13.358000</lineItem>
+<lineItem coaCode="SFCF">-2.519000</lineItem>
+<lineItem coaCode="FCDP">0.000000</lineItem>
+<lineItem coaCode="FPSS">-1.526000</lineItem>
+<lineItem coaCode="FPRD">0.000000</lineItem>
+<lineItem coaCode="FTLF">-4.045000</lineItem>
+<lineItem coaCode="SFEE">0.510000</lineItem>
+<lineItem coaCode="SNCC">18.679000</lineItem>
+</Statement>
+</FiscalPeriod>
+<FiscalPeriod Type="Annual" EndDate="2013-03-31" FiscalYear="2013">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="RES">Restated Normal</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2015-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2015-06-01">10-K</Source>
+</FPHeader>
+<lineItem coaCode="SREV">180.878000</lineItem>
+<lineItem coaCode="RTLR">180.878000</lineItem>
+<lineItem coaCode="SCOR">79.903000</lineItem>
+<lineItem coaCode="SGRP">100.975000</lineItem>
+<lineItem coaCode="SSGA">56.625000</lineItem>
+<lineItem coaCode="ERAD">13.577000</lineItem>
+<lineItem coaCode="SUIE">-17.250000</lineItem>
+<lineItem coaCode="ETOE">132.855000</lineItem>
+<lineItem coaCode="SOPI">48.023000</lineItem>
+<lineItem coaCode="SNIN">0.253000</lineItem>
+<lineItem coaCode="EIBT">48.276000</lineItem>
+<lineItem coaCode="TTAX">17.149000</lineItem>
+<lineItem coaCode="TIAT">31.127000</lineItem>
+<lineItem coaCode="NIBX">31.127000</lineItem>
+<lineItem coaCode="STXI">-3.668000</lineItem>
+<lineItem coaCode="NINC">27.459000</lineItem>
+<lineItem coaCode="CIAC">31.127000</lineItem>
+<lineItem coaCode="XNIC">27.459000</lineItem>
+<lineItem coaCode="SDAJ">0.069630</lineItem>
+<lineItem coaCode="SDNI">27.528630</lineItem>
+<lineItem coaCode="SDWS">22.381000</lineItem>
+<lineItem coaCode="SDBF">1.393890</lineItem>
+<lineItem coaCode="VDES">0.896940</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2013-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2013-06-14">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">54.910000</lineItem>
+<lineItem coaCode="ASTI">23.354000</lineItem>
+<lineItem coaCode="SCSI">78.264000</lineItem>
+<lineItem coaCode="AACR">40.005000</lineItem>
+<lineItem coaCode="ATRC">40.005000</lineItem>
+<lineItem coaCode="AITL">26.786000</lineItem>
+<lineItem coaCode="APPY">3.319000</lineItem>
+<lineItem coaCode="SOCA">4.589000</lineItem>
+<lineItem coaCode="ATCA">152.963000</lineItem>
+<lineItem coaCode="APTC">52.130000</lineItem>
+<lineItem coaCode="ADEP">-26.800000</lineItem>
+<lineItem coaCode="APPN">25.330000</lineItem>
+<lineItem coaCode="AINT">3.122000</lineItem>
+<lineItem coaCode="SINV">19.613000</lineItem>
+<lineItem coaCode="SOLA">0.735000</lineItem>
+<lineItem coaCode="ATOT">201.763000</lineItem>
+<lineItem coaCode="LAPB">8.123000</lineItem>
+<lineItem coaCode="LAEX">9.099000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">2.797000</lineItem>
+<lineItem coaCode="LTCL">20.019000</lineItem>
+<lineItem coaCode="LLTD">0.682000</lineItem>
+<lineItem coaCode="LTTD">0.682000</lineItem>
+<lineItem coaCode="STLD">0.682000</lineItem>
+<lineItem coaCode="SBDT">0.000000</lineItem>
+<lineItem coaCode="SLTL">4.868000</lineItem>
+<lineItem coaCode="LTLL">25.569000</lineItem>
+<lineItem coaCode="SCMS">121.019000</lineItem>
+<lineItem coaCode="QRED">55.133000</lineItem>
+<lineItem coaCode="SOTE">0.042000</lineItem>
+<lineItem coaCode="QTLE">176.194000</lineItem>
+<lineItem coaCode="QTEL">201.763000</lineItem>
+<lineItem coaCode="QTCO">22.120000</lineItem>
+<lineItem coaCode="QTPO">0.000000</lineItem>
+<lineItem coaCode="STBP">7.824230</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2013-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2013-06-14">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ONET">27.459000</lineItem>
+<lineItem coaCode="SDED">6.298000</lineItem>
+<lineItem coaCode="OBDT">-1.307000</lineItem>
+<lineItem coaCode="SNCI">5.720000</lineItem>
+<lineItem coaCode="SCTP">12.330000</lineItem>
+<lineItem coaCode="SOCF">-8.973000</lineItem>
+<lineItem coaCode="OTLO">29.197000</lineItem>
+<lineItem coaCode="SCEX">-5.640000</lineItem>
+<lineItem coaCode="SICF">3.983000</lineItem>
+<lineItem coaCode="ITLI">-1.657000</lineItem>
+<lineItem coaCode="SFCF">1.058000</lineItem>
+<lineItem coaCode="FCDP">-22.023000</lineItem>
+<lineItem coaCode="FPSS">2.800000</lineItem>
+<lineItem coaCode="FPRD">0.000000</lineItem>
+<lineItem coaCode="FTLF">-18.165000</lineItem>
+<lineItem coaCode="SFEE">-0.308000</lineItem>
+<lineItem coaCode="SNCC">9.067000</lineItem>
+</Statement>
+</FiscalPeriod>
+<FiscalPeriod Type="Annual" EndDate="2012-03-31" FiscalYear="2012">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2012-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2012-06-14">10-K</Source>
+</FPHeader>
+<lineItem coaCode="SREV">156.596000</lineItem>
+<lineItem coaCode="RTLR">156.596000</lineItem>
+<lineItem coaCode="SCOR">71.493000</lineItem>
+<lineItem coaCode="SGRP">85.103000</lineItem>
+<lineItem coaCode="SSGA">53.400000</lineItem>
+<lineItem coaCode="ERAD">12.246000</lineItem>
+<lineItem coaCode="ETOE">137.139000</lineItem>
+<lineItem coaCode="SOPI">19.457000</lineItem>
+<lineItem coaCode="SNIN">0.710000</lineItem>
+<lineItem coaCode="EIBT">20.167000</lineItem>
+<lineItem coaCode="TTAX">7.076000</lineItem>
+<lineItem coaCode="TIAT">13.091000</lineItem>
+<lineItem coaCode="NIBX">13.091000</lineItem>
+<lineItem coaCode="NINC">13.091000</lineItem>
+<lineItem coaCode="CIAC">13.091000</lineItem>
+<lineItem coaCode="XNIC">13.091000</lineItem>
+<lineItem coaCode="SDNI">13.091000</lineItem>
+<lineItem coaCode="SDWS">22.462000</lineItem>
+<lineItem coaCode="SDBF">0.582810</lineItem>
+<lineItem coaCode="DDPS1">0.000000</lineItem>
+<lineItem coaCode="VDES">0.582810</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2012-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2012-06-14">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">45.843000</lineItem>
+<lineItem coaCode="ASTI">21.689000</lineItem>
+<lineItem coaCode="SCSI">67.532000</lineItem>
+<lineItem coaCode="AACR">30.694000</lineItem>
+<lineItem coaCode="ATRC">30.694000</lineItem>
+<lineItem coaCode="AITL">19.597000</lineItem>
+<lineItem coaCode="APPY">5.423000</lineItem>
+<lineItem coaCode="SOCA">4.151000</lineItem>
+<lineItem coaCode="ATCA">127.397000</lineItem>
+<lineItem coaCode="APTC">48.124000</lineItem>
+<lineItem coaCode="ADEP">-23.828000</lineItem>
+<lineItem coaCode="APPN">24.296000</lineItem>
+<lineItem coaCode="AINT">3.990000</lineItem>
+<lineItem coaCode="SINV">26.068000</lineItem>
+<lineItem coaCode="SOLA">0.085000</lineItem>
+<lineItem coaCode="ATOT">181.836000</lineItem>
+<lineItem coaCode="LAPB">6.381000</lineItem>
+<lineItem coaCode="LAEX">8.327000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">2.723000</lineItem>
+<lineItem coaCode="LTCL">17.431000</lineItem>
+<lineItem coaCode="LLTD">0.783000</lineItem>
+<lineItem coaCode="LTTD">0.783000</lineItem>
+<lineItem coaCode="STLD">0.783000</lineItem>
+<lineItem coaCode="SBDT">0.199000</lineItem>
+<lineItem coaCode="SLTL">3.638000</lineItem>
+<lineItem coaCode="LTLL">22.051000</lineItem>
+<lineItem coaCode="SCMS">110.063000</lineItem>
+<lineItem coaCode="QRED">49.697000</lineItem>
+<lineItem coaCode="SOTE">0.025000</lineItem>
+<lineItem coaCode="QTLE">159.785000</lineItem>
+<lineItem coaCode="QTEL">181.836000</lineItem>
+<lineItem coaCode="QTCO">21.699000</lineItem>
+<lineItem coaCode="QTPO">0.000000</lineItem>
+<lineItem coaCode="STBP">7.179820</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2012-03-31</StatementDate>
+<AuditorName Code="BUPM">Burr, Pilger &amp; Mayer</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2012-06-14">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ONET">13.091000</lineItem>
+<lineItem coaCode="SDED">5.090000</lineItem>
+<lineItem coaCode="OBDT">0.673000</lineItem>
+<lineItem coaCode="SNCI">6.107000</lineItem>
+<lineItem coaCode="SCTP">6.161000</lineItem>
+<lineItem coaCode="SOCF">-2.988000</lineItem>
+<lineItem coaCode="OTLO">21.973000</lineItem>
+<lineItem coaCode="SCEX">-7.663000</lineItem>
+<lineItem coaCode="SICF">16.142000</lineItem>
+<lineItem coaCode="ITLI">8.479000</lineItem>
+<lineItem coaCode="SFCF">-1.349000</lineItem>
+<lineItem coaCode="FPSS">-26.713000</lineItem>
+<lineItem coaCode="FPRD">0.147000</lineItem>
+<lineItem coaCode="FTLF">-27.915000</lineItem>
+<lineItem coaCode="SFEE">-0.165000</lineItem>
+<lineItem coaCode="SNCC">2.372000</lineItem>
+</Statement>
+</FiscalPeriod>
+</AnnualPeriods>
+<InterimPeriods>
+<FiscalPeriod Type="Interim" EndDate="2017-06-30" FiscalYear="2018" FiscalPeriodNumber="1">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>3</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2017-06-30</StatementDate>
+<Source Date="2017-08-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="SREV">58.258000</lineItem>
+<lineItem coaCode="RTLR">58.258000</lineItem>
+<lineItem coaCode="SCOR">26.314000</lineItem>
+<lineItem coaCode="SGRP">31.944000</lineItem>
+<lineItem coaCode="SSGA">17.051000</lineItem>
+<lineItem coaCode="ERAD">6.432000</lineItem>
+<lineItem coaCode="ETOE">49.797000</lineItem>
+<lineItem coaCode="SOPI">8.461000</lineItem>
+<lineItem coaCode="SNIN">1.311000</lineItem>
+<lineItem coaCode="EIBT">9.772000</lineItem>
+<lineItem coaCode="TTAX">3.442000</lineItem>
+<lineItem coaCode="TIAT">6.330000</lineItem>
+<lineItem coaCode="NIBX">6.330000</lineItem>
+<lineItem coaCode="NINC">6.330000</lineItem>
+<lineItem coaCode="CIAC">6.330000</lineItem>
+<lineItem coaCode="XNIC">6.330000</lineItem>
+<lineItem coaCode="SDAJ">0.000000</lineItem>
+<lineItem coaCode="SDNI">6.330000</lineItem>
+<lineItem coaCode="SDWS">22.616000</lineItem>
+<lineItem coaCode="SDBF">0.279890</lineItem>
+<lineItem coaCode="DDPS1">0.140000</lineItem>
+<lineItem coaCode="VDES">0.279890</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2017-06-30</StatementDate>
+<Source Date="2017-08-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">91.473000</lineItem>
+<lineItem coaCode="ASTI">46.190000</lineItem>
+<lineItem coaCode="SCSI">137.663000</lineItem>
+<lineItem coaCode="AACR">44.022000</lineItem>
+<lineItem coaCode="ATRC">44.022000</lineItem>
+<lineItem coaCode="AITL">40.569000</lineItem>
+<lineItem coaCode="APPY">4.500000</lineItem>
+<lineItem coaCode="SOCA">0.034000</lineItem>
+<lineItem coaCode="ATCA">226.788000</lineItem>
+<lineItem coaCode="APPN">34.281000</lineItem>
+<lineItem coaCode="AINT">1.132000</lineItem>
+<lineItem coaCode="SINV">35.689000</lineItem>
+<lineItem coaCode="SOLA">19.348000</lineItem>
+<lineItem coaCode="ATOT">317.238000</lineItem>
+<lineItem coaCode="LAPB">10.266000</lineItem>
+<lineItem coaCode="LAEX">20.981000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">8.789000</lineItem>
+<lineItem coaCode="LTCL">40.036000</lineItem>
+<lineItem coaCode="LLTD">0.253000</lineItem>
+<lineItem coaCode="LTTD">0.253000</lineItem>
+<lineItem coaCode="STLD">0.253000</lineItem>
+<lineItem coaCode="SBDT">0.226000</lineItem>
+<lineItem coaCode="SLTL">5.584000</lineItem>
+<lineItem coaCode="LTLL">46.099000</lineItem>
+<lineItem coaCode="SPRS">0.000000</lineItem>
+<lineItem coaCode="SCMS">137.699000</lineItem>
+<lineItem coaCode="QRED">133.462000</lineItem>
+<lineItem coaCode="SOTE">-0.022000</lineItem>
+<lineItem coaCode="QTLE">271.139000</lineItem>
+<lineItem coaCode="QTEL">317.238000</lineItem>
+<lineItem coaCode="QTCO">22.654000</lineItem>
+<lineItem coaCode="STBP">11.918730</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>3</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2017-06-30</StatementDate>
+<Source Date="2017-08-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="ONET">6.330000</lineItem>
+<lineItem coaCode="SDED">1.955000</lineItem>
+<lineItem coaCode="OBDT">-0.714000</lineItem>
+<lineItem coaCode="SNCI">2.787000</lineItem>
+<lineItem coaCode="SCTP">-0.660000</lineItem>
+<lineItem coaCode="SOCF">0.940000</lineItem>
+<lineItem coaCode="OTLO">11.298000</lineItem>
+<lineItem coaCode="SCEX">-1.653000</lineItem>
+<lineItem coaCode="SICF">-5.588000</lineItem>
+<lineItem coaCode="ITLI">-7.241000</lineItem>
+<lineItem coaCode="SFCF">-1.354000</lineItem>
+<lineItem coaCode="FCDP">-3.172000</lineItem>
+<lineItem coaCode="FTLF">-4.526000</lineItem>
+<lineItem coaCode="SFEE">0.610000</lineItem>
+<lineItem coaCode="SNCC">0.141000</lineItem>
+</Statement>
+</FiscalPeriod>
+<FiscalPeriod Type="Interim" EndDate="2017-03-31" FiscalYear="2017" FiscalPeriodNumber="4">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>3</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UCA">Updated Calculated</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2017-03-31</StatementDate>
+<AuditorName Code="BPLL">BPM LLP</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2017-05-30">10-K</Source>
+</FPHeader>
+<lineItem coaCode="SREV">58.200000</lineItem>
+<lineItem coaCode="RTLR">58.200000</lineItem>
+<lineItem coaCode="SCOR">26.018000</lineItem>
+<lineItem coaCode="SGRP">32.182000</lineItem>
+<lineItem coaCode="SSGA">16.142000</lineItem>
+<lineItem coaCode="ERAD">4.880000</lineItem>
+<lineItem coaCode="ETOE">47.040000</lineItem>
+<lineItem coaCode="SOPI">11.160000</lineItem>
+<lineItem coaCode="SNIN">0.428000</lineItem>
+<lineItem coaCode="EIBT">11.588000</lineItem>
+<lineItem coaCode="TTAX">4.045000</lineItem>
+<lineItem coaCode="TIAT">7.543000</lineItem>
+<lineItem coaCode="NIBX">7.543000</lineItem>
+<lineItem coaCode="STXI">0.007000</lineItem>
+<lineItem coaCode="NINC">7.550000</lineItem>
+<lineItem coaCode="CIAC">7.543000</lineItem>
+<lineItem coaCode="XNIC">7.550000</lineItem>
+<lineItem coaCode="SDAJ">0.000000</lineItem>
+<lineItem coaCode="SDNI">7.550000</lineItem>
+<lineItem coaCode="SDWS">22.929000</lineItem>
+<lineItem coaCode="SDBF">0.328970</lineItem>
+<lineItem coaCode="DDPS1">0.140000</lineItem>
+<lineItem coaCode="VDES">0.328970</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2017-03-31</StatementDate>
+<AuditorName Code="BPLL">BPM LLP</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2017-05-30">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">91.332000</lineItem>
+<lineItem coaCode="ASTI">51.561000</lineItem>
+<lineItem coaCode="SCSI">142.893000</lineItem>
+<lineItem coaCode="AACR">40.568000</lineItem>
+<lineItem coaCode="ATRC">40.568000</lineItem>
+<lineItem coaCode="AITL">39.010000</lineItem>
+<lineItem coaCode="APPY">4.997000</lineItem>
+<lineItem coaCode="SOCA">5.710000</lineItem>
+<lineItem coaCode="ATCA">233.178000</lineItem>
+<lineItem coaCode="APPN">34.260000</lineItem>
+<lineItem coaCode="AINT">1.171000</lineItem>
+<lineItem coaCode="SINV">25.021000</lineItem>
+<lineItem coaCode="SOLA">12.016000</lineItem>
+<lineItem coaCode="ATOT">305.646000</lineItem>
+<lineItem coaCode="LAPB">7.517000</lineItem>
+<lineItem coaCode="LAEX">20.612000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">5.314000</lineItem>
+<lineItem coaCode="LTCL">33.443000</lineItem>
+<lineItem coaCode="LLTD">0.278000</lineItem>
+<lineItem coaCode="LTTD">0.278000</lineItem>
+<lineItem coaCode="STLD">0.278000</lineItem>
+<lineItem coaCode="SBDT">0.234000</lineItem>
+<lineItem coaCode="SLTL">5.467000</lineItem>
+<lineItem coaCode="LTLL">39.422000</lineItem>
+<lineItem coaCode="SPRS">0.000000</lineItem>
+<lineItem coaCode="SCMS">135.932000</lineItem>
+<lineItem coaCode="QRED">130.304000</lineItem>
+<lineItem coaCode="SOTE">-0.012000</lineItem>
+<lineItem coaCode="QTLE">266.224000</lineItem>
+<lineItem coaCode="QTEL">305.646000</lineItem>
+<lineItem coaCode="QTCO">22.540000</lineItem>
+<lineItem coaCode="STBP">11.759230</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>12</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2017-03-31</StatementDate>
+<AuditorName Code="BPLL">BPM LLP</AuditorName>
+<AuditorOpinion Code="UNQ">Unqualified</AuditorOpinion>
+<Source Date="2017-05-30">10-K</Source>
+</FPHeader>
+<lineItem coaCode="ONET">32.716000</lineItem>
+<lineItem coaCode="SDED">7.340000</lineItem>
+<lineItem coaCode="OBDT">-1.319000</lineItem>
+<lineItem coaCode="SNCI">6.288000</lineItem>
+<lineItem coaCode="SCTP">16.901000</lineItem>
+<lineItem coaCode="SOCF">-11.873000</lineItem>
+<lineItem coaCode="OTLO">33.152000</lineItem>
+<lineItem coaCode="SCEX">-10.171000</lineItem>
+<lineItem coaCode="SICF">-5.732000</lineItem>
+<lineItem coaCode="ITLI">-15.903000</lineItem>
+<lineItem coaCode="SFCF">-1.904000</lineItem>
+<lineItem coaCode="FCDP">-11.715000</lineItem>
+<lineItem coaCode="FPSS">0.000000</lineItem>
+<lineItem coaCode="FTLF">-13.619000</lineItem>
+<lineItem coaCode="SFEE">-0.621000</lineItem>
+<lineItem coaCode="SNCC">3.009000</lineItem>
+</Statement>
+</FiscalPeriod>
+<FiscalPeriod Type="Interim" EndDate="2016-12-31" FiscalYear="2017" FiscalPeriodNumber="3">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>3</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2016-12-31</StatementDate>
+<Source Date="2017-02-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="SREV">52.772000</lineItem>
+<lineItem coaCode="RTLR">52.772000</lineItem>
+<lineItem coaCode="SCOR">23.368000</lineItem>
+<lineItem coaCode="SGRP">29.404000</lineItem>
+<lineItem coaCode="SSGA">13.788000</lineItem>
+<lineItem coaCode="ERAD">4.776000</lineItem>
+<lineItem coaCode="ETOE">41.932000</lineItem>
+<lineItem coaCode="SOPI">10.840000</lineItem>
+<lineItem coaCode="SNIN">-0.052000</lineItem>
+<lineItem coaCode="EIBT">10.788000</lineItem>
+<lineItem coaCode="TTAX">3.929000</lineItem>
+<lineItem coaCode="TIAT">6.859000</lineItem>
+<lineItem coaCode="NIBX">6.859000</lineItem>
+<lineItem coaCode="STXI">-0.015000</lineItem>
+<lineItem coaCode="NINC">6.844000</lineItem>
+<lineItem coaCode="CIAC">6.859000</lineItem>
+<lineItem coaCode="XNIC">6.844000</lineItem>
+<lineItem coaCode="SDAJ">0.000000</lineItem>
+<lineItem coaCode="SDNI">6.844000</lineItem>
+<lineItem coaCode="SDWS">22.789000</lineItem>
+<lineItem coaCode="SDBF">0.300980</lineItem>
+<lineItem coaCode="DDPS1">0.140000</lineItem>
+<lineItem coaCode="VDES">0.300980</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2016-12-31</StatementDate>
+<Source Date="2017-02-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">85.653000</lineItem>
+<lineItem coaCode="ASTI">52.291000</lineItem>
+<lineItem coaCode="SCSI">137.944000</lineItem>
+<lineItem coaCode="AACR">35.245000</lineItem>
+<lineItem coaCode="ATRC">35.245000</lineItem>
+<lineItem coaCode="AITL">39.192000</lineItem>
+<lineItem coaCode="APPY">6.225000</lineItem>
+<lineItem coaCode="SOCA">4.947000</lineItem>
+<lineItem coaCode="ATCA">223.553000</lineItem>
+<lineItem coaCode="APPN">33.709000</lineItem>
+<lineItem coaCode="AINT">1.209000</lineItem>
+<lineItem coaCode="SINV">24.738000</lineItem>
+<lineItem coaCode="SOLA">10.782000</lineItem>
+<lineItem coaCode="ATOT">293.991000</lineItem>
+<lineItem coaCode="LAPB">8.922000</lineItem>
+<lineItem coaCode="LAEX">16.275000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">3.701000</lineItem>
+<lineItem coaCode="LTCL">28.898000</lineItem>
+<lineItem coaCode="LLTD">0.303000</lineItem>
+<lineItem coaCode="LTTD">0.303000</lineItem>
+<lineItem coaCode="STLD">0.303000</lineItem>
+<lineItem coaCode="SBDT">0.242000</lineItem>
+<lineItem coaCode="SLTL">5.387000</lineItem>
+<lineItem coaCode="LTLL">34.830000</lineItem>
+<lineItem coaCode="SPRS">0.000000</lineItem>
+<lineItem coaCode="SCMS">133.262000</lineItem>
+<lineItem coaCode="QRED">125.910000</lineItem>
+<lineItem coaCode="SOTE">-0.011000</lineItem>
+<lineItem coaCode="QTLE">259.161000</lineItem>
+<lineItem coaCode="QTEL">293.991000</lineItem>
+<lineItem coaCode="QTCO">22.537000</lineItem>
+<lineItem coaCode="STBP">11.445710</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>9</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2016-12-31</StatementDate>
+<Source Date="2017-02-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="ONET">25.166000</lineItem>
+<lineItem coaCode="SDED">5.329000</lineItem>
+<lineItem coaCode="OBDT">-0.604000</lineItem>
+<lineItem coaCode="SNCI">3.227000</lineItem>
+<lineItem coaCode="SCTP">14.836000</lineItem>
+<lineItem coaCode="SOCF">-10.849000</lineItem>
+<lineItem coaCode="OTLO">22.269000</lineItem>
+<lineItem coaCode="SCEX">-8.014000</lineItem>
+<lineItem coaCode="SICF">-5.802000</lineItem>
+<lineItem coaCode="ITLI">-13.816000</lineItem>
+<lineItem coaCode="SFCF">-1.842000</lineItem>
+<lineItem coaCode="FCDP">-8.559000</lineItem>
+<lineItem coaCode="FPSS">0.000000</lineItem>
+<lineItem coaCode="FTLF">-10.401000</lineItem>
+<lineItem coaCode="SFEE">-0.722000</lineItem>
+<lineItem coaCode="SNCC">-2.670000</lineItem>
+</Statement>
+</FiscalPeriod>
+<FiscalPeriod Type="Interim" EndDate="2016-09-30" FiscalYear="2017" FiscalPeriodNumber="2">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>3</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2016-09-30</StatementDate>
+<Source Date="2016-11-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="SREV">58.552000</lineItem>
+<lineItem coaCode="RTLR">58.552000</lineItem>
+<lineItem coaCode="SCOR">26.294000</lineItem>
+<lineItem coaCode="SGRP">32.258000</lineItem>
+<lineItem coaCode="SSGA">15.607000</lineItem>
+<lineItem coaCode="ERAD">4.906000</lineItem>
+<lineItem coaCode="ETOE">46.807000</lineItem>
+<lineItem coaCode="SOPI">11.745000</lineItem>
+<lineItem coaCode="SNIN">6.279000</lineItem>
+<lineItem coaCode="EIBT">18.024000</lineItem>
+<lineItem coaCode="TTAX">6.537000</lineItem>
+<lineItem coaCode="TIAT">11.487000</lineItem>
+<lineItem coaCode="NIBX">11.487000</lineItem>
+<lineItem coaCode="STXI">-0.055000</lineItem>
+<lineItem coaCode="NINC">11.432000</lineItem>
+<lineItem coaCode="CIAC">11.487000</lineItem>
+<lineItem coaCode="XNIC">11.432000</lineItem>
+<lineItem coaCode="SDAJ">0.000000</lineItem>
+<lineItem coaCode="SDNI">11.432000</lineItem>
+<lineItem coaCode="SDWS">22.745000</lineItem>
+<lineItem coaCode="SDBF">0.505030</lineItem>
+<lineItem coaCode="DDPS1">0.120000</lineItem>
+<lineItem coaCode="VDES">0.505030</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2016-09-30</StatementDate>
+<Source Date="2016-11-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">90.393000</lineItem>
+<lineItem coaCode="ASTI">55.120000</lineItem>
+<lineItem coaCode="SCSI">145.513000</lineItem>
+<lineItem coaCode="AACR">35.269000</lineItem>
+<lineItem coaCode="ATRC">35.269000</lineItem>
+<lineItem coaCode="AITL">36.233000</lineItem>
+<lineItem coaCode="APPY">4.795000</lineItem>
+<lineItem coaCode="SOCA">4.859000</lineItem>
+<lineItem coaCode="ATCA">226.669000</lineItem>
+<lineItem coaCode="APPN">32.452000</lineItem>
+<lineItem coaCode="AINT">1.248000</lineItem>
+<lineItem coaCode="SINV">18.584000</lineItem>
+<lineItem coaCode="SOLA">9.486000</lineItem>
+<lineItem coaCode="ATOT">288.439000</lineItem>
+<lineItem coaCode="LAPB">7.270000</lineItem>
+<lineItem coaCode="LAEX">18.867000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">3.280000</lineItem>
+<lineItem coaCode="LTCL">29.417000</lineItem>
+<lineItem coaCode="LLTD">0.328000</lineItem>
+<lineItem coaCode="LTTD">0.328000</lineItem>
+<lineItem coaCode="STLD">0.328000</lineItem>
+<lineItem coaCode="SBDT">0.277000</lineItem>
+<lineItem coaCode="SLTL">5.290000</lineItem>
+<lineItem coaCode="LTLL">35.312000</lineItem>
+<lineItem coaCode="SPRS">0.000000</lineItem>
+<lineItem coaCode="SCMS">130.906000</lineItem>
+<lineItem coaCode="QRED">122.222000</lineItem>
+<lineItem coaCode="SOTE">-0.001000</lineItem>
+<lineItem coaCode="QTLE">253.127000</lineItem>
+<lineItem coaCode="QTEL">288.439000</lineItem>
+<lineItem coaCode="QTCO">22.533000</lineItem>
+<lineItem coaCode="STBP">11.178230</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>6</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2016-09-30</StatementDate>
+<Source Date="2016-11-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="ONET">18.322000</lineItem>
+<lineItem coaCode="SDED">3.479000</lineItem>
+<lineItem coaCode="OBDT">-0.610000</lineItem>
+<lineItem coaCode="SNCI">0.097000</lineItem>
+<lineItem coaCode="SCTP">9.986000</lineItem>
+<lineItem coaCode="SOCF">-4.565000</lineItem>
+<lineItem coaCode="OTLO">16.723000</lineItem>
+<lineItem coaCode="SCEX">-5.649000</lineItem>
+<lineItem coaCode="SICF">-1.513000</lineItem>
+<lineItem coaCode="ITLI">-7.162000</lineItem>
+<lineItem coaCode="SFCF">-1.767000</lineItem>
+<lineItem coaCode="FCDP">-5.403000</lineItem>
+<lineItem coaCode="FPSS">0.000000</lineItem>
+<lineItem coaCode="FTLF">-7.170000</lineItem>
+<lineItem coaCode="SFEE">-0.321000</lineItem>
+<lineItem coaCode="SNCC">2.070000</lineItem>
+</Statement>
+</FiscalPeriod>
+<FiscalPeriod Type="Interim" EndDate="2016-06-30" FiscalYear="2017" FiscalPeriodNumber="1">
+<Statement Type="INC">
+<FPHeader>
+<PeriodLength>3</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<AccountingStd></AccountingStd>
+<StatementDate>2016-06-30</StatementDate>
+<Source Date="2016-08-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="SREV">57.696000</lineItem>
+<lineItem coaCode="RTLR">57.696000</lineItem>
+<lineItem coaCode="SCOR">25.695000</lineItem>
+<lineItem coaCode="SGRP">32.001000</lineItem>
+<lineItem coaCode="SSGA">16.026000</lineItem>
+<lineItem coaCode="ERAD">5.233000</lineItem>
+<lineItem coaCode="ETOE">46.954000</lineItem>
+<lineItem coaCode="SOPI">10.742000</lineItem>
+<lineItem coaCode="SNIN">-0.030000</lineItem>
+<lineItem coaCode="EIBT">10.712000</lineItem>
+<lineItem coaCode="TTAX">3.822000</lineItem>
+<lineItem coaCode="TIAT">6.890000</lineItem>
+<lineItem coaCode="NIBX">6.890000</lineItem>
+<lineItem coaCode="NINC">6.890000</lineItem>
+<lineItem coaCode="CIAC">6.890000</lineItem>
+<lineItem coaCode="XNIC">6.890000</lineItem>
+<lineItem coaCode="SDAJ">0.000000</lineItem>
+<lineItem coaCode="SDNI">6.890000</lineItem>
+<lineItem coaCode="SDWS">22.685000</lineItem>
+<lineItem coaCode="SDBF">0.303720</lineItem>
+<lineItem coaCode="DDPS1">0.120000</lineItem>
+<lineItem coaCode="VDES">0.303720</lineItem>
+</Statement>
+<Statement Type="BAL">
+<FPHeader>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2016-06-30</StatementDate>
+<Source Date="2016-08-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="ACAE">87.526000</lineItem>
+<lineItem coaCode="ASTI">48.657000</lineItem>
+<lineItem coaCode="SCSI">136.183000</lineItem>
+<lineItem coaCode="AACR">36.908000</lineItem>
+<lineItem coaCode="ATRC">36.908000</lineItem>
+<lineItem coaCode="AITL">35.640000</lineItem>
+<lineItem coaCode="APPY">4.040000</lineItem>
+<lineItem coaCode="SOCA">4.871000</lineItem>
+<lineItem coaCode="ATCA">217.642000</lineItem>
+<lineItem coaCode="APPN">29.277000</lineItem>
+<lineItem coaCode="AINT">1.286000</lineItem>
+<lineItem coaCode="SINV">22.750000</lineItem>
+<lineItem coaCode="SOLA">7.690000</lineItem>
+<lineItem coaCode="ATOT">278.645000</lineItem>
+<lineItem coaCode="LAPB">8.390000</lineItem>
+<lineItem coaCode="LAEX">17.223000</lineItem>
+<lineItem coaCode="LSTD">0.000000</lineItem>
+<lineItem coaCode="SOCL">4.983000</lineItem>
+<lineItem coaCode="LTCL">30.596000</lineItem>
+<lineItem coaCode="LLTD">0.354000</lineItem>
+<lineItem coaCode="LTTD">0.354000</lineItem>
+<lineItem coaCode="STLD">0.354000</lineItem>
+<lineItem coaCode="SBDT">0.277000</lineItem>
+<lineItem coaCode="SLTL">5.256000</lineItem>
+<lineItem coaCode="LTLL">36.483000</lineItem>
+<lineItem coaCode="SPRS">0.000000</lineItem>
+<lineItem coaCode="SCMS">128.667000</lineItem>
+<lineItem coaCode="QRED">113.493000</lineItem>
+<lineItem coaCode="SOTE">0.002000</lineItem>
+<lineItem coaCode="QTLE">242.162000</lineItem>
+<lineItem coaCode="QTEL">278.645000</lineItem>
+<lineItem coaCode="QTCO">22.500000</lineItem>
+<lineItem coaCode="STBP">10.705600</lineItem>
+</Statement>
+<Statement Type="CAS">
+<FPHeader>
+<PeriodLength>3</PeriodLength>
+<periodType Code="M">Months</periodType>
+<UpdateType Code="UPD">Updated Normal</UpdateType>
+<StatementDate>2016-06-30</StatementDate>
+<Source Date="2016-08-09">10-Q</Source>
+</FPHeader>
+<lineItem coaCode="ONET">6.890000</lineItem>
+<lineItem coaCode="SDED">1.692000</lineItem>
+<lineItem coaCode="OBDT">-0.396000</lineItem>
+<lineItem coaCode="SNCI">3.100000</lineItem>
+<lineItem coaCode="SCTP">0.718000</lineItem>
+<lineItem coaCode="SOCF">-0.647000</lineItem>
+<lineItem coaCode="OTLO">10.639000</lineItem>
+<lineItem coaCode="SCEX">-2.578000</lineItem>
+<lineItem coaCode="SICF">-4.943000</lineItem>
+<lineItem coaCode="ITLI">-7.521000</lineItem>
+<lineItem coaCode="SFCF">-0.971000</lineItem>
+<lineItem coaCode="FCDP">-2.700000</lineItem>
+<lineItem coaCode="FPSS">0.000000</lineItem>
+<lineItem coaCode="FTLF">-3.671000</lineItem>
+<lineItem coaCode="SFEE">-0.244000</lineItem>
+<lineItem coaCode="SNCC">-0.797000</lineItem>
+</Statement>
+</FiscalPeriod>
+</InterimPeriods>
+</FinancialStatements>
+</ReportFinancialStatements>

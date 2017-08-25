@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">07585</CoID>
+		<CoID Type="CompanyName">Autodesk, Inc.</CoID>
+		<CoID Type="IRSNo">942819853</CoID>
+		<CoID Type="CIKNo">0000769397</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">ADSK</IssueID>
+			<IssueID Type="CUSIP">052769106</IssueID>
+			<IssueID Type="ISIN">US0527691069</IssueID>
+			<IssueID Type="RIC">ADSK.O</IssueID>
+			<IssueID Type="SEDOL">2065159</IssueID>
+			<IssueID Type="DisplayRIC">ADSK.OQ</IssueID>
+			<IssueID Type="InstrumentPI">261042</IssueID>
+			<IssueID Type="QuotePI">7646535</IssueID>
+			<Exchange Code="NASD" Country="USA">NASDAQ</Exchange>
+			<MostRecentSplit Date="2004-12-21">2.0</MostRecentSplit>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-06-20</LastModified>
+		<LatestAvailableAnnual>2017-01-31</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-04-30</LatestAvailableInterim>
+		<Employees LastUpdated="2017-01-31">9000</Employees>
+		<SharesOut Date="2017-04-30" TotalFloat="219561065.0">220391696.0</SharesOut>
+		<CommonShareholders Date="2017-01-31">430</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2017-04-04T00:33:34">Autodesk, Inc. is a design software and services company, offering customers productive business solutions through technology products and services. The Company's segments include Architecture, Engineering and Construction (AEC), Platform Solutions and Emerging Business (PSEB), Manufacturing (MFG), and Media and Entertainment (M&amp;E). The Company serves customers in the architecture, engineering and construction; product design and manufacturing; and digital media and entertainment industries. The Company's product development and manufacturing software provides manufacturers in automotive, transportation, industrial machinery, consumer products and building products with digital engineering solutions. The Company's product offerings include, AutoCAD, AutoCAD LT, Industry Collections, 3ds Max, Maya, Revit, Inventor, AutoCAD Civil three dimensional (3D), CAM Solutions, Fusion 360, BIM 360 and Shotgun.</Text>
+		<Text Type="Financial Summary" lastModified="2017-06-20T02:55:04">BRIEF: For the three months ended 30 April 2017, Autodesk, Inc. revenues decreased 5% to $485.7M. Net loss decreased 23% to $129.6M. Revenues reflect Manufacturing segment decrease of 10% to $142.1M, Architecture segment decrease of 7% to $204.5M, Europe/Middle East/Africa segment decrease of 6% to $189.7M, United States segment decrease of 3% to $179.8M.</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-07-24T07:27:03">
+		<streetAddress line="1">111 MCINNIS PKWY</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>SAN RAFAEL</city>
+		<state-region>CA</state-region>
+		<postalCode>94903</postalCode>
+		<country code="USA">United States</country>
+		<contactName>John Clancy</contactName>
+		<contactTitle>Investor Relations Program Specialist</contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>415</city-areacode>
+				<number>5075000</number>
+			</phone>
+			<phone type="mainfax">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>415</city-areacode>
+				<number>5075100</number>
+			</phone>
+			<phone type="contactphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>415</city-areacode>
+				<number>5076373</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2014-11-02T22:11:36"><webSite mainCategory="Home Page">http://www.autodesk.com/</webSite><eMail mainCategory="Company Contact/E-mail">John.Clancy@autodesk.com</eMail></webLinks>
+	<peerInfo lastUpdated="2017-07-24T07:27:03">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5720102012" mnem="">Application Software</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="51121" mnem="">Software Publishers</Industry>
+			<Industry type="NAICS" order="2" reported="0" code="541512" mnem="">Computer Systems Design Services</Industry>
+			<Industry type="NAICS" order="3" reported="0" code="56199" mnem="">All Other Support Services</Industry>
+			<Industry type="SIC" order="0" reported="1" code="7372" mnem="">Prepackaged Software</Industry>
+			<Industry type="SIC" order="1" reported="0" code="7372" mnem="">Prepackaged Software</Industry>
+			<Industry type="SIC" order="2" reported="0" code="7373" mnem="">Computer Integrated System Design</Industry>
+			<Industry type="SIC" order="3" reported="0" code="7389" mnem="">Business Services, Nec</Industry>
+		</IndustryInfo>
+		<Indexconstituet>S&amp;P 500</Indexconstituet>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="03/2012">
+			<firstName>Andrew</firstName>
+			<mI></mI>
+			<lastName>Anagnost</lastName>
+			<age>52 </age>
+			<title startYear="2017" startMonth="06" startDay="19" iD1="PRE" abbr1="Pres." iD2="CEO" abbr2="CEO">President, Chief Executive Officer, Director</title>
+		</officer>
+		<officer rank="2" since="06/2000">
+			<firstName>Jan</firstName>
+			<mI></mI>
+			<lastName>Becker</lastName>
+			<age>64 </age>
+			<title startYear="2000" startMonth="06" startDay="" iD1="CHO" abbr1="Chief HR" iD2="SVP" abbr2="Sr. VP">Senior Vice President, Chief Human Resource Officer and Corporate Real Estate</title>
+		</officer>
+		<officer rank="3" since="11/01/2014">
+			<firstName>Richard</firstName>
+			<mI>Scott</mI>
+			<lastName>Herren</lastName>
+			<age>55 </age>
+			<title startYear="2014" startMonth="11" startDay="01" iD1="SVP" abbr1="Sr. VP" iD2="CFO" abbr2="CFO">Chief Financial Officer, Senior Vice President</title>
+		</officer>
+		<officer rank="4" since="02/2011">
+			<firstName>Steven</firstName>
+			<mI>M.</mI>
+			<lastName>Blum</lastName>
+			<age>52 </age>
+			<title startYear="2011" startMonth="02" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="DSL" abbr2="Dir.-Sales">Senior Vice President - Worldwide Sales and Services</title>
+		</officer>
+		<officer rank="5" since="03/2007">
+			<firstName>Pascal</firstName>
+			<mI>W.</mI>
+			<lastName>Di Fronzo</lastName>
+			<age>52 </age>
+			<title startYear="2016" startMonth="12" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="SEC" abbr2="Secy.">Senior Vice President - Corporate Affairs, Chief Legal Officer, Secretary</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-04-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">110.65000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">115.25000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">62.96000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">1.50885</Ratio>
+			<Ratio FieldName="EV" Type="N">24060.54000</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">24380.34000</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">2004.80000</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">-311.40000</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">-544.00000</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">-2.45170</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">9.03360</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">2.30544</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">8.21855</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">-1.86458</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">0.00000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">83.65423</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">-55.96708</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">12.16098</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">-99999.99000</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">47.99516</Ratio>
+			<Ratio FieldName="Employees" Type="N">9000</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2018" CurFiscalYearEndMonth="1" CurInterimEndCalYear="2017" CurInterimEndMonth="7" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">1.8696</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">114.66670</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">24.0000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">-197.51874</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">2042.84900</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">494.18820</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">-0.56020</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">-0.15400</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">-123.85040</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">0.00000</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

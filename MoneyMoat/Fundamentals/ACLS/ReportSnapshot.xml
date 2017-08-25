@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">A2582</CoID>
+		<CoID Type="CompanyName">Axcelis Technologies Inc</CoID>
+		<CoID Type="IRSNo">341818596</CoID>
+		<CoID Type="CIKNo">0001113232</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">ACLS</IssueID>
+			<IssueID Type="CUSIP">054540208</IssueID>
+			<IssueID Type="ISIN">US0545402085</IssueID>
+			<IssueID Type="RIC">ACLS.O</IssueID>
+			<IssueID Type="SEDOL">BD420Q8</IssueID>
+			<IssueID Type="DisplayRIC">ACLS.OQ</IssueID>
+			<IssueID Type="InstrumentPI">372318</IssueID>
+			<IssueID Type="QuotePI">7646029</IssueID>
+			<Exchange Code="NASD" Country="USA">NASDAQ</Exchange>
+			<MostRecentSplit Date="2016-07-01">0.25</MostRecentSplit>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-08-15</LastModified>
+		<LatestAvailableAnnual>2016-12-31</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-06-30</LatestAvailableInterim>
+		<Employees LastUpdated="2016-12-31">814</Employees>
+		<SharesOut Date="2017-08-01" TotalFloat="30756171.0">31223801.0</SharesOut>
+		<CommonShareholders Date="2016-12-31">4000</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2017-04-11T01:51:43">Axcelis Technologies, Inc. designs, manufactures and services ion implantation and other processing equipment used in the fabrication of semiconductor chips. The Company also provides aftermarket lifecycle products and services, including used tools, spare parts, equipment upgrades, maintenance services and customer training. The Company offers a complete line of high energy, high current and medium current implanters for all application requirements. The Company's Purion XE high energy system combines its radio frequency (RF) Linac high energy, spot beam technology with the Purion platform. The Company also offers the Purion M medium current system. The Company's Purion M systems also offer differentiation for specialty applications, such as hot silicon carbide. The Company's Purion H high current system is extendable into ultra-low energy applications to satisfy future process requirements, including leakage current performance.</Text>
+		<Text Type="Financial Summary" lastModified="2017-08-15T20:45:07">BRIEF: For the six months ended 30 June 2017, Axcelis Technologies Inc revenues increased 44% to $189.7M. Net income increased from $4.9M to $23.4M. Revenues reflect Product increase of 47% to $178.5M, Services increase of 2% to $11.2M. Net income benefited from Restructuring charges decrease from $282K (expense) to $0K, Other, net decrease of 54% to $138K (expense), Interest Income increase of 67% to $180K (income).</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-08-15T20:45:24">
+		<streetAddress line="1">108 Cherry Hill Dr</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>BEVERLY</city>
+		<state-region>MA</state-region>
+		<postalCode>01915-1066</postalCode>
+		<country code="USA">United States</country>
+		<contactName>Douglas Lawson</contactName>
+		<contactTitle>Executive Vice President - Corporate Marketing and Strategy</contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>978</city-areacode>
+				<number>7874000</number>
+			</phone>
+			<phone type="mainfax">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>978</city-areacode>
+				<number>7873000</number>
+			</phone>
+			<phone type="contactphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>978</city-areacode>
+				<number>7874000</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2013-05-13T22:40:38"><webSite mainCategory="Home Page">http://www.axcelis.com</webSite><eMail mainCategory="Company Contact/E-mail">investor.relations@axcelis.com</eMail></webLinks>
+	<peerInfo lastUpdated="2017-08-15T20:45:24">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5710102010" mnem="">Semiconductor Equipment &amp; Testing - NEC</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="334413" mnem="">Semiconductor and Related Device Manufacturing</Industry>
+			<Industry type="NAICS" order="2" reported="0" code="334515" mnem="">Instrument Manufacturing for Measuring and Testing Electricity and Electrical Signals</Industry>
+			<Industry type="SIC" order="0" reported="1" code="3559" mnem="">Special Industry MacHinery, Nec</Industry>
+			<Industry type="SIC" order="1" reported="0" code="3674" mnem="">Semiconductors/related Devices</Industry>
+			<Industry type="SIC" order="2" reported="0" code="3825" mnem="">Instruments To Measure Electric</Industry>
+		</IndustryInfo>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="02/1999">
+			<firstName>Mary</firstName>
+			<mI>G.</mI>
+			<lastName>Puma</lastName>
+			<age>59 </age>
+			<title startYear="2015" startMonth="05" startDay="13" iD1="PRE" abbr1="Pres." iD2="CEO" abbr2="CEO">President, Chief Executive Officer, Director</title>
+		</officer>
+		<officer rank="2" since="10/2002">
+			<firstName>Kevin</firstName>
+			<mI>J.</mI>
+			<lastName>Brewer</lastName>
+			<age>58 </age>
+			<title startYear="2013" startMonth="09" startDay="16" iD1="CFO" abbr1="CFO" iD2="EVP" abbr2="Exec. VP">Chief Financial Officer, Executive Vice President</title>
+		</officer>
+		<officer rank="3" since="2001">
+			<firstName>Lynnette</firstName>
+			<mI>C.</mI>
+			<lastName>Fallon</lastName>
+			<age>57 </age>
+			<title startYear="2005" startMonth="05" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="GCN" abbr2="Counsel">Executive Vice President - Human Resources/Legal, General Counsel, Corporate Secretary</title>
+		</officer>
+		<officer rank="4" since="11/2013">
+			<firstName>Douglas</firstName>
+			<mI>A.</mI>
+			<lastName>Lawson</lastName>
+			<age>56 </age>
+			<title startYear="2013" startMonth="11" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="IRC" abbr2="IR-Contact">Executive Vice President - Corporate Marketing and Strategy</title>
+		</officer>
+		<officer rank="5" since="02/2013">
+			<firstName>John</firstName>
+			<mI>E.</mI>
+			<lastName>Aldeborgh</lastName>
+			<age>60 </age>
+			<title startYear="2013" startMonth="02" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President - Customer Operations</title>
+		</officer>
+		<officer rank="6" since="NA">
+			<firstName>William</firstName>
+			<mI>J.</mI>
+			<lastName>Bintz</lastName>
+			<age>60 </age>
+			<title startYear="2016" startMonth="11" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President - Product Development</title>
+		</officer>
+		<officer rank="7" since="10/2016">
+			<firstName>Russell</firstName>
+			<mI>J.</mI>
+			<lastName>Low</lastName>
+			<age>46 </age>
+			<title startYear="2016" startMonth="10" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President - Engineering</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-06-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">20.15000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">26.52500</Ratio>
+			<Ratio FieldName="NLOW" Type="N">11.05000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">0.31125</Ratio>
+			<Ratio FieldName="EV" Type="N">568.29360</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">629.15960</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">324.69100</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">37.36800</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">29.55400</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">0.90989</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">10.14913</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">7.64715</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">3.48165</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">1.06849</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">0.00000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">38.44486</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">13.73806</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">1.93772</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">22.14553</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">2.63497</Ratio>
+			<Ratio FieldName="Employees" Type="N">814</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="12" CurInterimEndCalYear="2017" CurInterimEndMonth="9" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">2</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">25.40000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">20.0000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">16.12000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">379.95660</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">95.10000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">1.25000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">0.28400</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">41.64950</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

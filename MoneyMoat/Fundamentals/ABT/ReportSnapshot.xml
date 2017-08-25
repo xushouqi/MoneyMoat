@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">0091N</CoID>
+		<CoID Type="CompanyName">Abbott Laboratories</CoID>
+		<CoID Type="IRSNo">360698440</CoID>
+		<CoID Type="CIKNo">0000001800</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">ABT</IssueID>
+			<IssueID Type="CUSIP">002824100</IssueID>
+			<IssueID Type="ISIN">US0028241000</IssueID>
+			<IssueID Type="RIC">ABT</IssueID>
+			<IssueID Type="SEDOL">2002305</IssueID>
+			<IssueID Type="DisplayRIC">ABT.N</IssueID>
+			<IssueID Type="InstrumentPI">258450</IssueID>
+			<IssueID Type="QuotePI">1089457</IssueID>
+			<Exchange Code="NYSE" Country="USA">New York Stock Exchange</Exchange>
+			<MostRecentSplit Date="1998-06-01">2.0</MostRecentSplit>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-08-04</LastModified>
+		<LatestAvailableAnnual>2016-12-31</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-06-30</LatestAvailableInterim>
+		<Employees LastUpdated="2016-12-31">75000</Employees>
+		<SharesOut Date="2017-06-30" TotalFloat="1724454788.0">1737443264.0</SharesOut>
+		<CommonShareholders Date="2016-12-31">45545</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2017-03-06T22:02:41">Abbott Laboratories is engaged in the discovery, development, manufacture and sale of a range of healthcare products. The Company operates through four segments: Established Pharmaceutical Products, Diagnostic Products, Nutritional Products and Vascular Products. Its Established Pharmaceutical Products include a range of branded generic pharmaceuticals manufactured around the world and marketed and sold outside the United States. Its Diagnostic Products include a range of diagnostic systems and tests. Its Nutritional Products include a range of pediatric and adult nutritional products. Its Company's Vascular Products include a range of coronary, endovascular, vessel closure and structural heart devices for the treatment of vascular disease. The Company, through St. Jude Medical, Inc., also offers products, such as rhythm management products, electrophysiology products, heart failure related products, vascular products, structural heart products and neuromodulation products.</Text>
+		<Text Type="Financial Summary" lastModified="2017-08-04T11:03:07">BRIEF: For the six months ended 30 June 2017, Abbott Laboratories revenues increased 27% to $12.97B. Net income before extraordinary items increased less than 1% to $656M. Revenues reflect Vascular Products segment increase from $1.47B to $4.36B, Established Pharmaceutical Products segment increase of 6% to $1.97B, United States segment increase of 47% to $4.68B, All Other Countries segment increase of 18% to $8.29B.</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-08-16T06:24:05">
+		<streetAddress line="1">100 Abbott Park Rd</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>ABBOTT PARK</city>
+		<state-region>IL</state-region>
+		<postalCode>60064-3500</postalCode>
+		<country code="USA">United States</country>
+		<contactName></contactName>
+		<contactTitle></contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>847</city-areacode>
+				<number>9376100</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2013-03-19T04:33:05"><webSite mainCategory="Home Page">http://www.abbott.com</webSite><eMail mainCategory="Company Contact/E-mail"></eMail></webLinks>
+	<peerInfo lastUpdated="2017-08-16T06:24:05">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5620104010" mnem="">Pharmaceuticals - NEC</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="325412" mnem="">Pharmaceutical Preparation  Manufacturing</Industry>
+			<Industry type="NAICS" order="2" reported="0" code="325411" mnem="">Medicinal and Botanical Manufacturing</Industry>
+			<Industry type="NAICS" order="3" reported="0" code="325413" mnem="">InVitro Diagnostic Substance Manufacturing</Industry>
+			<Industry type="NAICS" order="4" reported="0" code="334510" mnem="">Electromedical and Electrotherapeutic Apparatus Manufacturing</Industry>
+			<Industry type="NAICS" order="5" reported="0" code="42221" mnem="">Drug, Drug Proprietaries and Druggists' Sundries Wholesalers</Industry>
+			<Industry type="NAICS" order="6" reported="0" code="42145" mnem="">Medical, Dental and Hospital Equipment and Supplies Wholesalers</Industry>
+			<Industry type="NAICS" order="7" reported="0" code="54171" mnem="">Research and Development in the Physical, Engineering, and Life Sciences</Industry>
+			<Industry type="SIC" order="0" reported="1" code="2834" mnem="">Pharmaceutical Preparations</Industry>
+			<Industry type="SIC" order="1" reported="0" code="2834" mnem="">Pharmaceutical Preparations</Industry>
+			<Industry type="SIC" order="2" reported="0" code="2833" mnem="">Medicinals And Botanicals</Industry>
+			<Industry type="SIC" order="3" reported="0" code="2835" mnem="">Diagnostic Substances</Industry>
+			<Industry type="SIC" order="4" reported="0" code="3845" mnem="">Electromedical Equipment</Industry>
+			<Industry type="SIC" order="5" reported="0" code="5122" mnem="">Drugs/proprietaries/sundries</Industry>
+			<Industry type="SIC" order="6" reported="0" code="5047" mnem="">Medical And Hospital Equipment</Industry>
+			<Industry type="SIC" order="7" reported="0" code="8731" mnem="">Commercial Physical Research</Industry>
+		</IndustryInfo>
+		<Indexconstituet>S&amp;P 500</Indexconstituet>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="1993">
+			<firstName>Miles</firstName>
+			<mI>D.</mI>
+			<lastName>White</lastName>
+			<age>62 </age>
+			<title startYear="1999" startMonth="" startDay="" iD1="CHM" abbr1="Chmn." iD2="DRC" abbr2="Dir.">Chairman of the Board, Chief Executive Officer</title>
+		</officer>
+		<officer rank="2" since="06/01/2015">
+			<firstName>Brian</firstName>
+			<mI>B.</mI>
+			<lastName>Yoor</lastName>
+			<age>47 </age>
+			<title startYear="2015" startMonth="06" startDay="01" iD1="CFO" abbr1="CFO" iD2="SVF" abbr2="Sr. VP-Fin.">Chief Financial Officer, Senior Vice President - Finance</title>
+		</officer>
+		<officer rank="3" since="2017">
+			<firstName>Michael</firstName>
+			<mI>T.</mI>
+			<lastName>Rousseau</lastName>
+			<age>61 </age>
+			<title startYear="2017" startMonth="" startDay="" iD1="CEX" abbr1="Corp. Exec." iD2="" abbr2="">President - Cardiovascular and Neuromodulation</title>
+		</officer>
+		<officer rank="4" since="01/2013">
+			<firstName>Hubert</firstName>
+			<mI>L.</mI>
+			<lastName>Allen</lastName>
+			<age>51 </age>
+			<title startYear="2013" startMonth="01" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="GCN" abbr2="Counsel">Executive Vice President, General Counsel, Secretary</title>
+		</officer>
+		<officer rank="5" since="1999">
+			<firstName>Stephen</firstName>
+			<mI>R.</mI>
+			<lastName>Fussell</lastName>
+			<age>59 </age>
+			<title startYear="2013" startMonth="" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="DHR" abbr2="Dir.-HR">Executive Vice President - Human Resources</title>
+		</officer>
+		<officer rank="6" since="06/2010">
+			<firstName>Brian</firstName>
+			<mI>J.</mI>
+			<lastName>Blaser</lastName>
+			<age>52 </age>
+			<title startYear="2012" startMonth="06" startDay="01" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President - Diagnostics Products</title>
+		</officer>
+		<officer rank="7" since="2006">
+			<firstName>John</firstName>
+			<mI>M.</mI>
+			<lastName>Capek</lastName>
+			<age>55 </age>
+			<title startYear="2015" startMonth="06" startDay="01" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President - Ventures</title>
+		</officer>
+		<officer rank="8" since="2014">
+			<firstName>Robert</firstName>
+			<mI>B.</mI>
+			<lastName>Ford</lastName>
+			<age>43 </age>
+			<title startYear="2015" startMonth="" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President - Medical Devices</title>
+		</officer>
+		<officer rank="9" since="2001">
+			<firstName>Heather</firstName>
+			<mI>L.</mI>
+			<lastName>Mason</lastName>
+			<age>56 </age>
+			<title startYear="2015" startMonth="" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President - Nutritional Products</title>
+		</officer>
+		<officer rank="10" since="2015">
+			<firstName>Roger</firstName>
+			<mI></mI>
+			<lastName>Bird</lastName>
+			<age>60 </age>
+			<title startYear="2015" startMonth="" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="" abbr2="">Senior Vice President - U.S. Nutrition</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-06-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">49.64000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">51.13000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">37.38000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">4.55974</Ratio>
+			<Ratio FieldName="EV" Type="N">100442.69000</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">86246.69000</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">23607.00000</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">4302.00000</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">1064.00000</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">0.65128</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">14.67174</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">18.18880</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">5.66062</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">1.95462</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">1.05000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">54.20003</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">4.07062</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">3.65344</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">76.21914</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">2.72915</Ratio>
+			<Ratio FieldName="Employees" Type="N">75000</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="12" CurInterimEndCalYear="2017" CurInterimEndMonth="9" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">1.95</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">54.94120</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">11.2670</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">19.93094</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">26470.27910</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">6713.08090</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">2.49060</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">0.65330</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">4414.78880</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">1.07220</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

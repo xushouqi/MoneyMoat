@@ -15,6 +15,7 @@ namespace MoneyModels
             return UpdateTime = DateTime.Now;
         }
 
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public DateTime UpdateTime { get; set; } = DateTime.Now;

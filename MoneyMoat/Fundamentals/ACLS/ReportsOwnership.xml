@@ -1,0 +1,2772 @@
+<OwnershipDetails>
+   <ISIN>US0545402085</ISIN>
+   <floatShares asofDate="2017-03-22">26089931</floatShares>
+   <Owner ownerId="0C000007DF">
+      <type>2</type>
+      <name asofDate="2017-03-31">Citigroup Inc</name>
+      <quantity asofDate="2017-03-31">373</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000008CM">
+      <type>2</type>
+      <name asofDate="2017-03-31">Merrill Lynch &#x26; Co Inc</name>
+      <quantity asofDate="2017-03-31">1642</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000008DE">
+      <type>2</type>
+      <name asofDate="2017-03-31">MetLife Inc</name>
+      <quantity asofDate="2017-03-31">20593</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000008UN">
+      <type>2</type>
+      <name asofDate="2017-03-31">Royal Bank Of Canada</name>
+      <quantity asofDate="2017-03-31">1000</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00000AXM">
+      <type>2</type>
+      <name asofDate="2017-03-31">Deutsche Bank AG</name>
+      <quantity asofDate="2017-03-31">18724</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00000CDE">
+      <type>2</type>
+      <name asofDate="2017-03-31">State Street Corp</name>
+      <quantity asofDate="2017-03-31">503191</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00000ENJ">
+      <type>2</type>
+      <name asofDate="2017-03-31">Columbia Management Company</name>
+      <quantity asofDate="2017-03-31">8120</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000010L9">
+      <type>2</type>
+      <name asofDate="2017-03-31">Dreyfus Corp</name>
+      <quantity asofDate="2017-03-31">23969</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000186C">
+      <type>2</type>
+      <name asofDate="2017-03-31">Invesco PowerShares Capital Mgmt LLC</name>
+      <quantity asofDate="2017-03-31">90752</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000018ZZ">
+      <type>2</type>
+      <name asofDate="2017-03-31">Salem Investment Counselors Inc</name>
+      <quantity asofDate="2017-03-31">685</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000190O">
+      <type>2</type>
+      <name asofDate="2017-06-30">Carroll Financial Associates Inc</name>
+      <quantity asofDate="2017-06-30">85</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001AGV">
+      <type>2</type>
+      <name asofDate="2017-03-31">Wells Fargo Advisors, LLC</name>
+      <quantity asofDate="2017-03-31">2632</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001AIE">
+      <type>2</type>
+      <name asofDate="2016-06-30">Christian Brothers Inv Srvc Inc</name>
+      <quantity asofDate="2016-06-30">14550</quantity>
+      <currency asofDate="2016-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001ALQ">
+      <type>2</type>
+      <name asofDate="2016-10-31">Principal Management Corp</name>
+      <quantity asofDate="2016-10-31">20220</quantity>
+      <currency asofDate="2016-10-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001AOM">
+      <type>2</type>
+      <name asofDate="2016-12-31">Segall Bryant &#x26; Hamill</name>
+      <quantity asofDate="2016-12-31">232608</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001AVQ">
+      <type>2</type>
+      <name asofDate="2016-09-30">Lincoln Investment Advisors Corporation</name>
+      <quantity asofDate="2016-09-30">1879</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001B27">
+      <type>2</type>
+      <name asofDate="2016-09-30">Jackson National Asset Management, LLC</name>
+      <quantity asofDate="2016-09-30">4637</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001B4O">
+      <type>2</type>
+      <name asofDate="2016-09-30">Coe Capital Management, LLC</name>
+      <quantity asofDate="2016-09-30">77713</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001BQI">
+      <type>2</type>
+      <name asofDate="2017-03-31">Timpani Capital Management LLC</name>
+      <quantity asofDate="2017-03-31">51910</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001BTX">
+      <type>2</type>
+      <name asofDate="2017-06-30">Creative Planning Inc</name>
+      <quantity asofDate="2017-06-30">5625</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001CH0">
+      <type>2</type>
+      <name asofDate="2016-12-31">Bridgeway Capital Management, Inc</name>
+      <quantity asofDate="2016-12-31">350</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001CVA">
+      <type>2</type>
+      <name asofDate="2016-09-30">DFA Australia Limited</name>
+      <quantity asofDate="2016-09-30">11263</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001D3E">
+      <type>2</type>
+      <name asofDate="2017-06-30">Hillsdale Investment Management</name>
+      <quantity asofDate="2017-06-30">51200</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001EHG">
+      <type>2</type>
+      <name asofDate="2017-03-31">J.P. Morgan Securities Inc</name>
+      <quantity asofDate="2017-03-31">19404</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001EHJ">
+      <type>2</type>
+      <name asofDate="2017-03-31">Goldman, Sachs &#x26; Co.</name>
+      <quantity asofDate="2017-03-31">19219</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001EJA">
+      <type>2</type>
+      <name asofDate="2016-12-31">Metlife Securities Inc</name>
+      <quantity asofDate="2016-12-31">1425</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001EJO">
+      <type>2</type>
+      <name asofDate="2017-03-31">BARCLAYS CAPITAL Inc</name>
+      <quantity asofDate="2017-03-31">63</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001ESH">
+      <type>2</type>
+      <name asofDate="2017-03-31">Sunamerica Asset Management Corp</name>
+      <quantity asofDate="2017-03-31">17943</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001ETF">
+      <type>2</type>
+      <name asofDate="2017-03-31">Royce &#x26; Associates, LLC</name>
+      <quantity asofDate="2017-03-31">130046</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001EW7">
+      <type>2</type>
+      <name asofDate="2017-03-31">Ladenburg Thalmann Asset Management Inc</name>
+      <quantity asofDate="2017-03-31">555</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001FIW">
+      <type>2</type>
+      <name asofDate="2017-03-31">Highbridge Capital Management, LLC</name>
+      <quantity asofDate="2017-03-31">20344</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001FZW">
+      <type>2</type>
+      <name asofDate="2017-03-31">Thompson Davis &#x26; Co Inc</name>
+      <quantity asofDate="2017-03-31">125</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001G1J">
+      <type>2</type>
+      <name asofDate="2017-03-31">SEI Investments Management Corp</name>
+      <quantity asofDate="2017-03-31">10</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001G3E">
+      <type>2</type>
+      <name asofDate="2017-03-31">Vanguard Group Inc</name>
+      <quantity asofDate="2017-03-31">1225693</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001H4X">
+      <type>2</type>
+      <name asofDate="2017-06-30">Aperio Group, LLC</name>
+      <quantity asofDate="2017-06-30">23711</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001H59">
+      <type>2</type>
+      <name asofDate="2016-10-31">LWI Financial Inc</name>
+      <quantity asofDate="2016-10-31">13370</quantity>
+      <currency asofDate="2016-10-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001HAT">
+      <type>2</type>
+      <name asofDate="2016-06-30">Falcon Point Capital, LLC</name>
+      <quantity asofDate="2016-06-30">19928</quantity>
+      <currency asofDate="2016-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001KEE">
+      <type>2</type>
+      <name asofDate="2017-03-31">Adirondack Research &#x26; Management Inc</name>
+      <quantity asofDate="2017-03-31">348762</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001KHP">
+      <type>2</type>
+      <name asofDate="2016-09-30">Sunamerica Asset Management, LLC</name>
+      <quantity asofDate="2016-09-30">389</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001KL6">
+      <type>2</type>
+      <name asofDate="2016-09-30">Allianz Investment Management LLC</name>
+      <quantity asofDate="2016-09-30">4712</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001KPP">
+      <type>2</type>
+      <name asofDate="2017-03-31">Ancora Advisors LLC</name>
+      <quantity asofDate="2017-03-31">142625</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001KXO">
+      <type>2</type>
+      <name asofDate="2017-07-31">Aurion Capital Management Inc</name>
+      <quantity asofDate="2017-07-31">100</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001LB5">
+      <type>2</type>
+      <name asofDate="2017-03-31">Barclays Capital Securities Limited</name>
+      <quantity asofDate="2017-03-31">10521</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001LB9">
+      <type>2</type>
+      <name asofDate="2017-08-10">BlackRock Fund Advisors</name>
+      <quantity asofDate="2017-08-10">871241</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001LMJ">
+      <type>2</type>
+      <name asofDate="2017-03-31">BNY Mellon Investment Management</name>
+      <quantity asofDate="2017-03-31">91848</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001M6J">
+      <type>2</type>
+      <name asofDate="2017-07-31">CIBC Asset Management Inc</name>
+      <quantity asofDate="2017-07-31">1251</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001MFK">
+      <type>2</type>
+      <name asofDate="2017-05-31">Connor Clark &#x26; Lunn Financial Group</name>
+      <quantity asofDate="2017-05-31">100</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001MFL">
+      <type>2</type>
+      <name asofDate="2017-03-31">Connor Clark &#x26; Lunn Inv Mgmt Ltd</name>
+      <quantity asofDate="2017-03-31">17100</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001MK8">
+      <type>2</type>
+      <name asofDate="2017-07-31">Credit Suisse AG</name>
+      <quantity asofDate="2017-07-31">9571</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001ML3">
+      <type>2</type>
+      <name asofDate="2016-12-31">Credit Suisse First Boston (CSFB)</name>
+      <quantity asofDate="2016-12-31">14458</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001MRB">
+      <type>2</type>
+      <name asofDate="2017-03-31">Delaware Management Business Trust</name>
+      <quantity asofDate="2017-03-31">11861</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001MU7">
+      <type>2</type>
+      <name asofDate="2016-09-30">Deutsche Inv Mgmt Americas Inc</name>
+      <quantity asofDate="2016-09-30">5633</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001MXJ">
+      <type>2</type>
+      <name asofDate="2017-03-31">Donald Smith &#x26; Co Inc</name>
+      <quantity asofDate="2017-03-31">2996651</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001NCX">
+      <type>2</type>
+      <name asofDate="2017-03-31">Federated MDTA LLC</name>
+      <quantity asofDate="2017-03-31">281</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001NHD">
+      <type>2</type>
+      <name asofDate="2017-06-30">Foresters Investment Management Company Inc</name>
+      <quantity asofDate="2017-06-30">163500</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001NT1">
+      <type>2</type>
+      <name asofDate="2017-07-31">GE Asset Management Inc</name>
+      <quantity asofDate="2017-07-31">551</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001NUC">
+      <type>2</type>
+      <name asofDate="2017-03-31">Geode Capital Management, LLC</name>
+      <quantity asofDate="2017-03-31">231298</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001O0R">
+      <type>2</type>
+      <name asofDate="2017-06-30">Great West Life Assurance Co</name>
+      <quantity asofDate="2017-06-30">3100</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001OSQ">
+      <type>2</type>
+      <name asofDate="2016-09-30">Jackson National Asset Management LLC</name>
+      <quantity asofDate="2016-09-30">3003</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001OUR">
+      <type>2</type>
+      <name asofDate="2017-06-30">John Hancock Advisers, LLC</name>
+      <quantity asofDate="2017-06-30">5268</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001OV9">
+      <type>2</type>
+      <name asofDate="2017-06-30">BMO Asset Management Inc</name>
+      <quantity asofDate="2017-06-30">158510</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001OVT">
+      <type>2</type>
+      <name asofDate="2017-03-31">J. P. Morgan Chase Bank NA</name>
+      <quantity asofDate="2017-03-31">564</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001OXU">
+      <type>2</type>
+      <name asofDate="2017-03-31">Kalmar Investments Inc</name>
+      <quantity asofDate="2017-03-31">159475</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001P7W">
+      <type>2</type>
+      <name asofDate="2016-09-30">Legg Mason Investments Europe Ltd</name>
+      <quantity asofDate="2016-09-30">65073</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001POV">
+      <type>2</type>
+      <name asofDate="2016-09-30">MetLife Advisers, LLC</name>
+      <quantity asofDate="2016-09-30">13934</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001PQX">
+      <type>2</type>
+      <name asofDate="2017-03-31">Millennium Management LLC</name>
+      <quantity asofDate="2017-03-31">137925</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001PYY">
+      <type>2</type>
+      <name asofDate="2017-03-31">Nationwide Fund Advisors</name>
+      <quantity asofDate="2017-03-31">24024</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001Q4Y">
+      <type>2</type>
+      <name asofDate="2017-06-30">Northern Trust Asset Management</name>
+      <quantity asofDate="2017-06-30">79677</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001Q57">
+      <type>2</type>
+      <name asofDate="2016-09-30">Northern Trust Investments Inc</name>
+      <quantity asofDate="2016-09-30">16695</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001Q5G">
+      <type>2</type>
+      <name asofDate="2017-03-31">NorthPointe Capital LLC</name>
+      <quantity asofDate="2017-03-31">290649</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001QD9">
+      <type>2</type>
+      <name asofDate="2017-07-31">Pacific Life Fund Advisors LLC (PLFA)</name>
+      <quantity asofDate="2017-07-31">12898</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001QDS">
+      <type>2</type>
+      <name asofDate="2017-03-31">Panagora Asset Management Inc</name>
+      <quantity asofDate="2017-03-31">3736</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001QEB">
+      <type>2</type>
+      <name asofDate="2016-09-30">Parametric Portfolio Associates LLC</name>
+      <quantity asofDate="2016-09-30">16922</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001QP6">
+      <type>2</type>
+      <name asofDate="2016-12-31">PRIMECAP Management Company</name>
+      <quantity asofDate="2016-12-31">3478393</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001QQO">
+      <type>2</type>
+      <name asofDate="2017-04-30">ProFund Advisors LLC</name>
+      <quantity asofDate="2017-04-30">1285</quantity>
+      <currency asofDate="2017-04-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001QQY">
+      <type>2</type>
+      <name asofDate="2017-07-31">ProShare Advisors LLC</name>
+      <quantity asofDate="2017-07-31">2298</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001R1I">
+      <type>2</type>
+      <name asofDate="2017-03-31">Columbia Mangmt Investment Advisers, LLC</name>
+      <quantity asofDate="2017-03-31">17954</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001R3B">
+      <type>2</type>
+      <name asofDate="2017-03-31">Acrospire Investment Management LLC</name>
+      <quantity asofDate="2017-03-31">145</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001R5O">
+      <type>2</type>
+      <name asofDate="2017-06-30">Russell Investment Management Co</name>
+      <quantity asofDate="2017-06-30">11903</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001R5Q">
+      <type>2</type>
+      <name asofDate="2017-05-31">Russell Investments Canada Limited</name>
+      <quantity asofDate="2017-05-31">2329</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001RAT">
+      <type>2</type>
+      <name asofDate="2017-03-31">Schneider Capital Management Corp</name>
+      <quantity asofDate="2017-03-31">394346</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001RE4">
+      <type>2</type>
+      <name asofDate="2017-06-30">Security Investors, LLC</name>
+      <quantity asofDate="2017-06-30">941</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001RFV">
+      <type>2</type>
+      <name asofDate="2017-03-31">SENVEST INTERNATIONAL LLC</name>
+      <quantity asofDate="2017-03-31">2856610</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001RGI">
+      <type>2</type>
+      <name asofDate="2017-03-31">SG Capital Management, LLC</name>
+      <quantity asofDate="2017-03-31">724363</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001RQC">
+      <type>2</type>
+      <name asofDate="2016-08-12">SSgA Funds Management Inc</name>
+      <quantity asofDate="2016-08-12">2349</quantity>
+      <currency asofDate="2016-08-12">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001RRW">
+      <type>2</type>
+      <name asofDate="2017-03-31">State Farm Investment Management Corp</name>
+      <quantity asofDate="2017-03-31">4964</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001S14">
+      <type>2</type>
+      <name asofDate="2017-03-31">Teachers Advisors Inc</name>
+      <quantity asofDate="2017-03-31">48234</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001S17">
+      <type>2</type>
+      <name asofDate="2017-01-31">Techinvest Limited</name>
+      <quantity asofDate="2017-01-31">70000</quantity>
+      <currency asofDate="2017-01-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001S22">
+      <type>2</type>
+      <name asofDate="2016-07-31">TFS Capital LLC</name>
+      <quantity asofDate="2016-07-31">11803</quantity>
+      <currency asofDate="2016-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001S3S">
+      <type>2</type>
+      <name asofDate="2016-09-30">Variable Annuity Life Insurance Co</name>
+      <quantity asofDate="2016-09-30">16414</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001S57">
+      <type>2</type>
+      <name asofDate="2017-03-31">TIAA-CREF Investment Management LLC</name>
+      <quantity asofDate="2017-03-31">78660</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001S9K">
+      <type>2</type>
+      <name asofDate="2016-06-30">Tudor Investment Corp Et AL</name>
+      <quantity asofDate="2016-06-30">45098</quantity>
+      <currency asofDate="2016-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001SCD">
+      <type>2</type>
+      <name asofDate="2017-03-31">UBS Securities LLC</name>
+      <quantity asofDate="2017-03-31">230303</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001SHB">
+      <type>2</type>
+      <name asofDate="2016-08-31">Vantagepoint Investment Adv, LLC</name>
+      <quantity asofDate="2016-08-31">6243</quantity>
+      <currency asofDate="2016-08-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001SNR">
+      <type>2</type>
+      <name asofDate="2017-03-31">Wells Fargo Bank NA</name>
+      <quantity asofDate="2017-03-31">24524</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001SNU">
+      <type>2</type>
+      <name asofDate="2017-06-30">Wells Fargo Funds Management LLC</name>
+      <quantity asofDate="2017-06-30">991</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001SQV">
+      <type>2</type>
+      <name asofDate="2016-12-07">WisdomTree Asset Management Inc</name>
+      <quantity asofDate="2016-12-07">14255</quantity>
+      <currency asofDate="2016-12-07">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001SWY">
+      <type>2</type>
+      <name asofDate="2017-03-31">AQR Capital Management LLC</name>
+      <quantity asofDate="2017-03-31">27263</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001SYX">
+      <type>2</type>
+      <name asofDate="2017-03-31">Charles Schwab Investment Management Inc</name>
+      <quantity asofDate="2017-03-31">47100</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001T2M">
+      <type>2</type>
+      <name asofDate="2017-03-31">Symphony Asset Management, LLC</name>
+      <quantity asofDate="2017-03-31">41938</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001T6K">
+      <type>2</type>
+      <name asofDate="2016-12-31">AllianceBernstein LP</name>
+      <quantity asofDate="2016-12-31">11100</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001T9N">
+      <type>2</type>
+      <name asofDate="2017-03-31">Northern Trust Investments N A</name>
+      <quantity asofDate="2017-03-31">309352</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001Y98">
+      <type>2</type>
+      <name asofDate="2017-03-31">Rhumbline Advisers</name>
+      <quantity asofDate="2017-03-31">37869</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00001ZRC">
+      <type>2</type>
+      <name asofDate="2017-03-31">Mellon Capital Management Corporation</name>
+      <quantity asofDate="2017-03-31">47313</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002DGS">
+      <type>2</type>
+      <name asofDate="2016-12-31">Palisade Capital Management LLc</name>
+      <quantity asofDate="2016-12-31">32400</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002DGV">
+      <type>2</type>
+      <name asofDate="2017-03-31">D. E. Shaw &#x26; Co LP</name>
+      <quantity asofDate="2017-03-31">50033</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002DO7">
+      <type>2</type>
+      <name asofDate="2017-03-31">California State Teachers Retirement Sys</name>
+      <quantity asofDate="2017-03-31">57417</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002DOE">
+      <type>2</type>
+      <name asofDate="2017-03-31">Fuller &#x26; Thaler Asset Management Inc</name>
+      <quantity asofDate="2017-03-31">211400</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002DTP">
+      <type>2</type>
+      <name asofDate="2017-03-31">Northwestern Mutual Wealth Management Co</name>
+      <quantity asofDate="2017-03-31">124</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002DUY">
+      <type>2</type>
+      <name asofDate="2017-03-31">BNP Paribas Arbitrage, SA</name>
+      <quantity asofDate="2017-03-31">112</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002DW6">
+      <type>2</type>
+      <name asofDate="2017-03-31">Two Sigma Investments LLC</name>
+      <quantity asofDate="2017-03-31">19850</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002DWH">
+      <type>2</type>
+      <name asofDate="2016-06-30">Mt Lucas Management LP</name>
+      <quantity asofDate="2016-06-30">17000</quantity>
+      <currency asofDate="2016-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002E27">
+      <type>2</type>
+      <name asofDate="2017-03-31">Guggenheim Capital LLC</name>
+      <quantity asofDate="2017-03-31">60036</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002E8G">
+      <type>2</type>
+      <name asofDate="2017-06-30">AssetMark Inc</name>
+      <quantity asofDate="2017-06-30">1103</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002EEX">
+      <type>2</type>
+      <name asofDate="2017-03-31">Symmetry Peak Management LLC</name>
+      <quantity asofDate="2017-03-31">25000</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002EFZ">
+      <type>2</type>
+      <name asofDate="2017-03-31">PEAK6 INVESTMENTS LP</name>
+      <quantity asofDate="2017-03-31">18799</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002EGS">
+      <type>2</type>
+      <name asofDate="2017-03-31">Employees Retirement System Of Texas</name>
+      <quantity asofDate="2017-03-31">114750</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002EHZ">
+      <type>2</type>
+      <name asofDate="2017-03-31">Kbc Group NV</name>
+      <quantity asofDate="2017-03-31">32443</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002EO2">
+      <type>2</type>
+      <name asofDate="2017-03-31">Susquehanna Financial Group, LLLP</name>
+      <quantity asofDate="2017-03-31">27615</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002EPU">
+      <type>2</type>
+      <name asofDate="2017-03-31">Dimensional Fund Advisors, Inc.</name>
+      <quantity asofDate="2017-03-31">1766009</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002ERM">
+      <type>2</type>
+      <name asofDate="2017-03-31">T. Rowe Price Associates, Inc.</name>
+      <quantity asofDate="2017-03-31">15553</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002ERQ">
+      <type>2</type>
+      <name asofDate="2017-03-31">New York State Common Retirement Fund</name>
+      <quantity asofDate="2017-03-31">29576</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002EUC">
+      <type>2</type>
+      <name asofDate="2017-03-31">Bt Alex Brown Inc</name>
+      <quantity asofDate="2017-03-31">7</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002EW8">
+      <type>2</type>
+      <name asofDate="2017-03-31">Manufacturers Life Insurance Co</name>
+      <quantity asofDate="2017-03-31">23737</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002FII">
+      <type>2</type>
+      <name asofDate="2017-03-31">Arrowstreet Capital Limited Partnership</name>
+      <quantity asofDate="2017-03-31">28100</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002FUZ">
+      <type>2</type>
+      <name asofDate="2017-03-31">Friess Associates LLC</name>
+      <quantity asofDate="2017-03-31">31862</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002FVX">
+      <type>2</type>
+      <name asofDate="2016-12-31">Renaissance Technologies Corp</name>
+      <quantity asofDate="2016-12-31">19950</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002GKX">
+      <type>2</type>
+      <name asofDate="2017-03-31">White Pine Capital LLC</name>
+      <quantity asofDate="2017-03-31">63061</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002GSE">
+      <type>2</type>
+      <name asofDate="2017-03-31">Kennedy Capital Management Inc</name>
+      <quantity asofDate="2017-03-31">151371</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002GV5">
+      <type>2</type>
+      <name asofDate="2017-03-31">California Public Employees Retrmnt Sys</name>
+      <quantity asofDate="2017-03-31">166775</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002H0Y">
+      <type>2</type>
+      <name asofDate="2017-03-31">GSA Capital Partners LLP</name>
+      <quantity asofDate="2017-03-31">85260</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002H72">
+      <type>2</type>
+      <name asofDate="2016-12-31">Legal &#x26; General Group PLC</name>
+      <quantity asofDate="2016-12-31">8474</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002HIG">
+      <type>2</type>
+      <name asofDate="2016-12-31">Teachers Insurance &#x26; Annuity Assn of Am</name>
+      <quantity asofDate="2016-12-31">1339</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002IPG">
+      <type>2</type>
+      <name asofDate="2017-06-30">Wealthtrust-arizona, LLC</name>
+      <quantity asofDate="2017-06-30">1000</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002ISF">
+      <type>2</type>
+      <name asofDate="2016-09-30">Penbrook Management LLC</name>
+      <quantity asofDate="2016-09-30">122360</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002IWR">
+      <type>2</type>
+      <name asofDate="2016-12-31">NORGES BANK</name>
+      <quantity asofDate="2016-12-31">143060</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002IXD">
+      <type>2</type>
+      <name asofDate="2017-03-31">Ameritas Investment Partners, Inc</name>
+      <quantity asofDate="2017-03-31">2416</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002J0F">
+      <type>2</type>
+      <name asofDate="2017-03-31">Managed Account Advisors LLC</name>
+      <quantity asofDate="2017-03-31">12929</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00002JRB">
+      <type>2</type>
+      <name asofDate="2017-03-31">EAM Investors</name>
+      <quantity asofDate="2017-03-31">139530</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000031NC">
+      <type>2</type>
+      <name asofDate="2017-06-30">Hand Benefits &#x26; Trust</name>
+      <quantity asofDate="2017-06-30">43</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000033VT">
+      <type>2</type>
+      <name asofDate="2017-08-10">First Trust Advisors L.P.</name>
+      <quantity asofDate="2017-08-10">189</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000033Y0">
+      <type>2</type>
+      <name asofDate="2017-03-31">Victory Capital Management Inc.</name>
+      <quantity asofDate="2017-03-31">101189</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000033YU">
+      <type>2</type>
+      <name asofDate="2017-06-30">Peregrine Capital Management Inc</name>
+      <quantity asofDate="2017-06-30">572856</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00003401">
+      <type>2</type>
+      <name asofDate="2017-03-31">Driehaus Capital Management LLC</name>
+      <quantity asofDate="2017-03-31">42783</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00003497">
+      <type>2</type>
+      <name asofDate="2017-03-31">Delaware Management Company</name>
+      <quantity asofDate="2017-03-31">11861</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000034AL">
+      <type>2</type>
+      <name asofDate="2017-07-31">PNC Capital Advisors</name>
+      <quantity asofDate="2017-07-31">2120</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000034HT">
+      <type>2</type>
+      <name asofDate="2017-03-31">Morgan Stanley &#x26; Co Inc</name>
+      <quantity asofDate="2017-03-31">163932</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000034OK">
+      <type>2</type>
+      <name asofDate="2016-12-31">BlackRock Advisors LLC</name>
+      <quantity asofDate="2016-12-31">121602</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000035OQ">
+      <type>2</type>
+      <name asofDate="2017-06-30">BMO Capital Markets Corp.</name>
+      <quantity asofDate="2017-06-30">171000</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000035T8">
+      <type>2</type>
+      <name asofDate="2017-03-31">Deutsche Asset Mgmt Invst Gesenschaft</name>
+      <quantity asofDate="2017-03-31">7143</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00003MQO">
+      <type>2</type>
+      <name asofDate="2016-12-31">Connecticut General Life Insurance Co.</name>
+      <quantity asofDate="2016-12-31">454</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000044JQ">
+      <type>2</type>
+      <name asofDate="2017-03-31">Group One Trading, LP</name>
+      <quantity asofDate="2017-03-31">4225</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000045XS">
+      <type>2</type>
+      <name asofDate="2016-12-31">Medical Mutual Of Ohio</name>
+      <quantity asofDate="2016-12-31">37500</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000049LS">
+      <type>2</type>
+      <name asofDate="2016-09-30">Dimensional Fund Advisors LP</name>
+      <quantity asofDate="2016-09-30">1036621</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00004A4W">
+      <type>2</type>
+      <name asofDate="2017-03-31">Morgan Stanley Smith Barney LLC</name>
+      <quantity asofDate="2017-03-31">15938</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00004AHX">
+      <type>2</type>
+      <name asofDate="2017-08-10">BlackRock Advisors (UK) Limited</name>
+      <quantity asofDate="2017-08-10">4529</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00004BK0">
+      <type>2</type>
+      <name asofDate="2017-06-30">John Hancock Investment Mgt Svcs, LLC</name>
+      <quantity asofDate="2017-06-30">16459</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00004HJW">
+      <type>2</type>
+      <name asofDate="2017-03-31">JBF Capital, Inc.</name>
+      <quantity asofDate="2017-03-31">3379</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00004HR3">
+      <type>2</type>
+      <name asofDate="2016-06-30">BlackRock Institutional Trust Company NA</name>
+      <quantity asofDate="2016-06-30">17314</quantity>
+      <currency asofDate="2016-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00004IGT">
+      <type>2</type>
+      <name asofDate="2017-02-28">Kalmar Investment Advisers</name>
+      <quantity asofDate="2017-02-28">47080</quantity>
+      <currency asofDate="2017-02-28">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00004SKF">
+      <type>2</type>
+      <name asofDate="2017-03-31">Alambic Investment Management, L.P.</name>
+      <quantity asofDate="2017-03-31">12012</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00006B3F">
+      <type>2</type>
+      <name asofDate="2016-10-31">Vanguard Group Inc.</name>
+      <quantity asofDate="2016-10-31">5162</quantity>
+      <currency asofDate="2016-10-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00008F1C">
+      <type>2</type>
+      <name asofDate="2016-09-30">Fidelity Management &#x26; Research Company</name>
+      <quantity asofDate="2016-09-30">195152</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00008IV8">
+      <type>2</type>
+      <name asofDate="2017-03-31">Dreyfus Corporation</name>
+      <quantity asofDate="2017-03-31">10291</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00008JMA">
+      <type>2</type>
+      <name asofDate="2017-03-31">Nuveen Fund Advisors, LLC.</name>
+      <quantity asofDate="2017-03-31">1446</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00008O30">
+      <type>2</type>
+      <name asofDate="2017-06-30">Russell Investments Limited</name>
+      <quantity asofDate="2017-06-30">6434</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00008OHN">
+      <type>2</type>
+      <name asofDate="2016-12-31">LoCorr Fund Management, LLC</name>
+      <quantity asofDate="2016-12-31">30515</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00008OUD">
+      <type>2</type>
+      <name asofDate="2017-06-30">CWM, LLC</name>
+      <quantity asofDate="2017-06-30">250</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00008PWE">
+      <type>2</type>
+      <name asofDate="2017-04-30">Calvert Investment Management, Inc.</name>
+      <quantity asofDate="2017-04-30">2416</quantity>
+      <currency asofDate="2017-04-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00008YYX">
+      <type>2</type>
+      <name asofDate="2016-12-31">State Ins Fd Workers&#x27; Compensation Fd</name>
+      <quantity asofDate="2016-12-31">800</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00009747">
+      <type>2</type>
+      <name asofDate="2017-03-31">Vericimetry Advisors LLC</name>
+      <quantity asofDate="2017-03-31">7375</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C000098Z2">
+      <type>2</type>
+      <name asofDate="2017-06-30">OFI Global Asset Management, Inc.</name>
+      <quantity asofDate="2017-06-30">855</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00009C3N">
+      <type>2</type>
+      <name asofDate="2017-06-30">WHITTIER TRUST Company of NEVADA Inc</name>
+      <quantity asofDate="2017-06-30">15</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00009CGM">
+      <type>2</type>
+      <name asofDate="2017-03-31">SOUTHPORT MANAGEMENT, L.L.C.</name>
+      <quantity asofDate="2017-03-31">38750</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00009DR3">
+      <type>2</type>
+      <name asofDate="2017-06-30">FMG LLC</name>
+      <quantity asofDate="2017-06-30">9134</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00009E94">
+      <type>2</type>
+      <name asofDate="2017-06-30">Spark Investment Management LLC</name>
+      <quantity asofDate="2017-06-30">77800</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C00009X2L">
+      <type>2</type>
+      <name asofDate="2017-06-30">Aon Hewitt Investment Consulting, Inc</name>
+      <quantity asofDate="2017-06-30">331</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000A4MO">
+      <type>2</type>
+      <name asofDate="2017-03-31">PDT Partners, LLC</name>
+      <quantity asofDate="2017-03-31">68000</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000A6LO">
+      <type>2</type>
+      <name asofDate="2017-03-31">Hood River Capital Management LLC</name>
+      <quantity asofDate="2017-03-31">794552</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000AADF">
+      <type>2</type>
+      <name asofDate="2017-08-10">Fidelity SelectCo, LLC</name>
+      <quantity asofDate="2017-08-10">5301</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000ABQG">
+      <type>2</type>
+      <name asofDate="2017-08-10">Deutsche Asset &#x26; Wealth Management Investment GmbH</name>
+      <quantity asofDate="2017-08-10">6860</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000AHNI">
+      <type>2</type>
+      <name asofDate="2017-03-31">Olive Street Investment Advisers, LLC</name>
+      <quantity asofDate="2017-03-31">5990</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000AHZ9">
+      <type>2</type>
+      <name asofDate="2017-03-31">Secor Asset Management</name>
+      <quantity asofDate="2017-03-31">87263</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000AIPO">
+      <type>2</type>
+      <name asofDate="2017-06-30">Municipal Employees&#x27; Retirement System of Michigan</name>
+      <quantity asofDate="2017-06-30">23980</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000AKZY">
+      <type>2</type>
+      <name asofDate="2017-03-31">S.A.C. Capital Advisors (Hong Kong) Ltd.</name>
+      <quantity asofDate="2017-03-31">17</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000AL8B">
+      <type>2</type>
+      <name asofDate="2016-09-30">MML Investment Advisers, LLC</name>
+      <quantity asofDate="2016-09-30">4408</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000ANFN">
+      <type>2</type>
+      <name asofDate="2017-03-31">Cubist Systematic Strategies, LLC</name>
+      <quantity asofDate="2017-03-31">34464</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000AVKZ">
+      <type>2</type>
+      <name asofDate="2017-06-30">SIMPLEX TRADING, LLC</name>
+      <quantity asofDate="2017-06-30">1084</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000AX7X">
+      <type>2</type>
+      <name asofDate="2016-12-31">Squarepoint Ops LLC</name>
+      <quantity asofDate="2016-12-31">13367</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="0C0000B04N">
+      <type>2</type>
+      <name asofDate="2017-07-31">Canter Compass Investments, Inc</name>
+      <quantity asofDate="2017-07-31">37300</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00008M04">
+      <type>3</type>
+      <name asofDate="2017-03-31">Vericimetry U.S. Small Cap Value Fund</name>
+      <quantity asofDate="2017-03-31">7375</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00008ZWN">
+      <type>3</type>
+      <name asofDate="2017-06-30">AQR TM Small Cap Momentum Style Fund</name>
+      <quantity asofDate="2017-06-30">2117</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000909G">
+      <type>3</type>
+      <name asofDate="2017-07-31">SEI Extended Market Index (SIIT)</name>
+      <quantity asofDate="2017-07-31">7550</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS000092YO">
+      <type>3</type>
+      <name asofDate="2017-03-31">Dimensional World Equity Fund</name>
+      <quantity asofDate="2017-03-31">2641</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS000093WF">
+      <type>3</type>
+      <name asofDate="2017-06-30">Active Port&#xAE; Multi-Mgr Small Cp Equity</name>
+      <quantity asofDate="2017-06-30">55200</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS000096S4">
+      <type>3</type>
+      <name asofDate="2017-06-30">Pru Ret Small Cap Value/Kennedy SP</name>
+      <quantity asofDate="2017-06-30">53641</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS000097SZ">
+      <type>3</type>
+      <name asofDate="2017-06-30">JHFunds2 Strategic Equity Allc Fund</name>
+      <quantity asofDate="2017-06-30">5268</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS000097T4">
+      <type>3</type>
+      <name asofDate="2017-06-30">JHVIT Strategic Equity Allocation Trust</name>
+      <quantity asofDate="2017-06-30">6586</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS000097TJ">
+      <type>3</type>
+      <name asofDate="2017-07-31">SEI Small Cap II (SIIT)</name>
+      <quantity asofDate="2017-07-31">16361</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS000098BG">
+      <type>3</type>
+      <name asofDate="2016-06-30">BSF Americas Diversified Eq Abs Ret Fd</name>
+      <quantity asofDate="2016-06-30">17314</quantity>
+      <currency asofDate="2016-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00009L28">
+      <type>3</type>
+      <name asofDate="2017-06-30">MM Russell 2000&#xAE; Small Cap Index Fund</name>
+      <quantity asofDate="2017-06-30">3962</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00009LDE">
+      <type>3</type>
+      <name asofDate="2017-08-10">PowerShares DWA SmallCap Momentum Port</name>
+      <quantity asofDate="2017-08-10">45086</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00009NHV">
+      <type>3</type>
+      <name asofDate="2017-06-30">BNY Mellon EB DL NSL Agg Bd Index UC5</name>
+      <quantity asofDate="2017-06-30">1696</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00009PYT">
+      <type>3</type>
+      <name asofDate="2017-03-31">JNL/DFA U.S. Micro Cap Fund</name>
+      <quantity asofDate="2017-03-31">5359</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00009QVF">
+      <type>3</type>
+      <name asofDate="2017-06-30">Master Small Cap Index Series</name>
+      <quantity asofDate="2017-06-30">13668</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00009SY6">
+      <type>3</type>
+      <name asofDate="2017-06-30">Oppenheimer Global Multi-Alternatives Fd</name>
+      <quantity asofDate="2017-06-30">25</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00009T9V">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA US Small Cap Growth Portfolio</name>
+      <quantity asofDate="2017-06-30">7836</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00009U82">
+      <type>3</type>
+      <name asofDate="2016-07-31">BlackRock Master Small Cap Growth Port</name>
+      <quantity asofDate="2016-07-31">2200</quantity>
+      <currency asofDate="2016-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS00009Z8Q">
+      <type>3</type>
+      <name asofDate="2016-12-31">LoCorr Long/Short Equity Fund</name>
+      <quantity asofDate="2016-12-31">30515</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000A3ZP">
+      <type>3</type>
+      <name asofDate="2016-12-31">Segall Bryant &#x26; Hamill Small Cap Val Fd</name>
+      <quantity asofDate="2016-12-31">29692</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000A45Q">
+      <type>3</type>
+      <name asofDate="2017-08-10">SPDR&#xAE; Russell 2000 ETF</name>
+      <quantity asofDate="2017-08-10">3200</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000A57J">
+      <type>3</type>
+      <name asofDate="2017-03-31">KP Small Cap Equity Fund</name>
+      <quantity asofDate="2017-03-31">2380</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000A5ZF">
+      <type>3</type>
+      <name asofDate="2017-06-30">Dimensional World Allocation 50/50 Trust</name>
+      <quantity asofDate="2017-06-30">57</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000A5ZG">
+      <type>3</type>
+      <name asofDate="2017-06-30">Dimensional World Equity Trust</name>
+      <quantity asofDate="2017-06-30">74</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000A6XW">
+      <type>3</type>
+      <name asofDate="2017-07-31">CSIF III World ex CH Sm Cp Idx Ble Pnsn</name>
+      <quantity asofDate="2017-07-31">6232</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000A8WX">
+      <type>3</type>
+      <name asofDate="2017-06-30">Dimensional Global Core Equity Tr</name>
+      <quantity asofDate="2017-06-30">4547</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000A9C4">
+      <type>3</type>
+      <name asofDate="2017-06-30">BlackRock Russell 2000&#xAE; Growth Fund</name>
+      <quantity asofDate="2017-06-30">6125</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000A9C5">
+      <type>3</type>
+      <name asofDate="2017-03-31">BlackRock Russell 2000&#xAE; Value Fund</name>
+      <quantity asofDate="2017-03-31">21441</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000A9UY">
+      <type>3</type>
+      <name asofDate="2017-08-10">Fidelity&#xAE; MSCI Information Tech ETF</name>
+      <quantity asofDate="2017-08-10">5301</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AAD7">
+      <type>3</type>
+      <name asofDate="2017-07-31">Cavalier Fundamental Growth Fund</name>
+      <quantity asofDate="2017-07-31">37300</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000ABNQ">
+      <type>3</type>
+      <name asofDate="2017-06-30">Oppenheimer Global Multi-Alts Fd/VA</name>
+      <quantity asofDate="2017-06-30">334</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000ACSR">
+      <type>3</type>
+      <name asofDate="2017-06-30">Aon Hewitt Small &#x26; Mid Cap Equity</name>
+      <quantity asofDate="2017-06-30">331</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000ACUG">
+      <type>3</type>
+      <name asofDate="2017-03-31">Nuveen Symphony Dynamic Equity Fund</name>
+      <quantity asofDate="2017-03-31">10272</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000ACUH">
+      <type>3</type>
+      <name asofDate="2017-06-30">Nuveen Symphony Small Cap Core Fund</name>
+      <quantity asofDate="2017-06-30">22524</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000ADUC">
+      <type>3</type>
+      <name asofDate="2017-06-30">Austock Dimensional Mul-Factor Gr</name>
+      <quantity asofDate="2017-06-30">172</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AE4P">
+      <type>3</type>
+      <name asofDate="2017-06-30">Driehaus Micro Cap Growth Fund</name>
+      <quantity asofDate="2017-06-30">177801</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AGXP">
+      <type>3</type>
+      <name asofDate="2017-06-30">SunAmerica Small-Cap Fund</name>
+      <quantity asofDate="2017-06-30">360</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AIV7">
+      <type>3</type>
+      <name asofDate="2017-06-30">Master Extended Market Index Series</name>
+      <quantity asofDate="2017-06-30">4811</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AJIE">
+      <type>3</type>
+      <name asofDate="2017-05-31">AXA/Horizon Small Cap Value Portfolio</name>
+      <quantity asofDate="2017-05-31">4754</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AJIF">
+      <type>3</type>
+      <name asofDate="2017-06-30">AXA/Lord Abbett Micro Cap Portfolio</name>
+      <quantity asofDate="2017-06-30">5246</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AJIG">
+      <type>3</type>
+      <name asofDate="2017-06-30">AXA/Morgan Stanley Small Cap Growth Port</name>
+      <quantity asofDate="2017-06-30">4185</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AJIH">
+      <type>3</type>
+      <name asofDate="2017-04-30">AXA/Pacific Global Small Cap Value Port</name>
+      <quantity asofDate="2017-04-30">2148</quantity>
+      <currency asofDate="2017-04-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AKRU">
+      <type>3</type>
+      <name asofDate="2017-07-31">CSIF World ex CH Small Cap Index Blue</name>
+      <quantity asofDate="2017-07-31">3339</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000ALUD">
+      <type>3</type>
+      <name asofDate="2017-08-10">db x-trackers Russell 2000 (DR)</name>
+      <quantity asofDate="2017-08-10">6860</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000ALUK">
+      <type>3</type>
+      <name asofDate="2017-03-31">BNY Mellon EB DL NSL Stk Index UC2</name>
+      <quantity asofDate="2017-03-31">1303</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AWGX">
+      <type>3</type>
+      <name asofDate="2017-06-30">SPDR&#xAE; Russell 2000 US Small Cap ETF</name>
+      <quantity asofDate="2017-06-30">8343</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AXMG">
+      <type>3</type>
+      <name asofDate="2017-06-30">AZL&#xAE; DFA US Small Cap Fund</name>
+      <quantity asofDate="2017-06-30">4245</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000AXMH">
+      <type>3</type>
+      <name asofDate="2017-06-30">AZL&#xAE; DFA US Core Equity Fund</name>
+      <quantity asofDate="2017-06-30">1615</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BKTQ">
+      <type>3</type>
+      <name asofDate="2017-06-30">Northern Trust Russell 2000 Index Fund - DC - Non-Lending</name>
+      <quantity asofDate="2017-06-30">79677</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BLEN">
+      <type>3</type>
+      <name asofDate="2017-03-31">Bridge Builder Small/Mid Cap Value Fund</name>
+      <quantity asofDate="2017-03-31">5990</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BMG6">
+      <type>3</type>
+      <name asofDate="2017-06-30">LVIP Dimensional US Core Equity 2 Fund</name>
+      <quantity asofDate="2017-06-30">1771</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BMMU">
+      <type>3</type>
+      <name asofDate="2017-08-10">iShares FactorSelect MSCI USA Small-Cap</name>
+      <quantity asofDate="2017-08-10">2217</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BO52">
+      <type>3</type>
+      <name asofDate="2017-06-30">BlackRock MSCI ACWI IMI Index Non-Lendable Fund</name>
+      <quantity asofDate="2017-06-30">885</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BO5J">
+      <type>3</type>
+      <name asofDate="2017-06-30">BlackRock Extended Equity Market Fund</name>
+      <quantity asofDate="2017-06-30">33378</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BO68">
+      <type>3</type>
+      <name asofDate="2017-06-30">BlackRock Russell 2000&#xAE; Index Non-Lendable Fund</name>
+      <quantity asofDate="2017-06-30">41638</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BO69">
+      <type>3</type>
+      <name asofDate="2017-06-30">BlackRock Russell 2500&#x2122; Index Fund</name>
+      <quantity asofDate="2017-06-30">37898</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BO6A">
+      <type>3</type>
+      <name asofDate="2017-06-30">BlackRock Russell 2500&#x2122; Index Non-Lendable Fund</name>
+      <quantity asofDate="2017-06-30">8764</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BO6B">
+      <type>3</type>
+      <name asofDate="2017-06-30">BlackRock Russell 3000&#xAE; Index Fund</name>
+      <quantity asofDate="2017-06-30">7547</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BO6C">
+      <type>3</type>
+      <name asofDate="2017-06-30">BlackRock Russell 3000&#xAE; Index Non-Lendable Fund</name>
+      <quantity asofDate="2017-06-30">2694</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BO6G">
+      <type>3</type>
+      <name asofDate="2017-06-30">BlackRock U.S. Equity Market Fund</name>
+      <quantity asofDate="2017-06-30">16148</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000BWAK">
+      <type>3</type>
+      <name asofDate="2017-06-30">State Street Small/Mid Cap Eq Idx Port</name>
+      <quantity asofDate="2017-06-30">1975</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000C6IK">
+      <type>3</type>
+      <name asofDate="2017-03-31">SSgA U.S. Total Market Index Fund Tr</name>
+      <quantity asofDate="2017-03-31">7890</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000C6KO">
+      <type>3</type>
+      <name asofDate="2017-06-30">Donald Smith &#x26; Co. Sm-Cap Val Eq Tr</name>
+      <quantity asofDate="2017-06-30">378187</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000C6M3">
+      <type>3</type>
+      <name asofDate="2016-12-31">State Street Russell Small/Mid Cap Index Fund Tr</name>
+      <quantity asofDate="2016-12-31">82379</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000C6M7">
+      <type>3</type>
+      <name asofDate="2017-06-30">BlackRock Russell 2000&#xAE; Index Tr</name>
+      <quantity asofDate="2017-06-30">4673</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000C6MM">
+      <type>3</type>
+      <name asofDate="2016-12-31">State Street Russell All Cap Index Fund Tr</name>
+      <quantity asofDate="2016-12-31">14463</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000C6N4">
+      <type>3</type>
+      <name asofDate="2017-06-30">Mellon Capital Small Cap Stock Index</name>
+      <quantity asofDate="2017-06-30">6782</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000C6RC">
+      <type>3</type>
+      <name asofDate="2016-12-31">Wilshire 5000 Indexing Tr</name>
+      <quantity asofDate="2016-12-31">250</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000CAI3">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Glbl Mom Fact UCITS ETF</name>
+      <quantity asofDate="2017-06-30">200</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FS0000CAI5">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Glbl Lqudty Fact UCITS ETF</name>
+      <quantity asofDate="2017-06-30">476</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSAUS05LM3">
+      <type>3</type>
+      <name asofDate="2017-06-30">Dimensional Global Small Company Trust</name>
+      <quantity asofDate="2017-06-30">1684</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSAUS07N5P">
+      <type>3</type>
+      <name asofDate="2016-09-30">Dimensional Global Core Equity Trust</name>
+      <quantity asofDate="2016-09-30">2216</quantity>
+      <currency asofDate="2016-09-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSAUS08KNJ">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard International Small Companies</name>
+      <quantity asofDate="2017-06-30">1275</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSAUS09C2R">
+      <type>3</type>
+      <name asofDate="2017-06-30">Strategic International Equity Fund</name>
+      <quantity asofDate="2017-06-30">3228</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSCAN061ND">
+      <type>3</type>
+      <name asofDate="2017-07-31">CIBC US Broad Market Index Fund</name>
+      <quantity asofDate="2017-07-31">1251</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSCAN061TQ">
+      <type>3</type>
+      <name asofDate="2017-05-31">DFA US Vector Equity Fund</name>
+      <quantity asofDate="2017-05-31">2575</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSCAN06BIT">
+      <type>3</type>
+      <name asofDate="2017-07-31">Aurion Canadian Equity</name>
+      <quantity asofDate="2017-07-31">100</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSCAN06F1E">
+      <type>3</type>
+      <name asofDate="2017-05-31">DFA US Core Equity Fund</name>
+      <quantity asofDate="2017-05-31">3828</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSCAN08FL2">
+      <type>3</type>
+      <name asofDate="2017-05-31">CC&#x26;L MKT NEUTRAL ONSHORE</name>
+      <quantity asofDate="2017-05-31">100</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSCAN08H7U">
+      <type>3</type>
+      <name asofDate="2017-06-30">Hillsdale US Performance Equity (US$)</name>
+      <quantity asofDate="2017-06-30">51200</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSGBR04WKN">
+      <type>3</type>
+      <name asofDate="2017-06-30">Russell US Small Cap Equity</name>
+      <quantity asofDate="2017-06-30">6434</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSGBR05AMU">
+      <type>3</type>
+      <name asofDate="2017-01-31">MFM Techinvest Technology</name>
+      <quantity asofDate="2017-01-31">70000</quantity>
+      <currency asofDate="2017-01-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSGBR05DOV">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard US Opportunities</name>
+      <quantity asofDate="2017-06-30">423550</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSGBR063GZ">
+      <type>3</type>
+      <name asofDate="2017-03-31">Dimensional US Sm Company</name>
+      <quantity asofDate="2017-03-31">4348</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0008M">
+      <type>3</type>
+      <name asofDate="2016-06-30">Royce Low-Priced Stock Fund</name>
+      <quantity asofDate="2016-06-30">179800</quantity>
+      <currency asofDate="2016-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA000JV">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA U.S. Small Cap Portfolio</name>
+      <quantity asofDate="2017-06-30">414604</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA000K1">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA U.S. Micro Cap Portfolio</name>
+      <quantity asofDate="2017-06-30">272787</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA000LQ">
+      <type>3</type>
+      <name asofDate="2017-06-30">Wells Fargo Diversified Equity Fund</name>
+      <quantity asofDate="2017-06-30">991</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA000XR">
+      <type>3</type>
+      <name asofDate="2017-06-30">First Investors Special Situations Fund</name>
+      <quantity asofDate="2017-06-30">120000</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA001BS">
+      <type>3</type>
+      <name asofDate="2017-06-30">Schwab Small Cap Index Fund&#xAE;</name>
+      <quantity asofDate="2017-06-30">47100</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA001NU">
+      <type>3</type>
+      <name asofDate="2017-06-30">Wells Fargo Moderate Balanced Fund</name>
+      <quantity asofDate="2017-06-30">336</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA001PI">
+      <type>3</type>
+      <name asofDate="2016-06-30">Royce Micro Cap Series Fund</name>
+      <quantity asofDate="2016-06-30">131700</quantity>
+      <currency asofDate="2016-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA001VV">
+      <type>3</type>
+      <name asofDate="2016-07-31">BlackRock Small Cap Growth Equity Port</name>
+      <quantity asofDate="2016-07-31">9054</quantity>
+      <currency asofDate="2016-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA002BY">
+      <type>3</type>
+      <name asofDate="2017-07-31">SEI Small Cap Growth (SIMT)</name>
+      <quantity asofDate="2017-07-31">16785</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA002FY">
+      <type>3</type>
+      <name asofDate="2017-06-30">Wells Fargo Small Company Growth Fund</name>
+      <quantity asofDate="2017-06-30">356441</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA002I2">
+      <type>3</type>
+      <name asofDate="2017-06-30">Wells Fargo Growth Balanced Fund</name>
+      <quantity asofDate="2017-06-30">825</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA002LO">
+      <type>3</type>
+      <name asofDate="2017-03-31">Consulting Group Small-Mid Cap Equity Fd</name>
+      <quantity asofDate="2017-03-31">1358</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA002PK">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Balanced Index Fund</name>
+      <quantity asofDate="2017-06-30">23797</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA002PR">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Extended Market Index Fund</name>
+      <quantity asofDate="2017-06-30">376608</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA002WT">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA Tax-Managed U.S. Targeted Value</name>
+      <quantity asofDate="2017-06-30">116642</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0031D">
+      <type>3</type>
+      <name asofDate="2017-06-30">T. Rowe Price Total Equity Market Index</name>
+      <quantity asofDate="2017-06-30">15478</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00345">
+      <type>3</type>
+      <name asofDate="2017-02-28">Kalmar Growth with Value Sm Cp Fd</name>
+      <quantity asofDate="2017-02-28">47080</quantity>
+      <currency asofDate="2017-02-28">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0038T">
+      <type>3</type>
+      <name asofDate="2017-06-30">Northern Small Cap Index Fund</name>
+      <quantity asofDate="2017-06-30">17910</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0039H">
+      <type>3</type>
+      <name asofDate="2016-12-31">Laudus Small-Cap MarketMasters Fund&#x2122;</name>
+      <quantity asofDate="2016-12-31">377</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA003CW">
+      <type>3</type>
+      <name asofDate="2017-05-31">Russell US Small Cap Equity Fund</name>
+      <quantity asofDate="2017-05-31">52986</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA003EG">
+      <type>3</type>
+      <name asofDate="2017-06-30">Fidelity Spartan&#xAE; Extended Mkt Indx Fd</name>
+      <quantity asofDate="2017-06-30">130729</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA003JP">
+      <type>3</type>
+      <name asofDate="2017-06-30">Fidelity Spartan&#xAE; Total Market Idx Fund</name>
+      <quantity asofDate="2017-06-30">45794</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA003WV">
+      <type>3</type>
+      <name asofDate="2017-07-31">SEI Small Cap (SIIT)</name>
+      <quantity asofDate="2017-07-31">16445</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA003ZB">
+      <type>3</type>
+      <name asofDate="2017-04-30">ProFunds UltraSmall Cap Fund</name>
+      <quantity asofDate="2017-04-30">625</quantity>
+      <currency asofDate="2017-04-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0041K">
+      <type>3</type>
+      <name asofDate="2017-06-30">Victory Integrity Discovery Fund</name>
+      <quantity asofDate="2017-06-30">31626</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00423">
+      <type>3</type>
+      <name asofDate="2017-03-31">Nuveen Small Cap Index</name>
+      <quantity asofDate="2017-03-31">1446</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0042L">
+      <type>3</type>
+      <name asofDate="2017-06-30">Schwab Total Stock Market Index Fund&#xAE;</name>
+      <quantity asofDate="2017-06-30">15000</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0047F">
+      <type>3</type>
+      <name asofDate="2016-08-31">Vantagepoint Broad Market Index Fund</name>
+      <quantity asofDate="2016-08-31">1023</quantity>
+      <currency asofDate="2016-08-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0049Q">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA Tax Managed U.S. Small Cap Portfolio</name>
+      <quantity asofDate="2017-06-30">72460</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA004DL">
+      <type>3</type>
+      <name asofDate="2017-07-31">PNC Large Cap Core Fund</name>
+      <quantity asofDate="2017-07-31">2120</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA004DU">
+      <type>3</type>
+      <name asofDate="2016-08-31">Vantagepoint Mid/Small Company Idx Fund</name>
+      <quantity asofDate="2016-08-31">5220</quantity>
+      <currency asofDate="2016-08-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA004NY">
+      <type>3</type>
+      <name asofDate="2017-03-31">Royce Opportunity Fund</name>
+      <quantity asofDate="2017-03-31">69923</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA004VA">
+      <type>3</type>
+      <name asofDate="2017-06-30">Rydex Russell 2000 1.5x Strategy Fund</name>
+      <quantity asofDate="2017-06-30">29</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA004WE">
+      <type>3</type>
+      <name asofDate="2017-03-31">Schneider Small Cap Value Fund</name>
+      <quantity asofDate="2017-03-31">27117</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA004YC">
+      <type>3</type>
+      <name asofDate="2017-06-30">Principal SmallCap Growth Fund I</name>
+      <quantity asofDate="2017-06-30">5726</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA008M0">
+      <type>3</type>
+      <name asofDate="2017-03-31">State Farm Small Cap Index Fund</name>
+      <quantity asofDate="2017-03-31">7206</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA009A8">
+      <type>3</type>
+      <name asofDate="2017-06-30">Nationwide Small Cap Index Fund</name>
+      <quantity asofDate="2017-06-30">8859</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA009BR">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Instl Total Stock Market Index</name>
+      <quantity asofDate="2017-06-30">78792</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00B5E">
+      <type>3</type>
+      <name asofDate="2017-08-10">iShares Russell 3000</name>
+      <quantity asofDate="2017-08-10">7406</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00B5G">
+      <type>3</type>
+      <name asofDate="2017-01-19">iShares Core US Value</name>
+      <quantity asofDate="2017-01-19">2817</quantity>
+      <currency asofDate="2017-01-19">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00B5I">
+      <type>3</type>
+      <name asofDate="2017-08-10">iShares Russell 2000 Growth</name>
+      <quantity asofDate="2017-08-10">249887</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00B5J">
+      <type>3</type>
+      <name asofDate="2017-06-19">iShares Russell 2000 Value</name>
+      <quantity asofDate="2017-06-19">258614</quantity>
+      <currency asofDate="2017-06-19">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00B6S">
+      <type>3</type>
+      <name asofDate="2017-08-10">SPDR&#xAE; Russell 3000 ETF</name>
+      <quantity asofDate="2017-08-10">392</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00BPF">
+      <type>3</type>
+      <name asofDate="2017-06-30">LVIP Dimensional US Core Equity 1 Fund</name>
+      <quantity asofDate="2017-06-30">1050</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00BX8">
+      <type>3</type>
+      <name asofDate="2017-07-31">GE Investments Total Return</name>
+      <quantity asofDate="2017-07-31">551</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00BY1">
+      <type>3</type>
+      <name asofDate="2017-06-30">First Investors Life Ser Spec Situations</name>
+      <quantity asofDate="2017-06-30">43500</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00C5P">
+      <type>3</type>
+      <name asofDate="2017-06-30">CREF Stock Account</name>
+      <quantity asofDate="2017-06-30">58958</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00CC5">
+      <type>3</type>
+      <name asofDate="2017-06-30">Metropolitan Ser Russell 2000 Index</name>
+      <quantity asofDate="2017-06-30">13934</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00CIX">
+      <type>3</type>
+      <name asofDate="2017-03-31">ProFunds VP UltraSmall-Cap</name>
+      <quantity asofDate="2017-03-31">255</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00CRP">
+      <type>3</type>
+      <name asofDate="2017-06-30">TIAA-CREF Life Funds Stock Index Fund</name>
+      <quantity asofDate="2017-06-30">510</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00CTL">
+      <type>3</type>
+      <name asofDate="2017-06-30">TIAA Stock Index</name>
+      <quantity asofDate="2017-06-30">1183</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00CWP">
+      <type>3</type>
+      <name asofDate="2017-06-30">Deutsche Small Cap Index VIP</name>
+      <quantity asofDate="2017-06-30">6032</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00CZN">
+      <type>3</type>
+      <name asofDate="2016-06-30">Royce Capital Fund Micro-Cap Portfolio</name>
+      <quantity asofDate="2016-06-30">204700</quantity>
+      <currency asofDate="2016-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00D1K">
+      <type>3</type>
+      <name asofDate="2017-06-30">AXA/AB Small Cap Growth Portfolio</name>
+      <quantity asofDate="2017-06-30">14600</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00D1S">
+      <type>3</type>
+      <name asofDate="2017-05-31">Guggenheim Var Small Cap Val (Series Q)</name>
+      <quantity asofDate="2017-05-31">22373</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00D3Y">
+      <type>3</type>
+      <name asofDate="2017-06-30">CREF Equity Index Account</name>
+      <quantity asofDate="2017-06-30">20849</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00D54">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA VA U.S. Targeted Value</name>
+      <quantity asofDate="2017-06-30">8620</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00D98">
+      <type>3</type>
+      <name asofDate="2017-06-30">Calvert VP Russell 2000 Small Cap Idx</name>
+      <quantity asofDate="2017-06-30">2416</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00DC4">
+      <type>3</type>
+      <name asofDate="2017-07-31">Pacific Select Fund Small-Cap Index</name>
+      <quantity asofDate="2017-07-31">12898</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00DEG">
+      <type>3</type>
+      <name asofDate="2017-06-30">Russell Aggressive Equity</name>
+      <quantity asofDate="2017-06-30">11903</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00DIS">
+      <type>3</type>
+      <name asofDate="2017-03-31">JNL/DFA US Core Equity Fund</name>
+      <quantity asofDate="2017-03-31">3003</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00DR4">
+      <type>3</type>
+      <name asofDate="2017-06-30">EQ/Small Company Index</name>
+      <quantity asofDate="2017-06-30">16700</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00DUF">
+      <type>3</type>
+      <name asofDate="2017-04-30">ProFunds Small Cap Fund</name>
+      <quantity asofDate="2017-04-30">280</quantity>
+      <currency asofDate="2017-04-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00DVE">
+      <type>3</type>
+      <name asofDate="2017-02-28">VP Partners Small Cap Value Fund</name>
+      <quantity asofDate="2017-02-28">26612</quantity>
+      <currency asofDate="2017-02-28">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00DX9">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA Tax Managed U.S. Equity Portfolio</name>
+      <quantity asofDate="2017-06-30">2125</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00DXN">
+      <type>3</type>
+      <name asofDate="2017-06-30">GuideMark&#xAE; Small/Mid Cap Core Fund</name>
+      <quantity asofDate="2017-06-30">1103</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00E1I">
+      <type>3</type>
+      <name asofDate="2017-06-30">Multimanager Mid Cap Growth Portfolio</name>
+      <quantity asofDate="2017-06-30">1236</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00E1M">
+      <type>3</type>
+      <name asofDate="2017-05-31">Multimanager Mid Cap Value Portfolio</name>
+      <quantity asofDate="2017-05-31">1311</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00GCG">
+      <type>3</type>
+      <name asofDate="2017-06-30">Rydex Var Russell 2000&#xAE; 1.5x Strategy</name>
+      <quantity asofDate="2017-06-30">30</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00H64">
+      <type>3</type>
+      <name asofDate="2017-06-30">TIAA-CREF Equity Index</name>
+      <quantity asofDate="2017-06-30">16940</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00I98">
+      <type>3</type>
+      <name asofDate="2017-07-31">SA U.S. Small Company Fund</name>
+      <quantity asofDate="2017-07-31">13370</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00IJY">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA US Targeted Value Portfolio</name>
+      <quantity asofDate="2017-06-30">258940</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00IXO">
+      <type>3</type>
+      <name asofDate="2017-06-30">The Vanguard - Total Stk Mkt Idx Trust. CF</name>
+      <quantity asofDate="2017-06-30">8197</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA00JFE">
+      <type>3</type>
+      <name asofDate="2017-06-30">TIAA-CREF Small-Cap Blend</name>
+      <quantity asofDate="2017-06-30">35234</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA04AUU">
+      <type>3</type>
+      <name asofDate="2017-06-30">Hood River Small Cap Growth Fund</name>
+      <quantity asofDate="2017-06-30">127341</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA04BMK">
+      <type>3</type>
+      <name asofDate="2017-06-30">Optimum Small-Mid Cap Growth</name>
+      <quantity asofDate="2017-06-30">46076</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA04C0O">
+      <type>3</type>
+      <name asofDate="2017-06-30">Fidelity&#xAE; Nasdaq Composite Tr Stk Fund</name>
+      <quantity asofDate="2017-06-30">5060</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA04WX6">
+      <type>3</type>
+      <name asofDate="2017-08-10">iShares Core S&#x26;P Total US Stock Mkt</name>
+      <quantity asofDate="2017-08-10">10853</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA04X80">
+      <type>3</type>
+      <name asofDate="2017-06-30">Fidelity&#xAE; NASDAQ Composite Index&#xAE; Fund</name>
+      <quantity asofDate="2017-06-30">13514</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA04YMJ">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA Tax-Managed U.S. Marketwide Value II</name>
+      <quantity asofDate="2017-06-30">175</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA04YNW">
+      <type>3</type>
+      <name asofDate="2017-02-28">DFA US Small Cap Value II Portfolio</name>
+      <quantity asofDate="2017-02-28">10033</quantity>
+      <currency asofDate="2017-02-28">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA04YQ9">
+      <type>3</type>
+      <name asofDate="2017-06-30">Principal SmallCap Value Fund II</name>
+      <quantity asofDate="2017-06-30">8390</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA05FML">
+      <type>3</type>
+      <name asofDate="2017-03-31">ProFunds VP Small Cap</name>
+      <quantity asofDate="2017-03-31">125</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA063DJ">
+      <type>3</type>
+      <name asofDate="2017-06-30">PrimeCap Odyssey Aggressive Growth Fund</name>
+      <quantity asofDate="2017-06-30">2947000</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0672C">
+      <type>3</type>
+      <name asofDate="2017-06-30">The Vanguard - Russell 2000 Grwth Idx CF</name>
+      <quantity asofDate="2017-06-30">48004</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0672D">
+      <type>3</type>
+      <name asofDate="2017-05-31">The Vanguard - Russ 2000 Val Idx CF</name>
+      <quantity asofDate="2017-05-31">23093</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA067GK">
+      <type>3</type>
+      <name asofDate="2017-03-31">State Farm VPT Small Cap Equity Index Fd</name>
+      <quantity asofDate="2017-03-31">4964</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA069VP">
+      <type>3</type>
+      <name asofDate="2017-06-30">Oppenheimer Port Ser Conservative Fund</name>
+      <quantity asofDate="2017-06-30">72</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA069VR">
+      <type>3</type>
+      <name asofDate="2017-06-30">Oppenheimer Port Ser Moderate Inv Fund</name>
+      <quantity asofDate="2017-06-30">86</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA069VT">
+      <type>3</type>
+      <name asofDate="2017-06-30">Oppenheimer Port Ser Active Allc Fund</name>
+      <quantity asofDate="2017-06-30">54</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06A9S">
+      <type>3</type>
+      <name asofDate="2016-07-31">TFS Market Neutral Fund</name>
+      <quantity asofDate="2016-07-31">11803</quantity>
+      <currency asofDate="2016-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06EC6">
+      <type>3</type>
+      <name asofDate="2017-08-10">iShares Micro-Cap</name>
+      <quantity asofDate="2017-08-10">67613</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06ED1">
+      <type>3</type>
+      <name asofDate="2017-08-10">PowerShares Zacks Micro Cap Portfolio</name>
+      <quantity asofDate="2017-08-10">2516</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06G7V">
+      <type>3</type>
+      <name asofDate="2017-06-30">Jhancock New Opportunities Fund</name>
+      <quantity asofDate="2017-06-30">7709</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06GLI">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA US Core Equity I Fund</name>
+      <quantity asofDate="2017-06-30">53851</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06GLJ">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA U.S. Core Equity II Fund</name>
+      <quantity asofDate="2017-06-30">81625</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06HGW">
+      <type>3</type>
+      <name asofDate="2016-08-30">SPDR&#xAE; Russell Small Cap Completeness&#xA0;ETF</name>
+      <quantity asofDate="2016-08-30">461</quantity>
+      <currency asofDate="2016-08-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06HM2">
+      <type>3</type>
+      <name asofDate="2017-06-30">JHVIT Small Cap Opportunities Trust</name>
+      <quantity asofDate="2017-06-30">4415</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06HO2">
+      <type>3</type>
+      <name asofDate="2017-06-30">JHVIT Small Cap Index Trust</name>
+      <quantity asofDate="2017-06-30">8719</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06HO4">
+      <type>3</type>
+      <name asofDate="2017-06-30">JHVIT Total Stock Market Index Trust</name>
+      <quantity asofDate="2017-06-30">1154</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06IRU">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA U.S. Vector Equity Fund</name>
+      <quantity asofDate="2017-06-30">48661</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06UK8">
+      <type>3</type>
+      <name asofDate="2017-06-30">VALIC Company I Small Cap Index</name>
+      <quantity asofDate="2017-06-30">16529</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06UL2">
+      <type>3</type>
+      <name asofDate="2017-06-30">SEI Small/Mid Cap Equity (SIIT)</name>
+      <quantity asofDate="2017-06-30">3200</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA06YVP">
+      <type>3</type>
+      <name asofDate="2017-06-30">NVIT Small Cap Index Fund</name>
+      <quantity asofDate="2017-06-30">8095</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0702X">
+      <type>3</type>
+      <name asofDate="2017-06-30">Rydex Russell 2000 2x Strategy Fund</name>
+      <quantity asofDate="2017-06-30">344</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA072DR">
+      <type>3</type>
+      <name asofDate="2017-06-30">Rydex Russell 2000 Fund</name>
+      <quantity asofDate="2017-06-30">510</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA073Z0">
+      <type>3</type>
+      <name asofDate="2017-03-31">Adirondack Small Cap Fund</name>
+      <quantity asofDate="2017-03-31">348762</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA075V4">
+      <type>3</type>
+      <name asofDate="2017-06-30">AXA/Franklin Small Cap Val Mgd Vol Port</name>
+      <quantity asofDate="2017-06-30">1740</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0781V">
+      <type>3</type>
+      <name asofDate="2017-08-10">PowerShares FTSE RAFI US 1500 Sm-Md Port</name>
+      <quantity asofDate="2017-08-10">23340</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA07834">
+      <type>3</type>
+      <name asofDate="2017-03-17">Wilshire Micro-Cap ETF</name>
+      <quantity asofDate="2017-03-17">6517</quantity>
+      <currency asofDate="2017-03-17">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA078LO">
+      <type>3</type>
+      <name asofDate="2017-08-10">PowerShares DWA Technology Momentum Port</name>
+      <quantity asofDate="2017-08-10">79508</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA078M0">
+      <type>3</type>
+      <name asofDate="2017-08-10">PowerShares Russell 2000 Equal Wt Port</name>
+      <quantity asofDate="2017-08-10">431</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA07I03">
+      <type>3</type>
+      <name asofDate="2017-08-10">First Trust Total US Market AlphaDEX ETF</name>
+      <quantity asofDate="2017-08-10">189</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA07KS3">
+      <type>3</type>
+      <name asofDate="2017-06-30">Rydex Var Russell 2000&#xAE; 2x Strategy</name>
+      <quantity asofDate="2017-06-30">28</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA07L46">
+      <type>3</type>
+      <name asofDate="2017-06-30">Oppenheimer Global Multi Strategies Fund</name>
+      <quantity asofDate="2017-06-30">284</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA07WZY">
+      <type>3</type>
+      <name asofDate="2017-07-31">ProShares Ultra Russell2000</name>
+      <quantity asofDate="2017-07-31">1510</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA07XH4">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA T.A. U.S. Core Equity 2 Portfolio</name>
+      <quantity asofDate="2017-06-30">28404</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA07YX4">
+      <type>3</type>
+      <name asofDate="2017-08-11">WisdomTree SmallCap Earnings Fund</name>
+      <quantity asofDate="2017-08-11">9465</quantity>
+      <currency asofDate="2017-08-11">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA081JT">
+      <type>3</type>
+      <name asofDate="2017-06-30">VAM Funds (Lux) &#x2013; US Micro Cap Growth</name>
+      <quantity asofDate="2017-06-30">20360</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA088YX">
+      <type>3</type>
+      <name asofDate="2017-05-31">DFA CSTG&#x26;E US Social Core Equity 2 Port</name>
+      <quantity asofDate="2017-05-31">651</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08B7Q">
+      <type>3</type>
+      <name asofDate="2016-06-30">Christian Bros CUIT Small Cap Eqty Idx</name>
+      <quantity asofDate="2016-06-30">14550</quantity>
+      <currency asofDate="2016-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08DNF">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA US Social Core Equity 2 Portfolio</name>
+      <quantity asofDate="2017-06-30">4442</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08HG8">
+      <type>3</type>
+      <name asofDate="2017-06-30">Nationwide U.S. Small Cap Value Fund</name>
+      <quantity asofDate="2017-06-30">7070</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08HSM">
+      <type>3</type>
+      <name asofDate="2017-06-30">DFA US Sustainability Core 1 Portfolio</name>
+      <quantity asofDate="2017-06-30">2358</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08KKZ">
+      <type>3</type>
+      <name asofDate="2017-08-10">iShares Russell 2000 (AU)</name>
+      <quantity asofDate="2017-08-10">533265</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08OET">
+      <type>3</type>
+      <name asofDate="2017-03-31">Dimensional International Core Eq</name>
+      <quantity asofDate="2017-03-31">1544</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08ORT">
+      <type>3</type>
+      <name asofDate="2017-06-30">Penn Series Fund Small Cap Index</name>
+      <quantity asofDate="2017-06-30">1025</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08VRW">
+      <type>3</type>
+      <name asofDate="2017-03-31">Ancora MicroCap Fund</name>
+      <quantity asofDate="2017-03-31">34750</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08WZZ">
+      <type>3</type>
+      <name asofDate="2017-05-31">Guggenheim Small Cap Value Fund</name>
+      <quantity asofDate="2017-05-31">4769</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08XE5">
+      <type>3</type>
+      <name asofDate="2017-03-31">Legg Mason RY US Small Cap Opp</name>
+      <quantity asofDate="2017-03-31">45073</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08XT8">
+      <type>3</type>
+      <name asofDate="2017-03-31">Frontier Timpani Small Cap Growth Fund</name>
+      <quantity asofDate="2017-03-31">8783</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA08XXF">
+      <type>3</type>
+      <name asofDate="2017-06-30">LVIP SSgA Small Cap Index Fund</name>
+      <quantity asofDate="2017-06-30">23333</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA096SH">
+      <type>3</type>
+      <name asofDate="2017-03-31">Dimensional Global Targeted Value</name>
+      <quantity asofDate="2017-03-31">19522</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA09GUB">
+      <type>3</type>
+      <name asofDate="2017-07-31">ProShares UltraPro Russell2000</name>
+      <quantity asofDate="2017-07-31">707</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA09P40">
+      <type>3</type>
+      <name asofDate="2017-03-31">Dimensional Global Core Equity</name>
+      <quantity asofDate="2017-03-31">2755</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA09RM9">
+      <type>3</type>
+      <name asofDate="2017-06-30">AQR Small Cap Momentum Style Fund</name>
+      <quantity asofDate="2017-06-30">13172</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA09SJE">
+      <type>3</type>
+      <name asofDate="2017-06-30">AXA 2000 Managed Volatility Portfolio</name>
+      <quantity asofDate="2017-06-30">45506</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA09SJF">
+      <type>3</type>
+      <name asofDate="2017-06-30">ATM Small Cap Managed Volatility Port</name>
+      <quantity asofDate="2017-06-30">13803</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA09UKS">
+      <type>3</type>
+      <name asofDate="2017-07-31">SEI Small Cap (SIMT)</name>
+      <quantity asofDate="2017-07-31">28173</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0A20H">
+      <type>3</type>
+      <name asofDate="2016-12-31">BlackRock LifePath&#xAE; Index Retirement Fund</name>
+      <quantity asofDate="2016-12-31">76</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0A2SL">
+      <type>3</type>
+      <name asofDate="2017-08-10">iShares MSCI USA Small Cap</name>
+      <quantity asofDate="2017-08-10">4529</quantity>
+      <currency asofDate="2017-08-10">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0A3YM">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard US Equity Index</name>
+      <quantity asofDate="2017-06-30">6362</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0A43L">
+      <type>3</type>
+      <name asofDate="2017-06-30">Hand MIZAN All Equity Moderate Alloc</name>
+      <quantity asofDate="2017-06-30">43</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0A7X2">
+      <type>3</type>
+      <name asofDate="2017-06-30">Mellon Capital EB DL Mkt Completion Fund</name>
+      <quantity asofDate="2017-06-30">21622</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0AJAN">
+      <type>3</type>
+      <name asofDate="2017-05-31">Russell US Equity Class</name>
+      <quantity asofDate="2017-05-31">2329</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0AJDP">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Gb Sm Cap Idx</name>
+      <quantity asofDate="2017-06-30">5951</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0AO17">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Intl Small Co Index Hedged</name>
+      <quantity asofDate="2017-06-30">199</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0AOFL">
+      <type>3</type>
+      <name asofDate="2017-01-31">SEI Multi-Strategy Alternative (SIMT)</name>
+      <quantity asofDate="2017-01-31">15037</quantity>
+      <currency asofDate="2017-01-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0AOTN">
+      <type>3</type>
+      <name asofDate="2016-12-31">Bridgeway Small-Cap Momentum</name>
+      <quantity asofDate="2016-12-31">350</quantity>
+      <currency asofDate="2016-12-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0AS1T">
+      <type>3</type>
+      <name asofDate="2017-06-30">Dreyfus Select Managers Small Cap Gr Fd</name>
+      <quantity asofDate="2017-06-30">40318</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0AXVP">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Russell 2000 Index Fund</name>
+      <quantity asofDate="2017-06-30">25342</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0AXVQ">
+      <type>3</type>
+      <name asofDate="2017-05-31">Vanguard Russell 2000 Value Index Fund</name>
+      <quantity asofDate="2017-05-31">9709</quantity>
+      <currency asofDate="2017-05-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0AXVR">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Russell 2000 Growth Index Fund</name>
+      <quantity asofDate="2017-06-30">16404</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0AXVS">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Russell 3000 Index Fund</name>
+      <quantity asofDate="2017-06-30">1649</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0B51O">
+      <type>3</type>
+      <name asofDate="2017-07-31">ProShares Hedge Replication</name>
+      <quantity asofDate="2017-07-31">81</quantity>
+      <currency asofDate="2017-07-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0BG2Y">
+      <type>3</type>
+      <name asofDate="2017-06-30">Vanguard Total Stock Mkt Idx</name>
+      <quantity asofDate="2017-06-30">686781</quantity>
+      <currency asofDate="2017-06-30">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0BGMX">
+      <type>3</type>
+      <name asofDate="2017-03-31">Dimensional Global Small Companies Fund</name>
+      <quantity asofDate="2017-03-31">3538</quantity>
+      <currency asofDate="2017-03-31">USD</currency>
+   </Owner>
+   <Owner ownerId="FSUSA0BGZD">
+      <type>3</type>
+      <name asofDate="2017-04-30">Fidelity Spartan&#xAE; Small Cap Index Fund</name>
+      <quantity asofDate="2017-04-30">46300</quantity>
+      <currency asofDate="2017-04-30">USD</currency>
+   </Owner>
+   <Owner ownerId="PS00000189">
+      <type>1</type>
+      <name asofDate="2005-07-01">Mr. Alexander M. Cutler</name>
+      <quantity asofDate="2005-07-01">34257.00</quantity>
+   </Owner>
+   <Owner ownerId="PS0000053W">
+      <type>1</type>
+      <name asofDate="2017-05-17">Arthur (Art) L. George,Jr</name>
+      <quantity asofDate="2017-05-17">36689.00</quantity>
+   </Owner>
+   <Owner ownerId="PS000008E3">
+      <type>1</type>
+      <name asofDate="2004-12-31">David Duff,PhD</name>
+      <quantity asofDate="2004-12-31">12459.80</quantity>
+   </Owner>
+   <Owner ownerId="PS00000D7L">
+      <type>1</type>
+      <name asofDate="2007-07-01">Donald W. Palette</name>
+      <quantity asofDate="2007-07-01">63736.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00000H5R">
+      <type>1</type>
+      <name asofDate="2012-03-08">Mr. Edward Braun</name>
+      <quantity asofDate="2012-03-08">10000.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00000MRA">
+      <type>1</type>
+      <name asofDate="2013-08-09">Mr. H. Brian Thompson</name>
+      <quantity asofDate="2013-08-09">104185.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00000P28">
+      <type>1</type>
+      <name asofDate="2013-01-18">Jay Zager</name>
+      <quantity asofDate="2013-01-18">178035.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00000QLM">
+      <type>1</type>
+      <name asofDate="2017-05-16">John E Aldeborgh</name>
+      <quantity asofDate="2017-05-16">39466.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00000XDR">
+      <type>1</type>
+      <name asofDate="2017-06-06">Lynnette C. Fallon</name>
+      <quantity asofDate="2017-06-06">53912.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00000XQE">
+      <type>1</type>
+      <name asofDate="2017-05-16">Mr. John T. Kurtzweil</name>
+      <quantity asofDate="2017-05-16">28289.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00000Y5C">
+      <type>1</type>
+      <name asofDate="2017-06-07">Mr. Joseph P. Keithley</name>
+      <quantity asofDate="2017-06-07">25439.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00000ZE8">
+      <type>1</type>
+      <name asofDate="2017-05-25">Mr. Kevin J. Brewer</name>
+      <quantity asofDate="2017-05-25">69184.00</quantity>
+   </Owner>
+   <Owner ownerId="PS000010MO">
+      <type>1</type>
+      <name asofDate="2007-08-08">Marc S. Levine</name>
+      <quantity asofDate="2007-08-08">127511.00</quantity>
+   </Owner>
+   <Owner ownerId="PS000012C7">
+      <type>1</type>
+      <name asofDate="2004-12-09">Michael J. Luttati</name>
+      <quantity asofDate="2004-12-09">15338.12</quantity>
+   </Owner>
+   <Owner ownerId="PS000012SH">
+      <type>1</type>
+      <name asofDate="2007-07-16">Michio Naruto</name>
+      <quantity asofDate="2007-07-16">24436.00</quantity>
+   </Owner>
+   <Owner ownerId="PS000014HW">
+      <type>1</type>
+      <name asofDate="2007-07-01">Mr. Mark J. Namaroff</name>
+      <quantity asofDate="2007-07-01">65546.00</quantity>
+   </Owner>
+   <Owner ownerId="PS0000173W">
+      <type>1</type>
+      <name asofDate="2017-05-17">Dr. Patrick H. Nettles,PhD</name>
+      <quantity asofDate="2017-05-17">31360.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00001BIW">
+      <type>1</type>
+      <name asofDate="2017-05-17">R. John Fletcher</name>
+      <quantity asofDate="2017-05-17">40235.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00001C1X">
+      <type>1</type>
+      <name asofDate="2017-05-17">Mr. Richard J. Faubert</name>
+      <quantity asofDate="2017-05-17">26689.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00001J5T">
+      <type>1</type>
+      <name asofDate="2010-11-12">Stephen G. Bassett</name>
+      <quantity asofDate="2010-11-12">126631.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00001PFU">
+      <type>1</type>
+      <name asofDate="2013-08-08">William C. Jennings</name>
+      <quantity asofDate="2013-08-08">92185.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00001R3Y">
+      <type>1</type>
+      <name asofDate="2008-12-31">Craig Halterman</name>
+      <quantity asofDate="2008-12-31">133368.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00001YVE">
+      <type>1</type>
+      <name asofDate="2011-02-08">Geoffrey Wild</name>
+      <quantity asofDate="2011-02-08">43712.00</quantity>
+   </Owner>
+   <Owner ownerId="PS0000218Y">
+      <type>1</type>
+      <name asofDate="2006-02-14">Kirk P. Pond</name>
+      <quantity asofDate="2006-02-14">10000.00</quantity>
+   </Owner>
+   <Owner ownerId="PS0000221N">
+      <type>1</type>
+      <name asofDate="2017-05-16">Mary G. Puma</name>
+      <quantity asofDate="2017-05-16">231097.00</quantity>
+   </Owner>
+   <Owner ownerId="PS000024TW">
+      <type>1</type>
+      <name asofDate="2004-08-24">Van Maaren Jan Paul</name>
+      <quantity asofDate="2004-08-24">1965.80</quantity>
+   </Owner>
+   <Owner ownerId="PS0000258B">
+      <type>1</type>
+      <name asofDate="2012-02-10">Matthew Flynn</name>
+      <quantity asofDate="2012-02-10">45527.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00002AWV">
+      <type>1</type>
+      <name asofDate="2014-05-19">Stephen R Hardis</name>
+      <quantity asofDate="2014-05-19">702068.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00002F97">
+      <type>1</type>
+      <name asofDate="2017-06-06">William Bintz</name>
+      <quantity asofDate="2017-06-06">54094.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00003AUU">
+      <type>1</type>
+      <name asofDate="2017-05-17">Thomas St. Dennis</name>
+      <quantity asofDate="2017-05-17">26689.00</quantity>
+   </Owner>
+   <Owner ownerId="PS000047BQ">
+      <type>1</type>
+      <name asofDate="2016-05-16">Mr. Thomas St. Dennis</name>
+      <quantity asofDate="2016-05-16">91545.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00004FSE">
+      <type>1</type>
+      <name asofDate="2017-08-15">Douglas A. Lawson</name>
+      <quantity asofDate="2017-08-15">39244.00</quantity>
+   </Owner>
+   <Owner ownerId="PS00009SU8">
+      <type>1</type>
+      <name asofDate="2016-12-12">Ms. Barbara J. Lundberg</name>
+      <quantity asofDate="2016-12-12">10262.00</quantity>
+   </Owner>
+   <Owner ownerId="PS0000AKO3">
+      <type>1</type>
+      <name asofDate="2017-05-17">Mr. Russell Low</name>
+      <quantity asofDate="2017-05-17">24282.00</quantity>
+   </Owner>
+</OwnershipDetails>

@@ -89,6 +89,7 @@ namespace MoneyMoat.Services
                         var ser = new YAXSerializer(typeof(ReportSnapshot));
                         var obj = (ReportSnapshot)ser.Deserialize(data);
 
+                        //更新数据库
                         var stock = await m_repoStock.Find(symbol);
                         if (stock != null)
                         {
@@ -103,6 +104,7 @@ namespace MoneyMoat.Services
                         var obj = (RESC)ser.Deserialize(data);
                         var test = obj;
 
+                        //更新数据库
                         var stock = await m_repoStock.Find(symbol);
                         if (stock != null)
                         {
@@ -113,16 +115,19 @@ namespace MoneyMoat.Services
                             await m_repoStock.Update(stock);                            
                         }
 
+                        //先删除财务数据
+                        await m_repoFin.RemoveRange(t => t.Symbol.Equals(symbol) && t.Id > 0);                                
+                        //更新财务数据库
                         for (int i = 0; i < obj.Actuals.FYActuals.Count; i++)
                         {
                             var act = obj.Actuals.FYActuals[i];
                             for (int j = 0; j < act.FYPeriods.Count; j++)
                             {
                                 var adata = act.FYPeriods[j];
-                                bool already = await m_repoFin.Any(t => t.Symbol.Equals(symbol) && t.type.Equals(act.type)
-                                    && t.fYear == adata.fYear && t.endMonth == adata.endMonth
-                                    && t.periodType == adata.periodType);
-                                if (!already)
+                                //bool already = await m_repoFin.Any(t => t.Symbol.Equals(symbol) && t.type.Equals(act.type)
+                                //    && t.fYear == adata.fYear && t.endMonth == adata.endMonth
+                                //    && t.periodType == adata.periodType);
+                                //if (!already)
                                 {
                                     var sdata = new Financal
                                     {
@@ -133,11 +138,11 @@ namespace MoneyMoat.Services
                                         periodType = adata.periodType,
                                         Value = adata.ActValue,
                                     };
-                                    m_repoFin.AddNoCacheNotSave(sdata);
+                                    await m_repoFin.AddNoCache(sdata);
                                 }
                             }
                         }
-                        await m_repoFin.SaveChangesAsync();
+                        //await m_repoFin.SaveChangesAsync();
                     }
                     else if (ftype == FundamentalsReportEnum.ReportsOwnership)
                     {

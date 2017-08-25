@@ -1,0 +1,381 @@
+<FinancialSummary>
+   <TotalRevenues currency="USD">
+      <TotalRevenue asofDate="2017-06-30" reportType="TTM" period="12M">15952100000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2017-03-31" reportType="TTM" period="12M">16268500000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-12-31" reportType="TTM" period="12M">16380100000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-09-30" reportType="TTM" period="12M">16204700000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-06-30" reportType="TTM" period="12M">15983900000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-03-31" reportType="TTM" period="12M">15917700000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-12-31" reportType="TTM" period="12M">16453200000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-09-30" reportType="TTM" period="12M">17300000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-06-30" reportType="TTM" period="12M">16978000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-03-31" reportType="TTM" period="12M">17080000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-12-31" reportType="TTM" period="12M">17020000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-09-30" reportType="TTM" period="12M">16767000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-06-30" reportType="TTM" period="12M">16641000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-03-31" reportType="TTM" period="12M">16179000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-12-31" reportType="TTM" period="12M">15357000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-09-30" reportType="TTM" period="12M">15197000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-06-30" reportType="TTM" period="12M">15177000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-03-31" reportType="TTM" period="12M">15146000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-12-31" reportType="TTM" period="12M">14945000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-09-30" reportType="TTM" period="12M">14776000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-06-30" reportType="TTM" period="12M">14953000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-03-31" reportType="TTM" period="12M">15011000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-12-31" reportType="TTM" period="12M">15116000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2017-06-30" reportType="A" period="3M">3576500000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2017-03-31" reportType="A" period="3M">3933300000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-12-31" reportType="A" period="3M">3790100000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-12-31" reportType="A" period="12M">16380100000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-09-30" reportType="A" period="3M">4652200000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-06-30" reportType="A" period="3M">3892900000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-03-31" reportType="A" period="3M">4044900000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-12-31" reportType="A" period="3M">3614200000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-12-31" reportType="A" period="12M">16453200000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-09-30" reportType="A" period="3M">4432000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-06-30" reportType="A" period="3M">3942000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-03-31" reportType="A" period="3M">4708000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-12-31" reportType="A" period="3M">4026000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-12-31" reportType="A" period="12M">17020000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-09-30" reportType="A" period="3M">4302000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-06-30" reportType="A" period="3M">4044000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-03-31" reportType="A" period="3M">4648000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-12-31" reportType="A" period="3M">3773000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-12-31" reportType="A" period="12M">15357000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-09-30" reportType="A" period="3M">4176000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-06-30" reportType="A" period="3M">3582000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-03-31" reportType="A" period="3M">3826000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-12-31" reportType="A" period="3M">3613000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-12-31" reportType="A" period="12M">14945000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-09-30" reportType="A" period="3M">4156000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-06-30" reportType="A" period="3M">3551000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-03-31" reportType="A" period="3M">3625000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-12-31" reportType="A" period="3M">3444000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-12-31" reportType="A" period="12M">15116000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-09-30" reportType="A" period="3M">4333000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-06-30" reportType="A" period="3M">3609000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-03-31" reportType="A" period="3M">3730000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2010-12-31" reportType="A" period="3M">3434000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2010-12-31" reportType="A" period="12M">14427000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2010-09-30" reportType="A" period="3M">4064000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2017-06-30" reportType="R" period="3M">3576500000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2017-06-30" reportType="R" period="12M">15952100000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2017-03-31" reportType="R" period="3M">3933300000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2017-03-31" reportType="R" period="12M">16268500000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-12-31" reportType="R" period="3M">3790100000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-12-31" reportType="R" period="12M">16380100000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-09-30" reportType="R" period="3M">4652200000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-09-30" reportType="R" period="12M">16204700000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-06-30" reportType="R" period="3M">3892900000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-06-30" reportType="R" period="12M">15983900000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-03-31" reportType="R" period="3M">4044900000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2016-03-31" reportType="R" period="12M">15917700000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-12-31" reportType="R" period="3M">3614700000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-12-31" reportType="R" period="12M">16453200000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-09-30" reportType="R" period="3M">4431400000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-09-30" reportType="R" period="12M">17300000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-06-30" reportType="R" period="3M">3826700000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-06-30" reportType="R" period="12M">16978000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-03-31" reportType="R" period="3M">4580400000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2015-03-31" reportType="R" period="12M">17080000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-12-31" reportType="R" period="3M">3819600000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-12-31" reportType="R" period="12M">16378600000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-09-30" reportType="R" period="3M">4161000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-09-30" reportType="R" period="12M">16767000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-06-30" reportType="R" period="3M">4044000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-06-30" reportType="R" period="12M">16641000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-03-31" reportType="R" period="3M">4648000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2014-03-31" reportType="R" period="12M">16179000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-12-31" reportType="R" period="3M">3229500000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-12-31" reportType="R" period="12M">14813500000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-09-30" reportType="R" period="3M">4176000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-09-30" reportType="R" period="12M">15197000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-06-30" reportType="R" period="3M">3582000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-06-30" reportType="R" period="12M">15177000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-03-31" reportType="R" period="3M">3826000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2013-03-31" reportType="R" period="12M">15146000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-12-31" reportType="R" period="3M">3613000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-12-31" reportType="R" period="12M">14945000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-09-30" reportType="R" period="3M">4156000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-09-30" reportType="R" period="12M">14776000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-06-30" reportType="R" period="3M">3551000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-06-30" reportType="R" period="12M">14953000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-03-31" reportType="R" period="3M">3625000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2012-03-31" reportType="R" period="12M">15011000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-12-31" reportType="R" period="3M">3444000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-12-31" reportType="R" period="12M">15116000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-09-30" reportType="R" period="3M">4333000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-09-30" reportType="R" period="12M">15106000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-06-30" reportType="R" period="3M">3609000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-06-30" reportType="R" period="12M">14837000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-03-31" reportType="R" period="3M">3730000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2011-03-31" reportType="R" period="12M">14588000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2010-12-31" reportType="R" period="3M">3434000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2010-12-31" reportType="R" period="12M">14427000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2010-09-30" reportType="R" period="3M">4064000000.000000</TotalRevenue>
+      <TotalRevenue asofDate="2010-09-30" reportType="R" period="12M">14275000000.000000</TotalRevenue>
+   </TotalRevenues>
+   <DividendPerShares currency="USD">
+      <DividendPerShare asofDate="2017-06-30" reportType="A" period="3M">0.590000</DividendPerShare>
+      <DividendPerShare asofDate="2017-03-31" reportType="A" period="3M">0.590000</DividendPerShare>
+      <DividendPerShare asofDate="2016-12-31" reportType="A" period="3M">0.590000</DividendPerShare>
+      <DividendPerShare asofDate="2016-12-31" reportType="A" period="12M">2.270000</DividendPerShare>
+      <DividendPerShare asofDate="2016-09-30" reportType="A" period="3M">0.560000</DividendPerShare>
+      <DividendPerShare asofDate="2016-06-30" reportType="A" period="3M">0.560000</DividendPerShare>
+      <DividendPerShare asofDate="2016-03-31" reportType="A" period="3M">0.560000</DividendPerShare>
+      <DividendPerShare asofDate="2015-12-31" reportType="A" period="3M">0.560000</DividendPerShare>
+      <DividendPerShare asofDate="2015-12-31" reportType="A" period="12M">2.150000</DividendPerShare>
+      <DividendPerShare asofDate="2015-09-30" reportType="A" period="3M">0.530000</DividendPerShare>
+      <DividendPerShare asofDate="2015-06-30" reportType="A" period="3M">0.530000</DividendPerShare>
+      <DividendPerShare asofDate="2015-03-31" reportType="A" period="3M">0.530000</DividendPerShare>
+      <DividendPerShare asofDate="2014-12-31" reportType="A" period="3M">0.530000</DividendPerShare>
+      <DividendPerShare asofDate="2014-12-31" reportType="A" period="12M">2.030000</DividendPerShare>
+      <DividendPerShare asofDate="2014-09-30" reportType="A" period="3M">0.500000</DividendPerShare>
+      <DividendPerShare asofDate="2014-06-30" reportType="A" period="3M">0.500000</DividendPerShare>
+      <DividendPerShare asofDate="2014-03-31" reportType="A" period="3M">0.500000</DividendPerShare>
+      <DividendPerShare asofDate="2013-12-31" reportType="A" period="3M">0.500000</DividendPerShare>
+      <DividendPerShare asofDate="2013-12-31" reportType="A" period="12M">1.950000</DividendPerShare>
+      <DividendPerShare asofDate="2013-09-30" reportType="A" period="3M">0.490000</DividendPerShare>
+      <DividendPerShare asofDate="2013-06-30" reportType="A" period="3M">0.490000</DividendPerShare>
+      <DividendPerShare asofDate="2013-03-31" reportType="A" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2012-12-31" reportType="A" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2012-12-31" reportType="A" period="12M">1.880000</DividendPerShare>
+      <DividendPerShare asofDate="2012-09-30" reportType="A" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2012-06-30" reportType="A" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2012-03-31" reportType="A" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2011-12-31" reportType="A" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2011-12-31" reportType="A" period="12M">1.850000</DividendPerShare>
+      <DividendPerShare asofDate="2011-09-30" reportType="A" period="3M">0.460000</DividendPerShare>
+      <DividendPerShare asofDate="2011-06-30" reportType="A" period="3M">0.460000</DividendPerShare>
+      <DividendPerShare asofDate="2011-03-31" reportType="A" period="3M">0.460000</DividendPerShare>
+      <DividendPerShare asofDate="2010-12-31" reportType="A" period="3M">0.460000</DividendPerShare>
+      <DividendPerShare asofDate="2010-12-31" reportType="A" period="12M">1.710000</DividendPerShare>
+      <DividendPerShare asofDate="2010-09-30" reportType="A" period="3M">0.420000</DividendPerShare>
+      <DividendPerShare asofDate="2017-06-30" reportType="TTM" period="12M">2.330000</DividendPerShare>
+      <DividendPerShare asofDate="2017-03-31" reportType="TTM" period="12M">2.300000</DividendPerShare>
+      <DividendPerShare asofDate="2016-12-31" reportType="TTM" period="12M">2.270000</DividendPerShare>
+      <DividendPerShare asofDate="2016-09-30" reportType="TTM" period="12M">2.240000</DividendPerShare>
+      <DividendPerShare asofDate="2016-06-30" reportType="TTM" period="12M">2.210000</DividendPerShare>
+      <DividendPerShare asofDate="2016-03-31" reportType="TTM" period="12M">2.180000</DividendPerShare>
+      <DividendPerShare asofDate="2015-12-31" reportType="TTM" period="12M">2.150000</DividendPerShare>
+      <DividendPerShare asofDate="2015-09-30" reportType="TTM" period="12M">2.120000</DividendPerShare>
+      <DividendPerShare asofDate="2015-06-30" reportType="TTM" period="12M">2.090000</DividendPerShare>
+      <DividendPerShare asofDate="2015-03-31" reportType="TTM" period="12M">2.060000</DividendPerShare>
+      <DividendPerShare asofDate="2014-12-31" reportType="TTM" period="12M">2.030000</DividendPerShare>
+      <DividendPerShare asofDate="2014-09-30" reportType="TTM" period="12M">2.000000</DividendPerShare>
+      <DividendPerShare asofDate="2014-06-30" reportType="TTM" period="12M">1.990000</DividendPerShare>
+      <DividendPerShare asofDate="2014-03-31" reportType="TTM" period="12M">1.980000</DividendPerShare>
+      <DividendPerShare asofDate="2013-12-31" reportType="TTM" period="12M">1.950000</DividendPerShare>
+      <DividendPerShare asofDate="2013-09-30" reportType="TTM" period="12M">1.920000</DividendPerShare>
+      <DividendPerShare asofDate="2013-06-30" reportType="TTM" period="12M">1.900000</DividendPerShare>
+      <DividendPerShare asofDate="2013-03-31" reportType="TTM" period="12M">1.880000</DividendPerShare>
+      <DividendPerShare asofDate="2012-12-31" reportType="TTM" period="12M">1.880000</DividendPerShare>
+      <DividendPerShare asofDate="2012-09-30" reportType="TTM" period="12M">1.880000</DividendPerShare>
+      <DividendPerShare asofDate="2012-06-30" reportType="TTM" period="12M">1.870000</DividendPerShare>
+      <DividendPerShare asofDate="2012-03-31" reportType="TTM" period="12M">1.860000</DividendPerShare>
+      <DividendPerShare asofDate="2011-12-31" reportType="TTM" period="12M">1.850000</DividendPerShare>
+      <DividendPerShare asofDate="2017-06-30" reportType="R" period="3M">0.590000</DividendPerShare>
+      <DividendPerShare asofDate="2017-06-30" reportType="R" period="12M">2.330000</DividendPerShare>
+      <DividendPerShare asofDate="2017-03-31" reportType="R" period="3M">0.590000</DividendPerShare>
+      <DividendPerShare asofDate="2017-03-31" reportType="R" period="12M">2.300000</DividendPerShare>
+      <DividendPerShare asofDate="2016-12-31" reportType="R" period="3M">0.590000</DividendPerShare>
+      <DividendPerShare asofDate="2016-12-31" reportType="R" period="12M">2.270000</DividendPerShare>
+      <DividendPerShare asofDate="2016-09-30" reportType="R" period="3M">0.560000</DividendPerShare>
+      <DividendPerShare asofDate="2016-09-30" reportType="R" period="12M">2.240000</DividendPerShare>
+      <DividendPerShare asofDate="2016-06-30" reportType="R" period="3M">0.560000</DividendPerShare>
+      <DividendPerShare asofDate="2016-06-30" reportType="R" period="12M">2.210000</DividendPerShare>
+      <DividendPerShare asofDate="2016-03-31" reportType="R" period="3M">0.560000</DividendPerShare>
+      <DividendPerShare asofDate="2016-03-31" reportType="R" period="12M">2.180000</DividendPerShare>
+      <DividendPerShare asofDate="2015-12-31" reportType="R" period="3M">0.560000</DividendPerShare>
+      <DividendPerShare asofDate="2015-12-31" reportType="R" period="12M">2.150000</DividendPerShare>
+      <DividendPerShare asofDate="2015-09-30" reportType="R" period="3M">0.530000</DividendPerShare>
+      <DividendPerShare asofDate="2015-09-30" reportType="R" period="12M">2.120000</DividendPerShare>
+      <DividendPerShare asofDate="2015-06-30" reportType="R" period="3M">0.530000</DividendPerShare>
+      <DividendPerShare asofDate="2015-06-30" reportType="R" period="12M">2.090000</DividendPerShare>
+      <DividendPerShare asofDate="2015-03-31" reportType="R" period="3M">0.530000</DividendPerShare>
+      <DividendPerShare asofDate="2015-03-31" reportType="R" period="12M">2.060000</DividendPerShare>
+      <DividendPerShare asofDate="2014-12-31" reportType="R" period="3M">0.530000</DividendPerShare>
+      <DividendPerShare asofDate="2014-12-31" reportType="R" period="12M">2.030000</DividendPerShare>
+      <DividendPerShare asofDate="2014-09-30" reportType="R" period="3M">0.500000</DividendPerShare>
+      <DividendPerShare asofDate="2014-09-30" reportType="R" period="12M">2.000000</DividendPerShare>
+      <DividendPerShare asofDate="2014-06-30" reportType="R" period="3M">0.500000</DividendPerShare>
+      <DividendPerShare asofDate="2014-06-30" reportType="R" period="12M">1.990000</DividendPerShare>
+      <DividendPerShare asofDate="2014-03-31" reportType="R" period="3M">0.500000</DividendPerShare>
+      <DividendPerShare asofDate="2014-03-31" reportType="R" period="12M">1.980000</DividendPerShare>
+      <DividendPerShare asofDate="2013-12-31" reportType="R" period="3M">0.500000</DividendPerShare>
+      <DividendPerShare asofDate="2013-12-31" reportType="R" period="12M">1.950000</DividendPerShare>
+      <DividendPerShare asofDate="2013-09-30" reportType="R" period="3M">0.490000</DividendPerShare>
+      <DividendPerShare asofDate="2013-09-30" reportType="R" period="12M">1.920000</DividendPerShare>
+      <DividendPerShare asofDate="2013-06-30" reportType="R" period="3M">0.490000</DividendPerShare>
+      <DividendPerShare asofDate="2013-06-30" reportType="R" period="12M">1.900000</DividendPerShare>
+      <DividendPerShare asofDate="2013-03-31" reportType="R" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2013-03-31" reportType="R" period="12M">1.880000</DividendPerShare>
+      <DividendPerShare asofDate="2012-12-31" reportType="R" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2012-12-31" reportType="R" period="12M">1.880000</DividendPerShare>
+      <DividendPerShare asofDate="2012-09-30" reportType="R" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2012-09-30" reportType="R" period="12M">1.880000</DividendPerShare>
+      <DividendPerShare asofDate="2012-06-30" reportType="R" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2012-06-30" reportType="R" period="12M">1.870000</DividendPerShare>
+      <DividendPerShare asofDate="2012-03-31" reportType="R" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2012-03-31" reportType="R" period="12M">1.860000</DividendPerShare>
+      <DividendPerShare asofDate="2011-12-31" reportType="R" period="3M">0.470000</DividendPerShare>
+      <DividendPerShare asofDate="2011-12-31" reportType="R" period="12M">1.850000</DividendPerShare>
+      <DividendPerShare asofDate="2011-09-30" reportType="R" period="3M">0.460000</DividendPerShare>
+      <DividendPerShare asofDate="2011-09-30" reportType="R" period="12M">1.840000</DividendPerShare>
+      <DividendPerShare asofDate="2011-06-30" reportType="R" period="3M">0.460000</DividendPerShare>
+      <DividendPerShare asofDate="2011-06-30" reportType="R" period="12M">1.800000</DividendPerShare>
+      <DividendPerShare asofDate="2011-03-31" reportType="R" period="3M">0.460000</DividendPerShare>
+      <DividendPerShare asofDate="2011-03-31" reportType="R" period="12M">1.760000</DividendPerShare>
+      <DividendPerShare asofDate="2010-12-31" reportType="R" period="3M">0.460000</DividendPerShare>
+      <DividendPerShare asofDate="2010-12-31" reportType="R" period="12M">1.710000</DividendPerShare>
+      <DividendPerShare asofDate="2010-09-30" reportType="R" period="3M">0.420000</DividendPerShare>
+      <DividendPerShare asofDate="2010-09-30" reportType="R" period="12M">1.660000</DividendPerShare>
+   </DividendPerShares>
+   <Dividends currency="USD">
+      <Dividend type="CD" exDate="2017-08-08" recordDate="2017-08-10" payDate="2017-09-08" declarationDate="2017-07-25">0.590000</Dividend>
+      <Dividend type="CD" exDate="2017-05-08" recordDate="2017-05-10" payDate="2017-06-09" declarationDate="2017-04-25">0.590000</Dividend>
+      <Dividend type="CD" exDate="2017-02-08" recordDate="2017-02-10" payDate="2017-03-10" declarationDate="2017-01-24">0.590000</Dividend>
+      <Dividend type="CD" exDate="2016-11-08" recordDate="2016-11-10" payDate="2016-12-09" declarationDate="2016-10-25">0.590000</Dividend>
+      <Dividend type="CD" exDate="2016-08-08" recordDate="2016-08-10" payDate="2016-09-09" declarationDate="2016-07-26">0.560000</Dividend>
+      <Dividend type="CD" exDate="2016-05-06" recordDate="2016-05-10" payDate="2016-06-10" declarationDate="2016-04-26">0.560000</Dividend>
+      <Dividend type="CD" exDate="2016-02-08" recordDate="2016-02-10" payDate="2016-03-10" declarationDate="2016-01-25">0.560000</Dividend>
+      <Dividend type="CD" exDate="2015-11-06" recordDate="2015-11-10" payDate="2015-12-10" declarationDate="2015-10-20">0.560000</Dividend>
+      <Dividend type="CD" exDate="2015-08-06" recordDate="2015-08-10" payDate="2015-09-10" declarationDate="2015-07-21">0.530000</Dividend>
+      <Dividend type="CD" exDate="2015-05-06" recordDate="2015-05-08" payDate="2015-06-10" declarationDate="2015-04-21">0.530000</Dividend>
+      <Dividend type="CD" exDate="2015-02-06" recordDate="2015-02-10" payDate="2015-03-10" declarationDate="2015-01-21">0.530000</Dividend>
+      <Dividend type="CD" exDate="2014-11-06" recordDate="2014-11-10" payDate="2014-12-10" declarationDate="2014-10-21">0.530000</Dividend>
+      <Dividend type="CD" exDate="2014-08-06" recordDate="2014-08-08" payDate="2014-09-10" declarationDate="2014-07-22">0.500000</Dividend>
+      <Dividend type="CD" exDate="2014-05-07" recordDate="2014-05-09" payDate="2014-06-10" declarationDate="2014-04-22">0.500000</Dividend>
+      <Dividend type="CD" exDate="2014-02-06" recordDate="2014-02-10" payDate="2014-03-10" declarationDate="2014-01-22">0.500000</Dividend>
+      <Dividend type="CD" exDate="2013-11-06" recordDate="2013-11-08" payDate="2013-12-10" declarationDate="2013-10-22">0.500000</Dividend>
+      <Dividend type="CD" exDate="2013-08-07" recordDate="2013-08-09" payDate="2013-09-10" declarationDate="2013-07-24">0.490000</Dividend>
+      <Dividend type="CD" exDate="2013-05-08" recordDate="2013-05-10" payDate="2013-06-10" declarationDate="2013-04-24">0.490000</Dividend>
+      <Dividend type="CD" exDate="2013-02-06" recordDate="2013-02-08" payDate="2013-03-08" declarationDate="2013-01-23">0.470000</Dividend>
+      <Dividend type="CD" exDate="2012-11-07" recordDate="2012-11-09" payDate="2012-12-10" declarationDate="2012-10-23">0.470000</Dividend>
+      <Dividend type="CD" exDate="2012-08-08" recordDate="2012-08-10" payDate="2012-09-10" declarationDate="2012-07-26">0.470000</Dividend>
+      <Dividend type="CD" exDate="2012-05-08" recordDate="2012-05-10" payDate="2012-06-08" declarationDate="2012-04-25">0.470000</Dividend>
+      <Dividend type="CD" exDate="2012-02-08" recordDate="2012-02-10" payDate="2012-03-09" declarationDate="2012-01-26">0.470000</Dividend>
+      <Dividend type="CD" exDate="2011-11-08" recordDate="2011-11-10" payDate="2011-12-09" declarationDate="2011-10-26">0.470000</Dividend>
+      <Dividend type="CD" exDate="2011-08-08" recordDate="2011-08-10" payDate="2011-09-09" declarationDate="2011-07-28">0.460000</Dividend>
+      <Dividend type="CD" exDate="2011-05-06" recordDate="2011-05-10" payDate="2011-06-10" declarationDate="2011-04-27">0.460000</Dividend>
+      <Dividend type="CD" exDate="2011-02-08" recordDate="2011-02-10" payDate="2011-03-10" declarationDate="2011-01-27">0.460000</Dividend>
+      <Dividend type="CD" exDate="2010-11-08" recordDate="2010-11-10" payDate="2010-12-10" declarationDate="2010-10-27">0.460000</Dividend>
+      <Dividend type="CD" exDate="2010-08-06" recordDate="2010-08-10" payDate="2010-09-10" declarationDate="2010-07-29">0.420000</Dividend>
+   </Dividends>
+   <EPSs currency="USD">
+      <EPS asofDate="2017-06-30" reportType="A" period="3M">0.760000</EPS>
+      <EPS asofDate="2017-03-31" reportType="A" period="3M">1.200000</EPS>
+      <EPS asofDate="2016-12-31" reportType="A" period="3M">0.760000</EPS>
+      <EPS asofDate="2016-12-31" reportType="A" period="12M">1.240000</EPS>
+      <EPS asofDate="2016-09-30" reportType="A" period="3M">-1.560000</EPS>
+      <EPS asofDate="2016-06-30" reportType="A" period="3M">1.020000</EPS>
+      <EPS asofDate="2016-03-31" reportType="A" period="3M">1.020000</EPS>
+      <EPS asofDate="2015-12-31" reportType="A" period="3M">0.950000</EPS>
+      <EPS asofDate="2015-12-31" reportType="A" period="12M">4.170000</EPS>
+      <EPS asofDate="2015-09-30" reportType="A" period="3M">1.060000</EPS>
+      <EPS asofDate="2015-06-30" reportType="A" period="3M">0.880000</EPS>
+      <EPS asofDate="2015-03-31" reportType="A" period="3M">1.290000</EPS>
+      <EPS asofDate="2014-12-31" reportType="A" period="3M">0.390000</EPS>
+      <EPS asofDate="2014-12-31" reportType="A" period="12M">3.340000</EPS>
+      <EPS asofDate="2014-09-30" reportType="A" period="3M">1.010000</EPS>
+      <EPS asofDate="2014-06-30" reportType="A" period="3M">0.800000</EPS>
+      <EPS asofDate="2014-03-31" reportType="A" period="3M">1.150000</EPS>
+      <EPS asofDate="2013-12-31" reportType="A" period="3M">0.710000</EPS>
+      <EPS asofDate="2013-12-31" reportType="A" period="12M">3.040000</EPS>
+      <EPS asofDate="2013-09-30" reportType="A" period="3M">0.890000</EPS>
+      <EPS asofDate="2013-06-30" reportType="A" period="3M">0.690000</EPS>
+      <EPS asofDate="2013-03-31" reportType="A" period="3M">0.750000</EPS>
+      <EPS asofDate="2012-12-31" reportType="A" period="3M">0.050000</EPS>
+      <EPS asofDate="2012-12-31" reportType="A" period="12M">2.600000</EPS>
+      <EPS asofDate="2012-09-30" reportType="A" period="3M">1.000000</EPS>
+      <EPS asofDate="2012-06-30" reportType="A" period="3M">0.750000</EPS>
+      <EPS asofDate="2012-03-31" reportType="A" period="3M">0.800000</EPS>
+      <EPS asofDate="2011-12-31" reportType="A" period="3M">0.630000</EPS>
+      <EPS asofDate="2011-12-31" reportType="A" period="12M">4.020000</EPS>
+      <EPS asofDate="2011-09-30" reportType="A" period="3M">1.920000</EPS>
+      <EPS asofDate="2011-06-30" reportType="A" period="3M">0.730000</EPS>
+      <EPS asofDate="2011-03-31" reportType="A" period="3M">0.730000</EPS>
+      <EPS asofDate="2010-12-31" reportType="A" period="3M">0.370000</EPS>
+      <EPS asofDate="2010-12-31" reportType="A" period="12M">2.530000</EPS>
+      <EPS asofDate="2010-09-30" reportType="A" period="3M">1.160000</EPS>
+      <EPS asofDate="2017-06-30" reportType="TTM" period="12M">1.170000</EPS>
+      <EPS asofDate="2017-03-31" reportType="TTM" period="12M">1.420000</EPS>
+      <EPS asofDate="2016-12-31" reportType="TTM" period="12M">1.240000</EPS>
+      <EPS asofDate="2016-09-30" reportType="TTM" period="12M">1.430000</EPS>
+      <EPS asofDate="2016-06-30" reportType="TTM" period="12M">4.050000</EPS>
+      <EPS asofDate="2016-03-31" reportType="TTM" period="12M">3.900000</EPS>
+      <EPS asofDate="2015-12-31" reportType="TTM" period="12M">4.170000</EPS>
+      <EPS asofDate="2015-09-30" reportType="TTM" period="12M">3.610656</EPS>
+      <EPS asofDate="2015-06-30" reportType="TTM" period="12M">3.560740</EPS>
+      <EPS asofDate="2015-03-31" reportType="TTM" period="12M">3.482434</EPS>
+      <EPS asofDate="2014-12-31" reportType="TTM" period="12M">3.340000</EPS>
+      <EPS asofDate="2014-09-30" reportType="TTM" period="12M">3.665045</EPS>
+      <EPS asofDate="2014-06-30" reportType="TTM" period="12M">3.545721</EPS>
+      <EPS asofDate="2014-03-31" reportType="TTM" period="12M">3.442610</EPS>
+      <EPS asofDate="2013-12-31" reportType="TTM" period="12M">3.040000</EPS>
+      <EPS asofDate="2013-09-30" reportType="TTM" period="12M">2.375959</EPS>
+      <EPS asofDate="2013-06-30" reportType="TTM" period="12M">2.489548</EPS>
+      <EPS asofDate="2013-03-31" reportType="TTM" period="12M">2.541318</EPS>
+      <EPS asofDate="2012-12-31" reportType="TTM" period="12M">2.600000</EPS>
+      <EPS asofDate="2012-09-30" reportType="TTM" period="12M">3.193548</EPS>
+      <EPS asofDate="2012-06-30" reportType="TTM" period="12M">4.109770</EPS>
+      <EPS asofDate="2012-03-31" reportType="TTM" period="12M">4.094522</EPS>
+      <EPS asofDate="2011-12-31" reportType="TTM" period="12M">4.020000</EPS>
+      <EPS asofDate="2017-06-30" reportType="R" period="3M">0.760000</EPS>
+      <EPS asofDate="2017-06-30" reportType="R" period="12M">1.170000</EPS>
+      <EPS asofDate="2017-03-31" reportType="R" period="3M">1.200000</EPS>
+      <EPS asofDate="2017-03-31" reportType="R" period="12M">1.420000</EPS>
+      <EPS asofDate="2016-12-31" reportType="R" period="3M">0.760000</EPS>
+      <EPS asofDate="2016-12-31" reportType="R" period="12M">1.240000</EPS>
+      <EPS asofDate="2016-09-30" reportType="R" period="3M">-1.560000</EPS>
+      <EPS asofDate="2016-09-30" reportType="R" period="12M">1.430000</EPS>
+      <EPS asofDate="2016-06-30" reportType="R" period="3M">1.020000</EPS>
+      <EPS asofDate="2016-06-30" reportType="R" period="12M">4.050000</EPS>
+      <EPS asofDate="2016-03-31" reportType="R" period="3M">1.020000</EPS>
+      <EPS asofDate="2016-03-31" reportType="R" period="12M">3.900000</EPS>
+      <EPS asofDate="2015-12-31" reportType="R" period="3M">0.950000</EPS>
+      <EPS asofDate="2015-12-31" reportType="R" period="12M">4.170000</EPS>
+      <EPS asofDate="2015-09-30" reportType="R" period="3M">1.060000</EPS>
+      <EPS asofDate="2015-09-30" reportType="R" period="12M">3.610000</EPS>
+      <EPS asofDate="2015-06-30" reportType="R" period="3M">0.880000</EPS>
+      <EPS asofDate="2015-06-30" reportType="R" period="12M">3.550000</EPS>
+      <EPS asofDate="2015-03-31" reportType="R" period="3M">1.290000</EPS>
+      <EPS asofDate="2015-03-31" reportType="R" period="12M">3.480000</EPS>
+      <EPS asofDate="2014-12-31" reportType="R" period="3M">0.390000</EPS>
+      <EPS asofDate="2014-12-31" reportType="R" period="12M">3.340000</EPS>
+      <EPS asofDate="2014-09-30" reportType="R" period="3M">1.010000</EPS>
+      <EPS asofDate="2014-09-30" reportType="R" period="12M">3.660000</EPS>
+      <EPS asofDate="2014-06-30" reportType="R" period="3M">0.800000</EPS>
+      <EPS asofDate="2014-06-30" reportType="R" period="12M">3.550000</EPS>
+      <EPS asofDate="2014-03-31" reportType="R" period="3M">1.150000</EPS>
+      <EPS asofDate="2014-03-31" reportType="R" period="12M">3.440000</EPS>
+      <EPS asofDate="2013-12-31" reportType="R" period="3M">0.710000</EPS>
+      <EPS asofDate="2013-12-31" reportType="R" period="12M">3.040000</EPS>
+      <EPS asofDate="2013-09-30" reportType="R" period="3M">0.890000</EPS>
+      <EPS asofDate="2013-09-30" reportType="R" period="12M">2.380000</EPS>
+      <EPS asofDate="2013-06-30" reportType="R" period="3M">0.690000</EPS>
+      <EPS asofDate="2013-06-30" reportType="R" period="12M">2.490000</EPS>
+      <EPS asofDate="2013-03-31" reportType="R" period="3M">0.750000</EPS>
+      <EPS asofDate="2013-03-31" reportType="R" period="12M">2.550000</EPS>
+      <EPS asofDate="2012-12-31" reportType="R" period="3M">0.050000</EPS>
+      <EPS asofDate="2012-12-31" reportType="R" period="12M">2.600000</EPS>
+      <EPS asofDate="2012-09-30" reportType="R" period="3M">1.000000</EPS>
+      <EPS asofDate="2012-09-30" reportType="R" period="12M">3.180000</EPS>
+      <EPS asofDate="2012-06-30" reportType="R" period="3M">0.750000</EPS>
+      <EPS asofDate="2012-06-30" reportType="R" period="12M">4.110000</EPS>
+      <EPS asofDate="2012-03-31" reportType="R" period="3M">0.800000</EPS>
+      <EPS asofDate="2012-03-31" reportType="R" period="12M">4.090000</EPS>
+      <EPS asofDate="2011-12-31" reportType="R" period="3M">0.630000</EPS>
+      <EPS asofDate="2011-12-31" reportType="R" period="12M">4.020000</EPS>
+      <EPS asofDate="2011-09-30" reportType="R" period="3M">1.920000</EPS>
+      <EPS asofDate="2011-09-30" reportType="R" period="12M">3.760000</EPS>
+      <EPS asofDate="2011-06-30" reportType="R" period="3M">0.730000</EPS>
+      <EPS asofDate="2011-06-30" reportType="R" period="12M">2.990000</EPS>
+      <EPS asofDate="2011-03-31" reportType="R" period="3M">0.730000</EPS>
+      <EPS asofDate="2011-03-31" reportType="R" period="12M">2.540000</EPS>
+      <EPS asofDate="2010-12-31" reportType="R" period="3M">0.370000</EPS>
+      <EPS asofDate="2010-12-31" reportType="R" period="12M">2.530000</EPS>
+      <EPS asofDate="2010-09-30" reportType="R" period="3M">1.160000</EPS>
+      <EPS asofDate="2010-09-30" reportType="R" period="12M">2.650000</EPS>
+   </EPSs>
+</FinancialSummary>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">A0240</CoID>
+		<CoID Type="CompanyName">AAON, Inc.</CoID>
+		<CoID Type="IRSNo">870448736</CoID>
+		<CoID Type="CIKNo">0000824142</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">AAON</IssueID>
+			<IssueID Type="CUSIP">000360206</IssueID>
+			<IssueID Type="ISIN">US0003602069</IssueID>
+			<IssueID Type="RIC">AAON.O</IssueID>
+			<IssueID Type="SEDOL">2268130</IssueID>
+			<IssueID Type="DisplayRIC">AAON.OQ</IssueID>
+			<IssueID Type="InstrumentPI">343037</IssueID>
+			<IssueID Type="QuotePI">7645705</IssueID>
+			<Exchange Code="NASD" Country="USA">NASDAQ</Exchange>
+			<MostRecentSplit Date="2014-07-17">1.49999</MostRecentSplit>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-08-05</LastModified>
+		<LatestAvailableAnnual>2016-12-31</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-06-30</LatestAvailableInterim>
+		<Employees LastUpdated="2016-12-31">1619</Employees>
+		<SharesOut Date="2017-07-28" TotalFloat="40963125.0">52603622.0</SharesOut>
+		<CommonShareholders Date="2016-12-31">1115</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-23">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2017-03-13T05:06:23">AAON, Inc. is engaged in the engineering, manufacturing, marketing and sale of air conditioning and heating equipment consisting of standard, semi-custom and custom rooftop units, chillers, packaged outdoor mechanical rooms, air handling units, makeup air units, energy recovery units, condensing units, geothermal/water-source heat pumps and coils. Its products serve the commercial and industrial new construction and replacement markets. Its rooftop and condensing unit markets consist of units installed on commercial or industrial structures of less than 10 stories in height. Its air handling units, self-contained units, geothermal/water-source heat pumps, chillers, packaged outdoor mechanical rooms and coils are applicable to all sizes of commercial and industrial buildings. The replacement market consists of products installed to replace existing units/components that are worn or damaged.</Text>
+		<Text Type="Financial Summary" lastModified="2017-08-05T09:33:44">BRIEF: For the six months ended 30 June 2017, AAON, Inc. revenues decreased less than 1% to $187.4M. Net income decreased 9% to $24M. Revenues reflect market conditions. Net income was partially offset by Other SGA increase of 29% to $10M (expense), Stock Compensation increase of 74% to $2.4M (expense), Advertising Expenses increase of 50% to $1.1M (expense). Dividend per share increased from $0.11 to $0.13.</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-08-05T09:33:57">
+		<streetAddress line="1">2425 S Yukon Ave</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>TULSA</city>
+		<state-region>OK</state-region>
+		<postalCode>74107-2728</postalCode>
+		<country code="USA">United States</country>
+		<contactName></contactName>
+		<contactTitle></contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>918</city-areacode>
+				<number>5832266</number>
+			</phone>
+			<phone type="mainfax">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>918</city-areacode>
+				<number>5836094</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2011-06-29T02:31:50"><webSite mainCategory="Home Page">http://www.aaon.com/</webSite><eMail mainCategory="Company Contact/E-mail">investor1@aaon.com</eMail></webLinks>
+	<peerInfo lastUpdated="2017-08-05T09:33:57">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5210203015" mnem="">Heating, Ventilation &amp; Air Conditioning Systems</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="333415" mnem="">Air-Conditioning and Warm Air Heating Equipment and Commercial and Industrial Refrigeration Equipment Manufacturing</Industry>
+			<Industry type="SIC" order="0" reported="1" code="3585" mnem="">Refrigeration/heating Equipment</Industry>
+			<Industry type="SIC" order="1" reported="0" code="3585" mnem="">Refrigeration/heating Equipment</Industry>
+		</IndustryInfo>
+		<Indexconstituet>S&amp;P 600 Small Cap</Indexconstituet>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="11/01/2016">
+			<firstName>Gary</firstName>
+			<mI>D.</mI>
+			<lastName>Fields</lastName>
+			<age>57 </age>
+			<title startYear="2016" startMonth="11" startDay="01" iD1="PRE" abbr1="Pres." iD2="DRC" abbr2="Dir.">President, Director</title>
+		</officer>
+		<officer rank="2" since="06/16/1989">
+			<firstName>Norman</firstName>
+			<mI>H.</mI>
+			<lastName>Asbjornson</lastName>
+			<age>81 </age>
+			<title startYear="2016" startMonth="11" startDay="01" iD1="CEO" abbr1="CEO" iD2="DRC" abbr2="Dir.">Chief Executive Officer, Director</title>
+		</officer>
+		<officer rank="3" since="08/09/2012">
+			<firstName>Scott</firstName>
+			<mI>M.</mI>
+			<lastName>Asbjornson</lastName>
+			<age>48 </age>
+			<title startYear="2012" startMonth="08" startDay="09" iD1="CFO" abbr1="CFO" iD2="VFN" abbr2="VP-Fin.">Chief Financial Officer, Vice President - Finance</title>
+		</officer>
+		<officer rank="4" since="07/01/1999">
+			<firstName>Kathy</firstName>
+			<mI>I.</mI>
+			<lastName>Sheffield</lastName>
+			<age>64 </age>
+			<title startYear="2012" startMonth="08" startDay="09" iD1="SVP" abbr1="Sr. VP" iD2="TRS" abbr2="Treas.">Senior Vice President - Administration, Treasurer</title>
+		</officer>
+		<officer rank="5" since="02/22/2017">
+			<firstName>Mikel</firstName>
+			<mI>D</mI>
+			<lastName>Crews</lastName>
+			<age></age>
+			<title startYear="2017" startMonth="02" startDay="22" iD1="VPR" abbr1="VP" iD2="" abbr2="">Vice President - Operations</title>
+		</officer>
+		<officer rank="6" since="05/28/2015">
+			<firstName>Sam</firstName>
+			<mI>J.</mI>
+			<lastName>Neale</lastName>
+			<age>40 </age>
+			<title startYear="2015" startMonth="05" startDay="28" iD1="VPR" abbr1="VP" iD2="" abbr2="">Vice President</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-06-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">31.80000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">38.20000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">26.51000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-24T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">0.11024</Ratio>
+			<Ratio FieldName="EV" Type="N">1620.99100</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">1672.79500</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">383.64000</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">88.70300</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">51.11300</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">0.95917</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">7.20000</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">4.13842</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">0.98457</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">1.22145</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">0.26000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">30.30602</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">24.76819</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">4.36033</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">33.15366</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">7.68408</Ratio>
+			<Ratio FieldName="Employees" Type="N">1619</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="12" CurInterimEndCalYear="2017" CurInterimEndMonth="9" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">3</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">36.50000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">31.80000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">406.51500</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">112.76470</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">1.00000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">0.29330</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">53.07300</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">0.13000</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

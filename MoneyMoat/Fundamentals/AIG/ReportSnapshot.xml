@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">0445N</CoID>
+		<CoID Type="CompanyName">American International Group Inc</CoID>
+		<CoID Type="IRSNo">132592361</CoID>
+		<CoID Type="CIKNo">0000005272</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">AIG</IssueID>
+			<IssueID Type="CUSIP">026874784</IssueID>
+			<IssueID Type="ISIN">US0268747849</IssueID>
+			<IssueID Type="RIC">AIG</IssueID>
+			<IssueID Type="SEDOL">2027342</IssueID>
+			<IssueID Type="DisplayRIC">AIG.N</IssueID>
+			<IssueID Type="InstrumentPI">283578</IssueID>
+			<IssueID Type="QuotePI">1089481</IssueID>
+			<Exchange Code="NYSE" Country="USA">New York Stock Exchange</Exchange>
+			<MostRecentSplit Date="2009-07-01">0.05</MostRecentSplit>
+		</Issue>
+		<Issue ID="4" Type="C" Desc="Common Stock" Order="2">
+			<IssueID Type="Name">Unit</IssueID>
+			<IssueID Type="Ticker">AIG PR A</IssueID>
+			<IssueID Type="CUSIP">026874115</IssueID>
+			<IssueID Type="ISIN">US0268741156</IssueID>
+			<IssueID Type="RIC">AIG_pa^H11</IssueID>
+			<IssueID Type="DisplayRIC">AIG_pa.N</IssueID>
+			<IssueID Type="InstrumentPI">46543080</IssueID>
+			<IssueID Type="QuotePI">46546982</IssueID>
+			<Exchange Code="NYSE" Country="USA">New York Stock Exchange</Exchange>
+		</Issue>
+		<Issue ID="3" Type="C" Desc="Common Stock" Order="3">
+			<IssueID Type="Name">Index-linked Note</IssueID>
+			<IssueID Type="Ticker">NOW</IssueID>
+			<IssueID Type="CUSIP">026874883</IssueID>
+			<IssueID Type="ISIN">US0268748839</IssueID>
+			<IssueID Type="RIC">NOW.P^A11</IssueID>
+			<IssueID Type="SEDOL">B1Z9Q44</IssueID>
+			<IssueID Type="InstrumentPI">42285082</IssueID>
+			<IssueID Type="QuotePI">35196496</IssueID>
+			<Exchange Code="PAC" Country="USA">NYSE Arca</Exchange>
+		</Issue>
+		<Issue ID="2" Type="P" Desc="Preferred Stock" Order="1">
+			<IssueID Type="Name">7.70% Debenture Series A-5</IssueID>
+			<IssueID Type="Ticker">AVF CL</IssueID>
+			<IssueID Type="CUSIP">026874859</IssueID>
+			<IssueID Type="ISIN">US0268748599</IssueID>
+			<IssueID Type="RIC">AVF^C13</IssueID>
+			<IssueID Type="SEDOL">B29ZWB4</IssueID>
+			<IssueID Type="DisplayRIC">AVF</IssueID>
+			<IssueID Type="InstrumentPI">41911781</IssueID>
+			<IssueID Type="QuotePI">41915829</IssueID>
+			<Exchange Code="NYSE" Country="USA">New York Stock Exchange</Exchange>
+		</Issue>
+		<Issue ID="5" Type="P" Desc="Preferred Stock" Order="2">
+			<IssueID Type="Name">6.45% Debenture Series A-4</IssueID>
+			<IssueID Type="Ticker">AFF CL</IssueID>
+			<IssueID Type="CUSIP">026874800</IssueID>
+			<IssueID Type="ISIN">US0268748003</IssueID>
+			<IssueID Type="RIC">AFF^F13</IssueID>
+			<IssueID Type="SEDOL">B1YMQC2</IssueID>
+			<IssueID Type="DisplayRIC">AFF</IssueID>
+			<IssueID Type="InstrumentPI">57482922</IssueID>
+			<IssueID Type="QuotePI">34132849</IssueID>
+			<Exchange Code="NYSE" Country="USA">New York Stock Exchange</Exchange>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-08-07</LastModified>
+		<LatestAvailableAnnual>2016-12-31</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-06-30</LatestAvailableInterim>
+		<Employees LastUpdated="2016-12-31">56400</Employees>
+		<SharesOut Date="2017-06-30" TotalFloat="902952378.0">903392620.0</SharesOut>
+		<CommonShareholders Date="2016-12-31">27306</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2017-03-13T05:06:37">American International Group, Inc. is a global insurance company. The Company provides a range of property casualty insurance, life insurance, retirement products and other financial services to commercial and individual customers. Its segments include Commercial Insurance, Consumer Insurance, Other Operations and Legacy Portfolio. The Commercial Insurance segment is a provider of insurance products and services for commercial customers. It includes property casualty networks. The Consumer Insurance segment is a franchise that brings together a portfolio of retirement, life insurance and personal insurance products offered through multiple distribution networks. The Other Operations segment consists of businesses and items not attributed to its Commercial and Consumer modules or its Legacy Portfolio. The Legacy Portfolio segment includes Legacy Property and Casualty Run-Off Insurance Lines, as well as Legacy Life Insurance Run-Off Lines and Legacy Investments.</Text>
+		<Text Type="Financial Summary" lastModified="2017-08-07T10:27:12">BRIEF: For the six months ended 30 June 2017, American International Group Inc revenues decreased 6% to $25.26B. Net income before extraordinary items increased 29% to $2.31B. Revenues reflect AIG Property Casualty segment decrease of 15% to $9.22B. Net income reflects Expense Ratio -%-Personal Insurance decrease of 3% to 40.5%, Loss Ratio -%-Liability and Financial Li increase of 9% to 76.1%.</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-08-21T01:59:22">
+		<streetAddress line="1">175 Water St</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>NEW YORK</city>
+		<state-region>NY</state-region>
+		<postalCode>10038-4918</postalCode>
+		<country code="USA">United States</country>
+		<contactName></contactName>
+		<contactTitle></contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>212</city-areacode>
+				<number>7707000</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2013-06-19T20:31:01"><webSite mainCategory="Home Page">http://www.aig.com</webSite><eMail mainCategory="Company Contact/E-mail">IR@aig.com</eMail></webLinks>
+	<peerInfo lastUpdated="2017-08-21T01:59:22">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5530101010" mnem="">Multiline Insurance &amp; Brokers - NEC</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="524126" mnem="">Direct Property and Casualty Insurance Carriers</Industry>
+			<Industry type="NAICS" order="2" reported="0" code="524113" mnem="">Direct Life Insurance Carriers</Industry>
+			<Industry type="NAICS" order="3" reported="0" code="524114" mnem="">Direct Health and Medical Insurance Carriers</Industry>
+			<Industry type="NAICS" order="4" reported="0" code="532411" mnem="">Commercial Air, Rail, and Water Transportation Equipment Rental and Leasing</Industry>
+			<Industry type="NAICS" order="5" reported="0" code="52392" mnem="">Portfolio Management</Industry>
+			<Industry type="NAICS" order="6" reported="0" code="551112" mnem="">Offices of  Other Holding Companies</Industry>
+			<Industry type="SIC" order="0" reported="1" code="6331" mnem="">Fire/marine/casualty Insurance</Industry>
+			<Industry type="SIC" order="1" reported="0" code="6331" mnem="">Fire/marine/casualty Insurance</Industry>
+			<Industry type="SIC" order="2" reported="0" code="6311" mnem="">Life Insurance</Industry>
+			<Industry type="SIC" order="3" reported="0" code="6324" mnem="">Hospital/medical Service Plans</Industry>
+			<Industry type="SIC" order="4" reported="0" code="7359" mnem="">Equipment Rental &amp; Leasing, Nec</Industry>
+			<Industry type="SIC" order="5" reported="0" code="6282" mnem="">Investment Advice</Industry>
+			<Industry type="SIC" order="6" reported="0" code="6719" mnem="">Holding Companies, Nec</Industry>
+		</IndustryInfo>
+		<Indexconstituet>S&amp;P 500</Indexconstituet>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="05/14/2017">
+			<firstName>Brian</firstName>
+			<mI></mI>
+			<lastName>Duperreault</lastName>
+			<age>69 </age>
+			<title startYear="2017" startMonth="05" startDay="14" iD1="PRE" abbr1="Pres." iD2="CEO" abbr2="CEO">President, Chief Executive Officer, Director</title>
+		</officer>
+		<officer rank="2" since="12/2010">
+			<firstName>Siddhartha</firstName>
+			<mI></mI>
+			<lastName>Sankaran</lastName>
+			<age>39 </age>
+			<title startYear="2015" startMonth="12" startDay="10" iD1="CFO" abbr1="CFO" iD2="EVP" abbr2="Exec. VP">Chief Financial Officer, Executive Vice President</title>
+		</officer>
+		<officer rank="3" since="08/01/2017">
+			<firstName>Peter</firstName>
+			<mI></mI>
+			<lastName>Zaffino</lastName>
+			<age>50 </age>
+			<title startYear="2017" startMonth="08" startDay="01" iD1="COO" abbr1="COO" iD2="EVP" abbr2="Exec. VP">Chief Operating Officer, Executive Vice President - Global</title>
+		</officer>
+		<officer rank="4" since="07/28/2015">
+			<firstName>Douglas</firstName>
+			<mI>A.</mI>
+			<lastName>Dachille</lastName>
+			<age>53 </age>
+			<title startYear="2015" startMonth="07" startDay="28" iD1="EVP" abbr1="Exec. VP" iD2="CIN" abbr2="Chief Inv.Off.">Executive Vice President, Chief Investment Officer</title>
+		</officer>
+		<officer rank="5" since="04/02/2015">
+			<firstName>Martha</firstName>
+			<mI>J.</mI>
+			<lastName>Gallo</lastName>
+			<age>59 </age>
+			<title startYear="2017" startMonth="03" startDay="06" iD1="EVP" abbr1="Exec. VP" iD2="CIO" abbr2="CIO">Executive Vice President, Chief Information Officer</title>
+		</officer>
+		<officer rank="6" since="2016">
+			<firstName>Alessandrea</firstName>
+			<mI>C.</mI>
+			<lastName>Quane</lastName>
+			<age>47 </age>
+			<title startYear="2016" startMonth="" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="CRO" abbr2="CRO">Executive Vice President, Chief Risk Officer</title>
+		</officer>
+		<officer rank="7" since="10/18/2016">
+			<firstName>Peter</firstName>
+			<mI>Y.</mI>
+			<lastName>Solmssen</lastName>
+			<age>62 </age>
+			<title startYear="2016" startMonth="10" startDay="18" iD1="EVP" abbr1="Exec. VP" iD2="GCN" abbr2="Counsel">Executive Vice President, General Counsel</title>
+		</officer>
+		<officer rank="8" since="04/2017">
+			<firstName>Donnalee</firstName>
+			<mI></mI>
+			<lastName>Demaio</lastName>
+			<age>58 </age>
+			<title startYear="2017" startMonth="04" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President, Chief Auditor</title>
+		</officer>
+		<officer rank="9" since="2013">
+			<firstName>Kevin</firstName>
+			<mI>T.</mI>
+			<lastName>Hogan</lastName>
+			<age>55 </age>
+			<title startYear="2013" startMonth="" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice PresidentConsumer</title>
+		</officer>
+		<officer rank="10" since="2010">
+			<firstName>Jeffrey</firstName>
+			<mI>Joy</mI>
+			<lastName>Hurd</lastName>
+			<age>50 </age>
+			<title startYear="2017" startMonth="08" startDay="01" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-06-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">60.77000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">67.47000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">57.35000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">3.98494</Ratio>
+			<Ratio FieldName="EV" Type="N">84194.96000</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">54899.96000</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">51310.00000</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">9988.00000</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">-239.00000</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">-0.15801</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">50.31191</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">81.61678</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">2.78616</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">4.02613</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">1.28000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">-99999.99000</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">-0.29204</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">1.06997</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">-99999.99000</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">0.74458</Ratio>
+			<Ratio FieldName="Employees" Type="N">56400</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="12" CurInterimEndCalYear="2017" CurInterimEndMonth="9" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">2.2778</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">69.84620</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">154.4505</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">11.50620</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">49114.37000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">11787.37000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">5.28150</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">1.21750</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">6814.88640</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">1.33500</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

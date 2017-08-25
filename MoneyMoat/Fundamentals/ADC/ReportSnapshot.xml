@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">A0849</CoID>
+		<CoID Type="CompanyName">Agree Realty Corporation</CoID>
+		<CoID Type="IRSNo">383148187</CoID>
+		<CoID Type="CIKNo">0000917251</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">ADC</IssueID>
+			<IssueID Type="CUSIP">008492100</IssueID>
+			<IssueID Type="ISIN">US0084921008</IssueID>
+			<IssueID Type="RIC">ADC</IssueID>
+			<IssueID Type="SEDOL">2062161</IssueID>
+			<IssueID Type="DisplayRIC">ADC.N</IssueID>
+			<IssueID Type="InstrumentPI">346066</IssueID>
+			<IssueID Type="QuotePI">1093266</IssueID>
+			<Exchange Code="NYSE" Country="USA">New York Stock Exchange</Exchange>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-07-31</LastModified>
+		<LatestAvailableAnnual>2016-12-31</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-06-30</LatestAvailableInterim>
+		<Employees LastUpdated="2016-12-31">24</Employees>
+		<SharesOut Date="2017-07-21" TotalFloat="27502167.0">28636903.0</SharesOut>
+		<CommonShareholders Date="2017-03-31">133</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2017-03-13T05:08:02">Agree Realty Corporation (Agree Realty) is an integrated real estate investment trust (REIT) primarily focused on the ownership, acquisition, development and management of retail properties. The Company operates through Agree Limited Partnership (the Operating Partnership). As of December 31, 2016, its portfolio consisted of 366 properties located in 43 states and totaling approximately seven million square feet of gross leasable area (GLA). As of December 31, 2016, its portfolio included 363 net lease properties, which contributed approximately 98.1% of annualized base rent, and three community shopping centers. The Company's business objective is to generate consistent shareholder returns by investing in and actively managing a diversified portfolio of retail properties net leased to industry tenants. Its community shopping centers include Capital Plaza, Frankfort; Central Michigan Commons, Mount Pleasant, and West Frankfort Plaza, West Frankfort.</Text>
+		<Text Type="Financial Summary" lastModified="2017-07-31T22:39:06">BRIEF: For the six months ended 30 June 2017, Agree Realty Corporation revenues increased 30% to $54.6M. Net income increased 63% to $29.5M. Revenues reflect FFO per Share (Diluted) increase of 8% to $0.66, Minimum Rents increase of 28% to $49.2M, Operating cost reimbursement increase of 48% to $5.2M. Net income benefited from Gain (Loss) on sale of assets increase from $2.7M to $9.5M (income), Land lease payments decrease of less than 1% to $326K (expense).</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-07-31T22:39:29">
+		<streetAddress line="1">70 E Long Lake Rd</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>BLOOMFIELD HILLS</city>
+		<state-region>MI</state-region>
+		<postalCode>48304-2356</postalCode>
+		<country code="USA">United States</country>
+		<contactName></contactName>
+		<contactTitle></contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>810</city-areacode>
+				<number>7374190</number>
+			</phone>
+			<phone type="mainfax">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>248</city-areacode>
+				<number>7379110</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2016-05-26T11:30:50"><webSite mainCategory="Home Page">http://www.agreerealty.com/</webSite><eMail mainCategory="Company Contact/E-mail">investorrelations@agreerealty.com</eMail></webLinks>
+	<peerInfo lastUpdated="2017-07-31T22:39:29">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5540302012" mnem="">Retail REITs</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="53112" mnem="">Lessors of Nonresidential Buildings (except Miniwarehouses)</Industry>
+			<Industry type="SIC" order="0" reported="1" code="6798" mnem="">Real Estate Investment Trusts</Industry>
+			<Industry type="SIC" order="1" reported="0" code="6512" mnem="">Nonresidential Building Operators</Industry>
+		</IndustryInfo>
+		<Indexconstituet>S&amp;P 600 Small Cap</Indexconstituet>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="12/1993">
+			<firstName>Richard</firstName>
+			<mI></mI>
+			<lastName>Agree</lastName>
+			<age>73 </age>
+			<title startYear="2013" startMonth="01" startDay="08" iD1="CHM" abbr1="Chmn." iD2="DRC" abbr2="Dir.">Executive Chairman of the Board</title>
+		</officer>
+		<officer rank="2" since="01/12/2006">
+			<firstName>Joey</firstName>
+			<mI></mI>
+			<lastName>Agree</lastName>
+			<age>38 </age>
+			<title startYear="2013" startMonth="01" startDay="08" iD1="PRE" abbr1="Pres." iD2="CEO" abbr2="CEO">President, Chief Executive Officer, Director</title>
+		</officer>
+		<officer rank="3" since="01/11/2016">
+			<firstName>Matthew</firstName>
+			<mI>Morris</mI>
+			<lastName>Partridge</lastName>
+			<age>33 </age>
+			<title startYear="2016" startMonth="01" startDay="11" iD1="CFO" abbr1="CFO" iD2="EVP" abbr2="Exec. VP">Chief Financial Officer, Executive Vice President, Secretary</title>
+		</officer>
+		<officer rank="4" since="06/1994">
+			<firstName>Kenneth</firstName>
+			<mI>R.</mI>
+			<lastName>Howe</lastName>
+			<age>68 </age>
+			<title startYear="2017" startMonth="08" startDay="04" iD1="CFO" abbr1="CFO" iD2="" abbr2="">Interim Chief Financial Officer</title>
+		</officer>
+		<officer rank="5" since="04/05/2010">
+			<firstName>Laith</firstName>
+			<mI>M.</mI>
+			<lastName>Hermiz</lastName>
+			<age>46 </age>
+			<title startYear="2015" startMonth="11" startDay="12" iD1="COO" abbr1="COO" iD2="EVP" abbr2="Exec. VP">Chief Operating Officer, Executive Vice President</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-06-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">49.63000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">51.50000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">41.01000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">0.13315</Ratio>
+			<Ratio FieldName="EV" Type="N">1850.73500</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">1421.25000</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">104.09900</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">84.91505</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">56.44700</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">2.22811</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">4.10295</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">27.70451</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">0.14572</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">3.33454</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">1.95000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">90.93939</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">8.36450</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">13.65286</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">22.27448</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">1.79141</Ratio>
+			<Ratio FieldName="Employees" Type="N">24</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="12" CurInterimEndCalYear="2017" CurInterimEndMonth="9" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">1.8182</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">52.77270</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">-0.9000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">25.24415</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">115.06760</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">29.85380</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">1.96600</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">0.42000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">52.82480</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">2.01500</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

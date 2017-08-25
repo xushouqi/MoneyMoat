@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">AFD25</CoID>
+		<CoID Type="CompanyName">AirMedia Group Inc (ADR)</CoID>
+		<CoID Type="CIKNo">0001413745</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">ADR</IssueID>
+			<IssueID Type="Ticker">AMCN</IssueID>
+			<IssueID Type="CUSIP">009411109</IssueID>
+			<IssueID Type="ISIN">US0094111095</IssueID>
+			<IssueID Type="RIC">AMCN.O</IssueID>
+			<IssueID Type="SEDOL">B28XBS9</IssueID>
+			<IssueID Type="DisplayRIC">AMCN.OQ</IssueID>
+			<IssueID Type="InstrumentPI">40121649</IssueID>
+			<IssueID Type="QuotePI">40225050</IssueID>
+			<Exchange Code="NASD" Country="USA">NASDAQ</Exchange>
+			<GlobalListingType SharesPerListing="2.0">ADR</GlobalListingType>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-06-30</LastModified>
+		<LatestAvailableAnnual>2016-12-31</LatestAvailableAnnual>
+		<LatestAvailableInterim>2016-12-31</LatestAvailableInterim>
+		<Employees LastUpdated="2016-12-31">410</Employees>
+		<SharesOut Date="2016-12-31" TotalFloat="113012227.0">125629779.0</SharesOut>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2016-07-05T00:02:40">AirMedia Group Inc. is an operator of out-of-home advertising platforms in China. The Company is engaged in selling advertising time slots on its network, primarily air travel advertising network. It holds concession rights to install and operate wireless fidelity (Wi-Fi) systems on trains administered by over eight regional railway administrative bureaus in China. It also holds concession rights to install and operate Wi-Fi systems on various long-haul buses in China. It operates approximately 71,900 digital television screens on airplanes operated by over five airlines, including Air China, China Eastern Airlines, China Southern Airlines, Shanghai Airlines and Xiamen Airlines. It also holds concession rights to operate the advertising media platforms at Sinopec gas stations across China. It provides in-flight advertising and non-advertising contents. It offers advertising services from the platforms, digital television screens on airplanes and gas station media displays.</Text>
+		<Text Type="Financial Summary" lastModified="2017-06-30T09:39:35">BRIEF: For the fiscal year ended 31 December 2016, AirMedia Group Inc (ADR) revenues decreased 67% to $16.5M. Net loss before extraordinary items decreased 7% to $65.6M. Revenues reflect Air Travel Media Network decrease of 69% to $12.2M, Gas station Media Network decrease of 59% to $4M, Other Media decrease of 81% to $410K. Lower net loss reflects Other income, net increase from $1.4M to $4.2M (income), Interest  income, net increase of 79% to $843K (income).</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-08-16T03:49:47">
+		<streetAddress line="1">17F, Sky Plaza, No. 46</streetAddress>
+		<streetAddress line="2">Dongzhimenwai Street</streetAddress>
+		<streetAddress line="3">Dongcheng District</streetAddress>
+		<city>BEIJING</city>
+		<state-region>BEJ</state-region>
+		<postalCode>100027</postalCode>
+		<country code="CHN">China</country>
+		<contactName></contactName>
+		<contactTitle></contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>86</countryPhoneCode>
+				<city-areacode>10</city-areacode>
+				<number>84386868</number>
+			</phone>
+			<phone type="mainfax">
+				<countryPhoneCode>86</countryPhoneCode>
+				<city-areacode>10</city-areacode>
+				<number>84608658</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2016-05-26T11:30:33"><webSite mainCategory="Home Page">http://www.airmedia.net.cn/</webSite><eMail mainCategory="Company Contact/E-mail">ir@airmedia.net.cn</eMail></webLinks>
+	<peerInfo lastUpdated="2017-08-16T03:49:47">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5330201014" mnem="">Outdoor Advertising</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="54181" mnem="">Advertising Agencies</Industry>
+			<Industry type="NAICS" order="2" reported="0" code="54185" mnem="">Display Advertising</Industry>
+			<Industry type="NAICS" order="3" reported="0" code="551112" mnem="">Offices of  Other Holding Companies</Industry>
+			<Industry type="SIC" order="0" reported="1" code="7311" mnem="">Advertising Agencies</Industry>
+			<Industry type="SIC" order="1" reported="0" code="7311" mnem="">Advertising Agencies</Industry>
+			<Industry type="SIC" order="2" reported="0" code="7312" mnem="">Outdoor Advertising Services</Industry>
+			<Industry type="SIC" order="3" reported="0" code="6719" mnem="">Holding Companies, Nec</Industry>
+		</IndustryInfo>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="08/2005">
+			<firstName>Herman Man</firstName>
+			<mI></mI>
+			<lastName>Guo</lastName>
+			<age>49 </age>
+			<title startYear="2005" startMonth="08" startDay="" iD1="CHM" abbr1="Chmn." iD2="CEO" abbr2="CEO">Chairman of the Board, Chief Executive Officer</title>
+		</officer>
+		<officer rank="2" since="10/2005">
+			<firstName>Zhonghua</firstName>
+			<mI></mI>
+			<lastName>Feng</lastName>
+			<age>42 </age>
+			<title startYear="2011" startMonth="05" startDay="06" iD1="PRE" abbr1="Pres." iD2="DRC" abbr2="Dir.">President, Director</title>
+		</officer>
+		<officer rank="3" since="06/01/2014">
+			<firstName>Richard</firstName>
+			<mI>Peidong</mI>
+			<lastName>Wu</lastName>
+			<age>49 </age>
+			<title startYear="2014" startMonth="06" startDay="01" iD1="CFO" abbr1="CFO" iD2="" abbr2="">Chief Financial Officer</title>
+		</officer>
+		<officer rank="4" since="06/07/2010">
+			<firstName>Qing</firstName>
+			<mI></mI>
+			<lastName>Xu</lastName>
+			<age>52 </age>
+			<title startYear="2010" startMonth="06" startDay="07" iD1="CEX" abbr1="Corp. Exec." iD2="DRC" abbr2="Dir.">Executive President, Director</title>
+		</officer>
+		<officer rank="5" since="04/2007">
+			<firstName>Wei</firstName>
+			<mI></mI>
+			<lastName>He</lastName>
+			<age>38 </age>
+			<title startYear="2007" startMonth="04" startDay="" iD1="OTH" abbr1="Other" iD2="" abbr2="">Chief Public Relations Officer</title>
+		</officer>
+		<officer rank="6" since="03/2013">
+			<firstName>Tong</firstName>
+			<mI></mI>
+			<lastName>Wu</lastName>
+			<age>45 </age>
+			<title startYear="2013" startMonth="03" startDay="" iD1="OTH" abbr1="Other" iD2="" abbr2="">Chief Strategy Officer</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2016-12-31">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">2.57000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">3.77790</Ratio>
+			<Ratio FieldName="NLOW" Type="N">1.35000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">0.16364</Ratio>
+			<Ratio FieldName="EV" Type="N">43.88730</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">161.43430</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">16.51300</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">-89.81200</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">-65.62500</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">-1.04738</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">0.26362</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">4.27824</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">1.87132</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">-99999.99000</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">0.00000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">-196.99020</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">-20.02884</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">9.77619</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">-99999.99000</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">0.60071</Ratio>
+			<Ratio FieldName="Employees" Type="N">410</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="12" CurInterimEndCalYear="2017" CurInterimEndMonth="3" EarningsBasis="REP">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

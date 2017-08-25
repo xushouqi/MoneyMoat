@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">80115</CoID>
+		<CoID Type="CompanyName">Almost Family Inc</CoID>
+		<CoID Type="IRSNo">061153720</CoID>
+		<CoID Type="CIKNo">0000799231</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">AFAM</IssueID>
+			<IssueID Type="CUSIP">020409108</IssueID>
+			<IssueID Type="ISIN">US0204091088</IssueID>
+			<IssueID Type="RIC">AFAM.O</IssueID>
+			<IssueID Type="SEDOL">2796448</IssueID>
+			<IssueID Type="DisplayRIC">AFAM.OQ</IssueID>
+			<IssueID Type="InstrumentPI">291958</IssueID>
+			<IssueID Type="QuotePI">7646711</IssueID>
+			<Exchange Code="NASD" Country="USA">NASDAQ</Exchange>
+			<MostRecentSplit Date="2007-01-16">2.0</MostRecentSplit>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-08-10</LastModified>
+		<LatestAvailableAnnual>2016-12-30</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-06-30</LatestAvailableInterim>
+		<Employees LastUpdated="2016-12-30">15500</Employees>
+		<SharesOut Date="2017-08-07" TotalFloat="12466011.0">13964031.0</SharesOut>
+		<CommonShareholders Date="2016-12-30">279</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2017-04-04T00:38:05">Almost Family, Inc. is a provider of home healthcare services. The Company has two divisions: Home Health and Healthcare Innovations (HCI). The Home Health division consists of two segments: Visiting Nurse Services (VN or Visiting Nurse) and Personal Care Services (PC or Personal Care). The VN segment provides a range of Medicare-certified home health nursing services to patients in need of recuperative care, following a period of hospitalization or care in another type of inpatient facility. The PC segment provides services in patients' homes primarily on an as-needed, hourly basis. These services include personal care, medication management, meal preparation, caregiver respite and homemaking. The HCI segment includes its developmental activity outside of the home health business platform. HCI activities include technology, information, population health management, risk-sharing, enhanced patient engagement and informed clinical decision making.</Text>
+		<Text Type="Financial Summary" lastModified="2017-08-10T08:52:48">BRIEF: For the six months ended 30 June 2017, Almost Family Inc revenues increased 30% to $402M. Net income decreased 3% to $8.4M. Revenues reflect Home Health Care segment increase of 36% to $299.5M, Other Home-Based Services segment increase of 15% to $92.1M, Healthcare Innovations segment increase of 4% to $10.4M. Net income was offset by Healthcare Innovations segment loss totaling $16K vs. income of $47K.</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-08-10T08:53:15">
+		<streetAddress line="1">9510 Ormsby Station Rd Ste 300</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>LOUISVILLE</city>
+		<state-region>KY</state-region>
+		<postalCode>40223-5016</postalCode>
+		<country code="USA">United States</country>
+		<contactName>C. Steven Guenthner</contactName>
+		<contactTitle>President, Principal Financial Officer</contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>502</city-areacode>
+				<number>8911000</number>
+			</phone>
+			<phone type="mainfax">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>502</city-areacode>
+				<number>8918067</number>
+			</phone>
+			<phone type="contactphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>502</city-areacode>
+				<number>8911000</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2016-03-24T13:30:08"><webSite mainCategory="Home Page">http://www.almostfamily.com</webSite><eMail mainCategory="Company Contact/E-mail">steveguenthner@almostfamily.com</eMail></webLinks>
+	<peerInfo lastUpdated="2017-08-10T08:53:15">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5610201018" mnem="">Home Healthcare Services</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="62161" mnem="">Home Health Care Services</Industry>
+			<Industry type="NAICS" order="2" reported="0" code="62311" mnem="">Nursing Care Facilities</Industry>
+			<Industry type="NAICS" order="3" reported="0" code="62412" mnem="">Services for the Elderly and Persons with Disabilities</Industry>
+			<Industry type="NAICS" order="4" reported="0" code="62134" mnem="">Offices of Physical, Occupational and Speech Therapists and Audiologists</Industry>
+			<Industry type="NAICS" order="5" reported="0" code="551112" mnem="">Offices of  Other Holding Companies</Industry>
+			<Industry type="SIC" order="1" reported="0" code="8082" mnem="">Home Health Care Services</Industry>
+			<Industry type="SIC" order="2" reported="0" code="8059" mnem="">Nursing And Personal Care, Nec</Industry>
+			<Industry type="SIC" order="3" reported="0" code="8322" mnem="">Individual And Family Services</Industry>
+			<Industry type="SIC" order="4" reported="0" code="8049" mnem="">Offices Of Health Practices Nec</Industry>
+			<Industry type="SIC" order="5" reported="0" code="6719" mnem="">Holding Companies, Nec</Industry>
+		</IndustryInfo>
+		<Indexconstituet>S&amp;P 600 Small Cap</Indexconstituet>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="1992">
+			<firstName>William</firstName>
+			<mI>B.</mI>
+			<lastName>Yarmuth</lastName>
+			<age>64 </age>
+			<title startYear="2012" startMonth="06" startDay="04" iD1="CHM" abbr1="Chmn." iD2="CEO" abbr2="CEO">Chairman of the Board, Chief Executive Officer</title>
+		</officer>
+		<officer rank="2" since="1992">
+			<firstName>C. Steven</firstName>
+			<mI></mI>
+			<lastName>Guenthner</lastName>
+			<age>56 </age>
+			<title startYear="2012" startMonth="06" startDay="04" iD1="PRE" abbr1="Pres." iD2="CFO" abbr2="CFO">President, Principal Financial Officer</title>
+		</officer>
+		<officer rank="3" since="04/18/2013">
+			<firstName>Daniel</firstName>
+			<mI>J.</mI>
+			<lastName>Schwartz</lastName>
+			<age>50 </age>
+			<title startYear="2013" startMonth="12" startDay="09" iD1="COO" abbr1="COO" iD2="SVP" abbr2="Sr. VP">Chief Operating Officer, Senior Vice President - Operations</title>
+		</officer>
+		<officer rank="4" since="10/2011">
+			<firstName>Rajneesh</firstName>
+			<mI></mI>
+			<lastName>Kaushal</lastName>
+			<age>56 </age>
+			<title startYear="2012" startMonth="" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="" abbr2="">Senior Vice President and Chief Clinical Officer</title>
+		</officer>
+		<officer rank="5" since="10/1997">
+			<firstName>Patrick</firstName>
+			<mI>Todd</mI>
+			<lastName>Lyles</lastName>
+			<age>55 </age>
+			<title startYear="2006" startMonth="" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="" abbr2="">Senior Vice President - Administration</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-06-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">48.20000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">62.95000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">35.21000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">0.11605</Ratio>
+			<Ratio FieldName="EV" Type="N">786.66330</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">673.06630</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">715.89300</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">40.24800</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">17.36800</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">1.48904</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">60.15781</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">32.59360</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">1.54261</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">2.13012</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">0.00000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">46.93788</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">4.65410</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">0.94018</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">32.36985</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">1.47882</Ratio>
+			<Ratio FieldName="Employees" Type="N">15500</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="12" CurInterimEndCalYear="2017" CurInterimEndMonth="9" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">2.4</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">56.60000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">5.8000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">20.40644</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">815.55600</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">204.52020</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">2.36200</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">0.54800</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">32.79750</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">0.00000</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

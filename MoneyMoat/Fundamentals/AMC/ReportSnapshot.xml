@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">AF9CC</CoID>
+		<CoID Type="CompanyName">AMC Entertainment Holdings Inc</CoID>
+		<CoID Type="IRSNo">260303916</CoID>
+		<CoID Type="CIKNo">0001411579</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares Class A</IssueID>
+			<IssueID Type="Ticker">AMC</IssueID>
+			<IssueID Type="CUSIP">00165C104</IssueID>
+			<IssueID Type="ISIN">US00165C1045</IssueID>
+			<IssueID Type="RIC">AMC</IssueID>
+			<IssueID Type="SEDOL">BH4HLL3</IssueID>
+			<IssueID Type="DisplayRIC">AMC.N</IssueID>
+			<IssueID Type="InstrumentPI">38010249</IssueID>
+			<IssueID Type="QuotePI">143421760</IssueID>
+			<Exchange Code="NYSE" Country="USA">New York Stock Exchange</Exchange>
+		</Issue>
+		<Issue ID="2" Type="C" Desc="Common Stock" Order="2">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="InstrumentPI">148485147</IssueID>
+			<Exchange Code="NA" Country="">Not Available</Exchange>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-08-09</LastModified>
+		<LatestAvailableAnnual>2016-12-31</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-06-30</LatestAvailableInterim>
+		<Employees LastUpdated="2016-12-31">3194</Employees>
+		<SharesOut Date="2017-07-31" TotalFloat="50143410.0">130905499.0</SharesOut>
+		<CommonShareholders Date="2016-12-31">39</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2016-12-22T01:33:49">AMC Entertainment Holdings, Inc. is a holding company. The Company, through its subsidiaries, including AMC Entertainment Inc. (AMCE), American Multi-Cinema, Inc. (OpCo) and its subsidiaries, is engaged in the theatrical exhibition business. It operates through theatrical exhibition operations segment. It licenses first-run motion pictures from distributors owned by film production companies and from independent distributors. The Company also offers a range of food and beverage items, which include popcorn; soft drinks; candy; hot dogs; specialty drinks, including beers, wine and mixed drinks, and made to order hot foods, including menu choices, such as curly fries, chicken tenders and mozzarella sticks. It operates over 900 theatres with approximately 10,000 screens globally, including over 661 theatres with approximately 8,200 screens in the United States and over 244 theatres with approximately 2,200 screens in Europe. The Companys subsidiary also includes Carmike Cinemas, Inc. </Text>
+		<Text Type="Financial Summary" lastModified="2017-08-09T11:01:26">BRIEF: For the six months ended 30 June 2017, AMC Entertainment Holdings Inc revenues increased 62% to $2.49B. Net loss totaled $168.1M vs. income of $52.3M. Revenues reflect United States segment increase of 24% to $1.9B, United Kingdom segment increase from $3.3M to $241M. Net loss reflects Operating expense (income) increase of 87% to $753.1M (expense).</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-08-09T11:01:55">
+		<streetAddress line="1">11500 Ash St</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>LEAWOOD</city>
+		<state-region>KS</state-region>
+		<postalCode>66211-7804</postalCode>
+		<country code="USA">United States</country>
+		<contactName>John Merriwether</contactName>
+		<contactTitle>Vice President, Investor Relations</contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>913</city-areacode>
+				<number>2132000</number>
+			</phone>
+			<phone type="mainfax">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>302</city-areacode>
+				<number>6555049</number>
+			</phone>
+			<phone type="contactphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>866</city-areacode>
+				<number>2483872</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2017-03-03T09:30:04"><webSite mainCategory="Home Page">https://www.amctheatres.com/</webSite><eMail mainCategory="Company Contact/E-mail">InvestorRelations@amctheatres.com</eMail></webLinks>
+	<peerInfo lastUpdated="2017-08-09T11:01:55">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5330104011" mnem="">Movie Theaters &amp; Movie Products</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="512131" mnem="">Motion Picture Theaters, Except Drive-Ins.</Industry>
+			<Industry type="SIC" order="0" reported="1" code="7832" mnem="">Motion Pict Theaters Not Drive-In</Industry>
+			<Industry type="SIC" order="1" reported="0" code="7832" mnem="">Motion Pict Theaters Not Drive-In</Industry>
+		</IndustryInfo>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="01/04/2016">
+			<firstName>Adam</firstName>
+			<mI>M.</mI>
+			<lastName>Aron</lastName>
+			<age>62 </age>
+			<title startYear="2016" startMonth="01" startDay="04" iD1="PRE" abbr1="Pres." iD2="CEO" abbr2="CEO">President, Chief Executive Officer, Director</title>
+		</officer>
+		<officer rank="2" since="NA">
+			<firstName>Craig</firstName>
+			<mI>R.</mI>
+			<lastName>Ramsey</lastName>
+			<age>65 </age>
+			<title startYear="2016" startMonth="01" startDay="04" iD1="CFO" abbr1="CFO" iD2="EVP" abbr2="Exec. VP">Chief Financial Officer, Executive Vice President</title>
+		</officer>
+		<officer rank="3" since="12/2009">
+			<firstName>Stephen</firstName>
+			<mI>A.</mI>
+			<lastName>Colanero</lastName>
+			<age>50 </age>
+			<title startYear="2009" startMonth="12" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="CMO" abbr2="CMO">Executive Vice President, Chief Marketing Officer</title>
+		</officer>
+		<officer rank="4" since="07/2012">
+			<firstName>Elizabeth</firstName>
+			<mI></mI>
+			<lastName>Frank</lastName>
+			<age>47 </age>
+			<title startYear="2012" startMonth="07" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President, Chief Content &amp; Programming Officer</title>
+		</officer>
+		<officer rank="5" since="07/2009">
+			<firstName>John</firstName>
+			<mI>D.</mI>
+			<lastName>McDonald</lastName>
+			<age>59 </age>
+			<title startYear="2009" startMonth="07" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President, U.S. Operations</title>
+		</officer>
+		<officer rank="6" since="07/2009">
+			<firstName>Mark</firstName>
+			<mI>A.</mI>
+			<lastName>McDonald</lastName>
+			<age>58 </age>
+			<title startYear="2009" startMonth="07" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President - Global Development</title>
+		</officer>
+		<officer rank="7" since="06/2010">
+			<firstName>Chris</firstName>
+			<mI>A.</mI>
+			<lastName>Cox</lastName>
+			<age>51 </age>
+			<title startYear="2010" startMonth="06" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="CAO" abbr2="CAO">Senior Vice President, Chief Accounting Officer</title>
+		</officer>
+		<officer rank="8" since="04/2003">
+			<firstName>Kevin</firstName>
+			<mI>M.</mI>
+			<lastName>Connor</lastName>
+			<age>54 </age>
+			<title startYear="2003" startMonth="04" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="GCN" abbr2="Counsel">Senior Vice President, General Counsel, Secretary</title>
+		</officer>
+		<officer rank="9" since="01/2014">
+			<firstName>Carla</firstName>
+			<mI></mI>
+			<lastName>Sanders</lastName>
+			<age>51 </age>
+			<title startYear="2014" startMonth="01" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="DHR" abbr2="Dir.-HR">Senior Vice President - Human Resources</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-06-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">12.55000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">35.65000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">12.05000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">3.65513</Ratio>
+			<Ratio FieldName="EV" Type="N">6449.46400</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">1642.86400</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">4191.56700</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">633.11200</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">-108.69100</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">-0.67842</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">37.12514</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">18.93687</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">0.97684</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">2.61666</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">0.80000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">62.74641</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">-5.39219</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">0.39195</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">-99999.99000</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">0.66273</Ratio>
+			<Ratio FieldName="Employees" Type="N">3194</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="12" CurInterimEndCalYear="2017" CurInterimEndMonth="9" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">2.2667</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">25.66070</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">-15.1470</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">-12.45905</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">5161.34710</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">1168.34650</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">-1.00730</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">-0.25900</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">-133.28260</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">0.80170</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

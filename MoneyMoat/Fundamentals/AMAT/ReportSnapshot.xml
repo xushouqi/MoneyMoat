@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">05840</CoID>
+		<CoID Type="CompanyName">Applied Materials, Inc.</CoID>
+		<CoID Type="IRSNo">941655526</CoID>
+		<CoID Type="CIKNo">0000006951</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">AMAT</IssueID>
+			<IssueID Type="CUSIP">038222105</IssueID>
+			<IssueID Type="ISIN">US0382221051</IssueID>
+			<IssueID Type="RIC">AMAT.O</IssueID>
+			<IssueID Type="SEDOL">2046552</IssueID>
+			<IssueID Type="DisplayRIC">AMAT.OQ</IssueID>
+			<IssueID Type="InstrumentPI">260596</IssueID>
+			<IssueID Type="QuotePI">7656173</IssueID>
+			<Exchange Code="NASD" Country="USA">NASDAQ</Exchange>
+			<MostRecentSplit Date="2002-04-17">2.0</MostRecentSplit>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-08-17</LastModified>
+		<LatestAvailableAnnual>2016-10-30</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-07-30</LatestAvailableInterim>
+		<Employees LastUpdated="2016-10-30">15600</Employees>
+		<SharesOut Date="2017-07-30" TotalFloat="1071999458.0">1074631708.0</SharesOut>
+		<CommonShareholders Date="2017-01-29">3062</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2016-11-28T00:11:20">Applied Materials, Inc. provides manufacturing equipment, services and software to the global semiconductor, display and related industries. The Company's segments are Semiconductor Systems, which includes semiconductor capital equipment for etch, rapid thermal processing, deposition, chemical mechanical planarization, metrology and inspection, wafer packaging, and ion implantation; Applied Global Services, which provides integrated solutions to optimize equipment and fab performance and productivity; Display and Adjacent Markets, which includes products for manufacturing liquid crystal displays, organic light-emitting diodes, upgrades and roll-to-roll Web coating systems and other display technologies for televisions, personal computers, smart phones and other consumer-oriented devices, and Corporate and Other segment, which includes revenues from products, as well as costs of products sold for fabricating solar photovoltaic cells and modules, and certain operating expenses.</Text>
+		<Text Type="Financial Summary" lastModified="2017-08-17T22:34:35">BRIEF: For the 39 weeks ended 30 July 2017, Applied Materials, Inc. revenues increased 40% to $10.57B. Net income increased from $1.11B to $2.45B. Revenues reflect Display and Adjacent Markets segment increase of 17% to $813M. Net income benefited from Semiconductor Systems segment income increase of 31% to $1.5B, Corporate and Other segment loss decrease of 20% to $322M, Display and Adjacent Markets segment income increase of 53% to $199M.</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-08-17T23:04:24">
+		<streetAddress line="1">3050 Bowers Ave</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>SANTA CLARA</city>
+		<state-region>CA</state-region>
+		<postalCode>95054-3299</postalCode>
+		<country code="USA">United States</country>
+		<contactName></contactName>
+		<contactTitle></contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>408</city-areacode>
+				<number>7275555</number>
+			</phone>
+			<phone type="mainfax">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>408</city-areacode>
+				<number>7489943</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2014-10-29T02:04:28"><webSite mainCategory="Home Page">http://www.appliedmaterials.com/</webSite><eMail mainCategory="Company Contact/E-mail">investor_relations@amat.com</eMail></webLinks>
+	<peerInfo lastUpdated="2017-08-17T23:04:24">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5710102011" mnem="">Semiconductor Machinery Manufacturing</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="333295" mnem="">Semiconductor Machinery Manufacturing</Industry>
+			<Industry type="SIC" order="0" reported="1" code="3674" mnem="">Semiconductors/related Devices</Industry>
+			<Industry type="SIC" order="1" reported="0" code="3559" mnem="">Special Industry MacHinery, Nec</Industry>
+		</IndustryInfo>
+		<Indexconstituet>S&amp;P 500</Indexconstituet>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="03/09/2017">
+			<firstName>Thomas</firstName>
+			<mI>J.</mI>
+			<lastName>Iannotti</lastName>
+			<age>60 </age>
+			<title startYear="2017" startMonth="03" startDay="09" iD1="CHM" abbr1="Chmn." iD2="IND" abbr2="Ind. Dir.">Independent Chairman of the Board</title>
+		</officer>
+		<officer rank="2" since="06/19/2012">
+			<firstName>Gary</firstName>
+			<mI>E.</mI>
+			<lastName>Dickerson</lastName>
+			<age>59 </age>
+			<title startYear="2013" startMonth="09" startDay="01" iD1="PRE" abbr1="Pres." iD2="CEO" abbr2="CEO">President, Chief Executive Officer, Director</title>
+		</officer>
+		<officer rank="3" since="01/24/2011">
+			<firstName>Omkaram</firstName>
+			<mI></mI>
+			<lastName>Nalamasu</lastName>
+			<age>58 </age>
+			<title startYear="2013" startMonth="06" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="CTO" abbr2="CTO">Senior Vice President, Chief Technology Officer</title>
+		</officer>
+		<officer rank="4" since="11/26/2012">
+			<firstName>Thomas</firstName>
+			<mI>F.</mI>
+			<lastName>Larkins</lastName>
+			<age>55 </age>
+			<title startYear="2012" startMonth="11" startDay="26" iD1="SVP" abbr1="Sr. VP" iD2="GCN" abbr2="Counsel">Senior Vice President, General Counsel, Corporate Secretary</title>
+		</officer>
+		<officer rank="5" since="11/29/2012">
+			<firstName>Ali</firstName>
+			<mI></mI>
+			<lastName>Salehpour</lastName>
+			<age>55 </age>
+			<title startYear="2013" startMonth="09" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="GMG" abbr2="GM">Senior Vice President, General Manager - Applied Global Services and Growth Markets</title>
+		</officer>
+		<officer rank="6" since="03/2014">
+			<firstName>Ginetto</firstName>
+			<mI></mI>
+			<lastName>Addiego</lastName>
+			<age>57 </age>
+			<title startYear="2015" startMonth="06" startDay="" iD1="SVP" abbr1="Sr. VP" iD2="" abbr2="">Senior Vice President, Engineering, Operations and Quality</title>
+		</officer>
+		<officer rank="7" since="08/07/2017">
+			<firstName>Daniel</firstName>
+			<mI>J.</mI>
+			<lastName>Durn</lastName>
+			<age>50 </age>
+			<title startYear="2017" startMonth="08" startDay="07" iD1="SVP" abbr1="Sr. VP" iD2="" abbr2="">Senior Vice President</title>
+		</officer>
+		<officer rank="8" since="09/30/2013">
+			<firstName>Charles</firstName>
+			<mI></mI>
+			<lastName>Read</lastName>
+			<age>50 </age>
+			<title startYear="2013" startMonth="09" startDay="30" iD1="CAO" abbr1="CAO" iD2="VPR" abbr2="VP">Chief Accounting Officer, Corporate Vice President, Corporate Controller</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-07-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">44.02000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">47.86000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">27.56000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">11.33661</Ratio>
+			<Ratio FieldName="EV" Type="N">45377.29000</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">47305.29000</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">13865.00000</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">3683.00000</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">3062.00000</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">2.81674</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">12.73771</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">8.11069</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">6.72882</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">3.08222</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">0.40000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">44.31302</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">39.42066</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">3.41185</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">15.62800</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">5.42741</Ratio>
+			<Ratio FieldName="Employees" Type="N">15600</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="10" CurInterimEndCalYear="2017" CurInterimEndMonth="10" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">1.7727</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">55.27500</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">27.6100</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">13.72965</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">14500.02380</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">3937.48760</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">3.20620</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">0.90510</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">3455.34760</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">0.41180</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

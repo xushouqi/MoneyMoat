@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
@@ -19,11 +20,58 @@ namespace MoneyMoat
         protected readonly ICacheClient m_cacheClient;
         protected readonly TContext m_context;
 
+        private ConcurrentDictionary<string, TEntity> m_updateDb = new ConcurrentDictionary<string, TEntity>();
+        private ConcurrentDictionary<string, TEntity> m_addDb = new ConcurrentDictionary<string, TEntity>();
+
         public Repository(TContext context, DbSet<TEntity> datas, ICacheClient cacheClient)
         {
             Datas = datas;
             m_cacheClient = cacheClient;
             m_context = context;
+
+            new Task(Work).Start();
+        }
+
+        private void Work()
+        {
+            var typeName = typeof(TEntity).Name;
+
+            while (true)
+            {
+                bool ret = false;
+                lock (m_lock_me)
+                {
+                    if (m_addDb.Count > 0)
+                    {
+                        lock (m_addDb)
+                        {
+                            foreach (var item in m_addDb)
+                            {
+                                Datas.Add(item.Value);
+                                Console.WriteLine("Lazy Add Db: {0}.{1}", typeName, item.Key);
+                            }
+                            m_addDb.Clear();
+                        }
+                        ret = true;
+                    }
+                    if (m_updateDb.Count > 0)
+                    {
+                        lock (m_updateDb)
+                        {
+                            foreach (var item in m_updateDb)
+                            {
+                                Datas.Update(item.Value);
+                                Console.WriteLine("Lazy Update Db: {0}.{1}", typeName, item.Key);
+                            }
+                            m_updateDb.Clear();
+                        }
+                        ret = true;
+                    }
+                    if (ret)
+                        m_context.SaveChanges();
+                }
+                Task.Delay(100);
+            }
         }
         private string GetKey(int id)
         {
@@ -52,16 +100,27 @@ namespace MoneyMoat
                 return data;
             }
         }
+
+        object m_lock_me = new object();
+        private ConcurrentDictionary<string, TEntity> m_findDb = new ConcurrentDictionary<string, TEntity>();
         public async Task<TEntity> Find(string key)
         {
-            var ret = await m_cacheClient.GetAsync<TEntity>(key);
-            if (ret.HasValue)
-                return ret.Value;
-            else
+            //var ret = await m_cacheClient.GetAsync<TEntity>(key);
+            //if (ret.HasValue)
+            //    return ret.Value;
+            //else
             {
-                var data = Datas.Find(key);
-                if (data != null)
-                    await m_cacheClient.SetAsync(key, data);
+                var data = default(TEntity);
+                if (!m_findDb.TryGetValue(key, out data))
+                {
+                    lock (m_lock_me)
+                    {
+                        data = Datas.Find(key);
+                    }
+                    m_findDb.AddOrUpdate(key, data, (tkey, oldValue) => data);
+                }
+                //if (data != null)
+                //    await m_cacheClient.SetAsync(key, data);
                 return data;
             }
         }
@@ -116,35 +175,39 @@ namespace MoneyMoat
             var key = GetKey(data);
             data.TryUpdateTime();
             var ret = await m_cacheClient.SetAsync(key, data);
-            Datas.Add(data);
-            await m_context.SaveChangesAsync();
+            m_addDb.AddOrUpdate(key, data, (tkey, oldValue) => data);
+            //Datas.Add(data);
+            //await m_context.SaveChangesAsync();
             return ret;
-        }
-        public bool AddNoCacheNotSave(TEntity data)
-        {
-            data.TryUpdateTime();
-            Datas.Add(data);
-            return true;
-        }
-        public async Task<bool> SaveChangesAsync()
-        {
-            await m_context.SaveChangesAsync();
-            return true;
         }
         public async Task<bool> AddNoCache(TEntity data)
         {
             data.TryUpdateTime();
-            Datas.Add(data);
-            await m_context.SaveChangesAsync();
+            //Datas.Add(data);
+            //await m_context.SaveChangesAsync();
+            var key = GetKey(data);
+            m_addDb.AddOrUpdate(key, data, (tkey, oldValue) => data);
             return true;
         }
+        //public bool AddNoCacheNotSave(TEntity data)
+        //{
+        //    data.TryUpdateTime();
+        //    Datas.Add(data);
+        //    return true;
+        //}
+        //public async Task<bool> SaveChangesAsync()
+        //{
+        //    await m_context.SaveChangesAsync();
+        //    return true;
+        //}
         public async Task<bool> Update(TEntity data)
         {
             var key = GetKey(data);
             var ret = await m_cacheClient.SetAsync(key, data);
             data.TryUpdateTime();
-            Datas.Update(data);
-            await m_context.SaveChangesAsync();
+            //Datas.Update(data);
+            //await m_context.SaveChangesAsync();
+            m_updateDb.AddOrUpdate(key, data, (tkey, oldValue) => data);
             return ret;
         }
         public async Task<bool> Remove(TEntity data)
@@ -161,13 +224,7 @@ namespace MoneyMoat
             bool ret = false;
             var data = await Find(id);
             if (data != null)
-            {
-                ret = true;
-                var key = GetKey(id);
-                await m_cacheClient.RemoveAsync(key);
-                Datas.Remove(data);
-                await m_context.SaveChangesAsync();
-            }
+                ret = await Remove(data);
             return ret;
         }
         public async Task<bool> RemoveRange(params TEntity[] datas)
@@ -184,6 +241,11 @@ namespace MoneyMoat
             Datas.RemoveRange(datas);
             await m_context.SaveChangesAsync();
             return ret;
+        }
+        public async Task<bool> RemoveRange(Expression<Func<TEntity, bool>> predicate)
+        {
+            var datas = Where(predicate).ToArray();
+            return await RemoveRange(datas);
         }
     }
 }

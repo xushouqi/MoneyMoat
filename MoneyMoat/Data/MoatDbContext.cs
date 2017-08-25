@@ -10,7 +10,7 @@ namespace MoneyMoat
     public class MoatDbContext : DbContext
     {
         public DbSet<Stock> Stocks { get; set; }
-        public DbSet<Financal> Financals { get; set; }
+        //public DbSet<Financal> Financals { get; set; }
 
         public MoatDbContext(DbContextOptions<MoatDbContext> options)
             : base(options)

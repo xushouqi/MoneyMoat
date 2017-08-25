@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">A0CCB</CoID>
+		<CoID Type="CompanyName">Advanced Energy Industries, Inc.</CoID>
+		<CoID Type="IRSNo">840846841</CoID>
+		<CoID Type="CIKNo">0000927003</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">AEIS</IssueID>
+			<IssueID Type="CUSIP">007973100</IssueID>
+			<IssueID Type="ISIN">US0079731008</IssueID>
+			<IssueID Type="RIC">AEIS.O</IssueID>
+			<IssueID Type="SEDOL">2049175</IssueID>
+			<IssueID Type="DisplayRIC">AEIS.OQ</IssueID>
+			<IssueID Type="InstrumentPI">275261</IssueID>
+			<IssueID Type="QuotePI">7646639</IssueID>
+			<Exchange Code="NASD" Country="USA">NASDAQ</Exchange>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-08-01</LastModified>
+		<LatestAvailableAnnual>2016-12-31</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-06-30</LatestAvailableInterim>
+		<Employees LastUpdated="2016-12-31">1558</Employees>
+		<SharesOut Date="2017-07-24" TotalFloat="39474398.0">39942723.0</SharesOut>
+		<CommonShareholders Date="2016-12-31">358</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2017-03-13T05:04:01">Advanced Energy Industries, Inc. is a provider of engineered, precision power conversion, measurement and control solutions. The Company is engaged in designing, manufacturing, selling and supporting its power conversion products and solutions that transform power into various forms in various applications ranging from manufacturing and industrial processes to instrumentation, and test and measurement. It also provides repair and maintenance services for all of its products. Its process power systems include direct current (DC), pulsed DC, low frequency, high voltage, and radio frequency (RF) power supplies, matching networks, remote plasma sources for reactive gas applications and RF instrumentation. These power conversion systems refine, modify and control the raw electrical power from a utility and convert it into power that may be customized and is predictable and repeatable. Its power control modules and thermal instrumentation products are used in the semiconductor industry.</Text>
+		<Text Type="Financial Summary" lastModified="2017-08-01T10:34:18">BRIEF: For the six months ended 30 June 2017, Advanced Energy Industries, Inc. revenues increased 42% to $315.2M. Net income before extraordinary items increased 71% to $81.3M. Revenues reflect Product increase of 45% to $272.1M,  Services increase of 24% to $43.1M. Net income benefited from Amortization of intangible assets decrease of 9% to $1.9M (expense). Basic Earnings per Share excluding Extraordinary Items increased from $1.19 to $2.04.</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-08-01T10:34:44">
+		<streetAddress line="1">1625 SHARP POINT DR</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>FORT COLLINS</city>
+		<state-region>CO</state-region>
+		<postalCode>80525</postalCode>
+		<country code="USA">United States</country>
+		<contactName>Annie Leschin</contactName>
+		<contactTitle>Investor Relations</contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>970</city-areacode>
+				<number>2214670</number>
+			</phone>
+			<phone type="mainfax">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>970</city-areacode>
+				<number>4075296</number>
+			</phone>
+			<phone type="contactphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>970</city-areacode>
+				<number>4076555</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2013-05-06T16:07:08"><webSite mainCategory="Home Page">http://www.advancedenergy.com</webSite><eMail mainCategory="Company Contact/E-mail">ir@aei.com</eMail></webLinks>
+	<peerInfo lastUpdated="2017-08-01T10:34:44">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5710101010" mnem="">Semiconductors - NEC</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="334419" mnem="">Other Electronic Component Manufacturing</Industry>
+			<Industry type="NAICS" order="2" reported="0" code="335999" mnem="">All Other Miscellaneous Electrical Equipment and Component Manufacturing</Industry>
+			<Industry type="NAICS" order="3" reported="0" code="333295" mnem="">Semiconductor Machinery Manufacturing</Industry>
+			<Industry type="NAICS" order="4" reported="0" code="334413" mnem="">Semiconductor and Related Device Manufacturing</Industry>
+			<Industry type="SIC" order="0" reported="1" code="3679" mnem="">Electronic Components, Nec</Industry>
+			<Industry type="SIC" order="1" reported="0" code="3679" mnem="">Electronic Components, Nec</Industry>
+			<Industry type="SIC" order="2" reported="0" code="3699" mnem="">Electrical Equip/supplies, Nec</Industry>
+			<Industry type="SIC" order="3" reported="0" code="3559" mnem="">Special Industry MacHinery, Nec</Industry>
+			<Industry type="SIC" order="4" reported="0" code="3674" mnem="">Semiconductors/related Devices</Industry>
+		</IndustryInfo>
+		<Indexconstituet>S&amp;P 600 Small Cap</Indexconstituet>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="05/05/2016">
+			<firstName>Grant</firstName>
+			<mI>H.</mI>
+			<lastName>Beard</lastName>
+			<age>56 </age>
+			<title startYear="2016" startMonth="05" startDay="05" iD1="CHM" abbr1="Chmn." iD2="DRC" abbr2="Dir.">Chairman of the Board</title>
+		</officer>
+		<officer rank="2" since="05/18/2015">
+			<firstName>Thomas</firstName>
+			<mI></mI>
+			<lastName>Liguori</lastName>
+			<age>59 </age>
+			<title startYear="2015" startMonth="05" startDay="18" iD1="CFO" abbr1="CFO" iD2="EVP" abbr2="Exec. VP">Chief Financial Officer, Executive Vice President</title>
+		</officer>
+		<officer rank="3" since="08/2011">
+			<firstName>Thomas</firstName>
+			<mI>O.</mI>
+			<lastName>McGimpsey</lastName>
+			<age>55 </age>
+			<title startYear="2015" startMonth="" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="GCN" abbr2="Counsel">Executive Vice President, General Counsel, Corporate Secretary</title>
+		</officer>
+		<officer rank="4" since="08/2007">
+			<firstName>Yuval</firstName>
+			<mI></mI>
+			<lastName>Wasserman</lastName>
+			<age>62 </age>
+			<title startYear="2014" startMonth="10" startDay="01" iD1="DRC" abbr1="Dir." iD2="CEO" abbr2="CEO">President, Chief Executive Officer, Director</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-06-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">70.53000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">86.25000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">43.29000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">0.28941</Ratio>
+			<Ratio FieldName="EV" Type="N">2454.12700</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">2817.16000</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">577.11800</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">171.92900</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">150.78800</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">3.75724</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">14.38524</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">12.15202</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">9.08878</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">3.95763</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">0.00000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">52.60848</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">37.36075</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">4.88143</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">18.77176</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">5.80397</Ratio>
+			<Ratio FieldName="Employees" Type="N">1558</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="12" CurInterimEndCalYear="2017" CurInterimEndMonth="9" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">2.75</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">77.50000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">15.36601</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">649.01290</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">165.80290</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">4.59000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">1.16630</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">185.72670</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">0.00000</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportSnapshot Major="1" Minor="0" Revision="1">
+	<CoIDs>
+		<CoID Type="RepNo">A0891</CoID>
+		<CoID Type="CompanyName">Astoria Financial Corp</CoID>
+		<CoID Type="IRSNo">113170868</CoID>
+		<CoID Type="CIKNo">0000910322</CoID>
+	</CoIDs>
+	<Issues>
+		<Issue ID="1" Type="C" Desc="Common Stock" Order="1">
+			<IssueID Type="Name">Ordinary Shares</IssueID>
+			<IssueID Type="Ticker">AF</IssueID>
+			<IssueID Type="CUSIP">046265104</IssueID>
+			<IssueID Type="ISIN">US0462651045</IssueID>
+			<IssueID Type="RIC">AF</IssueID>
+			<IssueID Type="SEDOL">2052689</IssueID>
+			<IssueID Type="DisplayRIC">AF.N</IssueID>
+			<IssueID Type="InstrumentPI">273279</IssueID>
+			<IssueID Type="QuotePI">7481662</IssueID>
+			<Exchange Code="NYSE" Country="USA">New York Stock Exchange</Exchange>
+			<MostRecentSplit Date="2005-03-02">1.5</MostRecentSplit>
+		</Issue>
+		<Issue ID="3" Type="C" Desc="Common Stock" Order="2">
+			<IssueID Type="Name">NonCum. Pref. Shrs</IssueID>
+			<IssueID Type="Ticker">AF PR C</IssueID>
+			<IssueID Type="CUSIP">046265302</IssueID>
+			<IssueID Type="ISIN">US0462653025</IssueID>
+			<IssueID Type="RIC">AF_pc</IssueID>
+			<IssueID Type="SEDOL">B91RFH4</IssueID>
+			<IssueID Type="DisplayRIC">AF_pc.N</IssueID>
+			<IssueID Type="InstrumentPI">141479828</IssueID>
+			<Exchange Code="NYSE" Country="USA">New York Stock Exchange</Exchange>
+		</Issue>
+		<Issue ID="2" Type="P" Desc="Preferred Stock" Order="1">
+			<IssueID Type="Name">Preference Shares</IssueID>
+			<IssueID Type="InstrumentPI">100687549</IssueID>
+			<Exchange Code="NASD" Country="USA">NASDAQ</Exchange>
+		</Issue>
+	</Issues>
+	<CoGeneralInfo>
+		<CoStatus Code="1">Active</CoStatus>
+		<CoType Code="EQU">Equity Issue</CoType>
+		<LastModified>2017-08-07</LastModified>
+		<LatestAvailableAnnual>2016-12-31</LatestAvailableAnnual>
+		<LatestAvailableInterim>2017-06-30</LatestAvailableInterim>
+		<Employees LastUpdated="2016-12-31">1328</Employees>
+		<SharesOut Date="2017-07-28" TotalFloat="92687518.0">101852865.0</SharesOut>
+		<CommonShareholders Date="2016-12-31">2812</CommonShareholders>
+		<ReportingCurrency Code="USD">U.S. Dollars</ReportingCurrency>
+		<MostRecentExchange Date="2017-08-22">1.0</MostRecentExchange>
+	</CoGeneralInfo>
+	<TextInfo>
+		<Text Type="Business Summary" lastModified="2017-03-13T05:06:57">Astoria Financial Corporation is a unitary savings and loan holding company. The Company's principal business is the operation of its subsidiary, Astoria Bank. Astoria Bank's primary business is attracting retail deposits from the general public and businesses and investing those deposits, together with funds generated from operations, principal repayments on loans and securities and borrowings, primarily in multi-family and commercial real estate mortgage loans, one- to four-family, or residential, mortgage loans and mortgage-backed securities. Astoria Bank also invests in consumer and other loans, the United States Government, government agency and government-sponsored enterprise (GSE) securities, and other investments permitted by federal banking laws and regulations. Its loan portfolio consists primarily of mortgage loans, and consumer and other loans. The Company's investment activities include securities available-for-sale and securities held-to-maturity.</Text>
+		<Text Type="Financial Summary" lastModified="2017-08-07T06:39:18">BRIEF: For the six months ended 30 June 2017, Astoria Financial Corp interest income decreased 5% to $218.3M. Net interest income after loan loss provision decreased 5% to $163.6M.  Net income applicable to common stockholders decreased 14% to $27.8M. Net interest income after loan loss provision reflects Net Interest Spread, Total -% decrease of less than 1% to 2.27%, Multi-family and commercial real estate decrease of 7% to $86.8M.</Text>
+	</TextInfo>
+	<contactInfo lastUpdated="2017-08-07T06:40:33">
+		<streetAddress line="1">1 Astoria Bank Plz</streetAddress>
+		<streetAddress line="2"></streetAddress>
+		<streetAddress line="3"></streetAddress>
+		<city>NEW HYDE PARK</city>
+		<state-region>NY</state-region>
+		<postalCode>11042-1085</postalCode>
+		<country code="USA">United States</country>
+		<contactName></contactName>
+		<contactTitle></contactTitle>
+		<phone>
+			<phone type="mainphone">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>516</city-areacode>
+				<number>3273000</number>
+			</phone>
+			<phone type="mainfax">
+				<countryPhoneCode>1</countryPhoneCode>
+				<city-areacode>302</city-areacode>
+				<number>6555049</number>
+			</phone>
+		</phone>
+	</contactInfo>
+	<webLinks lastUpdated="2016-03-15T03:30:06"><webSite mainCategory="Home Page">http://ir.astoriafederal.com/</webSite><eMail mainCategory="Company Contact/E-mail"> ir@astoriabank.com</eMail></webLinks>
+	<peerInfo lastUpdated="2017-08-07T06:40:33">
+		<IndustryInfo>
+			<Industry type="TRBC" order="1" reported="0" code="5510101010" mnem="">Banks - NEC</Industry>
+			<Industry type="NAICS" order="1" reported="0" code="52212" mnem="">Savings Institutions</Industry>
+			<Industry type="NAICS" order="2" reported="0" code="52421" mnem="">Insurance Agencies and Brokerages</Industry>
+			<Industry type="NAICS" order="3" reported="0" code="551111" mnem="">Offices of  Bank Holding Companies</Industry>
+			<Industry type="SIC" order="0" reported="1" code="6035" mnem="">Federal Savings Institutions</Industry>
+			<Industry type="SIC" order="1" reported="0" code="6035" mnem="">Federal Savings Institutions</Industry>
+			<Industry type="SIC" order="2" reported="0" code="6411" mnem="">Insurance Agents/brokers/service</Industry>
+			<Industry type="SIC" order="3" reported="0" code="6712" mnem="">Bank Holding Companies</Industry>
+		</IndustryInfo>
+		<Indexconstituet>S&amp;P 600 Small Cap</Indexconstituet>
+	</peerInfo>
+	<officers>
+		<officer rank="1" since="06/21/2012">
+			<firstName>Ralph</firstName>
+			<mI>F.</mI>
+			<lastName>Palleschi</lastName>
+			<age>70 </age>
+			<title startYear="2012" startMonth="06" startDay="21" iD1="CHM" abbr1="Chmn." iD2="DRC" abbr2="Dir.">Independent Chairman of the Board</title>
+		</officer>
+		<officer rank="2" since="1993">
+			<firstName>Monte</firstName>
+			<mI>N.</mI>
+			<lastName>Redman</lastName>
+			<age>66 </age>
+			<title startYear="2011" startMonth="07" startDay="01" iD1="CEO" abbr1="CEO" iD2="PRE" abbr2="Pres.">President, Chief Executive Officer, Director</title>
+		</officer>
+		<officer rank="3" since="09/30/1997">
+			<firstName>Gerard</firstName>
+			<mI>C.</mI>
+			<lastName>Keegan</lastName>
+			<age>70 </age>
+			<title startYear="2017" startMonth="03" startDay="31" iD1="VCH" abbr1="Vice Chmn." iD2="DRC" abbr2="Dir.">Vice Chairman of the Board</title>
+		</officer>
+		<officer rank="4" since="08/15/2007">
+			<firstName>Frank</firstName>
+			<mI>E.</mI>
+			<lastName>Fusco</lastName>
+			<age>53 </age>
+			<title startYear="2012" startMonth="01" startDay="01" iD1="CFO" abbr1="CFO" iD2="EVP" abbr2="Exec. VP">Chief Financial Officer, Senior Executive Vice President</title>
+		</officer>
+		<officer rank="5" since="01/01/2012">
+			<firstName>Robert</firstName>
+			<mI>J.</mI>
+			<lastName>DeStefano</lastName>
+			<age>58 </age>
+			<title startYear="2012" startMonth="01" startDay="01" iD1="EVP" abbr1="Exec. VP" iD2="CIO" abbr2="CIO">Executive Vice President, Chief Information Officer</title>
+		</officer>
+		<officer rank="6" since="1994">
+			<firstName>Alan</firstName>
+			<mI>P.</mI>
+			<lastName>Eggleston</lastName>
+			<age>63 </age>
+			<title startYear="2013" startMonth="12" startDay="" iD1="EVP" abbr1="Exec. VP" iD2="CRO" abbr2="CRO">Senior Executive Vice President, Chief Risk Officer</title>
+		</officer>
+		<officer rank="7" since="01/01/2012">
+			<firstName>Josie</firstName>
+			<mI></mI>
+			<lastName>Callari</lastName>
+			<age>64 </age>
+			<title startYear="2012" startMonth="01" startDay="01" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President, Chief Support Services Officer</title>
+		</officer>
+		<officer rank="8" since="10/08/2014">
+			<firstName>Hugh</firstName>
+			<mI>J.</mI>
+			<lastName>Donlon</lastName>
+			<age>53 </age>
+			<title startYear="2014" startMonth="10" startDay="08" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Senior Executive Vice President, Chief Lending Officer</title>
+		</officer>
+		<officer rank="9" since="01/01/2012">
+			<firstName>Brian</firstName>
+			<mI>T.</mI>
+			<lastName>Edwards</lastName>
+			<age>56 </age>
+			<title startYear="2012" startMonth="01" startDay="01" iD1="EVP" abbr1="Exec. VP" iD2="" abbr2="">Executive Vice President</title>
+		</officer>
+	</officers>
+	<Ratios PriceCurrency="USD" ReportingCurrency="USD" ExchangeRate="1.00000" LatestAvailableDate="2017-06-30">
+		<Group ID="Price and Volume">
+			<Ratio FieldName="NPRICE" Type="N">19.31000</Ratio>
+			<Ratio FieldName="NHIG" Type="N">21.66000</Ratio>
+			<Ratio FieldName="NLOW" Type="N">14.11000</Ratio>
+			<Ratio FieldName="PDATE" Type="D">2017-08-23T00:00:00</Ratio>
+			<Ratio FieldName="VOL10DAVG" Type="N">0.75413</Ratio>
+			<Ratio FieldName="EV" Type="N">3456.14900</Ratio>
+		</Group>
+		<Group ID="Income Statement">
+			<Ratio FieldName="MKTCAP" Type="N">1964.17200</Ratio>
+			<Ratio FieldName="TTMREV" Type="N">444.46100</Ratio>
+			<Ratio FieldName="TTMEBITD" Type="N">214.57800</Ratio>
+			<Ratio FieldName="TTMNIAC" Type="N">57.72500</Ratio>
+		</Group>
+		<Group ID="Per share data">
+			<Ratio FieldName="TTMEPSXCLX" Type="N">0.57442</Ratio>
+			<Ratio FieldName="TTMREVPS" Type="N">3.73427</Ratio>
+			<Ratio FieldName="QBVPS" Type="N">17.09667</Ratio>
+			<Ratio FieldName="QCSHPS" Type="N">1.03978</Ratio>
+			<Ratio FieldName="TTMCFSHR" Type="N">0.71139</Ratio>
+			<Ratio FieldName="TTMDIVSHR" Type="N">0.16000</Ratio>
+		</Group>
+		<Group ID="Other Ratios">
+			<Ratio FieldName="TTMGROSMGN" Type="N">-99999.99000</Ratio>
+			<Ratio FieldName="TTMROEPCT" Type="N">3.63649</Ratio>
+			<Ratio FieldName="TTMPR2REV" Type="N">5.23376</Ratio>
+			<Ratio FieldName="PEEXCLXOR" Type="N">33.61652</Ratio>
+			<Ratio FieldName="PRICE2BK" Type="N">1.22056</Ratio>
+			<Ratio FieldName="Employees" Type="N">1328</Ratio>
+		</Group>
+	</Ratios>
+	<ForecastData ConsensusType="Mean" CurFiscalYear="2017" CurFiscalYearEndMonth="12" CurInterimEndCalYear="2017" CurInterimEndMonth="9" EarningsBasis="PRX">
+		<Ratio FieldName="ConsRecom" Type="N">
+			<Value PeriodType="CURR">2.5</Value>
+		</Ratio>
+		<Ratio FieldName="TargetPrice" Type="N">
+			<Value PeriodType="CURR">22.37500</Value>
+		</Ratio>
+		<Ratio FieldName="ProjLTGrowthRate" Type="N">
+			<Value PeriodType="CURR">-99999.99000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjPE" Type="N">
+			<Value PeriodType="CURR">36.09346</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSales" Type="N">
+			<Value PeriodType="CURR">316.27700</Value>
+		</Ratio>
+		<Ratio FieldName="ProjSalesQ" Type="N">
+			<Value PeriodType="CURR">78.63800</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPS" Type="N">
+			<Value PeriodType="CURR">0.53500</Value>
+		</Ratio>
+		<Ratio FieldName="ProjEPSQ" Type="N">
+			<Value PeriodType="CURR">0.14000</Value>
+		</Ratio>
+		<Ratio FieldName="ProjProfit" Type="N">
+			<Value PeriodType="CURR">54.11600</Value>
+		</Ratio>
+		<Ratio FieldName="ProjDPS" Type="N">
+			<Value PeriodType="CURR">0.16000</Value>
+		</Ratio>
+	</ForecastData>
+</ReportSnapshot>
