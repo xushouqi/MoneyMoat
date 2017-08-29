@@ -10,7 +10,7 @@ using MoneyMoat.Messages;
 using MoneyMoat.Types;
 using MoneyModels;
 using IBApi;
-using MoneyModels;
+using Newtonsoft.Json;
 
 namespace MoneyMoat.Services
 {
@@ -18,19 +18,83 @@ namespace MoneyMoat.Services
     {
         public const int HISTORICAL_ID_BASE = 30000000;
 
+        private readonly IRepository<Stock> m_repoStock;
+        private readonly IRepository<XueQiuData> m_repoData;
         private readonly ILogger m_logger;
         private int activeReqId = 0;
 
         public HistoricalService(IBClient ibclient,
+                        IRepository<Stock> repoStock,
+                        IRepository<XueQiuData> repoData,
                         ILogger<IBManager> logger) : base(ibclient)
         {
             m_logger = logger;
+            m_repoStock = repoStock;
+            m_repoData = repoData;
 
             ibClient.HeadTimestamp += HandleEarliestDataPoint;
             ibClient.HistoricalData += HandleHistoricalData;
             ibClient.HistoricalDataEnd += HandleHistoricalDataEnd;
         }
 
+        public async Task UpdateAllStocks()
+        {
+            var stocklist = m_repoStock.GetAll();
+            for (int i = 0; i < stocklist.Count; i++)
+            {
+                var stock = stocklist[i];
+                await UpdateHistoricalDataFromXueQiu(stock.Symbol);
+            }
+        }
+
+        public async Task UpdateHistoricalDataFromXueQiu(string symbol)
+        {
+            var stock = m_repoStock.Find(symbol);
+            if (stock != null)
+            {
+                long to = Common.GetTimestamp(DateTime.Now);
+                long from = Common.GetTimestamp(stock.EarliestDate);
+
+                //取已有数据的最新一条
+                var retLas = await m_repoData.MaxAsync(t => t.Symbol == symbol, t => t.time);
+                if (retLas != null)
+                    from = Common.GetTimestamp(retLas.time.AddDays(1));
+
+                var url = "https://xueqiu.com/stock/forchartk/stocklist.json?symbol=" + symbol + "&period=1day&type=normal&begin="+ from + "&end="+ to;
+                var source = await Common.GetXueQiuContent(url);
+                if (!string.IsNullOrEmpty(source))
+                {
+                    JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+                    {
+                        DateTimeZoneHandling = DateTimeZoneHandling.Local,
+                        DateFormatString = "ddd MMM dd HH:mm:ss zzz yyyy",
+                    };
+
+                    try
+                    {
+                        var obj = JsonConvert.DeserializeObject<XueQiuHistorical>(source);
+                        if (obj.chartlist.Count > 0)
+                        {
+                            for (int i = 0; i < obj.chartlist.Count; i++)
+                            {
+                                var data = obj.chartlist[i];
+                                data.Symbol = symbol;
+                                m_repoData.Add(data);
+                            }
+                            await m_repoData.SaveChangesAsync();
+                        }
+                        Console.WriteLine("UpdateHistoricalData {0} Count={1}",
+                             symbol, obj.chartlist.Count);
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine("UpdateHistoricalData Error: {0}\n{1}",
+                             e.Message, e.StackTrace);
+                    }
+                }
+            }
+        }
+        
         public async Task<string> RequestEarliestDataPointAsync(string symbol, string exchange)
         {
             var reqId = Common.GetReqId(symbol);

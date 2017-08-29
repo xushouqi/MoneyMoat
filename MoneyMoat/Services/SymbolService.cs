@@ -45,9 +45,9 @@ namespace MoneyMoat.Services
         public async Task UpdateSymbolsFromSina()
         {            
             var parser = new HtmlParser();
-            
+
             var url = "http://vip.stock.finance.sina.com.cn/usstock/ustotal.php";
-            var source = Common.GetHttpContent(url, System.Text.Encoding.GetEncoding("gb2312")).GetAwaiter().GetResult();
+            var source = await Common.GetHttpContent(url, System.Text.Encoding.GetEncoding("gb2312"));
             if (!string.IsNullOrEmpty(source))
             {            
                 var document = parser.Parse(source);

@@ -10,6 +10,7 @@ using MoneyMoat.Types;
 using MoneyModels;
 using IBApi;
 using YAXLib;
+using Newtonsoft.Json;
 
 namespace MoneyMoat.Services
 {
@@ -18,30 +19,68 @@ namespace MoneyMoat.Services
         private readonly ILogger m_logger;
         private readonly IRepository<Stock> m_repoStock;
         private readonly IRepository<Financal> m_repoFin;
+        private readonly IRepository<FYEstimate> m_repoEst;
+        private readonly IRepository<NPEstimate> m_repoNPE;
+        private readonly IRepository<Recommendation> m_repoRecommend;
 
         public FundamentalService(IBClient ibclient,
                         IRepository<Stock> repoStock,
                         IRepository<Financal> repoFin,
+                        IRepository<FYEstimate> repoEst,
+                        IRepository<NPEstimate> repoNPE,
+                        IRepository<Recommendation> repoRecommend,
                         ILogger<IBManager> logger) : base(ibclient)
         {
             m_logger = logger;
             m_repoStock = repoStock;
             m_repoFin = repoFin;
+            m_repoEst = repoEst;
+            m_repoNPE = repoNPE;
+            m_repoRecommend = repoRecommend;
 
             ibClient.FundamentalData += HandleFundamentalsData;
         }
 
-        public async Task UpdateAllStocksFundamentals()
+        public async Task UpdateAllStocks()
         {
             var stocklist = m_repoStock.GetAll();
             for (int i = 0; i < stocklist.Count; i++)
             {
                 var stock = stocklist[i];
-                await DoUpdateStockFundamentals(stock.Symbol, stock.Exchange);
+                await UpdateFundamentalsFromIB(stock.Symbol, stock.Exchange);
             }
         }
 
-        public async Task DoUpdateStockFundamentals(string symbol, string exchange)
+        public async Task UpdateFundamentalsFromXueQiu(string symbol)
+        {
+            var stock = m_repoStock.Find(symbol);
+            if (stock != null)
+            {
+                var url = "http://xueqiu.com/v4/stock/quote.json?code=" + symbol;
+                var source = await Common.GetXueQiuContent(url);
+                if (!string.IsNullOrEmpty(source))
+                {
+                    JsonConvert.DefaultSettings = () => new JsonSerializerSettings
+                    {
+                        DateTimeZoneHandling = DateTimeZoneHandling.Local,
+                        DateFormatString = "ddd MMM dd HH:mm:ss zzz yyyy",
+                    };
+
+                    try
+                    {
+                        JObject o = JObject.Parse(source);
+
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("UpdateHistoricalData Error: {0}\n{1}",
+                             e.Message, e.StackTrace);
+                    }
+                }
+            }
+        }
+
+        public async Task UpdateFundamentalsFromIB(string symbol, string exchange)
         {
             List<Task<string>> tasklist = new List<Task<string>>();
             foreach (FundamentalsReportEnum ftype in Enum.GetValues(typeof(FundamentalsReportEnum)))
@@ -116,7 +155,7 @@ namespace MoneyMoat.Services
                         }
 
                         //先删除财务数据
-                        await m_repoFin.RemoveRangeAsync(t => t.Symbol.Equals(symbol) && t.Id > 0);    
+                        await m_repoFin.RemoveRangeAsync(t => t.Symbol == symbol);    
                         
                         //更新财务数据库
                         for (int i = 0; i < obj.Actuals.FYActuals.Count; i++)
@@ -125,25 +164,109 @@ namespace MoneyMoat.Services
                             for (int j = 0; j < act.FYPeriods.Count; j++)
                             {
                                 var adata = act.FYPeriods[j];
-                                //bool already = await m_repoFin.Any(t => t.Symbol.Equals(symbol) && t.type.Equals(act.type)
-                                //    && t.fYear == adata.fYear && t.endMonth == adata.endMonth
-                                //    && t.periodType == adata.periodType);
-                                //if (!already)
+                                var sdata = new Financal
                                 {
-                                    var sdata = new Financal
-                                    {
-                                        Symbol = symbol,
-                                        type = act.type,
-                                        fYear = adata.fYear,
-                                        endMonth = adata.endMonth,
-                                        periodType = adata.periodType,
-                                        Value = adata.ActValue,
-                                    };
-                                    m_repoFin.Add(sdata);
-                                }
+                                    Symbol = symbol,
+                                    type = act.type,
+                                    fYear = adata.fYear,
+                                    endMonth = adata.endMonth,
+                                    periodType = adata.periodType,
+                                    Value = adata.ActValue,
+                                };
+                                m_repoFin.Add(sdata);
                             }
                         }
                         await m_repoFin.SaveChangesAsync();
+
+                        //先删除预测数据
+                        await m_repoEst.RemoveRangeAsync(t => t.Symbol == symbol);
+
+                        //更新预测数据库
+                        for (int i = 0; i < obj.ConsEstimates.FYEstimates.Count; i++)
+                        {
+                            var act = obj.ConsEstimates.FYEstimates[i];
+                            for (int j = 0; j < act.FYPeriods.Count; j++)
+                            {
+                                var adata = act.FYPeriods[j];
+
+                                Dictionary<string, float> conValues = new Dictionary<string, float>();
+                                for (int n = 0; n < adata.ConsEstimates.Count; n++)
+                                {
+                                    var cValue = adata.ConsEstimates[n];
+                                    conValues[cValue.type] = cValue.ConsValue.ConsValue;
+                                }
+
+                                var sdata = new FYEstimate
+                                {
+                                    Symbol = symbol,
+                                    type = act.type,
+                                    fYear = adata.fYear,
+                                    endMonth = adata.endMonth,
+                                    periodType = adata.periodType,
+
+                                    High = conValues["High"],
+                                    Low = conValues["Low"],
+                                    Mean = conValues["Mean"],
+                                    Median = conValues["Median"],
+                                    StdDev = conValues["StdDev"],
+                                    NumOfEst = (int)conValues["NumOfEst"],
+                                };
+                                m_repoEst.Add(sdata);
+                            }
+                        }
+                        await m_repoEst.SaveChangesAsync();
+
+                        //先删除预测数据
+                        await m_repoNPE.RemoveRangeAsync(t => t.Symbol == symbol);
+
+                        for (int i = 0; i < obj.ConsEstimates.NPEstimates.Count; i++)
+                        {
+                            var act = obj.ConsEstimates.NPEstimates[i];
+                            Dictionary<string, float> conValues = new Dictionary<string, float>();
+                            for (int j = 0; j < act.ConsEstimates.Count; j++)
+                            {
+                                var adata = act.ConsEstimates[j];
+                                if (adata.ConsValues.ContainsKey("CURR"))
+                                    conValues[adata.type] = adata.ConsValues["CURR"];
+                            }
+
+                            var sdata = new NPEstimate
+                            {
+                                Symbol = symbol,
+                                type = act.type,
+
+                                High = conValues["High"],
+                                Low = conValues["Low"],
+                                Mean = conValues["Mean"],
+                                Median = conValues["Median"],
+                                StdDev = conValues["StdDev"],
+                                NumOfEst = (int)conValues["NumOfEst"],
+                                //UpGradings = (int)conValues["UpGradings"],
+                                //DnGradings = (int)conValues["DnGradings"],
+                            };
+                            m_repoNPE.Add(sdata);
+                        }
+                        await m_repoEst.SaveChangesAsync();
+
+                        //await m_repoRecommend.RemoveRangeAsync(t => t.Symbol == symbol);
+                        //Dictionary<string, float> stValues = new Dictionary<string, float>();
+                        //for (int i = 0; i < obj.ConsEstimates.Recommendations.STOpinion.Count; i++)
+                        //{
+                        //    var act = obj.ConsEstimates.Recommendations.STOpinion[i];
+                        //    stValues[act.desc] = float.Parse(act.ConsOpValue.ConsValues["CURR"]);
+                        //}
+                        //var rdata = new Recommendation
+                        //{
+                        //    Symbol = symbol,
+
+                        //    BUY = (int)stValues["BUY"],
+                        //    SELL = (int)stValues["SELL"],
+                        //    HOLD = (int)stValues["HOLD"],
+                        //    UNDERPERFORM = (int)stValues["UNDERPERFORM"],
+                        //    OUTPERFORM = (int)stValues["OUTPERFORM"],
+                        //};
+                        //m_repoRecommend.Add(rdata);
+                        //await m_repoRecommend.SaveChangesAsync();
                     }
                     else if (ftype == FundamentalsReportEnum.ReportsOwnership)
                     {

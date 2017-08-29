@@ -3,15 +3,18 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Storage.Internal;
 using MoneyMoat;
 using System;
 
 namespace MoneyMoat.Migrations
 {
     [DbContext(typeof(MoatDbContext))]
-    partial class MoatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170829072106_remestimate2")]
+    partial class remestimate2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -170,61 +173,6 @@ namespace MoneyMoat.Migrations
                     b.HasIndex("Symbol");
 
                     b.ToTable("Stocks");
-                });
-
-            modelBuilder.Entity("MoneyModels.XueQiuData", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Symbol");
-
-                    b.Property<DateTime>("UpdateTime");
-
-                    b.Property<float>("chg");
-
-                    b.Property<float>("close");
-
-                    b.Property<float>("dea");
-
-                    b.Property<float>("dif");
-
-                    b.Property<float>("high");
-
-                    b.Property<int>("lot_volume");
-
-                    b.Property<float>("low");
-
-                    b.Property<float>("ma10");
-
-                    b.Property<float>("ma20");
-
-                    b.Property<float>("ma30");
-
-                    b.Property<float>("ma5");
-
-                    b.Property<float>("macd");
-
-                    b.Property<float>("open");
-
-                    b.Property<float>("percent");
-
-                    b.Property<DateTime>("time");
-
-                    b.Property<long>("timestamp");
-
-                    b.Property<float>("turnrate");
-
-                    b.Property<int>("volume");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Symbol");
-
-                    b.HasIndex("time");
-
-                    b.ToTable("XueQiuDatas");
                 });
 #pragma warning restore 612, 618
         }

@@ -17,6 +17,8 @@ namespace MoneyMoat
         bool Any(string key);
         Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate);
         Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
+        Task<TEntity> MaxAsync<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order);
+        Task<TEntity> MinAsync<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order);
         IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
         Task<TEntity[]> WhereToArrayAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
         Task<List<TEntity>> WhereToListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));

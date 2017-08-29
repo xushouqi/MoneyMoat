@@ -11,6 +11,11 @@ namespace MoneyMoat
     {
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Financal> Financals { get; set; }
+        public DbSet<FYEstimate> FYEstimates { get; set; }
+        public DbSet<NPEstimate> NPEstimates { get; set; }
+        public DbSet<Recommendation> Recommendations { get; set; }
+        public DbSet<XueQiuData> XueQiuDatas { get; set; }
+        public DbSet<XueQiuQuote> XueQiuQuotes { get; set; }
 
         public MoatDbContext(DbContextOptions<MoatDbContext> options)
             : base(options)
@@ -25,6 +30,16 @@ namespace MoneyMoat
                 .HasIndex(b => b.Symbol);
             builder.Entity<Stock>()
                 .HasIndex(b => b.ConId);
+
+            builder.Entity<FYEstimate>()
+                .HasIndex(b => b.Symbol);
+            builder.Entity<NPEstimate>()
+                .HasIndex(b => b.Symbol);
+
+            builder.Entity<XueQiuData>()
+                .HasIndex(b => b.Symbol);
+            builder.Entity<XueQiuData>()
+                .HasIndex(b => b.time);
         }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder builder)

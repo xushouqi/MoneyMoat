@@ -77,15 +77,18 @@ namespace MoneyModels
                     public class ConsEstimate
                     {
                         [YAXAttributeForClass]
-                        public string dateType { get; set; }
-                        [YAXValueForClass]
-                        public float ConsValue { get; set; }
+                        public string type { get; set; }
+
+                        public class ConsValueData
+                        {
+                            [YAXValueForClass]
+                            public float ConsValue { get; set; }
+                        }
+                        public ConsValueData ConsValue { get; set; }
                     }
 
-                    [YAXDictionary(EachPairName = "ConsEstimate", KeyName = "type",
-                              SerializeKeyAs = YAXNodeTypes.Attribute, SerializeValueAs = YAXNodeTypes.Content)]
-                    [YAXCollection(YAXCollectionSerializationTypes.RecursiveWithNoContainingElement)]
-                    public Dictionary<string, ConsEstimate> ConsEstimates { get; set; }
+                    [YAXCollection(YAXCollectionSerializationTypes.RecursiveWithNoContainingElement, EachElementName = "ConsEstimate")]
+                    public List<ConsEstimate> ConsEstimates { get; set; }
                 }
 
                 [YAXCollection(YAXCollectionSerializationTypes.RecursiveWithNoContainingElement, EachElementName = "FYPeriod")]
@@ -126,6 +129,9 @@ namespace MoneyModels
                 {
                     [YAXAttributeForClass]
                     public string set { get; set; }
+
+                    //[YAXAttributeForClass]
+                    //public string desc { get; set; }
 
                     public class ConsOpValueData
                     {

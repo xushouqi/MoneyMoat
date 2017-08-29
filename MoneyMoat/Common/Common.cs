@@ -12,13 +12,66 @@ namespace MoneyMoat
 {
     public class Common
     {
+        public static long GetTimestamp(DateTime theTime)
+        {
+            System.DateTime startTime = new DateTime(1970, 1, 1).Add(TimeZoneInfo.Local.BaseUtcOffset); // 当地时区
+            long timeStamp = (long)(theTime - startTime).TotalMilliseconds; // 相差毫秒数
+            return timeStamp;
+        }
+        public static DateTime GetDateTime(long timeStamp)
+        {
+            System.DateTime time = new DateTime(1970, 1, 1).AddMilliseconds(timeStamp); // 当地时区
+            return time;
+        }
+
+        public static bool AcceptAllCertifications(object sender, System.Security.Cryptography.X509Certificates.X509Certificate certification, System.Security.Cryptography.X509Certificates.X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
+        {
+            return true;
+        }
+
+        public static async Task<string> GetXueQiuContent(string url)
+        {
+            ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
+
+            string result = string.Empty;
+            HttpWebRequest httpRequest = (HttpWebRequest)HttpWebRequest.Create(url);
+            httpRequest.Method = "GET";
+            httpRequest.Timeout = 10000;
+            httpRequest.CookieContainer = new CookieContainer();
+            httpRequest.CookieContainer.Add(new Cookie("xq_a_token", "f8846a20e3a8074cd781524d47619ba6879990e2", "/", "xueqiu.com"));
+            httpRequest.CookieContainer.Add(new Cookie("xq_r_token", "562674ae525074f694a9961c5a49a644275e3b53", "/", "xueqiu.com"));
+
+            try
+            {                
+                var res = await httpRequest.GetResponseAsync();
+                using (var sr = new StreamReader(res.GetResponseStream(), System.Text.Encoding.UTF8))
+                {
+                    result = sr.ReadToEnd();
+                }
+            }
+            catch (WebException wex)
+            {
+                if (wex.Response != null)
+                {
+                    using (var errorResponse = (HttpWebResponse)wex.Response)
+                    {
+                        using (var reader = new StreamReader(errorResponse.GetResponseStream()))
+                        {
+                            string error = reader.ReadToEnd();
+                            Console.WriteLine("GetHttp {0} Error: {1}", url, error);
+                        }
+                    }
+                }
+            }
+            return result;
+        }
 
         public static async Task<string> GetHttpContent(string url, Encoding encoding)
         {
             string result = string.Empty;
             HttpWebRequest httpRequest = (HttpWebRequest)HttpWebRequest.Create(url);
             httpRequest.Method = "GET";
-            httpRequest.Credentials = CredentialCache.DefaultCredentials;
+            //httpRequest.Credentials = CredentialCache.DefaultCredentials;
             httpRequest.Timeout = 10000;
 
             try
@@ -27,11 +80,22 @@ namespace MoneyMoat
                 using (var sr = new StreamReader(res.GetResponseStream(), encoding))
                 {
                     result = sr.ReadToEnd();
+                    var test = result;
                 }
             }
-            catch (Exception e)
+            catch (WebException wex)
             {
-                Console.WriteLine("GetHttp {0} Error: {1}", url, e.Message);
+                if (wex.Response != null)
+                {
+                    using (var errorResponse = (HttpWebResponse)wex.Response)
+                    {
+                        using (var reader = new StreamReader(errorResponse.GetResponseStream()))
+                        {
+                            string error = reader.ReadToEnd();
+                            Console.WriteLine("GetHttp {0} Error: {1}", url, error);
+                        }
+                    }
+                }
             }
             return result;
         }

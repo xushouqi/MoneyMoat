@@ -66,6 +66,16 @@ namespace MoneyMoat
         {
             return Datas.ToList();
         }
+        public async Task<TEntity> MaxAsync<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order)
+        {
+            var data = await Datas.Where(where).OrderByDescending(order).FirstOrDefaultAsync();
+            return data;
+        }
+        public async Task<TEntity> MinAsync<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order)
+        {
+            var data = await Datas.Where(where).OrderBy(order).FirstOrDefaultAsync();
+            return data;
+        }
         public async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken))
         {
             return await Datas.FirstOrDefaultAsync(predicate, token);
