@@ -10,6 +10,10 @@ namespace MoneyModels
         {
             return Id;
         }
+        public override string GetKey()
+        {
+            throw new NotImplementedException();
+        }
         public override DateTime TryUpdateTime()
         {
             return UpdateTime = DateTime.Now;

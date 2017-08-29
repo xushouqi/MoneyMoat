@@ -90,12 +90,12 @@ namespace MoneyMoat.Services
                         var obj = (ReportSnapshot)ser.Deserialize(data);
 
                         //更新数据库
-                        var stock = await m_repoStock.Find(symbol);
+                        var stock = m_repoStock.Find(symbol);
                         if (stock != null)
                         {
                             stock.CommonShareholders = obj.CoGeneralInfo.CommonShareholders;
                             stock.Employees = obj.CoGeneralInfo.Employees;
-                            await m_repoStock.Update(stock);
+                            m_repoStock.Update(stock);
                         }
                     }
                     else if (ftype == FundamentalsReportEnum.RESC)
@@ -105,18 +105,19 @@ namespace MoneyMoat.Services
                         var test = obj;
 
                         //更新数据库
-                        var stock = await m_repoStock.Find(symbol);
+                        var stock = m_repoStock.Find(symbol);
                         if (stock != null)
                         {
                             if (obj.Company.SecurityInfo.Security.MarketData.ContainsKey("SHARESOUT"))
                                 stock.SharesOut = (Int64)obj.Company.SecurityInfo.Security.MarketData["SHARESOUT"];
                             if (obj.Company.SecurityInfo.Security.MarketData.ContainsKey("MARKETCAP"))
                                 stock.MarketCap = (Int64)obj.Company.SecurityInfo.Security.MarketData["MARKETCAP"];
-                            await m_repoStock.Update(stock);                            
+                            m_repoStock.Update(stock);                            
                         }
 
                         //先删除财务数据
-                        await m_repoFin.RemoveRange(t => t.Symbol.Equals(symbol) && t.Id > 0);                                
+                        await m_repoFin.RemoveRangeAsync(t => t.Symbol.Equals(symbol) && t.Id > 0);    
+                        
                         //更新财务数据库
                         for (int i = 0; i < obj.Actuals.FYActuals.Count; i++)
                         {
@@ -138,11 +139,11 @@ namespace MoneyMoat.Services
                                         periodType = adata.periodType,
                                         Value = adata.ActValue,
                                     };
-                                    await m_repoFin.AddNoCache(sdata);
+                                    m_repoFin.Add(sdata);
                                 }
                             }
                         }
-                        //await m_repoFin.SaveChangesAsync();
+                        await m_repoFin.SaveChangesAsync();
                     }
                     else if (ftype == FundamentalsReportEnum.ReportsOwnership)
                     {

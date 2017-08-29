@@ -36,7 +36,6 @@ namespace MoneyMoat
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
-                .UseApplicationInsights()
                 .Build();
     }
 }

@@ -69,7 +69,7 @@ namespace MoneyMoat.Services
                             var name = node.InnerHtml.Replace("(" + symbol + ")", "");
                             Console.WriteLine("{0}: {1}", symbol, name);
 
-                            if (!m_repoStock.Any(symbol).Result)
+                            if (!m_repoStock.Any(symbol))
                             {
                                 var resuls = await RequestSymbolsAsync(symbol);
                                 if (resuls != null && resuls.Length > 0)
@@ -96,8 +96,6 @@ namespace MoneyMoat.Services
                                                         earliestDate = DateTime.Parse(his);
                                                     }
 
-                                                    var cate = m_categories[i];
-
                                                     var data = new Stock
                                                     {
                                                         Name = name,
@@ -106,9 +104,9 @@ namespace MoneyMoat.Services
                                                         Currency = detail.Contract.Currency,
                                                         Exchange = exchange,
                                                         EarliestDate = earliestDate,
-                                                        Category = cate,
+                                                        Category = m_categories[i],
                                                     };
-                                                    await m_repoStock.Add(data);
+                                                    m_repoStock.Add(data);
                                                     break;
                                                 }
                                             }
@@ -125,6 +123,7 @@ namespace MoneyMoat.Services
                         }
                     }
                 }
+                await m_repoStock.SaveChangesAsync();
             }
         }
         

@@ -17,6 +17,7 @@ using MoneyMoat.Services;
 using IBApi;
 using Foundatio.Caching;
 
+
 namespace MoneyMoat
 {
     public class Startup
@@ -43,10 +44,8 @@ namespace MoneyMoat
             services.Configure<AppSettings>(Configuration);
 
             string connstr = Configuration.GetConnectionString("MySQL");
-            services.AddDbContext<MoatDbContext>(opt =>
-                    opt.UseMySql(connstr), ServiceLifetime.Singleton);
-            services.AddDbContext<TestDbContext>(opt =>
-                    opt.UseMySql(connstr), ServiceLifetime.Singleton);
+            services.AddDbContextPool<MoatDbContext>(opt =>
+                    opt.UseMySql(connstr));
 
             // Add framework services.
             services.AddMvc();

@@ -14,19 +14,21 @@ namespace MoneyMoat
         //注册数据对象仓库
         public static IServiceCollection AddRepositoryService(this IServiceCollection services, IHostingEnvironment env, IConfigurationRoot config)
         {
+            services.AddScoped<IRepository<Stock>, Repository<Stock, MoatDbContext>>();
+            services.AddScoped<IRepository<Financal>, Repository<Financal, MoatDbContext>>();
 
-            services.AddSingleton<IRepository<Stock>>(sp =>
-            {
-                var icache = sp.GetRequiredService<ICacheClient>();
-                var context = sp.GetRequiredService<MoatDbContext>();
-                return new Repository<Stock, MoatDbContext>(context, context.Stocks, icache);
-            });
-            services.AddSingleton<IRepository<Financal>>(sp =>
-            {
-                var icache = sp.GetRequiredService<ICacheClient>();
-                var context = sp.GetRequiredService<TestDbContext>();
-                return new Repository<Financal, TestDbContext>(context, context.Financals, icache);
-            });
+            //services.AddSingleton<IRepository<Stock>>(sp =>
+            //{
+            //    var icache = sp.GetRequiredService<ICacheClient>();
+            //    var context = sp.GetRequiredService<MoatDbContext>();
+            //    return new Repository<Stock, MoatDbContext>(context, icache);
+            //});
+            //services.AddSingleton<IRepository<Financal>>(sp =>
+            //{
+            //    var icache = sp.GetRequiredService<ICacheClient>();
+            //    var context = sp.GetRequiredService<TestDbContext>();
+            //    return new Repository<Financal, TestDbContext>(context,icache);
+            //});
 
             return services;
         }

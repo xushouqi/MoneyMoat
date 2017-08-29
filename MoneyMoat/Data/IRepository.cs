@@ -11,23 +11,24 @@ namespace MoneyMoat
     {
         List<TEntity> GetAll();
         TEntity GetDefault();
-        Task<TEntity> Find(int id);
-        Task<TEntity> Find(string key);
-        Task<bool> Any(int id);
-        Task<bool> Any(string key);
-        Task<bool> Any(Expression<Func<TEntity, bool>> predicate);
-        Task<TEntity> FirstOrDefault(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
+        TEntity Find(int id);
+        TEntity Find(string key);
+        bool Any(int id);
+        bool Any(string key);
+        Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate);
+        Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
         IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
-        Task<TEntity[]> WhereToArray(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
-        Task<List<TEntity>> WhereToList(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
-        Task<bool> Add(TEntity data);
+        Task<TEntity[]> WhereToArrayAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
+        Task<List<TEntity>> WhereToListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken));
+        void Add(TEntity data);
         //bool AddNoCacheNotSave(TEntity data);
-        Task<bool> AddNoCache(TEntity data);
+        //bool AddNoCache(TEntity data);
         //Task<bool> SaveChangesAsync();
-        Task<bool> Update(TEntity data);
-        Task<bool> Remove(TEntity data);
-        Task<bool> Remove(int id);
-        Task<bool> RemoveRange(params TEntity[] datas);
-        Task<bool> RemoveRange(Expression<Func<TEntity, bool>> predicate);
+        void Update(TEntity data);
+        void Remove(TEntity data);
+        bool Remove(int id);
+        bool RemoveRange(params TEntity[] datas);
+        Task<int> RemoveRangeAsync(Expression<Func<TEntity, bool>> predicate);
+        Task SaveChangesAsync();
     }
 }

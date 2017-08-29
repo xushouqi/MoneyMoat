@@ -10,6 +10,10 @@ namespace MoneyModels
         {
             return ConId;
         }
+        public override string GetKey()
+        {
+            return Symbol;
+        }
         public override DateTime TryUpdateTime()
         {
             return UpdateTime = DateTime.Now;
