@@ -16,7 +16,7 @@ namespace MoneyMoat
         where TContext : DbContext
     {
         public DbSet<TEntity> Datas { get; set; }
-
+        
         protected readonly TContext m_context;
 
         public Repository(TContext context)
@@ -47,8 +47,7 @@ namespace MoneyMoat
         {
             var data = Datas.Find(key);
             return data;
-        }
-
+        }        
         public bool Any(int id)
         {
             return Datas.Any(t=>t.GetId() == id);
@@ -59,39 +58,50 @@ namespace MoneyMoat
         }
         public async Task<bool> AnyAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            var ret = await Datas.AnyAsync(predicate);
-            return ret;
+            return await Datas.AnyAsync(predicate);
         }
         public List<TEntity> GetAll()
         {
-            return Datas.ToList();
+            var data = Datas.ToList();
+            return data;
         }
         public async Task<TEntity> MaxAsync<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order)
         {
-            var data = await Datas.Where(where).OrderByDescending(order).FirstOrDefaultAsync();
-            return data;
+            return await Datas.Where(where).OrderByDescending(order).FirstOrDefaultAsync();
         }
         public async Task<TEntity> MinAsync<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order)
         {
-            var data = await Datas.Where(where).OrderBy(order).FirstOrDefaultAsync();
-            return data;
+            return await Datas.Where(where).OrderBy(order).FirstOrDefaultAsync();
         }
         public async Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken))
         {
             return await Datas.FirstOrDefaultAsync(predicate, token);
         }
-        public IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken))
+        public IQueryable<TEntity> Where<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order)
         {
-            return Datas.Where(predicate);
+            return Datas.Where(where);
         }
-        public async Task<TEntity[]> WhereToArrayAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken))
+        public IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> where)
         {
-            return await Datas.Where(predicate).ToArrayAsync();
+            return Datas.Where(where);
         }
-        public async Task<List<TEntity>> WhereToListAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken token = default(CancellationToken))
+        public async Task<TEntity[]> WhereToArrayAsync<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order)
         {
-            return await Datas.Where(predicate).ToListAsync();
+            return await Datas.Where(where).OrderBy(order).ToArrayAsync();
         }
+        public async Task<TEntity[]> WhereToArrayAsync(Expression<Func<TEntity, bool>> where)
+        {
+            return await Datas.Where(where).ToArrayAsync();
+        }
+        public async Task<List<TEntity>> WhereToListAsync<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order)
+        {
+            return await Datas.Where(where).OrderBy(order).ToListAsync();
+        }
+        public async Task<List<TEntity>> WhereToListAsync(Expression<Func<TEntity, bool>> where)
+        {
+            return await Datas.Where(where).ToListAsync();
+        }
+
         public void Add(TEntity data)
         {
             var key = GetKey(data);

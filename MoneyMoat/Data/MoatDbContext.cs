@@ -13,9 +13,11 @@ namespace MoneyMoat
         public DbSet<Financal> Financals { get; set; }
         public DbSet<FYEstimate> FYEstimates { get; set; }
         public DbSet<NPEstimate> NPEstimates { get; set; }
-        public DbSet<Recommendation> Recommendations { get; set; }
+        //public DbSet<Recommendation> Recommendations { get; set; }
         public DbSet<XueQiuData> XueQiuDatas { get; set; }
-        public DbSet<XueQiuQuote> XueQiuQuotes { get; set; }
+        //public DbSet<XueQiuQuote> XueQiuQuotes { get; set; }
+        public DbSet<FinSummary> FinSummarys { get; set; }
+        public DbSet<FinStatement> FinStatements { get; set; }
 
         public MoatDbContext(DbContextOptions<MoatDbContext> options)
             : base(options)
@@ -40,6 +42,26 @@ namespace MoneyMoat
                 .HasIndex(b => b.Symbol);
             builder.Entity<XueQiuData>()
                 .HasIndex(b => b.time);
+
+            builder.Entity<FinSummary>()
+                .HasIndex(b => b.Symbol);
+            builder.Entity<FinSummary>()
+                .HasIndex(b => b.asofDate);
+            builder.Entity<FinSummary>()
+                .HasIndex(b => b.reportType);
+            builder.Entity<FinSummary>()
+                .HasIndex(b => b.period);
+
+            builder.Entity<FinStatement>()
+                .HasIndex(b => b.Symbol);
+            builder.Entity<FinStatement>()
+                .HasIndex(b => b.FiscalYear);
+            builder.Entity<FinStatement>()
+                .HasIndex(b => b.FiscalPeriod);
+            builder.Entity<FinStatement>()
+                .HasIndex(b => b.coaCode);
+            builder.Entity<FinStatement>()
+                .HasIndex(b => b.EndDate);
         }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder builder)

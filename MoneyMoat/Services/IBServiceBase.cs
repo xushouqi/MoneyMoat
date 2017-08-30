@@ -14,7 +14,7 @@ using YAXLib;
 
 namespace MoneyMoat.Services
 {
-    class IBServiceBase<TResult>
+     class IBServiceBase<TResult>
     {
         protected readonly IBClient ibClient;
 

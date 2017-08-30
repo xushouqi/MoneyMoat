@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 
 namespace MoneyMoat.Services
 {
-    class HistoricalService : IBServiceBase<string>
+     class HistoricalService : IBServiceBase<string>
     {
         public const int HISTORICAL_ID_BASE = 30000000;
 

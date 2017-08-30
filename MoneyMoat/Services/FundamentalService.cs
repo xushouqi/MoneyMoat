@@ -11,24 +11,29 @@ using MoneyModels;
 using IBApi;
 using YAXLib;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace MoneyMoat.Services
 {
-    class FundamentalService : IBServiceBase<string>
+     class FundamentalService : IBServiceBase<string>
     {
         private readonly ILogger m_logger;
         private readonly IRepository<Stock> m_repoStock;
         private readonly IRepository<Financal> m_repoFin;
         private readonly IRepository<FYEstimate> m_repoEst;
         private readonly IRepository<NPEstimate> m_repoNPE;
-        private readonly IRepository<Recommendation> m_repoRecommend;
+        private readonly IRepository<XueQiuData> m_repoDatas;
+        private readonly IRepository<FinSummary> m_repoSummary;
+        private readonly IRepository<FinStatement> m_repoStatement;
 
         public FundamentalService(IBClient ibclient,
                         IRepository<Stock> repoStock,
                         IRepository<Financal> repoFin,
                         IRepository<FYEstimate> repoEst,
                         IRepository<NPEstimate> repoNPE,
-                        IRepository<Recommendation> repoRecommend,
+                        IRepository<XueQiuData> repoDatas,
+                        IRepository<FinSummary> repoSummary,
+                        IRepository<FinStatement> repoStatement,
                         ILogger<IBManager> logger) : base(ibclient)
         {
             m_logger = logger;
@@ -36,18 +41,23 @@ namespace MoneyMoat.Services
             m_repoFin = repoFin;
             m_repoEst = repoEst;
             m_repoNPE = repoNPE;
-            m_repoRecommend = repoRecommend;
+            m_repoDatas = repoDatas;
+            m_repoSummary = repoSummary;
+            m_repoStatement = repoStatement;
 
             ibClient.FundamentalData += HandleFundamentalsData;
         }
 
         public async Task UpdateAllStocks()
         {
+            bool readXml = !ibClient.ClientSocket.IsConnected();
+
             var stocklist = m_repoStock.GetAll();
             for (int i = 0; i < stocklist.Count; i++)
             {
                 var stock = stocklist[i];
-                await UpdateFundamentalsFromIB(stock.Symbol, stock.Exchange);
+                await UpdateFundamentalsFromIB(stock.Symbol, stock.Exchange, readXml);
+                //await UpdateFundamentalsFromXueQiu(stock.Symbol);
             }
         }
 
@@ -68,8 +78,16 @@ namespace MoneyMoat.Services
 
                     try
                     {
-                        JObject o = JObject.Parse(source);
+                        JObject jObj = JObject.Parse(source);
+                        var content = jObj[symbol];
+                        var data = JsonConvert.DeserializeObject<XueQiuQuote>(content.ToString());
 
+                        //var last = await m_repoQuote.MaxAsync(t => t.Symbol == symbol, t => t.updateAt);
+                        //if (last == null || last.updateAt < data.updateAt)
+                        //{
+                        //    m_repoQuote.Add(data);
+                        //    await m_repoQuote.SaveChangesAsync();
+                        //}
                     }
                     catch (Exception e)
                     {
@@ -80,22 +98,34 @@ namespace MoneyMoat.Services
             }
         }
 
-        public async Task UpdateFundamentalsFromIB(string symbol, string exchange)
+        public async Task UpdateFundamentalsFromIB(string symbol, string exchange, bool readXml)
         {
             List<Task<string>> tasklist = new List<Task<string>>();
             foreach (FundamentalsReportEnum ftype in Enum.GetValues(typeof(FundamentalsReportEnum)))
             {
-                Task<string> task = null;
-                if (ibClient.ClientSocket.IsConnected())
-                    task = RequestAndParseFundamentalsAsync(symbol, exchange, ftype);
-                else
-                    task = ReadAndParseFundamentalsAsync(symbol, ftype);
-                tasklist.Add(task);
+                await ReadAndParseFundamentalsAsync(symbol, ftype);
+                //Task<string> task = null;
+                //if (readXml)
+                //    task = ReadAndParseFundamentalsAsync(symbol, ftype);
+                //else
+                //    task = RequestAndParseFundamentalsAsync(symbol, exchange, ftype);
+                //tasklist.Add(task);
             }
-            await Task.WhenAll(tasklist.ToArray());
-            for (int t = 0; t < tasklist.Count; t++)
+            //await Task.WhenAll(tasklist.ToArray());
+            //for (int t = 0; t < tasklist.Count; t++)
+            //{
+            //    var data = tasklist[t].Result;
+            //}
+        }
+
+        private async Task UpdateCalcDatas(string symbol)
+        {
+            var datalist = await m_repoSummary.WhereToListAsync(t => t.Symbol == symbol);
+            for (int i = 0; i < datalist.Count; i++)
             {
-                var data = tasklist[t].Result;
+                var data = datalist[i];
+                //data.period
+                //var statement = await m_repoStatement.MaxAsync
             }
         }
 
@@ -103,7 +133,7 @@ namespace MoneyMoat.Services
         {
             if (!string.IsNullOrEmpty(data) && data.Length > 100)
             {
-                m_logger.LogInformation("HandleFundamentalsData: {0}: {1}", symbol, ftype.ToString());
+                m_logger.LogInformation("ParseFundamentalData: {0}: {1}", symbol, ftype.ToString());
 
                 if (saveXml)
                 {
@@ -117,11 +147,113 @@ namespace MoneyMoat.Services
                     {
                         var ser = new YAXSerializer(typeof(ReportsFinStatements));
                         var obj = (ReportsFinStatements)ser.Deserialize(data);
+
+                        //先删除数据
+                        await m_repoStatement.RemoveRangeAsync(t => t.Symbol == symbol);
+
+                        for (int i = 0; i < obj.FinancialStatements.FiscalPeriods.Count; i++)
+                        {
+                            var fdata = obj.FinancialStatements.FiscalPeriods[i];
+                            for (int j = 0; j < fdata.Statements.Count; j++)
+                            {
+                                var act = fdata.Statements[j];
+                                foreach (var item in act.Values)
+                                {
+                                    string skey = item.Key;
+                                    float svalue = item.Value;
+
+                                    int fiscalYear = fdata.EndDate.Year;
+                                    int.TryParse(fdata.FiscalYear, out fiscalYear);
+
+                                    var sdata = new FinStatement
+                                    {
+                                        Symbol = symbol,
+                                        FiscalPeriod = fdata.Type,
+                                        FiscalYear = fiscalYear,
+                                        EndDate = fdata.EndDate,
+                                        coaCode = skey,
+                                        Value = svalue,
+                                    };
+                                    m_repoStatement.Add(sdata);
+                                }
+                            }
+                        }
+                        await m_repoStatement.SaveChangesAsync();
                     }
                     else if (ftype == FundamentalsReportEnum.ReportsFinSummary)
                     {
                         var ser = new YAXSerializer(typeof(FinancialSummary));
                         var obj = (FinancialSummary)ser.Deserialize(data);
+
+                        //先删除数据
+                        await m_repoSummary.RemoveRangeAsync(t => t.Symbol == symbol);
+
+                        Dictionary<string, FinSummary> tmpDatas = new Dictionary<string, FinSummary>();
+
+                        for (int i = 0; i < obj.TotalRevenues.Count; i++)
+                        {
+                            var act = obj.TotalRevenues[i];
+                            if (act.reportType != "P")
+                            {
+                                var sdata = new FinSummary
+                                {
+                                    Symbol = symbol,
+                                    asofDate = act.asofDate,
+                                    reportType = act.reportType,
+                                    period = act.period,
+                                    TotalRevenue = act.Value,
+                                };
+                                string skey = string.Concat(symbol, act.asofDate.ToShortDateString(), act.reportType, act.period);
+                                tmpDatas[skey] = sdata;
+                            }
+                        }
+
+                        List<FinSummary> annualList = new List<FinSummary>();
+                        for (int i = 0; i < obj.EPSs.Count; i++)
+                        {
+                            var act = obj.EPSs[i];
+                            string skey = string.Concat(symbol, act.asofDate.ToShortDateString(), act.reportType, act.period);
+                            if (tmpDatas.ContainsKey(skey))
+                            {
+                                var sdata = tmpDatas[skey];
+                                sdata.EPS = act.Value;
+
+                                var lastData = await m_repoDatas.MaxAsync(t => t.Symbol == sdata.Symbol && t.time <= sdata.asofDate.AddDays(1), t => t.time);
+                                if (lastData != null)
+                                {
+                                    sdata.Price = lastData.close;
+                                    sdata.PE = sdata.Price / sdata.EPS;
+                                }
+                                m_repoSummary.Add(sdata);
+                                if (sdata.PE > 0)
+                                {
+                                    if (sdata.reportType == "A")
+                                        annualList.Add(sdata);
+                                    else if (sdata.reportType == "R")
+                                        annualList.Add(sdata);
+                                }
+                            }
+                        }
+                        await m_repoSummary.SaveChangesAsync();
+
+                        for (int i = 0; i < annualList.Count; i++)
+                        {
+                            var anData = annualList[i];
+                            var lastData = await m_repoSummary.MaxAsync(t => t.Symbol == anData.Symbol
+                                                                && t.reportType == anData.reportType && t.period == anData.period
+                                                                && t.asofDate < anData.asofDate, t => t.asofDate);
+                            if (lastData != null && lastData.EPS > 0)
+                            {
+                                var peg = anData.PE / (100 * (anData.EPS - lastData.EPS) / lastData.EPS);
+                                if (!float.IsNaN(peg))
+                                {
+                                    anData.PEG = peg;
+                                    m_logger.LogError("PEG {0}={1}", symbol, peg);
+                                    m_repoSummary.Update(anData);
+                                }
+                            }
+                        }
+                        await m_repoSummary.SaveChangesAsync();
                     }
                     else if (ftype == FundamentalsReportEnum.ReportSnapshot)
                     {
@@ -135,6 +267,7 @@ namespace MoneyMoat.Services
                             stock.CommonShareholders = obj.CoGeneralInfo.CommonShareholders;
                             stock.Employees = obj.CoGeneralInfo.Employees;
                             m_repoStock.Update(stock);
+                            await m_repoStock.SaveChangesAsync();
                         }
                     }
                     else if (ftype == FundamentalsReportEnum.RESC)
@@ -151,7 +284,8 @@ namespace MoneyMoat.Services
                                 stock.SharesOut = (Int64)obj.Company.SecurityInfo.Security.MarketData["SHARESOUT"];
                             if (obj.Company.SecurityInfo.Security.MarketData.ContainsKey("MARKETCAP"))
                                 stock.MarketCap = (Int64)obj.Company.SecurityInfo.Security.MarketData["MARKETCAP"];
-                            m_repoStock.Update(stock);                            
+                            m_repoStock.Update(stock);
+                            await m_repoStock.SaveChangesAsync();
                         }
 
                         //先删除财务数据
@@ -246,7 +380,7 @@ namespace MoneyMoat.Services
                             };
                             m_repoNPE.Add(sdata);
                         }
-                        await m_repoEst.SaveChangesAsync();
+                        await m_repoNPE.SaveChangesAsync();
 
                         //await m_repoRecommend.RemoveRangeAsync(t => t.Symbol == symbol);
                         //Dictionary<string, float> stValues = new Dictionary<string, float>();
@@ -277,7 +411,7 @@ namespace MoneyMoat.Services
                 }
                 catch(Exception e)
                 {
-                    m_logger.LogError("ParseFundamentalData Error: {0}, \r\n{1}", e.Message, e.StackTrace);
+                    m_logger.LogError("ParseFundamentalData Error: {0}\r\n{1}\r\n{2}", e.Message, e.StackTrace, e.InnerException.Message);
                 }
             }
         }

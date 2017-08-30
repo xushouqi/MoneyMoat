@@ -13,7 +13,7 @@ using YAXLib;
 
 namespace MoneyMoat.Services
 {
-    class AccountService
+     class AccountService
     {
         private const int ACCOUNT_ID_BASE = 50000000;
         private const int ACCOUNT_SUMMARY_ID = ACCOUNT_ID_BASE + 1;

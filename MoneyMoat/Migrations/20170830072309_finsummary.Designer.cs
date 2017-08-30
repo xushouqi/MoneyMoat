@@ -11,9 +11,10 @@ using System;
 namespace MoneyMoat.Migrations
 {
     [DbContext(typeof(MoatDbContext))]
-    partial class MoatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170830072309_finsummary")]
+    partial class finsummary
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,64 +46,19 @@ namespace MoneyMoat.Migrations
                     b.ToTable("Financals");
                 });
 
-            modelBuilder.Entity("MoneyModels.FinStatement", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("EndDate");
-
-                    b.Property<string>("FiscalPeriod");
-
-                    b.Property<int>("FiscalYear");
-
-                    b.Property<string>("Symbol");
-
-                    b.Property<DateTime>("UpdateTime");
-
-                    b.Property<float>("Value");
-
-                    b.Property<string>("coaCode");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EndDate");
-
-                    b.HasIndex("FiscalPeriod");
-
-                    b.HasIndex("FiscalYear");
-
-                    b.HasIndex("Symbol");
-
-                    b.HasIndex("coaCode");
-
-                    b.ToTable("FinStatements");
-                });
-
             modelBuilder.Entity("MoneyModels.FinSummary", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<float>("EPS");
-
-                    b.Property<float>("PB");
-
-                    b.Property<float>("PE");
-
-                    b.Property<float>("PEG");
-
-                    b.Property<float>("PS");
-
-                    b.Property<float>("Price");
-
                     b.Property<string>("Symbol");
 
-                    b.Property<float>("TotalRevenue");
+                    b.Property<string>("Type");
 
                     b.Property<DateTime>("UpdateTime");
+
+                    b.Property<float>("Value");
 
                     b.Property<DateTime>("asofDate");
 
@@ -189,6 +145,31 @@ namespace MoneyMoat.Migrations
                     b.HasIndex("Symbol");
 
                     b.ToTable("NPEstimates");
+                });
+
+            modelBuilder.Entity("MoneyModels.Recommendation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BUY");
+
+                    b.Property<int>("HOLD");
+
+                    b.Property<int>("OUTPERFORM");
+
+                    b.Property<int>("SELL");
+
+                    b.Property<string>("Symbol");
+
+                    b.Property<int>("UNDERPERFORM");
+
+                    b.Property<DateTime>("UpdateTime");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Recommendations");
                 });
 
             modelBuilder.Entity("MoneyModels.Stock", b =>
@@ -280,6 +261,93 @@ namespace MoneyMoat.Migrations
                     b.HasIndex("time");
 
                     b.ToTable("XueQiuDatas");
+                });
+
+            modelBuilder.Entity("MoneyModels.XueQiuQuote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Symbol");
+
+                    b.Property<DateTime>("UpdateTime");
+
+                    b.Property<float>("afterHours");
+
+                    b.Property<float>("afterHoursChg");
+
+                    b.Property<float>("afterHoursPct");
+
+                    b.Property<DateTime>("afterHoursTime");
+
+                    b.Property<float>("amount");
+
+                    b.Property<string>("amplitude");
+
+                    b.Property<float>("benefit_after_tax");
+
+                    b.Property<float>("benefit_before_tax");
+
+                    b.Property<float>("beta");
+
+                    b.Property<float>("change");
+
+                    b.Property<string>("convert_bond_ratio");
+
+                    b.Property<float>("current");
+
+                    b.Property<float>("dividend");
+
+                    b.Property<float>("eps");
+
+                    b.Property<float>("fall_stop");
+
+                    b.Property<float>("high52week");
+
+                    b.Property<float>("instOwn");
+
+                    b.Property<float>("last_close");
+
+                    b.Property<float>("lot_volume");
+
+                    b.Property<float>("low52week");
+
+                    b.Property<float>("marketCapital");
+
+                    b.Property<float>("net_assets");
+
+                    b.Property<string>("outstandingamt");
+
+                    b.Property<float>("pb");
+
+                    b.Property<string>("pe_lyr");
+
+                    b.Property<float>("pe_ttm");
+
+                    b.Property<float>("percentage");
+
+                    b.Property<float>("rise_stop");
+
+                    b.Property<DateTime>("time");
+
+                    b.Property<int>("totalShares");
+
+                    b.Property<string>("totalissuescale");
+
+                    b.Property<string>("turnover_rate");
+
+                    b.Property<long>("updateAt");
+
+                    b.Property<float>("volume");
+
+                    b.Property<float>("volumeAverage");
+
+                    b.Property<float>("yield");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("XueQiuQuotes");
                 });
 #pragma warning restore 612, 618
         }

@@ -13,7 +13,7 @@ using YAXLib;
 
 namespace MoneyMoat.Services
 {
-    class ScannerService
+     class ScannerService
     {
         private readonly ILogger m_logger;
         private readonly IBClient ibClient;

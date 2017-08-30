@@ -43,8 +43,9 @@ namespace MoneyModels
     }
     public enum PeriodTypeEnum
     {
-        Q,
-        A
+        Annual = 0,
+        Quarter,
+        TTM,
     }
     public enum FYTypeEnum
     {

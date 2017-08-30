@@ -13,7 +13,7 @@ using MoneyModels;
 
 namespace MoneyMoat.Services
 {
-    class SymbolService : IBServiceBase<ContractDescription[]>
+     class SymbolService : IBServiceBase<ContractDescription[]>
     {
         private readonly ILogger m_logger;
         private readonly HistoricalService m_historicalService;

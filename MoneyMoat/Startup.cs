@@ -47,9 +47,6 @@ namespace MoneyMoat
             services.AddDbContextPool<MoatDbContext>(opt =>
                     opt.UseMySql(connstr));
 
-            // Add framework services.
-            services.AddMvc();
-
             services.AddSingleton<CommonManager>();
 
             //缓存cache
@@ -64,6 +61,11 @@ namespace MoneyMoat
             services.AddSingleton<FundamentalService>();
             services.AddSingleton<HistoricalService>();
             services.AddSingleton<ScannerService>();
+            services.AddSingleton<AnalyserService>();
+
+            // Add framework services.
+            services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,7 +83,7 @@ namespace MoneyMoat
 
             var ibManager = (IBManager)services.GetService(typeof(IBManager));
             ibManager.Connect();
-            ibManager.Test();
+            ibManager.Work();
         }
     }
 }

@@ -18,9 +18,11 @@ namespace MoneyMoat
             services.AddScoped<IRepository<Financal>, Repository<Financal, MoatDbContext>>();
             services.AddScoped<IRepository<FYEstimate>, Repository<FYEstimate, MoatDbContext>>();
             services.AddScoped<IRepository<NPEstimate>, Repository<NPEstimate, MoatDbContext>>();
-            services.AddScoped<IRepository<Recommendation>, Repository<Recommendation, MoatDbContext>>();
+            //services.AddScoped<IRepository<Recommendation>, Repository<Recommendation, MoatDbContext>>();
             services.AddScoped<IRepository<XueQiuData>, Repository<XueQiuData, MoatDbContext>>();
-            services.AddScoped<IRepository<XueQiuQuote>, Repository<XueQiuQuote, MoatDbContext>>();
+            //services.AddScoped<IRepository<XueQiuQuote>, Repository<XueQiuQuote, MoatDbContext>>();
+            services.AddScoped<IRepository<FinSummary>, Repository<FinSummary, MoatDbContext>>();
+            services.AddScoped<IRepository<FinStatement>, Repository<FinStatement, MoatDbContext>>();
 
             //services.AddSingleton<IRepository<Stock>>(sp =>
             //{

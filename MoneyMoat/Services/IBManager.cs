@@ -15,7 +15,7 @@ using YAXLib;
 
 namespace MoneyMoat.Services
 {
-    class IBManager
+     class IBManager
     {
         private readonly ILogger m_logger;
         private readonly AppSettings m_config;
@@ -132,14 +132,15 @@ namespace MoneyMoat.Services
             }
         }
 
-        public void Test()
+        public async Task Work()
         {
+            await m_fundamentalService.UpdateAllStocks();
             //m_fundamentalService.RequestAndParseFundamentalsAsync("ATAI", ExchangeEnum.ISLAND.ToString(), FundamentalsReportEnum.RESC).Wait();
             //m_fundamentalService.DoUpdateStockFundamentals("ATAI", ExchangeEnum.ISLAND.ToString()).Wait();
             //m_fundamentalService.UpdateAllStocksFundamentals().Wait();
             //m_symbolSampleService.UpdateSymbolsFromSina().Wait();
             //m_historicalService.UpdateAllStocks().Wait();
-            m_fundamentalService.UpdateFundamentalsFromXueQiu("MOMO").Wait();
+            //m_fundamentalService.UpdateAllStocks().Wait();
 
             //RequestAccountSummery();
             //m_symbolSampleService.RequestSymbols("601011");

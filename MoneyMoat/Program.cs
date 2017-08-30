@@ -32,6 +32,7 @@ namespace MoneyMoat
 
         public static IWebHost BuildWebHost(string[] args) =>
             new WebHostBuilder()
+                .UseUrls("http://*:15046")
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()

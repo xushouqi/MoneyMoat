@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MoneyMoat.Services
 {
-    class IBClient : EWrapper
+     class IBClient : EWrapper
     {
         private EClientSocket clientSocket;
         private int nextOrderId;
