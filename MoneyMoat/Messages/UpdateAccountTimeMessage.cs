@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class UpdateAccountTimeMessage
+    public class UpdateAccountTimeMessage
     {
         private string timestamp;
         

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class PnLSingleMessage
+    public class PnLSingleMessage
     {
         public int ReqId { get; private set; }
         public int Pos { get; private set; }

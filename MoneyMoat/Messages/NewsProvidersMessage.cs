@@ -9,7 +9,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class NewsProvidersMessage
+    public class NewsProvidersMessage
     {
         public NewsProvider[] NewsProviders { get; private set; }
 

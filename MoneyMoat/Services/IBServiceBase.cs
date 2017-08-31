@@ -14,13 +14,17 @@ using YAXLib;
 
 namespace MoneyMoat.Services
 {
-     class IBServiceBase<TResult>
+    public class IBServiceBase<TResult>
     {
+        protected readonly IBManager ibManager;
         protected readonly IBClient ibClient;
 
-        public IBServiceBase(IBClient ibclient)
+        public IBServiceBase(IBManager ibmanager)
         {
-            ibClient = ibclient;
+            ibManager = ibmanager;
+            ibManager.Connect();
+
+            ibClient = ibManager.ibClient;
             ibClient.Error += ibClient_Error;
         }
 
@@ -50,7 +54,7 @@ namespace MoneyMoat.Services
         {
             bool ret = false;
             string symbol = string.Empty;
-            if (Common.CheckValidReqId(reqId, out symbol))
+            if (MoatCommon.CheckValidReqId(reqId, out symbol))
             {
                 if (m_handles.ContainsKey(reqId))
                 {

@@ -1,0 +1,23 @@
+﻿		/// <summary>
+        /// #Tips#
+        /// </summary>
+        public static async Task<ReturnMessage<#ReturnType#>> #MethodName#(#MethodParams#)
+        {
+            string qstr = #QueryString#;
+            byte[] datas = RsaService.EncryptFromString(qstr, 0);
+            var content = new ByteArrayContent(datas);
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+			
+            string url = ClientCommon.GetUrl("#ServerName#") + "/#Route#";
+            HttpClient client = new HttpClient();
+			client.DefaultRequestHeaders.Clear();
+            #TokenHeader#
+            var response = await client.PostAsync(url, content);
+            ReturnMessage<#ReturnType#> ret = new ReturnMessage<#ReturnType#>("Error");
+            if (response.IsSuccessStatusCode)
+            {
+                string tmp = response.Content.ReadAsStringAsync().Result;
+				ret = JsonConvert.DeserializeObject<ReturnMessage<#ReturnType#>>(tmp);
+            }
+            return ret;
+        }

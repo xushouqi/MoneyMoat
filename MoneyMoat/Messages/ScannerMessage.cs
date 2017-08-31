@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class ScannerMessage
+    public class ScannerMessage
     {
         private int requestId;
         private int rank;

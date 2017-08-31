@@ -11,12 +11,11 @@ using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using NLog.Extensions.Logging;
 using NLog.Web;
-using Pomelo.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql;
 using MoneyMoat.Services;
 using IBApi;
 using Foundatio.Caching;
-
+using FluentScheduler;
+using AutoMapper;
 
 namespace MoneyMoat
 {
@@ -56,6 +55,7 @@ namespace MoneyMoat
 
             services.AddSingleton(new IBClient(new EReaderMonitorSignal()));
             services.AddSingleton<IBManager>();
+            services.AddSingleton<TestService>();
             services.AddSingleton<AccountService>();
             services.AddSingleton<SymbolService>();
             services.AddSingleton<FundamentalService>();
@@ -66,6 +66,10 @@ namespace MoneyMoat
             // Add framework services.
             services.AddMvc();
 
+            Mapper.Initialize(cfg =>
+            {
+                //cfg.CreateMap<Account, AccountData>();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,9 +85,13 @@ namespace MoneyMoat
             var services = app.ApplicationServices;
             var settings = services.GetRequiredService<IOptions<AppSettings>>().Value;
 
-            var ibManager = (IBManager)services.GetService(typeof(IBManager));
-            ibManager.Connect();
-            ibManager.Work();
+            var logService = services.GetService<ILogger<Startup>>();
+
+            //定时任务
+            JobManager.Initialize(new JobRegistry(services));
+            JobManager.JobException += (info) => logService.LogError("An error just happened with a scheduled job: {0}/n{1}/n{2}", 
+                info.Exception.Message, info.Exception.StackTrace, info.Exception.InnerException.Message);
+
         }
     }
 }

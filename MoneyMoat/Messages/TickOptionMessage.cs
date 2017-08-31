@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class TickOptionMessage : MarketDataMessage
+    public class TickOptionMessage : MarketDataMessage
     {
         private double impliedVolatility;
         private double delta;

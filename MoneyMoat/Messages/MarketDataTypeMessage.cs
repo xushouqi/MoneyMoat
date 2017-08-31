@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class MarketDataTypeMessage
+    public class MarketDataTypeMessage
     {
         protected int requestId;
         protected int marketDataType;

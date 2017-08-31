@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class PositionMessage 
+    public class PositionMessage 
     {
         private string account;
         private Contract contract;

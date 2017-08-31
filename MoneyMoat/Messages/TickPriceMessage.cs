@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class TickPriceMessage : MarketDataMessage
+    public class TickPriceMessage : MarketDataMessage
     {
         private double price;
         private TickAttrib attribs;

@@ -1,0 +1,10 @@
+﻿using ProtoBuf;
+
+namespace GodModels
+{
+    [ProtoContract]
+    public class #TypeName#Data
+    {
+#Datas#
+    }
+}

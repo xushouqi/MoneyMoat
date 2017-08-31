@@ -1,0 +1,27 @@
+﻿using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using GodModels;
+using System.Net.WebSockets;
+using GodFramework;
+
+namespace GodFramework.#ProjectName#
+{
+	public class #ClassName#Client
+	{
+		private ClientSocket m_client;
+		public #ClassName#Client(ClientSocket client)
+		{
+			m_client = client;
+			
+#RegActions#
+		}
+
+		#Methods#
+	
+		#Callbacks#
+		
+#AddRemove#
+
+	}
+}

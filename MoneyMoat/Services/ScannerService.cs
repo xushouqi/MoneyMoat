@@ -10,30 +10,31 @@ using MoneyMoat.Types;
 using MoneyModels;
 using IBApi;
 using YAXLib;
+using CommonLibs;
 
 namespace MoneyMoat.Services
 {
-     class ScannerService
+    [WebApi]
+    public class ScannerService : IBServiceBase<string>
     {
         private readonly ILogger m_logger;
-        private readonly IBClient ibClient;
         private int activeReqId = 0;
 
-        public ScannerService(IBClient ibclient,
-                        ILogger<IBManager> logger)
+        public ScannerService(IBManager ibmanager,
+                        ILogger<IBManager> logger) : base(ibmanager)
         {
             m_logger = logger;
-            ibClient = ibclient;
 
             ibClient.ScannerParameters += xml => HandleScannerParameters(new ScannerParametersMessage(xml));
             ibClient.ScannerData += HandleScannerData;
             ibClient.ScannerDataEnd += reqId => { m_logger.LogInformation("ScannerDataEnd. " + reqId + "\r\n"); activeReqId = 0; };
         }
+
         public void AddRequest(ScanCodeEnum scanCode, SecTypeEnum secType, StockTypeFilterEnum filter, int count)
         {
             if (activeReqId == 0)
             {
-                activeReqId = Common.GetReqId(scanCode.ToString());
+                activeReqId = MoatCommon.GetReqId(scanCode.ToString());
 
                 ScannerSubscription subscription = new ScannerSubscription();
                 subscription.ScanCode = scanCode.ToString();
@@ -64,12 +65,12 @@ namespace MoneyMoat.Services
             m_logger.LogInformation("HandleScannerParameters: {0}", scanParamsMessage.XmlData);
 
             string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Parameters", "ScannerParameters.xml");
-            Common.WriteFile(filepath, scanParamsMessage.XmlData);
+            MoatCommon.WriteFile(filepath, scanParamsMessage.XmlData);
         }
         private void HandleScannerData(ScannerMessage scannMessage)
         {
             string scanCode = "";
-            if (Common.CheckValidReqId(scannMessage.RequestId, out scanCode))
+            if (MoatCommon.CheckValidReqId(scannMessage.RequestId, out scanCode))
             {
                 m_logger.LogInformation("HandleScannerData: Rank={0}, Summary={1}, Distance={2}, Benchmark={3}, Projection={4}, LegsStr={5}",
                     scannMessage.Rank, scannMessage.ContractDetails.Summary, scannMessage.Distance, scannMessage.Benchmark, scannMessage.Projection, scannMessage.LegsStr);

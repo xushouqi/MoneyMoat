@@ -11,10 +11,12 @@ using MoneyMoat.Types;
 using MoneyModels;
 using IBApi;
 using Newtonsoft.Json;
+using CommonLibs;
 
 namespace MoneyMoat.Services
 {
-     class HistoricalService : IBServiceBase<string>
+    [WebApi]
+    public class HistoricalService : IBServiceBase<string>
     {
         public const int HISTORICAL_ID_BASE = 30000000;
 
@@ -23,10 +25,10 @@ namespace MoneyMoat.Services
         private readonly ILogger m_logger;
         private int activeReqId = 0;
 
-        public HistoricalService(IBClient ibclient,
+        public HistoricalService(IBManager ibmanager,
                         IRepository<Stock> repoStock,
                         IRepository<XueQiuData> repoData,
-                        ILogger<IBManager> logger) : base(ibclient)
+                        ILogger<IBManager> logger) : base(ibmanager)
         {
             m_logger = logger;
             m_repoStock = repoStock;
@@ -52,16 +54,16 @@ namespace MoneyMoat.Services
             var stock = m_repoStock.Find(symbol);
             if (stock != null)
             {
-                long to = Common.GetTimestamp(DateTime.Now);
-                long from = Common.GetTimestamp(stock.EarliestDate);
+                long to = MoatCommon.GetTimestamp(DateTime.Now);
+                long from = MoatCommon.GetTimestamp(stock.EarliestDate);
 
                 //取已有数据的最新一条
                 var retLas = await m_repoData.MaxAsync(t => t.Symbol == symbol, t => t.time);
                 if (retLas != null)
-                    from = Common.GetTimestamp(retLas.time.AddDays(1));
+                    from = MoatCommon.GetTimestamp(retLas.time.AddDays(1));
 
                 var url = "https://xueqiu.com/stock/forchartk/stocklist.json?symbol=" + symbol + "&period=1day&type=normal&begin="+ from + "&end="+ to;
-                var source = await Common.GetXueQiuContent(url);
+                var source = await MoatCommon.GetXueQiuContent(url);
                 if (!string.IsNullOrEmpty(source))
                 {
                     JsonConvert.DefaultSettings = () => new JsonSerializerSettings
@@ -83,22 +85,24 @@ namespace MoneyMoat.Services
                             }
                             await m_repoData.SaveChangesAsync();
                         }
-                        Console.WriteLine("UpdateHistoricalData {0} Count={1}",
+                        m_logger.LogWarning("UpdateHistoricalData {0} Count={1}",
                              symbol, obj.chartlist.Count);
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
-                        Console.WriteLine("UpdateHistoricalData Error: {0}\n{1}",
+                        m_logger.LogError("UpdateHistoricalData Error: {0}\n{1}",
                              e.Message, e.StackTrace);
                     }
                 }
+                else
+                    m_logger.LogWarning("No new datas: {0}, since {1}", symbol, retLas != null? retLas.time.ToShortDateString(): "???");
             }
         }
         
         public async Task<string> RequestEarliestDataPointAsync(string symbol, string exchange)
         {
-            var reqId = Common.GetReqId(symbol);
-            var contract = Common.GetStockContract(symbol, exchange);
+            var reqId = MoatCommon.GetReqId(symbol);
+            var contract = MoatCommon.GetStockContract(symbol, exchange);
             ibClient.ClientSocket.reqHeadTimestamp(reqId, contract, "TRADES", 1, 1);
             return await SendRequestAsync(reqId);
         }
@@ -110,7 +114,7 @@ namespace MoneyMoat.Services
             m_results[message.ReqId] = message.HeadTimestamp;
             HandleResponse(message.ReqId);
 
-            Console.WriteLine("HandleEarliestDataPoint: {0}={1}",
+            m_logger.LogWarning("HandleEarliestDataPoint: {0}={1}",
                  symbol, message.HeadTimestamp);
         }
         public void CancelHeadTimestamp()
@@ -145,8 +149,8 @@ namespace MoneyMoat.Services
             if (activeReqId == 0)
             {
                 historicalData = new List<HistoricalDataMessage>();
-                activeReqId = Common.GetReqId(symbol) + HISTORICAL_ID_BASE;
-                var contract = Common.GetStockContract(symbol, exchange);
+                activeReqId = MoatCommon.GetReqId(symbol) + HISTORICAL_ID_BASE;
+                var contract = MoatCommon.GetStockContract(symbol, exchange);
                 var endStr = endDateTime.ToString("yyyyMMdd HH:mm:ss");
                 //Whether (1) or not (0) to retrieve data generated only within Regular Trading Hours (RTH)
                 int useRTH = 1;
@@ -172,13 +176,13 @@ namespace MoneyMoat.Services
         private void HandleHistoricalDataEnd(HistoricalDataEndMessage message)
         {
             string symbol = string.Empty;
-            if (Common.CheckValidReqId(message.RequestId, out symbol))
+            if (MoatCommon.CheckValidReqId(message.RequestId, out symbol))
             {
                 activeReqId = 0;
                 for (int i = 0; i < historicalData.Count; i++)
                 {
                     var data = historicalData[i];
-                    Console.WriteLine("HistoricalData: {0}, Date={1}, Open={2}, Close={3}, Count={4}, HasGaps={5}, High={6}, Low={7}, Volume={8}, Wap={9}", 
+                    m_logger.LogWarning("HistoricalData: {0}, Date={1}, Open={2}, Close={3}, Count={4}, HasGaps={5}, High={6}, Low={7}, Volume={8}, Wap={9}", 
                         symbol, data.Date, data.Open, data.Close, data.Count, data.HasGaps, data.High, data.Low, data.Volume, data.Wap);
                 }
             }

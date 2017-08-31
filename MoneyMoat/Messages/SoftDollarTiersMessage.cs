@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class SoftDollarTiersMessage
+    public class SoftDollarTiersMessage
     {
         public int ReqId { get; private set; }
         public IBApi.SoftDollarTier[] Tiers { get; private set; }

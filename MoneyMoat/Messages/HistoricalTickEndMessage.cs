@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class HistoricalTickEndMessage
+    public class HistoricalTickEndMessage
     {
         public int ReqId { get; private set; }
 

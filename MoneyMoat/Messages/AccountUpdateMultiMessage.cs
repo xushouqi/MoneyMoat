@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class AccountUpdateMultiMessage 
+    public class AccountUpdateMultiMessage 
     {
         private int reqId;
         private string account;

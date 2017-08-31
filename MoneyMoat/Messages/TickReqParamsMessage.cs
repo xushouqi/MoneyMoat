@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class TickReqParamsMessage
+    public class TickReqParamsMessage
     {
         public int TickerId { get; private set; }
         public double MinTick { get; private set; }

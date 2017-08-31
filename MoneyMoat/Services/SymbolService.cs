@@ -10,19 +10,21 @@ using MoneyMoat.Messages;
 using IBApi;
 using AngleSharp.Parser.Html;
 using MoneyModels;
+using CommonLibs;
 
 namespace MoneyMoat.Services
 {
-     class SymbolService : IBServiceBase<ContractDescription[]>
+    [WebApi]
+    public class SymbolService : IBServiceBase<ContractDescription[]>
     {
         private readonly ILogger m_logger;
         private readonly HistoricalService m_historicalService;
         private readonly IRepository<Stock> m_repoStock;
 
-        public SymbolService(IBClient ibclient,
+        public SymbolService(IBManager ibmanager,
                         HistoricalService historicalService,
                         IRepository<Stock> repoStock,
-                        ILogger<IBManager> logger) : base(ibclient)
+                        ILogger<IBManager> logger) : base(ibmanager)
         {
             m_logger = logger;
             m_historicalService = historicalService;
@@ -47,7 +49,7 @@ namespace MoneyMoat.Services
             var parser = new HtmlParser();
 
             var url = "http://vip.stock.finance.sina.com.cn/usstock/ustotal.php";
-            var source = await Common.GetHttpContent(url, System.Text.Encoding.GetEncoding("gb2312"));
+            var source = await MoatCommon.GetHttpContent(url, System.Text.Encoding.GetEncoding("gb2312"));
             if (!string.IsNullOrEmpty(source))
             {            
                 var document = parser.Parse(source);
@@ -60,8 +62,7 @@ namespace MoneyMoat.Services
                     for (int j = 0; j < hrefs.Length; j++)
                     {
                         var node = hrefs[j];
-
-                        //Console.WriteLine("node = {0}", node.InnerHtml);
+                        
                         var match = Regex.Match(node.InnerHtml, @"(?<=\().*?(?=\))");
                         if (match.Success)
                         {
@@ -129,7 +130,7 @@ namespace MoneyMoat.Services
         
         public async Task<ContractDescription[]> RequestSymbolsAsync(string pattern)
         {
-            int reqId = Common.GetReqId(pattern);
+            int reqId = MoatCommon.GetReqId(pattern);
             ibClient.ClientSocket.reqMatchingSymbols(reqId, pattern);
             return await SendRequestAsync(reqId);
         }

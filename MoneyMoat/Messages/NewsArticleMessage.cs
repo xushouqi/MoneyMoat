@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class NewsArticleMessage
+    public class NewsArticleMessage
     {
         public int RequestId { get; private set; }
         public int ArticleType { get; private set; }

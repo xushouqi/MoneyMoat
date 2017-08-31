@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class PositionMultiEndMessage 
+    public class PositionMultiEndMessage 
     {
         private int reqId;
         

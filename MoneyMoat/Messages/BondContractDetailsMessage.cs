@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class BondContractDetailsMessage
+    public class BondContractDetailsMessage
     {
         private int requestId;
         private ContractDetails contractDetails;

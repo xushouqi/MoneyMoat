@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class HistoricalDataEndMessage
+    public class HistoricalDataEndMessage
     {
         private int requestId;
         private string startDate;

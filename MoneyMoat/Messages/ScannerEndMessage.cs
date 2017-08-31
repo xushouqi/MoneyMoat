@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class ScannerEndMessage
+    public class ScannerEndMessage
     {
         private int requestId;
 

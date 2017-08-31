@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class AccountSummaryEndMessage 
+    public class AccountSummaryEndMessage 
     {
         private int requestId;
 

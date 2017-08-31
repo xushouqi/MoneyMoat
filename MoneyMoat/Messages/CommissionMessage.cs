@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class CommissionMessage
+    public class CommissionMessage
     {
         private CommissionReport commissionReport;
 

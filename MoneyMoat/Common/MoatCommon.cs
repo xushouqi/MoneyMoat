@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MoneyMoat
 {
-    public class Common
+    public class MoatCommon
     {
         public static long GetTimestamp(DateTime theTime)
         {
@@ -119,7 +119,7 @@ namespace MoneyMoat
             {
                 sw.Write(content);
             }
-            Console.WriteLine("Write ClientFile: " + filepath);
+            Console.WriteLine("Write: " + filepath);
         }
         public static async Task<string> ReadFile(string filepath)
         {
@@ -129,7 +129,7 @@ namespace MoneyMoat
             {
                 content = await File.ReadAllTextAsync(filepath, System.Text.Encoding.UTF8);
             }
-            Console.WriteLine("Read ClientFile: " + filepath);
+            Console.WriteLine("Read: " + filepath);
             return content;
         }
 

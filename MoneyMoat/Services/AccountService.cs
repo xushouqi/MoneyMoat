@@ -10,10 +10,12 @@ using MoneyMoat.Types;
 using MoneyModels;
 using IBApi;
 using YAXLib;
+using CommonLibs;
 
 namespace MoneyMoat.Services
 {
-     class AccountService
+    [WebApi]
+    public class AccountService : IBServiceBase<string>
     {
         private const int ACCOUNT_ID_BASE = 50000000;
         private const int ACCOUNT_SUMMARY_ID = ACCOUNT_ID_BASE + 1;
@@ -23,17 +25,15 @@ namespace MoneyMoat.Services
              + "FullExcessLiquidity,LookAheadNextChange,LookAheadInitMarginReq ,LookAheadMaintMarginReq,LookAheadAvailableFunds,LookAheadExcessLiquidity,HighestSeverity,DayTradesRemaining,Leverage";
 
         private readonly ILogger m_logger;
-        private readonly IBClient ibClient;
         private int activeReqId = 0;
 
-        public AccountService(IBClient ibclient,
-                        ILogger<IBManager> logger)
+        public AccountService(IBManager ibmanager,
+                        ILogger<IBManager> logger) : base(ibmanager)
         {
             m_logger = logger;
-            ibClient = ibclient;
 
             ibClient.AccountSummary += HandleAccountSummary;
-            ibClient.AccountSummaryEnd += reqId => { m_logger.LogInformation("AccountSummaryEnd. " + reqId + "\r\n"); activeReqId = 0; };
+            ibClient.AccountSummaryEnd += reqId => { m_logger.LogWarning("AccountSummaryEnd. " + reqId + "\r\n"); activeReqId = 0; };
         }
 
         public void RequestAccountSummery()
@@ -54,7 +54,7 @@ namespace MoneyMoat.Services
         }
         private void HandleAccountSummary(AccountSummaryMessage summaryMessage)
         {
-            m_logger.LogInformation("HandleAccountSummary: Account={0}, Value={1}, Currency={2}, Tag={3}",
+            m_logger.LogWarning("HandleAccountSummary: Account={0}, Value={1}, Currency={2}, Tag={3}",
             summaryMessage.Account, summaryMessage.Value, summaryMessage.Currency, summaryMessage.Tag);
         }
 

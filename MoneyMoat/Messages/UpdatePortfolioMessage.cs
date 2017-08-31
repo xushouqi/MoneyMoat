@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class UpdatePortfolioMessage
+    public class UpdatePortfolioMessage
     {
         private Contract contract;
         private double position;

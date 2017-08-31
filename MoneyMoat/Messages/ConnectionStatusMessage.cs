@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class ConnectionStatusMessage
+    public class ConnectionStatusMessage
     {
         private bool isConnected;
 

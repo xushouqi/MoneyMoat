@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class RealTimeBarMessage : HistoricalDataMessage
+    public class RealTimeBarMessage : HistoricalDataMessage
     {
         private long timestamp;
         private long longVolume;

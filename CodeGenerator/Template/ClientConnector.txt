@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using CommonLibs;
+using System.Text;
+using Newtonsoft.Json;
+
+namespace ClientApiConnector.#ServerName#
+{
+    public class #ClassName#
+    {
+		/*
+        private static HttpClient _client = new HttpClient();
+        private static HttpClient client
+        {
+            get
+            {
+                if (_client == null)
+                    _client = new HttpClient();
+                return _client;
+            }
+        }
+		*/
+
+		#Methods#
+    }
+}

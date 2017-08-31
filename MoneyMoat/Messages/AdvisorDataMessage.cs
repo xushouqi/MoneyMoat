@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class AdvisorDataMessage 
+    public class AdvisorDataMessage 
     {
         private int faDataType;
         private string data;

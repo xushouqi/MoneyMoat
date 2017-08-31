@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class ExecutionMessage
+    public class ExecutionMessage
     {
         private int reqId;
         private Contract contract;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class SecurityDefinitionOptionParameterEndMessage
+    public class SecurityDefinitionOptionParameterEndMessage
     {
         private int reqId;
 

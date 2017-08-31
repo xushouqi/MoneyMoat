@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class MktDepthExchangesMessage
+    public class MktDepthExchangesMessage
     {
         public IBApi.DepthMktDataDescription[] Descriptions { get; private set; }
 

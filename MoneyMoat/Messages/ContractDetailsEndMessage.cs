@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class ContractDetailsEndMessage
+    public class ContractDetailsEndMessage
     {
         public ContractDetailsEndMessage()
         {

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class DeepBookMessage
+    public class DeepBookMessage
     {
         private int requestId;
         private int position;

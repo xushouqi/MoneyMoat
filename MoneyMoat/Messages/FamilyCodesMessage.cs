@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class FamilyCodesMessage
+    public class FamilyCodesMessage
     {
         public FamilyCode[] FamilyCodes { get; private set; }
 

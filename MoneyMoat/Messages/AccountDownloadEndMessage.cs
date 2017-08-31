@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class AccountDownloadEndMessage
+    public class AccountDownloadEndMessage
     {
         private string account;
         

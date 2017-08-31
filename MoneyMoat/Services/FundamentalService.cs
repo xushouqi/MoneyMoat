@@ -12,10 +12,12 @@ using IBApi;
 using YAXLib;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using CommonLibs;
 
 namespace MoneyMoat.Services
 {
-     class FundamentalService : IBServiceBase<string>
+    [WebApi]
+    public class FundamentalService : IBServiceBase<string>
     {
         private readonly ILogger m_logger;
         private readonly IRepository<Stock> m_repoStock;
@@ -26,7 +28,7 @@ namespace MoneyMoat.Services
         private readonly IRepository<FinSummary> m_repoSummary;
         private readonly IRepository<FinStatement> m_repoStatement;
 
-        public FundamentalService(IBClient ibclient,
+        public FundamentalService(IBManager ibmanager,
                         IRepository<Stock> repoStock,
                         IRepository<Financal> repoFin,
                         IRepository<FYEstimate> repoEst,
@@ -34,7 +36,7 @@ namespace MoneyMoat.Services
                         IRepository<XueQiuData> repoDatas,
                         IRepository<FinSummary> repoSummary,
                         IRepository<FinStatement> repoStatement,
-                        ILogger<IBManager> logger) : base(ibclient)
+                        ILogger<IBManager> logger) : base(ibmanager)
         {
             m_logger = logger;
             m_repoStock = repoStock;
@@ -48,8 +50,10 @@ namespace MoneyMoat.Services
             ibClient.FundamentalData += HandleFundamentalsData;
         }
 
-        public async Task UpdateAllStocks()
+        [Api]
+        public async Task<int> UpdateAllStocks()
         {
+            int ret = 0;
             bool readXml = !ibClient.ClientSocket.IsConnected();
 
             var stocklist = m_repoStock.GetAll();
@@ -58,16 +62,20 @@ namespace MoneyMoat.Services
                 var stock = stocklist[i];
                 await UpdateFundamentalsFromIB(stock.Symbol, stock.Exchange, readXml);
                 //await UpdateFundamentalsFromXueQiu(stock.Symbol);
+                ret++;
             }
+            return ret;
         }
 
-        public async Task UpdateFundamentalsFromXueQiu(string symbol)
+        [Api]
+        public async Task<string> UpdateFundamentalsFromXueQiu(string symbol)
         {
+            string source = string.Empty;
             var stock = m_repoStock.Find(symbol);
             if (stock != null)
             {
                 var url = "http://xueqiu.com/v4/stock/quote.json?code=" + symbol;
-                var source = await Common.GetXueQiuContent(url);
+                source = await MoatCommon.GetXueQiuContent(url);
                 if (!string.IsNullOrEmpty(source))
                 {
                     JsonConvert.DefaultSettings = () => new JsonSerializerSettings
@@ -91,19 +99,33 @@ namespace MoneyMoat.Services
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine("UpdateHistoricalData Error: {0}\n{1}",
+                        m_logger.LogError("UpdateHistoricalData Error: {0}\n{1}",
                              e.Message, e.StackTrace);
                     }
                 }
             }
+            return source;
         }
 
-        public async Task UpdateFundamentalsFromIB(string symbol, string exchange, bool readXml)
+        [Api]
+        public async Task<int> UpdateFundamentalsFromIB(string symbol, bool readXml)
         {
-            List<Task<string>> tasklist = new List<Task<string>>();
+            int ret = 0;
+            var stock = m_repoStock.Find(symbol);
+            if (stock != null)
+            {
+                 ret = await UpdateFundamentalsFromIB(symbol, stock.Exchange, readXml);
+            }
+            return ret;
+        }
+        public async Task<int> UpdateFundamentalsFromIB(string symbol, string exchange, bool readXml)
+        {
+            int ret = 0;
+            //List<Task<string>> tasklist = new List<Task<string>>();
             foreach (FundamentalsReportEnum ftype in Enum.GetValues(typeof(FundamentalsReportEnum)))
             {
                 await ReadAndParseFundamentalsAsync(symbol, ftype);
+                ret ++;
                 //Task<string> task = null;
                 //if (readXml)
                 //    task = ReadAndParseFundamentalsAsync(symbol, ftype);
@@ -116,6 +138,7 @@ namespace MoneyMoat.Services
             //{
             //    var data = tasklist[t].Result;
             //}
+            return ret;
         }
 
         private async Task UpdateCalcDatas(string symbol)
@@ -133,12 +156,12 @@ namespace MoneyMoat.Services
         {
             if (!string.IsNullOrEmpty(data) && data.Length > 100)
             {
-                m_logger.LogInformation("ParseFundamentalData: {0}: {1}", symbol, ftype.ToString());
+                m_logger.LogWarning("ParseFundamentalData: {0}: {1}", symbol, ftype.ToString());
 
                 if (saveXml)
                 {
-                    string filepath = Common.GetFundamentalFilePath(symbol, ftype);
-                    Common.WriteFile(filepath, data);
+                    string filepath = MoatCommon.GetFundamentalFilePath(symbol, ftype);
+                    MoatCommon.WriteFile(filepath, data);
                 }
 
                 try
@@ -416,15 +439,26 @@ namespace MoneyMoat.Services
             }
         }
 
+        [Api]
         public async Task<string> ReadAndParseFundamentalsAsync(string symbol, FundamentalsReportEnum ftype)
         {
-            string filepath = Common.GetFundamentalFilePath(symbol, ftype);            
-            string data = await Common.ReadFile(filepath);
+            string filepath = MoatCommon.GetFundamentalFilePath(symbol, ftype);            
+            string data = await MoatCommon.ReadFile(filepath);
             if (!string.IsNullOrEmpty(data))
             {
                 await ParseFundamentalData(symbol, ftype, data, false);
                 return data;
             }
+            else
+                return string.Empty;
+        }
+
+        [Api]
+        public async Task<string> RequestAndParseFundamentalsAsync(string symbol, FundamentalsReportEnum ftype)
+        {
+            var stock = m_repoStock.Find(symbol);
+            if (stock != null)
+                return await RequestAndParseFundamentalsAsync(symbol, stock.Exchange, ftype);
             else
                 return string.Empty;
         }
@@ -439,14 +473,10 @@ namespace MoneyMoat.Services
             else
                 return string.Empty;
         }
-        public async Task<string> RequestFundamentalsAsync(string symbol, ExchangeEnum exchange, FundamentalsReportEnum ftype)
-        {
-            return await RequestFundamentalsAsync(symbol, exchange.ToString(), ftype);
-        }
         public async Task<string> RequestFundamentalsAsync(string symbol, string exchange, FundamentalsReportEnum ftype)
         {
-            int reqId = Common.GetReqId(symbol);
-            var contract = Common.GetStockContract(symbol, exchange);
+            int reqId = MoatCommon.GetReqId(symbol);
+            var contract = MoatCommon.GetStockContract(symbol, exchange);
             ibClient.ClientSocket.reqFundamentalData(reqId, contract, ftype.ToString(), new List<TagValue>());
             return await SendRequestAsync(reqId);
         }

@@ -8,7 +8,7 @@ using IBApi;
 
 namespace MoneyMoat.Messages
 {
-    class OpenOrderMessage : OrderMessage
+    public class OpenOrderMessage : OrderMessage
     {
         private Contract contract;
         private Order order;

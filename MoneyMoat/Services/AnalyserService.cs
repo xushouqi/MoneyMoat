@@ -10,10 +10,12 @@ using MoneyMoat.Types;
 using MoneyModels;
 using IBApi;
 using YAXLib;
+using CommonLibs;
 
 namespace MoneyMoat.Services
 {
-     class AnalyserService
+    [WebApi]
+    public class AnalyserService
     {
         private readonly ILogger m_logger;
         protected readonly IBClient ibClient;

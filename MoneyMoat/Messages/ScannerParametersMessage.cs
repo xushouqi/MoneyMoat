@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MoneyMoat.Messages
 {
-    class ScannerParametersMessage
+    public class ScannerParametersMessage
     {
         private string xmlData;
         
