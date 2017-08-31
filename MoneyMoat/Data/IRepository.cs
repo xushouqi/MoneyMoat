@@ -9,7 +9,7 @@ namespace MoneyMoat
 {
     public interface IRepository<TEntity>
     {
-        List<TEntity> GetAll();
+        Task<List<TEntity>> GetAllAsync();
         TEntity GetDefault();
         TEntity Find(int id);
         TEntity Find(string key);

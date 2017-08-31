@@ -14,15 +14,13 @@ namespace MoneyMoat
         //注册数据对象仓库
         public static IServiceCollection AddRepositoryService(this IServiceCollection services, IHostingEnvironment env, IConfigurationRoot config)
         {
-            services.AddScoped<IRepository<Stock>, Repository<Stock, MoatDbContext>>();
-            services.AddScoped<IRepository<Financal>, Repository<Financal, MoatDbContext>>();
-            services.AddScoped<IRepository<FYEstimate>, Repository<FYEstimate, MoatDbContext>>();
-            services.AddScoped<IRepository<NPEstimate>, Repository<NPEstimate, MoatDbContext>>();
-            //services.AddScoped<IRepository<Recommendation>, Repository<Recommendation, MoatDbContext>>();
-            services.AddScoped<IRepository<XueQiuData>, Repository<XueQiuData, MoatDbContext>>();
-            //services.AddScoped<IRepository<XueQiuQuote>, Repository<XueQiuQuote, MoatDbContext>>();
-            services.AddScoped<IRepository<FinSummary>, Repository<FinSummary, MoatDbContext>>();
-            services.AddScoped<IRepository<FinStatement>, Repository<FinStatement, MoatDbContext>>();
+            services.AddTransient<IRepository<Stock>, Repository<Stock, MoatDbContext>>();
+            services.AddTransient<IRepository<Financal>, Repository<Financal, MoatDbContext>>();
+            services.AddTransient<IRepository<FYEstimate>, Repository<FYEstimate, MoatDbContext>>();
+            services.AddTransient<IRepository<NPEstimate>, Repository<NPEstimate, MoatDbContext>>();
+            services.AddTransient<IRepository<XueQiuData>, Repository<XueQiuData, MoatDbContext>>();
+            services.AddTransient<IRepository<FinSummary>, Repository<FinSummary, MoatDbContext>>();
+            services.AddTransient<IRepository<FinStatement>, Repository<FinStatement, MoatDbContext>>();
 
             //services.AddSingleton<IRepository<Stock>>(sp =>
             //{

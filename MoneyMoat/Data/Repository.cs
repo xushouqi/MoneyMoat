@@ -60,9 +60,9 @@ namespace MoneyMoat
         {
             return await Datas.AnyAsync(predicate);
         }
-        public List<TEntity> GetAll()
+        public async Task<List<TEntity>> GetAllAsync()
         {
-            var data = Datas.ToList();
+            var data = await Datas.ToListAsync();
             return data;
         }
         public async Task<TEntity> MaxAsync<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order)

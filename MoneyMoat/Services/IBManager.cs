@@ -27,7 +27,7 @@ namespace MoneyMoat.Services
         private const int CONTRACT_DETAILS_ID = CONTRACT_ID_BASE + 1;
         private const int FUNDAMENTALS_ID = CONTRACT_ID_BASE + 2;
 
-         IBManager(IBClient ibclient,
+        public IBManager(IBClient ibclient,
                         ILogger<IBManager> logger,
                         IOptions<AppSettings> commonoptions)
         {

@@ -33,49 +33,6 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> UpdateAllStocks(string sign)
-        {
-			string design = string.Empty;
-            if (!string.IsNullOrEmpty(sign))
-            {
-                design = RsaService.DecryptToString(sign);
-            }
-            else if (Request.ContentLength != null)
-            {
-                byte[] datas = new byte[(int)Request.ContentLength];
-                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
-                design = RsaService.DecryptToString(datas, 0);
-            }
-            if (!string.IsNullOrEmpty(design))
-            {
-				var tmp = Common.QueryStringToData(design);
-				if (tmp != null)
-				{
-					var retData = await _actionService.UpdateAllStocks();
-					if (retData != null)
-					{
-						return new OkObjectResult(retData);
-					}
-					else
-						return NoContent();
-				}
-				else
-					return new UnauthorizedResult();
-            }
-            else
-            {
-				var retData = await _actionService.UpdateAllStocks();
-				if (retData != null)
-				{
-					return new OkObjectResult(retData);
-				}
-				else
-					return NoContent();
-            }
-        }
-
-        [HttpPost]
-        [AllowAnonymous]
         public async Task<IActionResult> UpdateFundamentalsFromXueQiu(string symbol, string sign)
         {
 			string design = string.Empty;
@@ -119,7 +76,7 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> UpdateFundamentalsFromIB(string symbol, bool readXml, string sign)
+        public async Task<IActionResult> UpdateAllFromIB(string symbol, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -135,9 +92,9 @@ namespace MoneyMoat.Controllers
             if (!string.IsNullOrEmpty(design))
             {
 				var tmp = Common.QueryStringToData(design);
-				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("readXml"))
+				if (tmp != null && tmp.ContainsKey("symbol"))
 				{
-					var retData = await _actionService.UpdateFundamentalsFromIB(tmp["symbol"], bool.Parse(tmp["readXml"]));
+					var retData = await _actionService.UpdateAllFromIB(tmp["symbol"]);
 					if (retData != null)
 					{
 						return new OkObjectResult(retData);
@@ -150,7 +107,7 @@ namespace MoneyMoat.Controllers
             }
             else
             {
-				var retData = await _actionService.UpdateFundamentalsFromIB(symbol, readXml);
+				var retData = await _actionService.UpdateAllFromIB(symbol);
 				if (retData != null)
 				{
 					return new OkObjectResult(retData);
@@ -162,7 +119,7 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> ReadAndParseFundamentalsAsync(string symbol, MoneyModels.FundamentalsReportEnum ftype, string sign)
+        public async Task<IActionResult> ReadFromXmlAsync(string symbol, MoneyModels.FundamentalsReportEnum ftype, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -180,7 +137,7 @@ namespace MoneyMoat.Controllers
 				var tmp = Common.QueryStringToData(design);
 				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("ftype"))
 				{
-					var retData = await _actionService.ReadAndParseFundamentalsAsync(tmp["symbol"], (MoneyModels.FundamentalsReportEnum)(int.Parse(tmp["ftype"])));
+					var retData = await _actionService.ReadFromXmlAsync(tmp["symbol"], (MoneyModels.FundamentalsReportEnum)(int.Parse(tmp["ftype"])));
 					if (retData != null)
 					{
 						return new OkObjectResult(retData);
@@ -193,7 +150,7 @@ namespace MoneyMoat.Controllers
             }
             else
             {
-				var retData = await _actionService.ReadAndParseFundamentalsAsync(symbol, ftype);
+				var retData = await _actionService.ReadFromXmlAsync(symbol, ftype);
 				if (retData != null)
 				{
 					return new OkObjectResult(retData);
@@ -205,7 +162,50 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> RequestAndParseFundamentalsAsync(string symbol, MoneyModels.FundamentalsReportEnum ftype, string sign)
+        public async Task<IActionResult> RequestFromIBAsync(string symbol, string exchange, MoneyModels.FundamentalsReportEnum ftype, string sign)
+        {
+			string design = string.Empty;
+            if (!string.IsNullOrEmpty(sign))
+            {
+                design = RsaService.DecryptToString(sign);
+            }
+            else if (Request.ContentLength != null)
+            {
+                byte[] datas = new byte[(int)Request.ContentLength];
+                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
+                design = RsaService.DecryptToString(datas, 0);
+            }
+            if (!string.IsNullOrEmpty(design))
+            {
+				var tmp = Common.QueryStringToData(design);
+				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("exchange") && tmp.ContainsKey("ftype"))
+				{
+					var retData = await _actionService.RequestFromIBAsync(tmp["symbol"], tmp["exchange"], (MoneyModels.FundamentalsReportEnum)(int.Parse(tmp["ftype"])));
+					if (retData != null)
+					{
+						return new OkObjectResult(retData);
+					}
+					else
+						return NoContent();
+				}
+				else
+					return new UnauthorizedResult();
+            }
+            else
+            {
+				var retData = await _actionService.RequestFromIBAsync(symbol, exchange, ftype);
+				if (retData != null)
+				{
+					return new OkObjectResult(retData);
+				}
+				else
+					return NoContent();
+            }
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> ReadParseFundamentalToDbBackend(string symbol, MoneyModels.FundamentalsReportEnum ftype, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -223,7 +223,7 @@ namespace MoneyMoat.Controllers
 				var tmp = Common.QueryStringToData(design);
 				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("ftype"))
 				{
-					var retData = await _actionService.RequestAndParseFundamentalsAsync(tmp["symbol"], (MoneyModels.FundamentalsReportEnum)(int.Parse(tmp["ftype"])));
+					var retData = await _actionService.ReadParseFundamentalToDbBackend(tmp["symbol"], (MoneyModels.FundamentalsReportEnum)(int.Parse(tmp["ftype"])));
 					if (retData != null)
 					{
 						return new OkObjectResult(retData);
@@ -236,7 +236,7 @@ namespace MoneyMoat.Controllers
             }
             else
             {
-				var retData = await _actionService.RequestAndParseFundamentalsAsync(symbol, ftype);
+				var retData = await _actionService.ReadParseFundamentalToDbBackend(symbol, ftype);
 				if (retData != null)
 				{
 					return new OkObjectResult(retData);

@@ -13,10 +13,13 @@ namespace MoneyMoat
         private readonly object _lock = new object();
 
         private bool _shuttingDown = false;
-        
+
+        //private readonly string Symbol;
+
         public HistoricalJob(IServiceProvider services)
         {
             _services = services;
+            //Symbol = symbol;
         }
 
         public void Execute()
@@ -28,6 +31,7 @@ namespace MoneyMoat
 
                 var historicalService = (HistoricalService)_services.GetService(typeof(HistoricalService));
                 historicalService.UpdateAllStocks().Wait();
+                //historicalService.UpdateHistoricalDataFromXueQiu(Symbol).Wait();
             }
         }
 

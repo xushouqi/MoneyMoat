@@ -39,9 +39,23 @@ namespace MoneyMoat.Services
             ibClient.HistoricalDataEnd += HandleHistoricalDataEnd;
         }
 
+        public async Task<int> UpdateAllBackend()
+        {
+            int count = 0;
+            var stocklist = await m_repoStock.GetAllAsync();
+            for (int i = 0; i < stocklist.Count; i++)
+            {
+                var stock = stocklist[i];
+                UpdateHistoricalDataFromXueQiu(stock.Symbol);
+                await Task.Delay(5);
+                count++;
+            }
+            return count;
+        }
+
         public async Task UpdateAllStocks()
         {
-            var stocklist = m_repoStock.GetAll();
+            var stocklist = await m_repoStock.GetAllAsync();
             for (int i = 0; i < stocklist.Count; i++)
             {
                 var stock = stocklist[i];
@@ -49,8 +63,10 @@ namespace MoneyMoat.Services
             }
         }
 
-        public async Task UpdateHistoricalDataFromXueQiu(string symbol)
+        [Api]
+        public async Task<XueQiuData> UpdateHistoricalDataFromXueQiu(string symbol)
         {
+            XueQiuData lastData = null;
             var stock = m_repoStock.Find(symbol);
             if (stock != null)
             {
@@ -58,9 +74,9 @@ namespace MoneyMoat.Services
                 long from = MoatCommon.GetTimestamp(stock.EarliestDate);
 
                 //取已有数据的最新一条
-                var retLas = await m_repoData.MaxAsync(t => t.Symbol == symbol, t => t.time);
-                if (retLas != null)
-                    from = MoatCommon.GetTimestamp(retLas.time.AddDays(1));
+                lastData = await m_repoData.MaxAsync(t => t.Symbol == symbol, t => t.time);
+                if (lastData != null)
+                    from = MoatCommon.GetTimestamp(lastData.time.AddDays(1));
 
                 var url = "https://xueqiu.com/stock/forchartk/stocklist.json?symbol=" + symbol + "&period=1day&type=normal&begin="+ from + "&end="+ to;
                 var source = await MoatCommon.GetXueQiuContent(url);
@@ -74,6 +90,7 @@ namespace MoneyMoat.Services
 
                     try
                     {
+                        int count = 0;
                         var obj = JsonConvert.DeserializeObject<XueQiuHistorical>(source);
                         if (obj.chartlist.Count > 0)
                         {
@@ -81,12 +98,23 @@ namespace MoneyMoat.Services
                             {
                                 var data = obj.chartlist[i];
                                 data.Symbol = symbol;
+                                
+                                if (lastData == null || lastData.time < data.time)
+                                    lastData = data;
+                                
                                 m_repoData.Add(data);
+                                count++;
+                                if (count >= 100)
+                                {
+                                    await m_repoData.SaveChangesAsync();
+                                    m_logger.LogWarning("UpdateHistoricalData {0} Count={1}", symbol, count);
+                                    count = 0;
+                                }
                             }
-                            await m_repoData.SaveChangesAsync();
+                            if (count >= 0)
+                                await m_repoData.SaveChangesAsync();
                         }
-                        m_logger.LogWarning("UpdateHistoricalData {0} Count={1}",
-                             symbol, obj.chartlist.Count);
+                        m_logger.LogWarning("UpdateHistoricalData {0} Count={1}", symbol, count);
                     }
                     catch (Exception e)
                     {
@@ -95,10 +123,11 @@ namespace MoneyMoat.Services
                     }
                 }
                 else
-                    m_logger.LogWarning("No new datas: {0}, since {1}", symbol, retLas != null? retLas.time.ToShortDateString(): "???");
+                    m_logger.LogWarning("No new datas: {0}, since {1}", symbol, lastData != null? lastData.time.ToShortDateString(): "???");
             }
+            return lastData;
         }
-        
+
         public async Task<string> RequestEarliestDataPointAsync(string symbol, string exchange)
         {
             var reqId = MoatCommon.GetReqId(symbol);

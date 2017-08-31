@@ -16,6 +16,7 @@ using IBApi;
 using Foundatio.Caching;
 using FluentScheduler;
 using AutoMapper;
+using CommonLibs;
 
 namespace MoneyMoat
 {
@@ -43,8 +44,12 @@ namespace MoneyMoat
             services.Configure<AppSettings>(Configuration);
 
             string connstr = Configuration.GetConnectionString("MySQL");
-            services.AddDbContextPool<MoatDbContext>(opt =>
-                    opt.UseMySql(connstr));
+            //services.AddDbContextPool<MoatDbContext>(opt =>
+            //        opt.UseMySql(connstr));
+            services.AddDbContext<MoatDbContext>(opt =>
+                    opt.UseMySql(connstr), ServiceLifetime.Transient);
+
+            services.AddTransient<ApiExceptionFilter>();
 
             services.AddSingleton<CommonManager>();
 
@@ -55,13 +60,14 @@ namespace MoneyMoat
 
             services.AddSingleton(new IBClient(new EReaderMonitorSignal()));
             services.AddSingleton<IBManager>();
-            services.AddSingleton<TestService>();
-            services.AddSingleton<AccountService>();
-            services.AddSingleton<SymbolService>();
-            services.AddSingleton<FundamentalService>();
-            services.AddSingleton<HistoricalService>();
-            services.AddSingleton<ScannerService>();
-            services.AddSingleton<AnalyserService>();
+
+            services.AddTransient<TestService>();
+            services.AddTransient<AccountService>();
+            services.AddTransient<SymbolService>();
+            services.AddTransient<FundamentalService>();
+            services.AddTransient<HistoricalService>();
+            services.AddTransient<ScannerService>();
+            services.AddTransient<AnalyserService>();
 
             // Add framework services.
             services.AddMvc();

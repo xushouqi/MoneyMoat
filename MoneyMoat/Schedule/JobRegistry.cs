@@ -13,11 +13,19 @@ namespace MoneyMoat
             var ibManager = (IBManager)services.GetService(typeof(IBManager));
             ibManager.Connect();
 
-            //更新历史报价数据：每天收盘后
-            Schedule(() => new HistoricalJob(services)).ToRunEvery(0).Days().At(8, 30);
+            var symbolService = (SymbolService)services.GetService(typeof(SymbolService));
+            var datalist = symbolService.GetAllAsync().GetAwaiter().GetResult();
 
+            var curTime = DateTime.Now;
+            DateTime startTime = new DateTime(curTime.Year, curTime.Month, curTime.Day, 8, 0, 0);
+
+            var theTime = startTime;
+            Schedule(() => new HistoricalJob(services)).ToRunEvery(0).Days().At(theTime.Hour, theTime.Minute);
+
+            theTime.AddMinutes(60);
             //更新基本面数据
-            Schedule(() => new FundamentalJob(services)).ToRunEvery(0).Days().At(12, 30);
+            Schedule(() => new FundamentalJob(services)).ToRunEvery(0).Days().At(theTime.Hour, theTime.Minute);
+
 
             // Schedule an IJob to run at an interval
             //Schedule(() => new JobService(wService)).ToRunEvery(0).Days().At(hour, minute);

@@ -14,9 +14,12 @@ namespace MoneyMoat
 
         private bool _shuttingDown = false;
 
+        //private readonly string Symbol;
+
         public FundamentalJob(IServiceProvider services)
         {
             _services = services;
+            //Symbol = symbol;
         }
 
         public void Execute()
@@ -31,6 +34,7 @@ namespace MoneyMoat
 
                 var fundamentalService = (FundamentalService)_services.GetService(typeof(FundamentalService));
                 fundamentalService.UpdateAllStocks().Wait();
+                //fundamentalService.UpdateAllFromIB(Symbol).Wait();
             }
         }
 

@@ -23,8 +23,8 @@ namespace CommonLibs
 
         public override void OnException(ExceptionContext context)
         {
-            _logger.LogError(string.Format("Exception={0}\n ExceptionSource={1}\n StackTrace={2}\n InnerException={3}", 
-                context.Exception.Message, context.Exception.Source, context.Exception.StackTrace, context.Exception.InnerException.Message));
+            _logger.LogError(string.Format("Exception={0}\n ExceptionSource={1}\n StackTrace={2}", 
+                context.Exception.Message, context.Exception.Source, context.Exception.StackTrace));
 
             //if (!_hostingEnvironment.IsDevelopment())
             //{
