@@ -68,8 +68,12 @@ namespace MoneyMoat.Services
             var stock = m_repoStock.Find(symbol);
             if (stock != null)
             {
+                DateTime beijingNow = DateTime.Now.ToBeijingTime();
                 //只取前一天的数据（当前数据有可能未完成）
-                long to = DateTime.Now.AddDays(-1).ToTimeStamp();
+                long to = beijingNow.AddDays(-1).ToTimeStamp();
+                //not close
+                if (beijingNow.Hour < 6)
+                    to = beijingNow.AddDays(-2).ToTimeStamp();
                 long from = stock.EarliestDate.ToTimeStamp();
 
                 //取已有数据的最新一条
