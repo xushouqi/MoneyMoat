@@ -8,9 +8,10 @@ using Microsoft.Extensions.Logging;
 using MoneyMoat.Messages;
 using MoneyMoat.Types;
 using MoneyModels;
-using IBApi;
 using YAXLib;
 using CommonLibs;
+using Polly;
+using Polly.Bulkhead;
 
 namespace MoneyMoat.Services
 {
@@ -18,59 +19,30 @@ namespace MoneyMoat.Services
     public class AnalyserService
     {
         private readonly ILogger m_logger;
-        protected readonly IBClient ibClient;
-        private readonly IRepository<Financal> m_repoFin;
-        private readonly IRepository<FYEstimate> m_repoEst;
-        private readonly IRepository<NPEstimate> m_repoNPE;
-        private readonly IRepository<Recommendation> m_repoRecommend;
-        private readonly IRepository<XueQiuData> m_repoDatas;
         private readonly SymbolService m_symbolService;
-        private readonly FundamentalService m_fundamentalService;
-        private readonly HistoricalService m_historicalService;
 
-        IServiceProvider _services;
-        public AnalyserService(IBClient ibclient,
-                        IServiceProvider services,
+        private readonly IServiceProvider _services;
+
+        public AnalyserService(IServiceProvider services,
                         SymbolService symbolService,
-                        //IRepository<Financal> repoFin,
-                        //IRepository<FYEstimate> repoEst,
-                        //IRepository<NPEstimate> repoNPE,
-                        //IRepository<Recommendation> repoRecommend,
-                        //IRepository<XueQiuData> repoDatas,
-                        //FundamentalService fundamentalService,
-                        //HistoricalService historicalService,
                         ILogger<IBManager> logger)
         {
             m_logger = logger;
-            ibClient = ibclient;
             _services = services;
             m_symbolService = symbolService;
-
-            //m_repoFin = repoFin;
-            //m_repoEst = repoEst;
-            //m_repoNPE = repoNPE;
-            //m_repoRecommend = repoRecommend;
-            //m_repoDatas = repoDatas;
-            //m_fundamentalService = fundamentalService;
-            //m_historicalService = historicalService;
-
-        }
-
-        public async Task UpdateDatas(string symbol)
-        {
-            //更新基本面数据
-            await m_fundamentalService.UpdateAllFromIB(symbol);
-            //更新历史数据
-            await m_historicalService.UpdateHistoricalDataFromXueQiu(symbol);
         }
 
         public async Task AnalyseStock(string symbol)
         {
             var stock = await m_symbolService.FindAsync(symbol);
-
-
         }
 
+        /// <summary>
+        /// 更新所有基本面数据
+        /// </summary>
+        /// <param name="interval">启动间隔</param>
+        /// <param name="count">同时启动数量</param>
+        /// <returns></returns>
         [Api]
         public async Task<int> UpdateAllFundamentals(int interval = 5, int count = 10)
         {
@@ -98,6 +70,12 @@ namespace MoneyMoat.Services
             return datalist.Count;
         }
 
+        /// <summary>
+        /// 更新所有历史报价
+        /// </summary>
+        /// <param name="interval">启动间隔</param>
+        /// <param name="count">同时启动数量</param>
+        /// <returns></returns>
         [Api]
         public async Task<int> UpdateAllHistoricals(int interval = 5, int count = 10)
         {

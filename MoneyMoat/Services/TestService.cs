@@ -18,7 +18,6 @@ namespace MoneyMoat.Services
     {
         private readonly ILogger m_logger;
         private readonly AppSettings m_config;
-        protected readonly IBClient ibClient;
 
         protected readonly SymbolService m_symbolSampleService;
         protected readonly FundamentalService m_fundamentalService;
@@ -26,7 +25,7 @@ namespace MoneyMoat.Services
         protected readonly HistoricalService m_historicalService;
         protected readonly ScannerService m_scannerService;
 
-        public TestService(IBClient ibclient,
+        public TestService(
                         SymbolService symbolService,
                         FundamentalService fundamentalService,
                         AccountService accountService,
@@ -37,7 +36,6 @@ namespace MoneyMoat.Services
         {
             m_logger = logger;
             m_config = commonoptions.Value;
-            ibClient = ibclient;
             m_symbolSampleService = symbolService;
             m_fundamentalService = fundamentalService;
             m_accountService = accountService;
@@ -65,7 +63,7 @@ namespace MoneyMoat.Services
             //m_scannerService.RequestParameters();
             //m_scannerService.AddRequest(ScanCodeEnum.HIGH_VS_13W_HL, SecTypeEnum.STK, StockTypeFilterEnum.ALL, 10);
 
-            DateTime endTime = DateTime.Now;
+            //DateTime endTime = DateTime.Now;
             //m_historicalService.AddRequest("MOMO", ExchangeEnum.ISLAND, endTime, "3 W", "1 day", WhatToShowEnum.MIDPOINT, false);
         }
 

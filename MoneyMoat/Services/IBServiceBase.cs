@@ -10,7 +10,7 @@ using MoneyMoat.Messages;
 using MoneyMoat.Types;
 using MoneyModels;
 using IBApi;
-using YAXLib;
+using Polly;
 
 namespace MoneyMoat.Services
 {
@@ -18,12 +18,14 @@ namespace MoneyMoat.Services
     {
         protected readonly IBManager ibManager;
         protected readonly IBClient ibClient;
+        protected readonly ILogger m_logger;
 
-        public IBServiceBase(IBManager ibmanager)
+        public IBServiceBase(IBManager ibmanager, ILogger logger)
         {
             ibManager = ibmanager;
-            ibManager.Connect();
+            m_logger = logger;
 
+            ibManager.Connect();
             ibClient = ibManager.ibClient;
             ibClient.Error += ibClient_Error;
         }
@@ -50,6 +52,7 @@ namespace MoneyMoat.Services
                 m_results.Remove(reqId);
             return await Task.FromResult(result);
         }
+
         protected bool HandleResponse(int reqId)
         {
             bool ret = false;

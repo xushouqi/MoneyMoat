@@ -23,15 +23,12 @@ namespace MoneyMoat.Services
         private const string ACCOUNT_SUMMARY_TAGS = "AccountType,NetLiquidation,TotalCashValue,SettledCash,AccruedCash,BuyingPower,EquityWithLoanValue,PreviousEquityWithLoanValue,"
              + "GrossPositionValue,ReqTEquity,ReqTMargin,SMA,InitMarginReq,MaintMarginReq,AvailableFunds,ExcessLiquidity,Cushion,FullInitMarginReq,FullMaintMarginReq,FullAvailableFunds,"
              + "FullExcessLiquidity,LookAheadNextChange,LookAheadInitMarginReq ,LookAheadMaintMarginReq,LookAheadAvailableFunds,LookAheadExcessLiquidity,HighestSeverity,DayTradesRemaining,Leverage";
-
-        private readonly ILogger m_logger;
+        
         private int activeReqId = 0;
 
         public AccountService(IBManager ibmanager,
-                        ILogger<IBManager> logger) : base(ibmanager)
+                        ILogger<IBManager> logger) : base(ibmanager, logger)
         {
-            m_logger = logger;
-
             ibClient.AccountSummary += HandleAccountSummary;
             ibClient.AccountSummaryEnd += reqId => { m_logger.LogWarning("AccountSummaryEnd. " + reqId + "\r\n"); activeReqId = 0; };
         }

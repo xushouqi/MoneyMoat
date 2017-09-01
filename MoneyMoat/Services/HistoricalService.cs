@@ -22,15 +22,13 @@ namespace MoneyMoat.Services
 
         private readonly IRepository<Stock> m_repoStock;
         private readonly IRepository<XueQiuData> m_repoData;
-        private readonly ILogger m_logger;
         private int activeReqId = 0;
 
         public HistoricalService(IBManager ibmanager,
                         IRepository<Stock> repoStock,
                         IRepository<XueQiuData> repoData,
-                        ILogger<IBManager> logger) : base(ibmanager)
+                        ILogger<IBManager> logger) : base(ibmanager, logger)
         {
-            m_logger = logger;
             m_repoStock = repoStock;
             m_repoData = repoData;
 
@@ -70,13 +68,14 @@ namespace MoneyMoat.Services
             var stock = m_repoStock.Find(symbol);
             if (stock != null)
             {
-                long to = MoatCommon.GetTimestamp(DateTime.Now);
-                long from = MoatCommon.GetTimestamp(stock.EarliestDate);
+                //只取前一天的数据（当前数据有可能未完成）
+                long to = DateTime.Now.AddDays(-1).ToTimeStamp();
+                long from = stock.EarliestDate.ToTimeStamp();
 
                 //取已有数据的最新一条
                 lastData = await m_repoData.MaxAsync(t => t.Symbol == symbol, t => t.time);
                 if (lastData != null)
-                    from = MoatCommon.GetTimestamp(lastData.time.AddDays(1));
+                    from = lastData.time.AddDays(1).ToTimeStamp();
 
                 var url = "https://xueqiu.com/stock/forchartk/stocklist.json?symbol=" + symbol + "&period=1day&type=normal&begin="+ from + "&end="+ to;
                 var source = await MoatCommon.GetXueQiuContent(url);

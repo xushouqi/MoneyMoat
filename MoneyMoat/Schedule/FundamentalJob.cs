@@ -29,11 +29,8 @@ namespace MoneyMoat
                 if (_shuttingDown)
                     return;
 
-                var ibManager = (IBManager)_services.GetService(typeof(IBManager));      
-                ibManager.Connect();
-
-                var fundamentalService = (FundamentalService)_services.GetService(typeof(FundamentalService));
-                fundamentalService.UpdateAllStocks().Wait();
+                var service = (AnalyserService)_services.GetService(typeof(AnalyserService));
+                service.UpdateAllFundamentals().Wait();
                 //fundamentalService.UpdateAllFromIB(Symbol).Wait();
             }
         }

@@ -60,6 +60,7 @@ namespace MoneyMoat
 
             services.AddSingleton(new IBClient(new EReaderMonitorSignal()));
             services.AddSingleton<IBManager>();
+            services.AddSingleton<AnalyserService>();
 
             services.AddTransient<TestService>();
             services.AddTransient<AccountService>();
@@ -67,7 +68,6 @@ namespace MoneyMoat
             services.AddTransient<FundamentalService>();
             services.AddTransient<HistoricalService>();
             services.AddTransient<ScannerService>();
-            services.AddTransient<AnalyserService>();
 
             // Add framework services.
             services.AddMvc();

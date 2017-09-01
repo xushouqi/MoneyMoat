@@ -29,8 +29,8 @@ namespace MoneyMoat
                 if (_shuttingDown)
                     return;
 
-                var historicalService = (HistoricalService)_services.GetService(typeof(HistoricalService));
-                historicalService.UpdateAllStocks().Wait();
+                var service = (AnalyserService)_services.GetService(typeof(AnalyserService));
+                service.UpdateAllHistoricals().Wait();
                 //historicalService.UpdateHistoricalDataFromXueQiu(Symbol).Wait();
             }
         }

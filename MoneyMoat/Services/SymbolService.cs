@@ -17,16 +17,14 @@ namespace MoneyMoat.Services
     [WebApi]
     public class SymbolService : IBServiceBase<ContractDescription[]>
     {
-        private readonly ILogger m_logger;
         private readonly HistoricalService m_historicalService;
         private readonly IRepository<Stock> m_repoStock;
 
         public SymbolService(IBManager ibmanager,
                         HistoricalService historicalService,
                         IRepository<Stock> repoStock,
-                        ILogger<IBManager> logger) : base(ibmanager)
+                        ILogger<IBManager> logger) : base(ibmanager, logger)
         {
-            m_logger = logger;
             m_historicalService = historicalService;
             m_repoStock = repoStock;
 

@@ -9,12 +9,9 @@ namespace MoneyMoat
         public JobRegistry(IServiceProvider services)
         {
             NonReentrantAsDefault();
-
-            var ibManager = (IBManager)services.GetService(typeof(IBManager));
-            ibManager.Connect();
-
-            var symbolService = (SymbolService)services.GetService(typeof(SymbolService));
-            var datalist = symbolService.GetAllAsync().GetAwaiter().GetResult();
+            
+            //var symbolService = (SymbolService)services.GetService(typeof(SymbolService));
+            //var datalist = symbolService.GetAllAsync().GetAwaiter().GetResult();
 
             var curTime = DateTime.Now;
             DateTime startTime = new DateTime(curTime.Year, curTime.Month, curTime.Day, 8, 0, 0);

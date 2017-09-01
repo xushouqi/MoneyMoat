@@ -20,7 +20,6 @@ namespace MoneyMoat.Services
     [WebApi]
     public class FundamentalService : IBServiceBase<string>
     {
-        private readonly ILogger m_logger;
         private readonly SymbolService m_symbolService;
         private readonly HistoricalService m_historicalService;
         private readonly IRepository<Financal> m_repoFin;
@@ -39,9 +38,8 @@ namespace MoneyMoat.Services
                         IRepository<XueQiuData> repoDatas,
                         IRepository<FinSummary> repoSummary,
                         IRepository<FinStatement> repoStatement,
-                        ILogger<IBManager> logger) : base(ibmanager)
+                        ILogger<IBManager> logger) : base(ibmanager, logger)
         {
-            m_logger = logger;
             m_symbolService = symbolService;
             m_historicalService = historicalService;
             m_repoFin = repoFin;

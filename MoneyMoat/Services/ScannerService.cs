@@ -17,14 +17,11 @@ namespace MoneyMoat.Services
     [WebApi]
     public class ScannerService : IBServiceBase<string>
     {
-        private readonly ILogger m_logger;
         private int activeReqId = 0;
 
         public ScannerService(IBManager ibmanager,
-                        ILogger<IBManager> logger) : base(ibmanager)
+                        ILogger<IBManager> logger) : base(ibmanager, logger)
         {
-            m_logger = logger;
-
             ibClient.ScannerParameters += xml => HandleScannerParameters(new ScannerParametersMessage(xml));
             ibClient.ScannerData += HandleScannerData;
             ibClient.ScannerDataEnd += reqId => { m_logger.LogInformation("ScannerDataEnd. " + reqId + "\r\n"); activeReqId = 0; };
