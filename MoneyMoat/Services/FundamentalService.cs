@@ -30,6 +30,7 @@ namespace MoneyMoat.Services
         private readonly IRepository<FinStatement> m_repoStatement;
 
         public FundamentalService(IBManager ibmanager,
+                        CommonManager commonManager,
                         SymbolService symbolService,
                         HistoricalService historicalService,
                         IRepository<Financal> repoFin,
@@ -38,7 +39,7 @@ namespace MoneyMoat.Services
                         IRepository<XueQiuData> repoDatas,
                         IRepository<FinSummary> repoSummary,
                         IRepository<FinStatement> repoStatement,
-                        ILogger<IBManager> logger) : base(ibmanager, logger)
+                        ILogger<IBManager> logger) : base(ibmanager, logger, commonManager)
         {
             m_symbolService = symbolService;
             m_historicalService = historicalService;
@@ -50,33 +51,6 @@ namespace MoneyMoat.Services
             m_repoStatement = repoStatement;
 
             ibClient.FundamentalData += HandleFundamentalsData;
-        }
-
-        public async Task<int> UpdateAllBackend()
-        {
-            int ret = 0;
-            var stocklist = await m_symbolService.GetAllAsync();
-            for (int i = 0; i < stocklist.Count; i++)
-            {
-                var stock = stocklist[i];
-                UpdateAllFromIB(stock);
-                await Task.Delay(5);
-                ret++;
-            }
-            return ret;
-        }
-
-        public async Task<int> UpdateAllStocks()
-        {
-            int ret = 0;
-            var stocklist = await m_symbolService.GetAllAsync();
-            for (int i = 0; i < stocklist.Count; i++)
-            {
-                var stock = stocklist[i];
-                await UpdateAllFromIB(stock);
-                ret++;
-            }
-            return ret;
         }
 
         [Api]
@@ -125,20 +99,20 @@ namespace MoneyMoat.Services
         /// <param name="symbol"></param>
         /// <returns></returns>
         [Api]
-        public async Task<int> UpdateAllFromIB(string symbol)
+        public async Task<int> UpdateAllFromIB(string symbol, bool forceUpdate = false)
         {
             int ret = 0;
             var stock = await m_symbolService.FindAsync(symbol);
             if (stock != null)
-                 ret = await UpdateAllFromIB(stock);
+                 ret = await UpdateAllFromIB(stock, forceUpdate);
             return ret;
         }
-        public async Task<int> UpdateAllFromIB(Stock stock)
+        public async Task<int> UpdateAllFromIB(Stock stock, bool forceUpdate = false)
         {
             int ret = 0;
             foreach (FundamentalsReportEnum ftype in Enum.GetValues(typeof(FundamentalsReportEnum)))
             {
-                await RequestFromIBAsync(stock.Symbol, stock.Exchange, ftype);
+                await RequestFromIBAsync(stock.Symbol, stock.Exchange, ftype, forceUpdate);
                 ret ++;
             }
             return ret;
@@ -165,35 +139,36 @@ namespace MoneyMoat.Services
         /// <param name="ftype"></param>
         /// <returns></returns>
         [Api]
-        public async Task<string> RequestFromIBAsync(string symbol, string exchange, FundamentalsReportEnum ftype)
+        public async Task<string> RequestFromIBAsync(string symbol, string exchange, FundamentalsReportEnum ftype, bool forceUpdate = false)
         {
             int reqId = MoatCommon.GetReqId(symbol);
             var contract = MoatCommon.GetStockContract(symbol, exchange);
-            ibClient.ClientSocket.reqFundamentalData(reqId, contract, ftype.ToString(), new List<TagValue>());
-            var data = await SendRequestAsync(reqId);
-
-            var md5 = MD5.Create();
-            byte[] result = md5.ComputeHash(System.Text.Encoding.Unicode.GetBytes(data));
-            var strResult = BitConverter.ToString(result);
-
-            //是否需要保存xml
-            bool needSave = true;
-            string filename = MoatCommon.GetFundamentalFilePath(symbol, ftype);
-            if (File.Exists(filename))
+            var data = await SendRequestAsync(reqId, ()=> m_clientSocket.reqFundamentalData(reqId, contract, ftype.ToString(), new List<TagValue>()));
+            if (!string.IsNullOrEmpty(data))
             {
-                string xmlData = await MoatCommon.ReadFile(filename);
-                byte[] result2 = md5.ComputeHash(System.Text.Encoding.Unicode.GetBytes(xmlData));
-                var strResult2 = BitConverter.ToString(result2);
-                needSave = !strResult.Equals(strResult2);
+                var md5 = MD5.Create();
+                byte[] result = md5.ComputeHash(System.Text.Encoding.Unicode.GetBytes(data));
+                var strResult = BitConverter.ToString(result);
+
+                //是否需要保存xml
+                bool needSave = true;
+                string filename = MoatCommon.GetFundamentalFilePath(symbol, ftype);
+                if (File.Exists(filename))
+                {
+                    string xmlData = await MoatCommon.ReadFile(filename);
+                    byte[] result2 = md5.ComputeHash(System.Text.Encoding.Unicode.GetBytes(xmlData));
+                    var strResult2 = BitConverter.ToString(result2);
+                    needSave = !strResult.Equals(strResult2);
+                }
+                if (needSave || forceUpdate)
+                {
+                    MoatCommon.WriteFile(filename, data);
+                    //后台分析并保存数据库
+                    await ParseFundamentalToDb(symbol, ftype, data);
+                }
+                else
+                    m_logger.LogWarning("{0}.{1} already exists!", symbol, ftype.ToString());
             }
-            if (needSave)
-            {
-                MoatCommon.WriteFile(filename, data);
-                //后台分析并保存数据库
-                ParseFundamentalToDb(symbol, ftype, data);
-            }
-            else
-                m_logger.LogWarning("{0}.{1} already exists!", symbol, ftype.ToString());
             return data;
         }
 
@@ -215,7 +190,7 @@ namespace MoneyMoat.Services
             var data = await ReadFromXmlAsync(symbol, ftype);
             if (!string.IsNullOrEmpty(data))
             {
-                ParseFundamentalToDb(symbol, ftype, data);
+                await ParseFundamentalToDb(symbol, ftype, data);
             }
             return data;
         }
@@ -235,9 +210,9 @@ namespace MoneyMoat.Services
                         await m_repoStatement.RemoveRangeAsync(t => t.Symbol == symbol);
 
                         int count = 0;
-                        for (int i = 0; i < obj.FinancialStatements.FiscalPeriods.Count; i++)
+                        for (int i = 0; i < obj.FinancialStatements.AnnualPeriods.Count; i++)
                         {
-                            var fdata = obj.FinancialStatements.FiscalPeriods[i];
+                            var fdata = obj.FinancialStatements.AnnualPeriods[i];
                             for (int j = 0; j < fdata.Statements.Count; j++)
                             {
                                 var act = fdata.Statements[j];
@@ -260,10 +235,52 @@ namespace MoneyMoat.Services
                                     };
                                     m_repoStatement.Add(sdata);
                                     count++;
+                                    if (count % 10 == 0)
+                                    {
+                                        await m_repoStatement.SaveChangesAsync();
+                                        m_logger.LogWarning("{0}.FinStatement Saved={1}", symbol, count);
+                                        count = 0;
+                                    }
                                 }
                             }
                         }
-                        await m_repoStatement.SaveChangesAsync();
+
+                        for (int i = 0; i < obj.FinancialStatements.InterimPeriods.Count; i++)
+                        {
+                            var fdata = obj.FinancialStatements.InterimPeriods[i];
+                            for (int j = 0; j < fdata.Statements.Count; j++)
+                            {
+                                var act = fdata.Statements[j];
+                                foreach (var item in act.Values)
+                                {
+                                    string skey = item.Key;
+                                    float svalue = item.Value;
+
+                                    int fiscalYear = fdata.EndDate.Year;
+                                    int.TryParse(fdata.FiscalYear, out fiscalYear);
+
+                                    var sdata = new FinStatement
+                                    {
+                                        Symbol = symbol,
+                                        FiscalPeriod = fdata.Type,
+                                        FiscalYear = fiscalYear,
+                                        EndDate = fdata.EndDate,
+                                        coaCode = skey,
+                                        Value = svalue,
+                                    };
+                                    m_repoStatement.Add(sdata);
+                                    count++;
+                                    if (count % 10 == 0)
+                                    {
+                                        await m_repoStatement.SaveChangesAsync();
+                                        m_logger.LogWarning("{0}.FinStatement Saved={1}", symbol, count);
+                                        count = 0;
+                                    }
+                                }
+                            }
+                        }
+                        if (count > 0)
+                            await m_repoStatement.SaveChangesAsync();
                         m_logger.LogWarning("{0}.FinStatement Saved={1}", symbol, count);
                     }
                     else if (ftype == FundamentalsReportEnum.ReportsFinSummary)
@@ -298,7 +315,7 @@ namespace MoneyMoat.Services
                         var lastHistorical = await m_historicalService.UpdateHistoricalDataFromXueQiu(symbol);
 
                         int count = 0;
-                        //计算PE并保存
+                        //保存EPS
                         List<FinSummary> annualList = new List<FinSummary>();
                         for (int i = 0; i < obj.EPSs.Count; i++)
                         {
@@ -337,30 +354,46 @@ namespace MoneyMoat.Services
                                 }
                             }
                         }
-                        await m_repoSummary.SaveChangesAsync();
+                        if (count > 0)
+                            await m_repoSummary.SaveChangesAsync();
                         m_logger.LogWarning("{0}.FinSummary Saved={1}", symbol, count);
 
                         if (lastHistorical != null)
                         {
                             count = 0;
-                            //计算PEG
+                            //计算同比数值
                             for (int i = 0; i < annualList.Count; i++)
                             {
                                 var anData = annualList[i];
                                 if (anData.PE > 0)
                                 {
+                                    //同比
                                     var lastData = await m_repoSummary.MaxAsync(t => t.Symbol == anData.Symbol
                                                                         && t.reportType == anData.reportType && t.period == anData.period
-                                                                        && t.asofDate < anData.asofDate, t => t.asofDate);
+                                                                        && t.asofDate.Year == anData.asofDate.Year - 1
+                                                                        && t.asofDate.Month == anData.asofDate.Month
+                                                                        , t => t.asofDate);
                                     if (lastData != null && lastData.EPS > 0)
                                     {
+                                        var priceYoY = (anData.Price - lastData.Price) / lastData.Price;
+                                        if (!float.IsNaN(priceYoY) && !float.IsInfinity(priceYoY))
+                                            anData.PriceYoY = priceYoY;
+                                        var peYoY = (anData.PE - lastData.PE) / lastData.PE;
+                                        if (!float.IsNaN(peYoY) && !float.IsInfinity(peYoY))
+                                            anData.PEYoY = peYoY;
                                         var peg = anData.PE / (100 * (anData.EPS - lastData.EPS) / lastData.EPS);
-                                        if (!float.IsNaN(peg))
-                                        {
+                                        if (!float.IsNaN(peg) && !float.IsInfinity(peg))
                                             anData.PEG = peg;
-                                            m_logger.LogWarning("{0}.PEG={1}: reportType={2}, period={3}, asofDate={4}", symbol, peg, lastData.reportType, lastData.period, lastData.asofDate);
-                                            m_repoSummary.Update(anData);
-                                            count++;
+
+                                        m_logger.LogWarning("{0}: PEYoY={5} PriceYoY={6} PEG={1}, reportType={2}, period={3}, asofDate={4}",
+                                                symbol, peg, lastData.reportType, lastData.period, lastData.asofDate.ToShortDateString(), peYoY, priceYoY);
+                                        m_repoSummary.Update(anData);
+                                        count++;
+                                        if (count % 10 == 0)
+                                        {
+                                            await m_repoSummary.SaveChangesAsync();
+                                            m_logger.LogWarning("{0}.FinSummary Updated={1}", symbol, count);
+                                            count = 0;
                                         }
                                     }
                                 }

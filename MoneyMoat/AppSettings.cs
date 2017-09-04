@@ -9,5 +9,8 @@ namespace MoneyMoat
     {
         public string GatewayHost { get; set; }
         public int GatewayPort { get; set; }
+
+        public int TaskInterval { get; set; }
+        public int TaskMaxCount { get; set; }
     }
 }

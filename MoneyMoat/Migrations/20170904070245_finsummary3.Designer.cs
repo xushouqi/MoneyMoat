@@ -11,9 +11,10 @@ using System;
 namespace MoneyMoat.Migrations
 {
     [DbContext(typeof(MoatDbContext))]
-    partial class MoatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170904070245_finsummary3")]
+    partial class finsummary3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,13 +89,7 @@ namespace MoneyMoat.Migrations
 
                     b.Property<float>("EPS");
 
-                    b.Property<float>("FreeCashFlow");
-
-                    b.Property<float>("FreeCashFlowYoY");
-
                     b.Property<float>("OTLO");
-
-                    b.Property<float>("OTLOYoY");
 
                     b.Property<float>("PB");
 
@@ -102,13 +97,9 @@ namespace MoneyMoat.Migrations
 
                     b.Property<float>("PEG");
 
-                    b.Property<float>("PEYoY");
-
                     b.Property<float>("PS");
 
                     b.Property<float>("Price");
-
-                    b.Property<float>("PriceYoY");
 
                     b.Property<float>("SCEX");
 

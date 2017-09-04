@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -19,37 +20,54 @@ namespace MoneyMoat.Services
         protected readonly IBManager ibManager;
         protected readonly IBClient ibClient;
         protected readonly ILogger m_logger;
+        protected readonly CommonManager m_commonManager;
 
-        public IBServiceBase(IBManager ibmanager, ILogger logger)
+        protected ConcurrentDictionary<int, TResult> m_results = new ConcurrentDictionary<int, TResult>();
+
+        protected EClientSocket m_clientSocket
+        {
+            get
+            {
+                if (!ibManager.IsConnected)
+                    ibManager.Connect();
+                return ibClient.ClientSocket;
+            }
+        }
+        
+        public IBServiceBase(IBManager ibmanager, ILogger logger, CommonManager commonManager)
         {
             ibManager = ibmanager;
             m_logger = logger;
+            m_commonManager = commonManager;
 
-            ibManager.Connect();
             ibClient = ibManager.ibClient;
             ibClient.Error += ibClient_Error;
         }
 
-        protected Dictionary<int, AutoResetEvent> m_handles = new Dictionary<int, AutoResetEvent>();
-        protected Dictionary<int, TResult> m_results = new Dictionary<int, TResult>();
-
         void ibClient_Error(int reqId, int errorCode, string str, Exception ex)
         {
-            if (m_handles.ContainsKey(reqId))
+            AutoResetEvent handle = null;
+            if (m_commonManager.RequestHnadles.TryGetValue(reqId, out handle))
             {
-                m_handles[reqId].Set();
+                handle.Set();
             }
         }
-
-        protected async Task<TResult> SendRequestAsync(int reqId)
+        
+        protected async Task<TResult> SendRequestAsync(int reqId, Action action = null)
         {
-            m_handles[reqId] = new AutoResetEvent(false);
-            m_handles[reqId].WaitOne(60000);
-            m_handles.Remove(reqId);
-
             TResult result = default(TResult);
-            if (m_results.TryGetValue(reqId, out result))
-                m_results.Remove(reqId);
+            var handle = new AutoResetEvent(false);
+            if (m_commonManager.RequestHnadles.TryAdd(reqId, handle))
+            {
+                if (action != null)
+                    action();
+
+                handle.WaitOne(60000);
+                m_commonManager.RequestHnadles.TryRemove(reqId, out handle);
+
+                if (m_results.TryGetValue(reqId, out result))
+                    m_results.TryRemove(reqId, out result);
+            }
             return await Task.FromResult(result);
         }
 
@@ -59,11 +77,10 @@ namespace MoneyMoat.Services
             string symbol = string.Empty;
             if (MoatCommon.CheckValidReqId(reqId, out symbol))
             {
-                if (m_handles.ContainsKey(reqId))
-                {
-                    ret = true;
-                    m_handles[reqId].Set();
-                }
+                AutoResetEvent handle = null;
+                ret = m_commonManager.RequestHnadles.TryGetValue(reqId, out handle);
+                if (ret)
+                    handle.Set();
             }
             return ret;
         }

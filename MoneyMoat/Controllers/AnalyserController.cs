@@ -33,7 +33,7 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> UpdateAllFundamentals(int interval, int count, string sign)
+        public async Task<IActionResult> StopAllTasks(int delay, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -49,9 +49,9 @@ namespace MoneyMoat.Controllers
             if (!string.IsNullOrEmpty(design))
             {
 				var tmp = Common.QueryStringToData(design);
-				if (tmp != null && tmp.ContainsKey("interval") && tmp.ContainsKey("count"))
+				if (tmp != null && tmp.ContainsKey("delay"))
 				{
-					var retData = await _actionService.UpdateAllFundamentals(int.Parse(tmp["interval"]), int.Parse(tmp["count"]));
+					var retData = await _actionService.StopAllTasks(int.Parse(tmp["delay"]));
 					if (retData != null)
 					{
 						return new OkObjectResult(retData);
@@ -64,7 +64,7 @@ namespace MoneyMoat.Controllers
             }
             else
             {
-				var retData = await _actionService.UpdateAllFundamentals(interval, count);
+				var retData = await _actionService.StopAllTasks(delay);
 				if (retData != null)
 				{
 					return new OkObjectResult(retData);
@@ -76,7 +76,7 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> UpdateAllHistoricals(int interval, int count, string sign)
+        public async Task<IActionResult> UpdateAllFundamentals(bool forceUpdate, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -92,9 +92,9 @@ namespace MoneyMoat.Controllers
             if (!string.IsNullOrEmpty(design))
             {
 				var tmp = Common.QueryStringToData(design);
-				if (tmp != null && tmp.ContainsKey("interval") && tmp.ContainsKey("count"))
+				if (tmp != null && tmp.ContainsKey("forceUpdate"))
 				{
-					var retData = await _actionService.UpdateAllHistoricals(int.Parse(tmp["interval"]), int.Parse(tmp["count"]));
+					var retData = await _actionService.UpdateAllFundamentals(bool.Parse(tmp["forceUpdate"]));
 					if (retData != null)
 					{
 						return new OkObjectResult(retData);
@@ -107,7 +107,136 @@ namespace MoneyMoat.Controllers
             }
             else
             {
-				var retData = await _actionService.UpdateAllHistoricals(interval, count);
+				var retData = await _actionService.UpdateAllFundamentals(forceUpdate);
+				if (retData != null)
+				{
+					return new OkObjectResult(retData);
+				}
+				else
+					return NoContent();
+            }
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> UpdateAllHistoricals(string sign)
+        {
+			string design = string.Empty;
+            if (!string.IsNullOrEmpty(sign))
+            {
+                design = RsaService.DecryptToString(sign);
+            }
+            else if (Request.ContentLength != null)
+            {
+                byte[] datas = new byte[(int)Request.ContentLength];
+                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
+                design = RsaService.DecryptToString(datas, 0);
+            }
+            if (!string.IsNullOrEmpty(design))
+            {
+				var tmp = Common.QueryStringToData(design);
+				if (tmp != null)
+				{
+					var retData = await _actionService.UpdateAllHistoricals();
+					if (retData != null)
+					{
+						return new OkObjectResult(retData);
+					}
+					else
+						return NoContent();
+				}
+				else
+					return new UnauthorizedResult();
+            }
+            else
+            {
+				var retData = await _actionService.UpdateAllHistoricals();
+				if (retData != null)
+				{
+					return new OkObjectResult(retData);
+				}
+				else
+					return NoContent();
+            }
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> CalcFinSummary(string symbol, string sign)
+        {
+			string design = string.Empty;
+            if (!string.IsNullOrEmpty(sign))
+            {
+                design = RsaService.DecryptToString(sign);
+            }
+            else if (Request.ContentLength != null)
+            {
+                byte[] datas = new byte[(int)Request.ContentLength];
+                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
+                design = RsaService.DecryptToString(datas, 0);
+            }
+            if (!string.IsNullOrEmpty(design))
+            {
+				var tmp = Common.QueryStringToData(design);
+				if (tmp != null && tmp.ContainsKey("symbol"))
+				{
+					var retData = await _actionService.CalcFinSummary(tmp["symbol"]);
+					if (retData != null)
+					{
+						return new OkObjectResult(retData);
+					}
+					else
+						return NoContent();
+				}
+				else
+					return new UnauthorizedResult();
+            }
+            else
+            {
+				var retData = await _actionService.CalcFinSummary(symbol);
+				if (retData != null)
+				{
+					return new OkObjectResult(retData);
+				}
+				else
+					return NoContent();
+            }
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> UpdateAndCalcFundamental(string symbol, string sign)
+        {
+			string design = string.Empty;
+            if (!string.IsNullOrEmpty(sign))
+            {
+                design = RsaService.DecryptToString(sign);
+            }
+            else if (Request.ContentLength != null)
+            {
+                byte[] datas = new byte[(int)Request.ContentLength];
+                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
+                design = RsaService.DecryptToString(datas, 0);
+            }
+            if (!string.IsNullOrEmpty(design))
+            {
+				var tmp = Common.QueryStringToData(design);
+				if (tmp != null && tmp.ContainsKey("symbol"))
+				{
+					var retData = await _actionService.UpdateAndCalcFundamental(tmp["symbol"]);
+					if (retData != null)
+					{
+						return new OkObjectResult(retData);
+					}
+					else
+						return NoContent();
+				}
+				else
+					return new UnauthorizedResult();
+            }
+            else
+            {
+				var retData = await _actionService.UpdateAndCalcFundamental(symbol);
 				if (retData != null)
 				{
 					return new OkObjectResult(retData);

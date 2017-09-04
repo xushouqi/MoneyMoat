@@ -20,7 +20,8 @@ namespace MoneyMoat.Services
         private int activeReqId = 0;
 
         public ScannerService(IBManager ibmanager,
-                        ILogger<IBManager> logger) : base(ibmanager, logger)
+                        CommonManager commonManager,
+                        ILogger<IBManager> logger) : base(ibmanager, logger, commonManager)
         {
             ibClient.ScannerParameters += xml => HandleScannerParameters(new ScannerParametersMessage(xml));
             ibClient.ScannerData += HandleScannerData;
@@ -40,21 +41,21 @@ namespace MoneyMoat.Services
                 subscription.StockTypeFilter = filter.ToString();
                 subscription.NumberOfRows = count;
 
-                ibClient.ClientSocket.reqScannerSubscription(activeReqId, subscription, new List<TagValue>());
+                m_clientSocket.reqScannerSubscription(activeReqId, subscription, new List<TagValue>());
             }
         }
         public void CancelRequest()
         {
             if (activeReqId > 0)
             {
-                ibClient.ClientSocket.cancelScannerSubscription(activeReqId);
+                m_clientSocket.cancelScannerSubscription(activeReqId);
                 activeReqId = 0;
             }
         }
 
         public void RequestParameters()
         {
-            ibClient.ClientSocket.reqScannerParameters();
+            m_clientSocket.reqScannerParameters();
         }
 
         private void HandleScannerParameters(ScannerParametersMessage scanParamsMessage)

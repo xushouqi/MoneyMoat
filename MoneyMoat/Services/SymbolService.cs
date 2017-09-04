@@ -21,9 +21,10 @@ namespace MoneyMoat.Services
         private readonly IRepository<Stock> m_repoStock;
 
         public SymbolService(IBManager ibmanager,
+                        CommonManager commonManager,
                         HistoricalService historicalService,
                         IRepository<Stock> repoStock,
-                        ILogger<IBManager> logger) : base(ibmanager, logger)
+                        ILogger<IBManager> logger) : base(ibmanager, logger, commonManager)
         {
             m_historicalService = historicalService;
             m_repoStock = repoStock;
@@ -166,9 +167,8 @@ namespace MoneyMoat.Services
         [Api]
         public async Task<ContractDescription[]> SearchSymbolsAsync(string pattern)
         {
-            int reqId = MoatCommon.GetReqId(pattern);
-            ibClient.ClientSocket.reqMatchingSymbols(reqId, pattern);
-            return await SendRequestAsync(reqId);
+            int reqId = MoatCommon.GetReqId(pattern);            
+            return await SendRequestAsync(reqId, ()=> m_clientSocket.reqMatchingSymbols(reqId, pattern));
         }
 
         private void HandleSymbolSamplesData(SymbolSamplesMessage message)

@@ -123,7 +123,11 @@ namespace MoneyModels
 
             [YAXSerializeAs("AnnualPeriods")]
             [YAXCollection(YAXCollectionSerializationTypes.Recursive, EachElementName = "FiscalPeriod")]
-            public List<FiscalPeriod> FiscalPeriods { get; set; }
+            public List<FiscalPeriod> AnnualPeriods { get; set; }
+
+            [YAXSerializeAs("InterimPeriods")]
+            [YAXCollection(YAXCollectionSerializationTypes.Recursive, EachElementName = "FiscalPeriod")]
+            public List<FiscalPeriod> InterimPeriods { get; set; }
         }
         public FinancialStatement FinancialStatements { get; set; }
 

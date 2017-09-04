@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MoneyMoat
 {
@@ -13,6 +15,8 @@ namespace MoneyMoat
 
         private object m_lock_me = new object();
         private Dictionary<string, Dictionary<string, object>> m_locks = new Dictionary<string, Dictionary<string, object>>();
+
+        public ConcurrentDictionary<int, AutoResetEvent> RequestHnadles = new ConcurrentDictionary<int, AutoResetEvent>();
 
         public object GetLockerById<T>(int id)
         {

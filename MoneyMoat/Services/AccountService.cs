@@ -27,7 +27,8 @@ namespace MoneyMoat.Services
         private int activeReqId = 0;
 
         public AccountService(IBManager ibmanager,
-                        ILogger<IBManager> logger) : base(ibmanager, logger)
+                        CommonManager commonManager,
+                        ILogger<IBManager> logger) : base(ibmanager, logger, commonManager)
         {
             ibClient.AccountSummary += HandleAccountSummary;
             ibClient.AccountSummaryEnd += reqId => { m_logger.LogWarning("AccountSummaryEnd. " + reqId + "\r\n"); activeReqId = 0; };
@@ -38,14 +39,14 @@ namespace MoneyMoat.Services
             if (activeReqId == 0)
             {
                 activeReqId = ACCOUNT_SUMMARY_ID;
-                ibClient.ClientSocket.reqAccountSummary(activeReqId, "All", ACCOUNT_SUMMARY_TAGS);
+                m_clientSocket.reqAccountSummary(activeReqId, "All", ACCOUNT_SUMMARY_TAGS);
             }
         }
         public void CancelAccountSummary()
         {
             if (activeReqId > 0)
             {
-                ibClient.ClientSocket.cancelAccountSummary(activeReqId);
+                m_clientSocket.cancelAccountSummary(activeReqId);
                 activeReqId = 0;
             }
         }

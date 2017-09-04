@@ -76,7 +76,7 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> UpdateAllFromIB(string symbol, string sign)
+        public async Task<IActionResult> UpdateAllFromIB(string symbol, bool forceUpdate, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -92,9 +92,9 @@ namespace MoneyMoat.Controllers
             if (!string.IsNullOrEmpty(design))
             {
 				var tmp = Common.QueryStringToData(design);
-				if (tmp != null && tmp.ContainsKey("symbol"))
+				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("forceUpdate"))
 				{
-					var retData = await _actionService.UpdateAllFromIB(tmp["symbol"]);
+					var retData = await _actionService.UpdateAllFromIB(tmp["symbol"], bool.Parse(tmp["forceUpdate"]));
 					if (retData != null)
 					{
 						return new OkObjectResult(retData);
@@ -107,7 +107,7 @@ namespace MoneyMoat.Controllers
             }
             else
             {
-				var retData = await _actionService.UpdateAllFromIB(symbol);
+				var retData = await _actionService.UpdateAllFromIB(symbol, forceUpdate);
 				if (retData != null)
 				{
 					return new OkObjectResult(retData);
@@ -162,7 +162,7 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> RequestFromIBAsync(string symbol, string exchange, MoneyModels.FundamentalsReportEnum ftype, string sign)
+        public async Task<IActionResult> RequestFromIBAsync(string symbol, string exchange, MoneyModels.FundamentalsReportEnum ftype, bool forceUpdate, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -178,9 +178,9 @@ namespace MoneyMoat.Controllers
             if (!string.IsNullOrEmpty(design))
             {
 				var tmp = Common.QueryStringToData(design);
-				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("exchange") && tmp.ContainsKey("ftype"))
+				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("exchange") && tmp.ContainsKey("ftype") && tmp.ContainsKey("forceUpdate"))
 				{
-					var retData = await _actionService.RequestFromIBAsync(tmp["symbol"], tmp["exchange"], (MoneyModels.FundamentalsReportEnum)(int.Parse(tmp["ftype"])));
+					var retData = await _actionService.RequestFromIBAsync(tmp["symbol"], tmp["exchange"], (MoneyModels.FundamentalsReportEnum)(int.Parse(tmp["ftype"])), bool.Parse(tmp["forceUpdate"]));
 					if (retData != null)
 					{
 						return new OkObjectResult(retData);
@@ -193,7 +193,7 @@ namespace MoneyMoat.Controllers
             }
             else
             {
-				var retData = await _actionService.RequestFromIBAsync(symbol, exchange, ftype);
+				var retData = await _actionService.RequestFromIBAsync(symbol, exchange, ftype, forceUpdate);
 				if (retData != null)
 				{
 					return new OkObjectResult(retData);

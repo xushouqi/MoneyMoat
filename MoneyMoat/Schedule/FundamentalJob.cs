@@ -30,7 +30,7 @@ namespace MoneyMoat
                     return;
 
                 var service = (AnalyserService)_services.GetService(typeof(AnalyserService));
-                service.UpdateAllFundamentals().Wait();
+                service.UpdateAllFundamentals(false).Wait();
                 //fundamentalService.UpdateAllFromIB(Symbol).Wait();
             }
         }

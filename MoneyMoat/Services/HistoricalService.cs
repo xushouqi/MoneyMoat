@@ -25,9 +25,10 @@ namespace MoneyMoat.Services
         private int activeReqId = 0;
 
         public HistoricalService(IBManager ibmanager,
+                        CommonManager commonManager,
                         IRepository<Stock> repoStock,
                         IRepository<XueQiuData> repoData,
-                        ILogger<IBManager> logger) : base(ibmanager, logger)
+                        ILogger<IBManager> logger) : base(ibmanager, logger, commonManager)
         {
             m_repoStock = repoStock;
             m_repoData = repoData;
@@ -35,30 +36,6 @@ namespace MoneyMoat.Services
             ibClient.HeadTimestamp += HandleEarliestDataPoint;
             ibClient.HistoricalData += HandleHistoricalData;
             ibClient.HistoricalDataEnd += HandleHistoricalDataEnd;
-        }
-
-        public async Task<int> UpdateAllBackend()
-        {
-            int count = 0;
-            var stocklist = await m_repoStock.GetAllAsync();
-            for (int i = 0; i < stocklist.Count; i++)
-            {
-                var stock = stocklist[i];
-                UpdateHistoricalDataFromXueQiu(stock.Symbol);
-                await Task.Delay(5);
-                count++;
-            }
-            return count;
-        }
-
-        public async Task UpdateAllStocks()
-        {
-            var stocklist = await m_repoStock.GetAllAsync();
-            for (int i = 0; i < stocklist.Count; i++)
-            {
-                var stock = stocklist[i];
-                await UpdateHistoricalDataFromXueQiu(stock.Symbol);
-            }
         }
 
         [Api]
@@ -134,9 +111,8 @@ namespace MoneyMoat.Services
         public async Task<string> RequestEarliestDataPointAsync(string symbol, string exchange)
         {
             var reqId = MoatCommon.GetReqId(symbol);
-            var contract = MoatCommon.GetStockContract(symbol, exchange);
-            ibClient.ClientSocket.reqHeadTimestamp(reqId, contract, "TRADES", 1, 1);
-            return await SendRequestAsync(reqId);
+            var contract = MoatCommon.GetStockContract(symbol, exchange);            
+            return await SendRequestAsync(reqId, ()=> m_clientSocket.reqHeadTimestamp(reqId, contract, "TRADES", 1, 1));
         }
 
         private void HandleEarliestDataPoint(HeadTimestampMessage message)
@@ -153,7 +129,7 @@ namespace MoneyMoat.Services
         {
             if (activeReqId > 0)
             {
-                ibClient.ClientSocket.cancelHeadTimestamp(activeReqId);
+                m_clientSocket.cancelHeadTimestamp(activeReqId);
                 activeReqId = 0;
             }
         }
@@ -188,7 +164,7 @@ namespace MoneyMoat.Services
                 int useRTH = 1;
                 //The format in which the incoming bars' date should be presented. Note that for day bars, only yyyyMMdd format is available.
                 int formatDate = 1;
-                ibClient.ClientSocket.reqHistoricalData(activeReqId, contract, endStr, durationString, barSizeSetting, whatToShow.ToString(), useRTH, formatDate, keepUpToDate, new List<TagValue>());
+                m_clientSocket.reqHistoricalData(activeReqId, contract, endStr, durationString, barSizeSetting, whatToShow.ToString(), useRTH, formatDate, keepUpToDate, new List<TagValue>());
             }
         }
 
@@ -196,7 +172,7 @@ namespace MoneyMoat.Services
         {
             if (activeReqId > 0)
             {
-                ibClient.ClientSocket.cancelHistoricalData(activeReqId);
+                m_clientSocket.cancelHistoricalData(activeReqId);
                 activeReqId = 0;
             }
         }

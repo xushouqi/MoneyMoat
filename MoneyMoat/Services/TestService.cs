@@ -45,8 +45,8 @@ namespace MoneyMoat.Services
 
         public async Task Work()
         {
-            await m_historicalService.UpdateAllStocks();
-            await m_fundamentalService.UpdateAllStocks();
+            //await m_historicalService.UpdateAllStocks();
+            //await m_fundamentalService.UpdateAllStocks();
             //m_fundamentalService.RequestAndParseFundamentalsAsync("ATAI", ExchangeEnum.ISLAND.ToString(), FundamentalsReportEnum.RESC).Wait();
             //m_fundamentalService.DoUpdateStockFundamentals("ATAI", ExchangeEnum.ISLAND.ToString()).Wait();
             //m_fundamentalService.UpdateAllStocksFundamentals().Wait();
