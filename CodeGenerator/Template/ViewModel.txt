@@ -1,6 +1,6 @@
 ﻿using ProtoBuf;
 
-namespace GodModels
+namespace #ProjectName#.ViewModels
 {
     [ProtoContract]
     public class #TypeName#Data

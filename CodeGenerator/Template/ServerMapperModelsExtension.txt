@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using GodModels;
+using #ProjectName#.ViewModels;
 using AutoMapper;
+using CommonLibs;
 
-namespace EClubServer
+namespace #ProjectName#
 {
     public static class AutoMapperExtensions
     {

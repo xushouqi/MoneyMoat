@@ -20,9 +20,10 @@
 				if (tmp != null#ValidDic#)
 				{
 					var retData = await _actionService.#MethodName#(#ParamsFromDic#);
-					if (retData != null)
+					#MapperReturn#
+					if (data != null)
 					{
-						return new OkObjectResult(retData);
+						return new OkObjectResult(data);
 					}
 					else
 						return NoContent();
@@ -33,9 +34,10 @@
             else
             {
 				var retData = await _actionService.#MethodName#(#ParamsInput#);
-				if (retData != null)
+				#MapperReturn#
+				if (data != null)
 				{
-					return new OkObjectResult(retData);
+					return new OkObjectResult(data);
 				}
 				else
 					return NoContent();

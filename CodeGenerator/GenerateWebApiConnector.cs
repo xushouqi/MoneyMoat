@@ -15,14 +15,16 @@ namespace CodeGenerator
         static string m_client_path = string.Empty;
         static string m_service_name = string.Empty;
         static string m_project_name = string.Empty;
+        static Assembly m_modelAssembly = null;
 
-        public static void InitPath(string template, string projectname, string server, string client)
+        public static void InitPath(Assembly modelAssembly, string template, string projectname, string server, string client)
         {
             m_project_name = projectname;
             m_template_path = template;
             //m_accountservice = accountservice;
             m_server_path = server;
             m_client_path = client;
+            m_modelAssembly = modelAssembly;
         }
 
         public static void GenerateFromService<T>()
@@ -54,6 +56,8 @@ namespace CodeGenerator
             //客户端
             string client_connector_methods = "";
 
+            string modelPrject = m_modelAssembly.FullName.Split(",")[0];
+
             //方法生成请求接口
             MethodInfo[] vMethodInfos = vType.GetMethods(BindingFlags.Instance | BindingFlags.DeclaredOnly | BindingFlags.Public);
             if (vMethodInfos.Length > 0)
@@ -63,8 +67,7 @@ namespace CodeGenerator
                     MethodInfo vMethodInfo = vMethodInfos[i];
                     if (!vMethodInfo.Name.StartsWith("get_") && !vMethodInfo.Name.StartsWith("set_"))
                     {
-                        if (vMethodInfo.IsDefined(typeof(ApiAttribute), false)
-                            || vMethodInfo.IsDefined(typeof(ApiAttribute), false))
+                        if (vMethodInfo.IsDefined(typeof(ApiAttribute), false))
                         {
                             var pars = vMethodInfo.ReturnParameter;
                             //返回值
@@ -159,12 +162,7 @@ namespace CodeGenerator
                             else
                                 methodParams += "string sign";
                             if (attributes.Encrypt && !string.IsNullOrEmpty(dicParams))
-                            {
                                 dicParams += ", { \"sign\", RsaService.Encrypt(" + encryptParams + ")}";
-                                //decryptString = "RsaService.Decrypt(sign).Equals("+ encryptParams + ")";;
-                            }
-                            //else
-                            //    decryptString = "true";
 
                             if (string.IsNullOrEmpty(queryString))
                                 queryString = "\"\"";
@@ -178,12 +176,15 @@ namespace CodeGenerator
                             }
 
                             string methodReturnTypeName = methodReturnType.FullName;
+                            bool isReturnData = methodReturnTypeName.Contains("ReturnData");
+                            bool needMapper = methodReturnTypeName.Contains(modelPrject);
 
                             //使用返回值结构
-                            methodReturnTypeName = CodeCommon.GetReturnTypeName(methodReturnTypeName);
+                            methodReturnTypeName = CodeCommon.GetReturnTypeName(methodReturnTypeName);                            
                             methodReturnTypeName = CodeCommon.GetSimpleTypeName(methodReturnTypeName);
                             //提取实际返回值类型
                             string returnTypeName = methodReturnTypeName;
+
                             //api设定的返回类型
                             if (attributes.ReturnType != null)
                             {
@@ -191,49 +192,36 @@ namespace CodeGenerator
                                 returnTypeName = CodeCommon.GetReturnTypeName(returnTypeName);
                                 returnTypeName = CodeCommon.GetSimpleTypeName(returnTypeName);
                             }
-
-                            string returnNull = "null";
-                            string convertReturn = "var retData = Mapper.Map<#ReturnType#>(data);";
-                            string validReturn = "data != null";
-
-                            if (methodReturnTypeName.Contains("List"))
+                            //todo: 总是mapper类型
+                            else if (needMapper)
                             {
-                                validReturn = "data != null";
-                                if (attributes.ReturnType != null)
+                                returnTypeName = returnTypeName + "Data";
+                            }
+
+                            string mapperReturn = "";
+                            if (needMapper)
+                            {
+                                if (isReturnData)
                                 {
-                                    convertReturn = "var retData = Mapper.Map<List<" + returnTypeName + ">>(data);";
-                                    returnTypeName = "List<" + returnTypeName + ">";
+                                    mapperReturn += "var data = new ReturnData<" + returnTypeName + ">{\n";
+                                    mapperReturn += "                    ErrorCode = retData.ErrorCode,\n";
+                                    mapperReturn += "                    Data = Mapper.Map<" + returnTypeName + ">(retData.Data),\n";
+                                    mapperReturn += "                };\n";
                                 }
                                 else
-                                    convertReturn = "var retData = data;";
+                                {
+                                    mapperReturn += "var data = Mapper.Map<" + returnTypeName + ">(retData);\n";
+                                }
                             }
-                            else if (methodReturnTypeName.Contains("bool"))
-                            {
-                                validReturn = "true";
-                                convertReturn = "var retData = data;";
-                                returnNull = "false";
-                            }
-                            else if (methodReturnTypeName.Contains("int"))
-                            {
-                                validReturn = "true";
-                                convertReturn = "var retData = data;";
-                                returnNull = "-1";
-                            }
-                            else if (methodReturnTypeName.Contains("string"))
-                            {
-                                validReturn = "!string.IsNullOrEmpty(data)";
-                                convertReturn = "var retData = data;";
-                                returnNull = "";
-                            }
-                            else if (methodReturnTypeName == returnTypeName)
-                            {
-                                convertReturn = "var retData = data;";
-                            }
+                            else
+                                mapperReturn += "var data = retData;\n";
+
 
                             //method模版
                             string server_controller_method = needauthaccount ? server_controller_method_auth_template : server_controller_method_template;
 
                             server_controller_method = server_controller_method.Replace("#MethodName#", vMethodInfo.Name);
+                            server_controller_method = server_controller_method.Replace("#ModelProject#", modelPrject);
                             server_controller_method = server_controller_method.Replace("#ParamsDeclare#", methodParams);
                             server_controller_method = server_controller_method.Replace("#ParamsInput#", inputParams);
                             server_controller_method = server_controller_method.Replace("#MethodRetunType#", methodReturnTypeName);
@@ -251,8 +239,7 @@ namespace CodeGenerator
                             else
                                 server_controller_method = server_controller_method.Replace("#AuthPolicy#", "[AllowAnonymous]");
 
-                            server_controller_method = server_controller_method.Replace("#ValidReturn#", validReturn);
-                            server_controller_method = server_controller_method.Replace("#ConvertReturn#", convertReturn);
+                            server_controller_method = server_controller_method.Replace("#MapperReturn#", mapperReturn);
                             server_controller_method = server_controller_method.Replace("#ParamsFromDic#", paramsFromDic);
                             server_controller_method = server_controller_method.Replace("#ValidDic#", ValidDic);
 
@@ -267,16 +254,20 @@ namespace CodeGenerator
 
                             server_controller_methods += server_controller_method;
 
+                            string WithReturnType = returnTypeName;
+                            if (isReturnData)
+                                WithReturnType = "ReturnData<" + returnTypeName + ">";
 
                             //client
                             client_connector_method = client_connector_method.Replace("#ServerName#", m_project_name);
+                            client_connector_method = client_connector_method.Replace("#ModelProject#", modelPrject);
                             client_connector_method = client_connector_method.Replace("#MethodName#", vMethodInfo.Name);
                             client_connector_method = client_connector_method.Replace("#ReturnType#", returnTypeName);
+                            client_connector_method = client_connector_method.Replace("#WithReturnType#", WithReturnType);
                             client_connector_method = client_connector_method.Replace("#MethodParams#", clientMethodParams);
                             client_connector_method = client_connector_method.Replace("#Route#", clientRoute);
                             client_connector_method = client_connector_method.Replace("#QueryString#", queryString);
                             client_connector_method = client_connector_method.Replace("#DicParams#", dicParams);
-                            client_connector_method = client_connector_method.Replace("#ReturnNull#", returnNull);
                             client_connector_method = client_connector_method.Replace("#TokenHeader#", attributes.AuthType != AuthTypeEnum.None ?
                                                                                                         "client.DefaultRequestHeaders.Add(\"Authorization\", \"Bearer \" + token);"
                                                                                                         : "");
@@ -294,12 +285,13 @@ namespace CodeGenerator
             //服务端Controller
             string server_controller_file = server_controller_template;
             server_controller_file = server_controller_file.Replace("#ControllerName#", controllerName);
+            server_controller_file = server_controller_file.Replace("#ModelProject#", modelPrject);
             server_controller_file = server_controller_file.Replace("#Interface#", interfaceName);
             server_controller_file = server_controller_file.Replace("#ProjectName#", m_project_name);
 
             server_controller_file = server_controller_file.Replace("#Methods#", server_controller_methods);
 
-            string controllerFilename = m_server_path + controllerName + ".cs";
+            string controllerFilename = m_server_path + @"\Controllers\" + controllerName + ".cs";
             CodeCommon.WriteFile(controllerFilename, server_controller_file);
             Console.WriteLine("Write ServerFile: " + controllerFilename);
 
@@ -309,6 +301,7 @@ namespace CodeGenerator
                 string client_connector_file = client_connector_template;
                 client_connector_file = client_connector_file.Replace("#ClassName#", connectorName);
                 client_connector_file = client_connector_file.Replace("#ServerName#", m_project_name);
+                client_connector_file = client_connector_file.Replace("#ModelProject#", modelPrject);
 
                 client_connector_file = client_connector_file.Replace("#Methods#", client_connector_methods);
 

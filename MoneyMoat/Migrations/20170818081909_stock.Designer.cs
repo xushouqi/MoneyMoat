@@ -21,7 +21,7 @@ namespace MoneyMoat.Migrations
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452");
 
-            modelBuilder.Entity("MoneyModels.Stock", b =>
+            modelBuilder.Entity("CommonModels.Stock", b =>
                 {
                     b.Property<string>("Symbol")
                         .ValueGeneratedOnAdd();

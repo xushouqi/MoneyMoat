@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,8 +38,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonLibs\CommonLibs.csproj" />
+    <ProjectReference Include="..\CommonNetwork\CommonNetwork.csproj" />
     <ProjectReference Include="..\CSharpAPI\CSharpAPI.csproj" />
-    <ProjectReference Include="..\MoneyModels\MoneyModels.csproj" />
+    <ProjectReference Include="..\StockModels\StockModels.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="appsettings.json">
@@ -50,6 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Microsoft.NETCore.App" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Base\" />
   </ItemGroup>
 
 </Project>

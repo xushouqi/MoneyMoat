@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace CommonLibs
@@ -1331,20 +1330,20 @@ namespace CommonLibs
         /// <typeparam name="T"></typeparam>
         /// <param name="jsonStr"></param>
         /// <returns></returns>
-        public static T ParseJson<T>(string jsonStr)
-        {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonStr);
-        }
+        //public static T ParseJson<T>(string jsonStr)
+        //{
+        //    return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonStr);
+        //}
 
-        /// <summary>
-        /// 将对象序列化成string
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static string ToJson(object value)
-        {
-            return Newtonsoft.Json.JsonConvert.SerializeObject(value);
-        }
+        ///// <summary>
+        ///// 将对象序列化成string
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <returns></returns>
+        //public static string ToJson(object value)
+        //{
+        //    return Newtonsoft.Json.JsonConvert.SerializeObject(value);
+        //}
 
         #endregion
     }

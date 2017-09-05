@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 using MoneyMoat.Messages;
-using MoneyMoat.Types;
-using MoneyModels;
 using IBApi;
 using YAXLib;
 using CommonLibs;

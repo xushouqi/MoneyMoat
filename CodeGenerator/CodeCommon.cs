@@ -48,15 +48,21 @@ namespace CodeGenerator
             return temp;
         }
 
-        public static void WriteFile(string filepath, string content)
+        public static void WriteFile(string filename, string content)
         {
-            if (File.Exists(filepath))
-                File.Delete(filepath);
-            using (var sw = File.CreateText(filepath))
+            var path = filename.Substring(0, filename.LastIndexOf(@"\"));
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+            else
+            {
+                if (File.Exists(filename))
+                    File.Delete(filename);
+            }
+            using (var sw = File.CreateText(filename))
             {
                 sw.Write(content);
             }
-            Console.WriteLine("Write ClientFile: " + filepath);
+            Console.WriteLine("Write ClientFile: " + filename);
         }
 
         public static bool CheckParamSocket(ParameterInfo paramInfo)
@@ -104,9 +110,9 @@ namespace CodeGenerator
                 }
                 else
                 {
-                    Match mc = Regex.Match(stype, @"ZeroModels.[A-Za-z]*");
+                    Match mc = Regex.Match(stype, @"Models.[A-Za-z]*");
                     if (mc != null && mc.Length > 0)
-                        clid_type = mc.Value.Substring(0, mc.Value.Length - 0);
+                        clid_type = mc.Value.Substring("Models.".Length, mc.Value.Length - 0);
                 }
                 ret = "List<" + clid_type + "> ";
             }
@@ -135,19 +141,25 @@ namespace CodeGenerator
 
         public static string GetReturnTypeName(string methodReturnTypeName)
         {
-            string returnDataPrefix = "GodModels.ReturnData`1";
-            string collectionsPrefix = "System.Collections.Generic.List`1";
-            string taskPrefix = "System.Threading.Tasks.Task`1";
-
             bool isCollections = false;
 
+            string taskPrefix = "System.Threading.Tasks.Task`1";
             if (methodReturnTypeName.Contains(taskPrefix))
                 methodReturnTypeName = methodReturnTypeName.Substring((taskPrefix + @"[[").Length);
 
-            if (methodReturnTypeName.Contains(returnDataPrefix))
-                methodReturnTypeName = methodReturnTypeName.Substring((returnDataPrefix + @"[[").Length);
+            string returnDataPrefix = "[A-Za-z]*.ReturnData`1";
+            var mc1 = Regex.Match(methodReturnTypeName, returnDataPrefix);
+            if (mc1 != null && mc1.Length > 0)
+                methodReturnTypeName = methodReturnTypeName.Substring((mc1.Value + @"[[").Length);
+
+            returnDataPrefix = "[A-Za-z]*.ReturnMessage`1";
+            mc1 = Regex.Match(methodReturnTypeName, returnDataPrefix);
+            if (mc1 != null && mc1.Length > 0)
+                methodReturnTypeName = methodReturnTypeName.Substring((mc1.Value + @"[[").Length);
+
 
             //是List<>
+            string collectionsPrefix = "System.Collections.Generic.List`1";
             if (methodReturnTypeName.Contains(collectionsPrefix))
             {
                 methodReturnTypeName = methodReturnTypeName.Substring((collectionsPrefix + @"[[").Length);
@@ -162,16 +174,23 @@ namespace CodeGenerator
 
         static string TryParseTypeName(string methodReturnTypeName)
         {
-            if (!GetSubTypeName(ref methodReturnTypeName, @"GodModels\.[A-Za-z]*"))
+            var mc = GetSubTypeName(ref methodReturnTypeName, @"Models\.[A-Za-z]*");
+            if (mc == null || mc.Length == 0)
             {
-                if (!GetSubTypeName(ref methodReturnTypeName, @"System\.[A-Za-z]*"))
+                mc = GetSubTypeName(ref methodReturnTypeName, @"System\.[A-Za-z]*");
+                if (mc == null || mc.Length == 0)
                 {
                     GetSubTypeName(ref methodReturnTypeName, "");
                 }
             }
+            else
+            {
+                int start = "Models.".Length;
+                methodReturnTypeName = mc.Value.Substring(start, mc.Value.Length - start);
+            }
             return methodReturnTypeName;
         }
-        static bool GetSubTypeName(ref string typeName, string pattern)
+        static Match GetSubTypeName(ref string typeName, string pattern)
         {
             bool ret = false;
             var mc1 = Regex.Match(typeName, pattern);
@@ -180,7 +199,7 @@ namespace CodeGenerator
                 ret = true;
                 typeName = mc1.Value;
             }
-            return ret;
+            return mc1;
         }
 
     }

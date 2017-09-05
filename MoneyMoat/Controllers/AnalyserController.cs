@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
+using StockModels;
+using StockModels.ViewModels;
 
 namespace MoneyMoat.Controllers
 {
@@ -52,9 +54,11 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("delay"))
 				{
 					var retData = await _actionService.StopAllTasks(int.Parse(tmp["delay"]));
-					if (retData != null)
+					var data = retData;
+
+					if (data != null)
 					{
-						return new OkObjectResult(retData);
+						return new OkObjectResult(data);
 					}
 					else
 						return NoContent();
@@ -65,9 +69,11 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.StopAllTasks(delay);
-				if (retData != null)
+				var data = retData;
+
+				if (data != null)
 				{
-					return new OkObjectResult(retData);
+					return new OkObjectResult(data);
 				}
 				else
 					return NoContent();
@@ -95,9 +101,11 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("forceUpdate"))
 				{
 					var retData = await _actionService.UpdateAllFundamentals(bool.Parse(tmp["forceUpdate"]));
-					if (retData != null)
+					var data = retData;
+
+					if (data != null)
 					{
-						return new OkObjectResult(retData);
+						return new OkObjectResult(data);
 					}
 					else
 						return NoContent();
@@ -108,9 +116,11 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.UpdateAllFundamentals(forceUpdate);
-				if (retData != null)
+				var data = retData;
+
+				if (data != null)
 				{
-					return new OkObjectResult(retData);
+					return new OkObjectResult(data);
 				}
 				else
 					return NoContent();
@@ -138,9 +148,11 @@ namespace MoneyMoat.Controllers
 				if (tmp != null)
 				{
 					var retData = await _actionService.UpdateAllHistoricals();
-					if (retData != null)
+					var data = retData;
+
+					if (data != null)
 					{
-						return new OkObjectResult(retData);
+						return new OkObjectResult(data);
 					}
 					else
 						return NoContent();
@@ -151,9 +163,11 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.UpdateAllHistoricals();
-				if (retData != null)
+				var data = retData;
+
+				if (data != null)
 				{
-					return new OkObjectResult(retData);
+					return new OkObjectResult(data);
 				}
 				else
 					return NoContent();
@@ -181,9 +195,11 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("symbol"))
 				{
 					var retData = await _actionService.CalcFinSummary(tmp["symbol"]);
-					if (retData != null)
+					var data = retData;
+
+					if (data != null)
 					{
-						return new OkObjectResult(retData);
+						return new OkObjectResult(data);
 					}
 					else
 						return NoContent();
@@ -194,9 +210,11 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.CalcFinSummary(symbol);
-				if (retData != null)
+				var data = retData;
+
+				if (data != null)
 				{
-					return new OkObjectResult(retData);
+					return new OkObjectResult(data);
 				}
 				else
 					return NoContent();
@@ -224,9 +242,11 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("symbol"))
 				{
 					var retData = await _actionService.UpdateAndCalcFundamental(tmp["symbol"]);
-					if (retData != null)
+					var data = retData;
+
+					if (data != null)
 					{
-						return new OkObjectResult(retData);
+						return new OkObjectResult(data);
 					}
 					else
 						return NoContent();
@@ -237,9 +257,11 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.UpdateAndCalcFundamental(symbol);
-				if (retData != null)
+				var data = retData;
+
+				if (data != null)
 				{
-					return new OkObjectResult(retData);
+					return new OkObjectResult(data);
 				}
 				else
 					return NoContent();

@@ -7,13 +7,12 @@ using System.Security.Cryptography;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 using MoneyMoat.Messages;
-using MoneyMoat.Types;
-using MoneyModels;
 using IBApi;
 using YAXLib;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using CommonLibs;
+using StockModels;
 
 namespace MoneyMoat.Services
 {
@@ -25,7 +24,7 @@ namespace MoneyMoat.Services
         private readonly IRepository<Financal> m_repoFin;
         private readonly IRepository<FYEstimate> m_repoEst;
         private readonly IRepository<NPEstimate> m_repoNPE;
-        private readonly IRepository<XueQiuData> m_repoDatas;
+        private readonly IRepository<Historical> m_repoDatas;
         private readonly IRepository<FinSummary> m_repoSummary;
         private readonly IRepository<FinStatement> m_repoStatement;
 
@@ -36,7 +35,7 @@ namespace MoneyMoat.Services
                         IRepository<Financal> repoFin,
                         IRepository<FYEstimate> repoEst,
                         IRepository<NPEstimate> repoNPE,
-                        IRepository<XueQiuData> repoDatas,
+                        IRepository<Historical> repoDatas,
                         IRepository<FinSummary> repoSummary,
                         IRepository<FinStatement> repoStatement,
                         ILogger<IBManager> logger) : base(ibmanager, logger, commonManager)

@@ -10,8 +10,7 @@
                 pars.Dispose();
 
                 var package = await m_client.SendAsync(#ActionId#, pardata);
-                retData = new ReturnData<#ReturnType#>();
-				retData.ErrorCode = (ErrorCodeEnum)package.ErrorCode;
+                retData = new ReturnData<#ReturnType#>((ErrorCodeEnum)package.ErrorCode);
 				if (package.MyError == ErrorCodeEnum.Success)
 					retData.Data = ProtoBufUtils.Deserialize<#ReturnType#>(package.Return);              
             }

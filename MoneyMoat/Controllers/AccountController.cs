@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
+using StockModels;
+using StockModels.ViewModels;
 
 namespace MoneyMoat.Controllers
 {

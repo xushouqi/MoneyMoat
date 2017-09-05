@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
+using StockModels;
+using StockModels.ViewModels;
 
 namespace MoneyMoat.Controllers
 {
@@ -52,9 +54,11 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("symbol"))
 				{
 					var retData = await _actionService.FindAsync(tmp["symbol"]);
-					if (retData != null)
+					var data = Mapper.Map<StockData>(retData);
+
+					if (data != null)
 					{
-						return new OkObjectResult(retData);
+						return new OkObjectResult(data);
 					}
 					else
 						return NoContent();
@@ -65,52 +69,11 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.FindAsync(symbol);
-				if (retData != null)
-				{
-					return new OkObjectResult(retData);
-				}
-				else
-					return NoContent();
-            }
-        }
+				var data = Mapper.Map<StockData>(retData);
 
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> GetAllAsync(string sign)
-        {
-			string design = string.Empty;
-            if (!string.IsNullOrEmpty(sign))
-            {
-                design = RsaService.DecryptToString(sign);
-            }
-            else if (Request.ContentLength != null)
-            {
-                byte[] datas = new byte[(int)Request.ContentLength];
-                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
-                design = RsaService.DecryptToString(datas, 0);
-            }
-            if (!string.IsNullOrEmpty(design))
-            {
-				var tmp = Common.QueryStringToData(design);
-				if (tmp != null)
+				if (data != null)
 				{
-					var retData = await _actionService.GetAllAsync();
-					if (retData != null)
-					{
-						return new OkObjectResult(retData);
-					}
-					else
-						return NoContent();
-				}
-				else
-					return new UnauthorizedResult();
-            }
-            else
-            {
-				var retData = await _actionService.GetAllAsync();
-				if (retData != null)
-				{
-					return new OkObjectResult(retData);
+					return new OkObjectResult(data);
 				}
 				else
 					return NoContent();
@@ -138,9 +101,11 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("name") && tmp.ContainsKey("symbol") && tmp.ContainsKey("category") && tmp.ContainsKey("saveToDb"))
 				{
 					var retData = await _actionService.UpdateStock(tmp["name"], tmp["symbol"], tmp["category"], bool.Parse(tmp["saveToDb"]));
-					if (retData != null)
+					var data = Mapper.Map<StockData>(retData);
+
+					if (data != null)
 					{
-						return new OkObjectResult(retData);
+						return new OkObjectResult(data);
 					}
 					else
 						return NoContent();
@@ -151,52 +116,11 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.UpdateStock(name, symbol, category, saveToDb);
-				if (retData != null)
-				{
-					return new OkObjectResult(retData);
-				}
-				else
-					return NoContent();
-            }
-        }
+				var data = Mapper.Map<StockData>(retData);
 
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<IActionResult> SearchSymbolsAsync(string pattern, string sign)
-        {
-			string design = string.Empty;
-            if (!string.IsNullOrEmpty(sign))
-            {
-                design = RsaService.DecryptToString(sign);
-            }
-            else if (Request.ContentLength != null)
-            {
-                byte[] datas = new byte[(int)Request.ContentLength];
-                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
-                design = RsaService.DecryptToString(datas, 0);
-            }
-            if (!string.IsNullOrEmpty(design))
-            {
-				var tmp = Common.QueryStringToData(design);
-				if (tmp != null && tmp.ContainsKey("pattern"))
+				if (data != null)
 				{
-					var retData = await _actionService.SearchSymbolsAsync(tmp["pattern"]);
-					if (retData != null)
-					{
-						return new OkObjectResult(retData);
-					}
-					else
-						return NoContent();
-				}
-				else
-					return new UnauthorizedResult();
-            }
-            else
-            {
-				var retData = await _actionService.SearchSymbolsAsync(pattern);
-				if (retData != null)
-				{
-					return new OkObjectResult(retData);
+					return new OkObjectResult(data);
 				}
 				else
 					return NoContent();

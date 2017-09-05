@@ -45,8 +45,23 @@ namespace CommonLibs
     {
     }
 
+    [AttributeUsage(AttributeTargets.Class)]
+    public class DataModelsAttribute : System.Attribute
+    {
+    }
+
+    [AttributeUsage(AttributeTargets.Class)]
+    public class DbContextAttribute : System.Attribute
+    {
+    }
+
+    [AttributeUsage(AttributeTargets.Class)]
+    public class ValidLoginAttribute : System.Attribute
+    {
+    }
+
     [AttributeUsage(AttributeTargets.Property)]
-    public class GodDataAttribute : System.Attribute
+    public class DataViewAttribute : System.Attribute
     {
         public string Tips = string.Empty;
     }

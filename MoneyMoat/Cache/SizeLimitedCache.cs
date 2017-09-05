@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MoneyModels
+namespace MoneyMoat
 {
     public class SizeLimitedCache<TKey, TValue> : Cache<TKey, TValue>
     {

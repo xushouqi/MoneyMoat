@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MoneyModels
+namespace MoneyMoat
 {
     public class Cache<TKey, TValue> : IDisposable
     {

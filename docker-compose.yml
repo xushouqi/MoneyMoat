@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  moneymoat:
+    image: moneymoat
+    build:
+      context: ./MoneyMoat
+      dockerfile: Dockerfile

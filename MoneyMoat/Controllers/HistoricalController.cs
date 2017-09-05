@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
+using StockModels;
+using StockModels.ViewModels;
 
 namespace MoneyMoat.Controllers
 {
@@ -52,9 +54,11 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("symbol"))
 				{
 					var retData = await _actionService.UpdateHistoricalDataFromXueQiu(tmp["symbol"]);
-					if (retData != null)
+					var data = Mapper.Map<HistoricalData>(retData);
+
+					if (data != null)
 					{
-						return new OkObjectResult(retData);
+						return new OkObjectResult(data);
 					}
 					else
 						return NoContent();
@@ -65,9 +69,11 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.UpdateHistoricalDataFromXueQiu(symbol);
-				if (retData != null)
+				var data = Mapper.Map<HistoricalData>(retData);
+
+				if (data != null)
 				{
-					return new OkObjectResult(retData);
+					return new OkObjectResult(data);
 				}
 				else
 					return NoContent();

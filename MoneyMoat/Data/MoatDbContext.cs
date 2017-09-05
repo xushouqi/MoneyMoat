@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Pomelo.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore.MySql;
-using MoneyModels;
+using StockModels;
+using CommonLibs;
 
 namespace MoneyMoat
 {
+    [DbContext]
     public class MoatDbContext : DbContext
     {
         public DbSet<Stock> Stocks { get; set; }
@@ -14,7 +16,7 @@ namespace MoneyMoat
         public DbSet<FYEstimate> FYEstimates { get; set; }
         public DbSet<NPEstimate> NPEstimates { get; set; }
         //public DbSet<Recommendation> Recommendations { get; set; }
-        public DbSet<XueQiuData> XueQiuDatas { get; set; }
+        public DbSet<Historical> XueQiuDatas { get; set; }
         //public DbSet<XueQiuQuote> XueQiuQuotes { get; set; }
         public DbSet<FinSummary> FinSummarys { get; set; }
         public DbSet<FinStatement> FinStatements { get; set; }
@@ -38,9 +40,9 @@ namespace MoneyMoat
             builder.Entity<NPEstimate>()
                 .HasIndex(b => b.Symbol);
 
-            builder.Entity<XueQiuData>()
+            builder.Entity<Historical>()
                 .HasIndex(b => b.Symbol);
-            builder.Entity<XueQiuData>()
+            builder.Entity<Historical>()
                 .HasIndex(b => b.time);
 
             builder.Entity<FinSummary>()

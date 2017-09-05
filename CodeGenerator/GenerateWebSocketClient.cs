@@ -24,20 +24,17 @@ namespace CodeGenerator
             m_client_path = client;
         }
 
-        public static void GenerateFromService<T>(ref string regModuleStr, ref string regActionIdByType, ref string defineClient, ref string declareClient)
+        public static void GenerateFromService<T>()
         {
-            GenerateFromService(typeof(T), ref regModuleStr, ref regActionIdByType, ref defineClient, ref declareClient);
+            GenerateFromService(typeof(T));
         }
 
-        public static void GenerateFromService(System.Type vType, ref string regModuleStr, ref string regActionIdByType, ref string defineClient, ref string declareClient)
+        public static void GenerateFromService(System.Type vType)
         {
             m_service_name = vType.Name;
 
             //eg: User
             string className = m_service_name.Replace("Service", "");
-
-            defineClient += "        public " + className + "Client " + className + "Client = null;\n";
-            declareClient += "            "+ className + "Client = new "+ className + "Client(m_socket);\n";
 
             string clientTemplate = CodeCommon.GetTemplate(m_template_path, "ClientServiceClient.txt");
             string clientMethodTemplate = CodeCommon.GetTemplate(m_template_path, "ClientServiceMethod.txt");
@@ -48,7 +45,6 @@ namespace CodeGenerator
             string serverActionTemplate = CodeCommon.GetTemplate(m_template_path, "ServerAction.txt");
             string serverActionAuthTemplate = CodeCommon.GetTemplate(m_template_path, "ServerActionAuth.txt");
 
-            string server_registers = "";
             string client_methods = "";
             string client_callbacks = "";
             string client_regcallbacks = "";
@@ -66,39 +62,42 @@ namespace CodeGenerator
 
                     //客户端注册回调函数
                     client_regcallbacks += "            client.RegActions[" + attributes.ActionId + "] = On" + vMethodInfo.Name + "CallBack;\n";
-                    //注册action
-                    server_registers += "            builder.RegisterType<Action" + attributes.ActionId + ">().InstancePerDependency();\n";
-
+              
                     //返回值
                     Type methodReturnType = vMethodInfo.ReturnType;
                     string methodReturnTypeName = methodReturnType.FullName;
+                    bool isReturnData = methodReturnTypeName.Contains("ReturnData");
 
                     //使用返回值结构
-                    methodReturnTypeName = Common.GetReturnTypeName(methodReturnTypeName);
-                    methodReturnTypeName = Common.GetSimpleTypeName(methodReturnTypeName);
+                    methodReturnTypeName = CodeCommon.GetReturnTypeName(methodReturnTypeName);
+                    methodReturnTypeName = CodeCommon.GetSimpleTypeName(methodReturnTypeName);
                     //提取实际返回值类型
                     string returnTypeName = methodReturnTypeName;
                     //api设定的返回类型
                     if (attributes.ReturnType != null)
                     {
                         returnTypeName = attributes.ReturnType.FullName;
-                        returnTypeName = Common.GetReturnTypeName(returnTypeName);
-                        returnTypeName = Common.GetSimpleTypeName(returnTypeName);
+                        returnTypeName = CodeCommon.GetReturnTypeName(returnTypeName);
+                        returnTypeName = CodeCommon.GetSimpleTypeName(returnTypeName);
                     }
 
-                    string convertReturn = "";
+                    string mapperReturn = "";
                     if (attributes.ReturnType != null)
                     {
-                        convertReturn += "var data = new ReturnData<" + returnTypeName + ">{\n";
-                        convertReturn += "                    ErrorCode = retData.ErrorCode,\n";
-                        convertReturn += "                    Data = Mapper.Map<" + returnTypeName + ">(retData.Data),\n";
-                        convertReturn += "                };\n";
+                        if (isReturnData)
+                        {
+                            mapperReturn += "var data = new ReturnData<" + returnTypeName + ">{\n";
+                            mapperReturn += "                    ErrorCode = retData.ErrorCode,\n";
+                            mapperReturn += "                    Data = Mapper.Map<" + returnTypeName + ">(retData.Data),\n";
+                            mapperReturn += "                };\n";
+                        }
+                        else
+                        {
+                            mapperReturn += "var data = Mapper.Map<" + returnTypeName + ">(retData.Data);\n";
+                        }
                     }
                     else
-                        convertReturn += "var data = retData;\n";
-
-                    if (attributes.RegPushData)
-                        regActionIdByType += "            m_actionIdByType[typeof(" + returnTypeName + ")] = " + attributes.ActionId + ";\n";
+                        mapperReturn += "var data = retData;\n";
 
                     string serverInputParams = "";
                     string serverUseParams = "";
@@ -112,7 +111,7 @@ namespace CodeGenerator
                     {
                         ParameterInfo paramInfo = paramInfos[j];
                         System.Type stype = paramInfo.ParameterType;
-                        string typestr = Common.GetSimpleTypeName(stype.ToString());
+                        string typestr = CodeCommon.GetSimpleTypeName(stype.ToString());
 
                         bool skipMethd = false;
                         if (attributes.AuthIDType != AuthIDTypeEnum.None && j == 0)
@@ -222,43 +221,31 @@ namespace CodeGenerator
                     server_action = server_action.Replace("#ReadParams#", serverReadBytes);
                     server_action = server_action.Replace("#Params#", serverUseParams);
                     server_action = server_action.Replace("#ReturnType#", returnTypeName);
-                    server_action = server_action.Replace("#ConvertReturn#", convertReturn);
+                    server_action = server_action.Replace("#MapperReturn#", mapperReturn);
                     server_action = server_action.Replace("#Attribute#", attributes.IsValidToken ? "[ValidLogin]" : "");
 
                     string serverFileName = "Action" + attributes.ActionId.ToString();
-                    serverFileName = m_server_path + serverFileName + ".cs";
+                    serverFileName = m_server_path + @"\Actions\" + serverFileName + ".cs";
                     CodeCommon.WriteFile(serverFileName, server_action);
                 }
             }
 
-            //客户端注册回调函数
-            //string client_regclass = clientRegPushTemplate;
-            //client_regclass = client_regclass.Replace("#ProjectName#", m_project_name);
-            //client_regclass = client_regclass.Replace("#ClassName#", className);
-            //client_regclass = client_regclass.Replace("#RegActions#", client_regcallbacks);
-            //client_regclass = client_regclass.Replace("#Callbacks#", client_callbacksAdd);
-            //client_regclass = client_regclass.Replace("#AddRemove#", client_regcallbackadds);
-
-            //string clientRegFileName = m_service_name.Replace("Service", "Push");
-            //clientRegFileName = m_client_path + @"Pushs\" + clientRegFileName + ".cs";
-            //Common.WriteFile(clientRegFileName, client_regclass);
-
             //客户端submit接口
-            string client_class = clientTemplate;
-            client_class = client_class.Replace("#ProjectName#", m_project_name);
-            client_class = client_class.Replace("#ClassName#", className);
-            client_class = client_class.Replace("#Methods#", client_methods);
-            client_class = client_class.Replace("#Callbacks#", client_callbacks);
-            client_class = client_class.Replace("#RegActions#", client_regcallbacks);
-            client_class = client_class.Replace("#AddRemove#", client_regcallbackadds);
+            if (!string.IsNullOrEmpty(m_client_path))
+            {
+                string client_class = clientTemplate;
+                client_class = client_class.Replace("#ProjectName#", m_project_name);
+                client_class = client_class.Replace("#ClassName#", className);
+                client_class = client_class.Replace("#Methods#", client_methods);
+                client_class = client_class.Replace("#Callbacks#", client_callbacks);
+                client_class = client_class.Replace("#RegActions#", client_regcallbacks);
+                client_class = client_class.Replace("#AddRemove#", client_regcallbackadds);
 
-            string clientFileName = m_service_name.Replace("Service", "Client");
-            clientFileName = m_client_path + @"Clients\" + clientFileName + ".cs";
-            CodeCommon.WriteFile(clientFileName, client_class);
-
-            //服务端注册action
-            regModuleStr += server_registers;
-
+                string clientFileName = m_service_name.Replace("Service", "Client");
+                clientFileName = m_client_path + clientFileName + ".cs";
+                CodeCommon.WriteFile(clientFileName, client_class);
+            }
+            
         }
 
 

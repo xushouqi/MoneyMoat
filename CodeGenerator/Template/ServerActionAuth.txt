@@ -42,7 +42,7 @@ namespace GodActions.Actions
 
 #ReadParams#
                 var retData = await m_service.#MethodName#(#Params#);
-				#ConvertReturn#
+				#MapperReturn#
                 m_return = data;
             }
             await base.DoAction();

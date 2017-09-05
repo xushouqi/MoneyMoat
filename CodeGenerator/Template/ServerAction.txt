@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using #ProjectName#.Services;
-using GodModels;
-using GodNetwork;
+using CommonLibs;
+using CommonNetwork;
 using AutoMapper;
 
-namespace GodActions.Actions
+namespace #ProjectName#.Actions
 {
 	#Attribute#
     public class Action#ActionId# : ActionBase<#ReturnType#>
     {
-        private readonly I#ServiceName# m_service;
+        private readonly #ServiceName# m_service;
 
         public Action#ActionId#(
-            I#ServiceName# service)
+            #ServiceName# service)
         {
             m_service = service;
             m_actionId = #ActionId#;
@@ -27,7 +27,7 @@ namespace GodActions.Actions
             {
 #ReadParams#
                 var retData = await m_service.#MethodName#(#Params#);
-				#ConvertReturn#
+				#MapperReturn#
                 m_return = data;
             }
             await base.DoAction();

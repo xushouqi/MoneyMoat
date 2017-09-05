@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -15,8 +13,8 @@ using MoneyMoat.Services;
 using IBApi;
 using Foundatio.Caching;
 using FluentScheduler;
-using AutoMapper;
-using CommonLibs;
+using CommonNetwork;
+using StockModels;
 
 namespace MoneyMoat
 {
@@ -58,6 +56,9 @@ namespace MoneyMoat
             //注册数据仓库（生成代码）
             services.AddRepositoryService(Environment, Configuration);
 
+            services.AddSingleton<IUserManager<UserData>, UserManager<UserData>>();
+            services.AddSingleton<IPushManager, PushManager>();
+
             services.AddSingleton(new IBClient(new EReaderMonitorSignal()));
             services.AddSingleton<IBManager>();
             services.AddSingleton<AnalyserService>();
@@ -72,10 +73,10 @@ namespace MoneyMoat
             // Add framework services.
             services.AddMvc();
 
-            Mapper.Initialize(cfg =>
-            {
-                //cfg.CreateMap<Account, AccountData>();
-            });
+            //AutoMapper
+            services.AddMapperModels(Environment, Configuration);
+            //Actions for WebSocket
+            services.AddRegisterActions(Environment, Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -87,6 +88,17 @@ namespace MoneyMoat
                 .AddNLog();
 
             app.UseMvc();
+
+            app.Map("/ws", (IApplicationBuilder ab) =>
+            {
+                var webSocketOptions = new WebSocketOptions()
+                {
+                    KeepAliveInterval = TimeSpan.FromSeconds(1200),
+                    ReceiveBufferSize = 4096
+                };
+                ab.UseWebSockets(webSocketOptions);
+                ab.UseMiddleware<SocketHandler<UserData>>();
+            });
 
             var services = app.ApplicationServices;
             var settings = services.GetRequiredService<IOptions<AppSettings>>().Value;

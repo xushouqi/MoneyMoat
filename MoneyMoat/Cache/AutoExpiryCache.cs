@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MoneyModels
+namespace MoneyMoat
 {
     public class AutoExpiryCache<TKey, TValue> : Cache<TKey, TValue>
     {

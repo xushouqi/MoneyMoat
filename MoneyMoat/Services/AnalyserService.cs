@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 using MoneyMoat.Messages;
-using MoneyMoat.Types;
-using MoneyModels;
+using StockModels;
 using YAXLib;
 using CommonLibs;
 using Polly;
@@ -17,6 +16,7 @@ using Polly.Bulkhead;
 
 namespace MoneyMoat.Services
 {
+    [WebSocket]
     [WebApi]
     public class AnalyserService
     {
@@ -49,16 +49,18 @@ namespace MoneyMoat.Services
         /// </summary>
         /// <param name="delay"></param>
         /// <returns></returns>
-        [Api]
-        public async Task<int> StopAllTasks(int delay)
+        [Api(ActionId = 1001, Tips = "停止所有后台任务")]
+        public async Task<ReturnData<int>> StopAllTasks(int delay)
         {
+            var retData = new ReturnData<int>(0);
             int count = m_cancelTokens.Count;
             foreach (var item in m_cancelTokens)
             {
                 item.Cancel();
             }
             m_cancelTokens.Clear();
-            return count;
+            retData.Data = count;
+            return retData;
         }
 
         /// <summary>
@@ -67,15 +69,17 @@ namespace MoneyMoat.Services
         /// <param name="interval">启动间隔</param>
         /// <param name="count">同时启动数量</param>
         /// <returns></returns>
-        [Api]
-        public async Task<int> UpdateAllFundamentals(bool forceUpdate)
+        [Api(ActionId = 1002, Tips = "更新所有基本面数据")]
+        public async Task<ReturnData<int>> UpdateAllFundamentals(bool forceUpdate)
         {
+            var retData = new ReturnData<int>(0);
             var datalist = await m_symbolService.GetAllAsync();
             var cts = new CancellationTokenSource();
             Task task = new Task(() => DoUpdateAllFundamentals(datalist, forceUpdate, cts.Token).Wait(), cts.Token);
             task.Start();
             m_cancelTokens.Add(cts);
-            return datalist.Count;
+            retData.Data = datalist.Count;
+            return retData;
         }
         private async Task DoUpdateAllFundamentals(List<Stock> datalist, bool forceUpdate, CancellationToken token)
         {
@@ -104,15 +108,17 @@ namespace MoneyMoat.Services
         /// <param name="interval">启动间隔</param>
         /// <param name="count">同时启动数量</param>
         /// <returns></returns>
-        [Api]
-        public async Task<int> UpdateAllHistoricals()
+        [Api(ActionId = 1003, Tips = "更新所有历史报价")]
+        public async Task<ReturnData<int>> UpdateAllHistoricals()
         {
+            var retData = new ReturnData<int>(0);
             var datalist = await m_symbolService.GetAllAsync();
             var cts = new CancellationTokenSource();
             Task task = new Task(() => DoUpdateAllHistoricals(datalist, cts.Token).Wait(), cts.Token);
             task.Start();
             m_cancelTokens.Add(cts);
-            return datalist.Count;
+            retData.Data = datalist.Count;
+            return retData;
         }
         private  async Task DoUpdateAllHistoricals(List<Stock> datalist, CancellationToken token)
         {
@@ -136,9 +142,10 @@ namespace MoneyMoat.Services
             }
         }
 
-        [Api]
-        public async Task<int> CalcFinSummary(string symbol)
+        [Api(ActionId = 1004)]
+        public async Task<ReturnData<int>> CalcFinSummary(string symbol)
         {
+            var retData = new ReturnData<int>(0);
             var repoSummary = (IRepository<FinSummary>)_services.GetService(typeof(IRepository<FinSummary>));
             var datalist = await repoSummary.WhereToArrayAsync(t=>t.Symbol == symbol);
             if (datalist != null && datalist.Length > 0)
@@ -199,7 +206,8 @@ namespace MoneyMoat.Services
                         sdata.FreeCashFlowYoY = (sdata.FreeCashFlowYoY - cashyoyData.FreeCashFlowYoY) / cashyoyData.FreeCashFlowYoY;
                 }
             }
-            return datalist.Length;
+            retData.Data = datalist.Length;
+            return retData;
         }
 
         private async Task<FinStatement> FindStatementBySummary(IRepository<FinStatement> repoStatement, string symbol, string period, DateTime date, string coaCode)
@@ -214,13 +222,16 @@ namespace MoneyMoat.Services
                                               && t.coaCode == coaCode);
         }
 
-        [Api]
-        public async Task<int> UpdateAndCalcFundamental(string symbol)
+        [Api(ActionId = 1005)]
+        public async Task<ReturnData<int>> UpdateAndCalcFundamental(string symbol)
         {
+            var retData = new ReturnData<int>(0);
             var fundamentalService = (FundamentalService)_services.GetService(typeof(FundamentalService));
             var ret = await fundamentalService.UpdateAllFromIB(symbol, true);
-            ret = await CalcFinSummary(symbol);
-            return ret;
+            var retSum = await CalcFinSummary(symbol);
+            if (retSum.ErrorCode == ErrorCodeEnum.Success)
+                retData.Data = retSum.Data;
+            return retData;
         }
     }
 }

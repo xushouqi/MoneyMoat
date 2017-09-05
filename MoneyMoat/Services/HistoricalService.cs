@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 using MoneyMoat.Messages;
-using MoneyMoat.Types;
-using MoneyModels;
 using IBApi;
 using Newtonsoft.Json;
 using CommonLibs;
+using StockModels;
 
 namespace MoneyMoat.Services
 {
@@ -21,13 +20,13 @@ namespace MoneyMoat.Services
         public const int HISTORICAL_ID_BASE = 30000000;
 
         private readonly IRepository<Stock> m_repoStock;
-        private readonly IRepository<XueQiuData> m_repoData;
+        private readonly IRepository<Historical> m_repoData;
         private int activeReqId = 0;
 
         public HistoricalService(IBManager ibmanager,
                         CommonManager commonManager,
                         IRepository<Stock> repoStock,
-                        IRepository<XueQiuData> repoData,
+                        IRepository<Historical> repoData,
                         ILogger<IBManager> logger) : base(ibmanager, logger, commonManager)
         {
             m_repoStock = repoStock;
@@ -39,9 +38,9 @@ namespace MoneyMoat.Services
         }
 
         [Api]
-        public async Task<XueQiuData> UpdateHistoricalDataFromXueQiu(string symbol)
+        public async Task<Historical> UpdateHistoricalDataFromXueQiu(string symbol)
         {
-            XueQiuData lastData = null;
+            Historical lastData = null;
             var stock = m_repoStock.Find(symbol);
             if (stock != null)
             {

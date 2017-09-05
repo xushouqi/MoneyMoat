@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Xml;
 using System.Security.Cryptography;
-using Microsoft.Extensions.Logging;
 
 namespace CommonLibs
 {
@@ -80,7 +78,7 @@ namespace CommonLibs
             return cipherBytes;
         }
 
-        public static string DecryptToString(byte[] input, int times, ILogger _loggerN = null)
+        public static string DecryptToString(byte[] input, int times)
         {
             string plainText = "";
             if (times < 3)
@@ -95,15 +93,14 @@ namespace CommonLibs
                 }
                 catch (Exception e)
                 {
-                    if (_loggerN != null)
-                        _loggerN.LogInformation(String.Format("DecryptToString, times={0}, Error={1}", times, e.Message));
-                    plainText = DecryptToString(input, times + 1, _loggerN);
+                    Console.WriteLine("DecryptToString, Error={0}", e.Message);
+                    plainText = DecryptToString(input, times + 1);
                 }
             }
             return plainText;
         }
 
-        public static string DecryptToString(string cipherText, ILogger _loggerN = null)
+        public static string DecryptToString(string cipherText)
         {
             string plainText = "";
             try
@@ -116,8 +113,7 @@ namespace CommonLibs
             }
             catch (Exception e)
             {
-                if (_loggerN != null)
-                    _loggerN.LogInformation(String.Format("Decrypt, Error={0}", e.Message));
+                Console.WriteLine("DecryptToString, Error={0}", e.Message);
             }
             return plainText;
         }

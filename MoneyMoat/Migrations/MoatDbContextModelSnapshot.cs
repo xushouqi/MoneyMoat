@@ -20,7 +20,7 @@ namespace MoneyMoat.Migrations
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452");
 
-            modelBuilder.Entity("MoneyModels.Financal", b =>
+            modelBuilder.Entity("CommonModels.Financal", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,7 +45,7 @@ namespace MoneyMoat.Migrations
                     b.ToTable("Financals");
                 });
 
-            modelBuilder.Entity("MoneyModels.FinStatement", b =>
+            modelBuilder.Entity("CommonModels.FinStatement", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,7 +80,7 @@ namespace MoneyMoat.Migrations
                     b.ToTable("FinStatements");
                 });
 
-            modelBuilder.Entity("MoneyModels.FinSummary", b =>
+            modelBuilder.Entity("CommonModels.FinSummary", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -141,7 +141,7 @@ namespace MoneyMoat.Migrations
                     b.ToTable("FinSummarys");
                 });
 
-            modelBuilder.Entity("MoneyModels.FYEstimate", b =>
+            modelBuilder.Entity("CommonModels.FYEstimate", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -178,7 +178,7 @@ namespace MoneyMoat.Migrations
                     b.ToTable("FYEstimates");
                 });
 
-            modelBuilder.Entity("MoneyModels.NPEstimate", b =>
+            modelBuilder.Entity("CommonModels.NPEstimate", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -209,7 +209,7 @@ namespace MoneyMoat.Migrations
                     b.ToTable("NPEstimates");
                 });
 
-            modelBuilder.Entity("MoneyModels.Stock", b =>
+            modelBuilder.Entity("CommonModels.Stock", b =>
                 {
                     b.Property<string>("Symbol")
                         .ValueGeneratedOnAdd();
@@ -245,7 +245,7 @@ namespace MoneyMoat.Migrations
                     b.ToTable("Stocks");
                 });
 
-            modelBuilder.Entity("MoneyModels.XueQiuData", b =>
+            modelBuilder.Entity("CommonModels.XueQiuData", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

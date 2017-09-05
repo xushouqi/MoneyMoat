@@ -8,7 +8,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 using System.Xml.Serialization;
 using IBApi;
-using MoneyModels;
+using StockModels;
 using MoneyMoat.Types;
 using MoneyMoat.Messages;
 

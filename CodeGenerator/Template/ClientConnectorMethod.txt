@@ -1,7 +1,7 @@
 ﻿		/// <summary>
         /// #Tips#
         /// </summary>
-        public static async Task<ReturnMessage<#ReturnType#>> #MethodName#(#MethodParams#)
+        public static async Task<#WithReturnType#> #MethodName#(#MethodParams#)
         {
             var content = new FormUrlEncodedContent(new Dictionary<string, string>()
             {
@@ -13,11 +13,11 @@
 			client.DefaultRequestHeaders.Clear();
             #TokenHeader#
             var response = await client.PostAsync(url, content);
-            ReturnMessage<#ReturnType#> ret = new ReturnMessage<#ReturnType#>("Error");
+            #WithReturnType# retData = default(#WithReturnType#);
             if (response.IsSuccessStatusCode)
             {
                 string tmp = response.Content.ReadAsStringAsync().Result;
-				ret = JsonConvert.DeserializeObject<ReturnMessage<#ReturnType#>>(tmp);
+				retData = JsonConvert.DeserializeObject<#WithReturnType#>(tmp);
             }
-            return ret;
+            return retData;
         }

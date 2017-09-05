@@ -9,8 +9,8 @@ using Microsoft.Extensions.Logging;
 using MoneyMoat.Messages;
 using IBApi;
 using AngleSharp.Parser.Html;
-using MoneyModels;
 using CommonLibs;
+using StockModels;
 
 namespace MoneyMoat.Services
 {
@@ -102,11 +102,11 @@ namespace MoneyMoat.Services
             if (data == null)
             {
                 var resuls = await SearchSymbolsAsync(symbol);
-                if (resuls != null && resuls.Length > 0)
+                if (resuls != null && resuls.Count > 0)
                 {
-                    m_logger.LogError("SearchSymbolsAsync, count={0}", resuls.Length);
+                    m_logger.LogError("SearchSymbolsAsync, count={0}", resuls.Count);
 
-                    for (int c = 0; c < resuls.Length; c++)
+                    for (int c = 0; c < resuls.Count; c++)
                     {
                         var detail = resuls[c];
                         if (symbol.Equals(detail.Contract.Symbol))
@@ -164,11 +164,11 @@ namespace MoneyMoat.Services
         /// </summary>
         /// <param name="pattern"></param>
         /// <returns></returns>
-        [Api]
-        public async Task<ContractDescription[]> SearchSymbolsAsync(string pattern)
+        public async Task<List<ContractDescription>> SearchSymbolsAsync(string pattern)
         {
             int reqId = MoatCommon.GetReqId(pattern);            
-            return await SendRequestAsync(reqId, ()=> m_clientSocket.reqMatchingSymbols(reqId, pattern));
+            var datas = await SendRequestAsync(reqId, ()=> m_clientSocket.reqMatchingSymbols(reqId, pattern));
+            return new List<ContractDescription>(datas);
         }
 
         private void HandleSymbolSamplesData(SymbolSamplesMessage message)
