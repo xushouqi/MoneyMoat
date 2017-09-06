@@ -6,6 +6,8 @@ using MoneyMoat.Services;
 using CommonLibs;
 using CommonNetwork;
 using AutoMapper;
+using StockModels;
+using StockModels.ViewModels;
 
 namespace MoneyMoat.Actions
 {

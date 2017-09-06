@@ -108,8 +108,8 @@ namespace CodeGenerator
                             {
                                 client_path = solutionPath + @"\ClientApiConnector\WebSocket\";
 
-                                GenerateWebSocketClient.InitPath(template_path, project_name, server_path, client_path);
-                                //GenerateWebSocketClient.GenerateFromService(myType);
+                                GenerateWebSocketClient.InitPath(modelsAssembly, template_path, project_name, server_path, client_path);
+                                GenerateWebSocketClient.GenerateFromService(myType);
 
                                 socketTypeList.Add(myType);
                             }

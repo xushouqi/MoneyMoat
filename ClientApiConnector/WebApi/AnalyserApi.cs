@@ -6,14 +6,12 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using CommonLibs;
 using CommonNetwork;
-using StockModels;
 using StockModels.ViewModels;
-using System.Text;
 using Newtonsoft.Json;
 
-namespace ClientApiConnector.MoneyMoat
+namespace ClientApi.MoneyMoat
 {
-    public class AnalyserConnector
+    public class AnalyserApi
     {
 		/*
         private static HttpClient _client = new HttpClient();
@@ -100,7 +98,7 @@ namespace ClientApiConnector.MoneyMoat
 		/// <summary>
         /// CalcFinSummary
         /// </summary>
-        public static async Task<ReturnData<int>> CalcFinSummary(string symbol)
+        public static async Task<ReturnData<List<FinSummaryData>>> CalcFinSummary(string symbol)
         {
             var content = new FormUrlEncodedContent(new Dictionary<string, string>()
             {
@@ -112,11 +110,11 @@ namespace ClientApiConnector.MoneyMoat
 			client.DefaultRequestHeaders.Clear();
             
             var response = await client.PostAsync(url, content);
-            ReturnData<int> retData = default(ReturnData<int>);
+            ReturnData<List<FinSummaryData>> retData = default(ReturnData<List<FinSummaryData>>);
             if (response.IsSuccessStatusCode)
             {
                 string tmp = response.Content.ReadAsStringAsync().Result;
-				retData = JsonConvert.DeserializeObject<ReturnData<int>>(tmp);
+				retData = JsonConvert.DeserializeObject<ReturnData<List<FinSummaryData>>>(tmp);
             }
             return retData;
         }

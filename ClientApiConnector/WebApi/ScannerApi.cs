@@ -6,14 +6,13 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using CommonLibs;
 using CommonNetwork;
-using StockModels;
 using StockModels.ViewModels;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace ClientApiConnector.MoneyMoat
+namespace ClientApi.MoneyMoat
 {
-    public class ScannerConnector
+    public class ScannerApi
     {
 		/*
         private static HttpClient _client = new HttpClient();

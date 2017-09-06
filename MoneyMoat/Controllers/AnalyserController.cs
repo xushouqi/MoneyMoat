@@ -195,7 +195,13 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("symbol"))
 				{
 					var retData = await _actionService.CalcFinSummary(tmp["symbol"]);
-					var data = retData;
+					var dataList = new List<FinSummaryData>();
+                    for (int i = 0; i < retData.Data.Count; i++)
+                        dataList.Add(Mapper.Map<FinSummaryData>(retData.Data[i]));
+                    var data = new ReturnData<List<FinSummaryData>>{
+                        ErrorCode = retData.ErrorCode,
+                        Data = dataList,
+                    };
 
 					if (data != null)
 					{
@@ -210,7 +216,13 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.CalcFinSummary(symbol);
-				var data = retData;
+				var dataList = new List<FinSummaryData>();
+                    for (int i = 0; i < retData.Data.Count; i++)
+                        dataList.Add(Mapper.Map<FinSummaryData>(retData.Data[i]));
+                    var data = new ReturnData<List<FinSummaryData>>{
+                        ErrorCode = retData.ErrorCode,
+                        Data = dataList,
+                    };
 
 				if (data != null)
 				{

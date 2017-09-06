@@ -94,8 +94,6 @@ namespace CodeGenerator
             //NetworkClient
             if (!string.IsNullOrEmpty(m_client_path))
             {
-                CodeCommon.WriteNetworkClient(m_template_path, m_client_path, defineClient, declareClient);
-
                 string networkd_client = CodeCommon.GetTemplate(m_template_path, "NetworkClient.txt");
                 networkd_client = networkd_client.Replace("#DefineClient#", defineClient);
                 networkd_client = networkd_client.Replace("#DeclareClient#", declareClient);

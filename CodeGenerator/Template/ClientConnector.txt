@@ -6,12 +6,10 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using CommonLibs;
 using CommonNetwork;
-using #ModelProject#;
 using #ModelProject#.ViewModels;
-using System.Text;
 using Newtonsoft.Json;
 
-namespace ClientApiConnector.#ServerName#
+namespace ClientApi.#ServerName#
 {
     public class #ClassName#
     {

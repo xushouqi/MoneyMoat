@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CommonLibs\CommonLibs.csproj" />
     <ProjectReference Include="..\CommonNetwork\CommonNetwork.csproj" />
+    <ProjectReference Include="..\StockModels\StockModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>

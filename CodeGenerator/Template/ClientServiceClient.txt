@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using GodModels;
-using System.Net.WebSockets;
-using GodFramework;
+using CommonLibs;
+using #ModelProject#.ViewModels;
 
-namespace GodFramework.#ProjectName#
+namespace CommonNetwork.#ProjectName#
 {
 	public class #ClassName#Client
 	{

@@ -9,30 +9,88 @@ namespace CodeGenerator
 {
     class CodeCommon
     {
-        public static void WriteFileRegisterModule(string project_name, string template_path, string server_path, string server_registers)
+        public static void ParseReturnType(Type methodReturnType, Type attriReturnType, string modelPrject, 
+            ref string methodReturnTypeName, ref string returnTypeName, ref string mapperReturn, ref string innerType)
         {
-            string server_regmodule = GetTemplate(template_path, "RegisterModule.txt");
-            server_regmodule = server_regmodule.Replace("#Action#", server_registers);
-            server_regmodule = server_regmodule.Replace("#ProjectName#", project_name);
-            string regFileName = server_path + "RegisterModule.cs";
-            WriteFile(regFileName, server_regmodule);
-        }
 
-        public static void WriteFilePushManager(string project_name, string template_path, string server_path, string server_regActionidByType)
-        {
-            string server_regmodule = GetTemplate(template_path, "TeamPushManager.txt");
-            server_regmodule = server_regmodule.Replace("#RegActionIdByType#", server_regActionidByType);
-            string regFileName = server_path + "TeamPushManager.cs";
-            WriteFile(regFileName, server_regmodule);
-        }
+            methodReturnTypeName = methodReturnType.FullName;
+            bool isReturnData = methodReturnTypeName.Contains("ReturnData");
+            bool needMapper = methodReturnTypeName.Contains(modelPrject);
 
-        public static void WriteNetworkClient(string template_path, string client_path, string defineClient, string declareClient)
-        {
-            string server_regmodule = GetTemplate(template_path, "NetworkClient.txt");
-            server_regmodule = server_regmodule.Replace("#DefineClient#", defineClient);
-            server_regmodule = server_regmodule.Replace("#DeclareClient#", declareClient);
-            string regFileName = client_path + "NetworkClient.cs";
-            WriteFile(regFileName, server_regmodule);
+            //使用返回值结构
+            methodReturnTypeName = CodeCommon.GetReturnTypeName(methodReturnTypeName);
+            methodReturnTypeName = CodeCommon.GetSimpleTypeName(methodReturnTypeName);
+            //提取实际返回值类型
+            returnTypeName = methodReturnTypeName;
+            //获取<>前的类型
+            innerType = returnTypeName;
+
+            //api设定的返回类型
+            if (attriReturnType != null)
+            {
+                returnTypeName = attriReturnType.FullName;
+                returnTypeName = CodeCommon.GetReturnTypeName(returnTypeName);
+                returnTypeName = CodeCommon.GetSimpleTypeName(returnTypeName);
+            }
+            //todo: 总是mapper类型
+            else if (needMapper)
+            {
+                //获取List中的类型
+                var mc = Regex.Match(returnTypeName, "[A-Za-z]*(?=>)");
+                if (mc != null && mc.Length > 0)
+                {
+                    innerType = mc.Value + "Data";
+                    //获取<>前的类型
+                    mc = Regex.Match(returnTypeName, "[A-Za-z]*(?=<)");
+                    if (mc != null && mc.Length > 0)
+                        returnTypeName = mc.Value + "<" + innerType + ">";
+                }
+                else
+                    returnTypeName = returnTypeName + "Data";
+            }
+
+            mapperReturn = "";
+            if (needMapper)
+            {
+                if (isReturnData)
+                {
+                    var mc = Regex.Match(returnTypeName, "[A-Za-z]*(?=>)");
+                    if (mc != null && mc.Length > 0)
+                    {
+                        mapperReturn += "var dataList = new " + returnTypeName + "();\n";
+                        mapperReturn += "                    for (int i = 0; i < retData.Data.Count; i++)\n";
+                        mapperReturn += "                        dataList.Add(Mapper.Map<" + innerType + ">(retData.Data[i]));\n";
+
+                        mapperReturn += "                    var data = new ReturnData<" + returnTypeName + ">{\n";
+                        mapperReturn += "                        ErrorCode = retData.ErrorCode,\n";
+                        mapperReturn += "                        Data = dataList,\n";
+                        mapperReturn += "                    };\n";
+                    }
+                    else
+                    {
+                        mapperReturn += "var data = new ReturnData<" + returnTypeName + ">{\n";
+                        mapperReturn += "                    ErrorCode = retData.ErrorCode,\n";
+                        mapperReturn += "                    Data = Mapper.Map<" + returnTypeName + ">(retData.Data),\n";
+                        mapperReturn += "                };\n";
+                    }
+                }
+                else
+                {
+                    var mc = Regex.Match(returnTypeName, "[A-Za-z]*(?=>)");
+                    if (mc != null && mc.Length > 0)
+                    {
+                        mapperReturn += "var data = new " + returnTypeName + "();\n";
+                        mapperReturn += "                    for (int i = 0; i < retData.Count; i++)\n";
+                        mapperReturn += "                        data.Add(Mapper.Map<" + innerType + ">(retData[i]));\n";
+                    }
+                    else
+                    {
+                        mapperReturn += "var data = Mapper.Map<" + returnTypeName + ">(retData);\n";
+                    }
+                }
+            }
+            else
+                mapperReturn += "var data = retData;\n";
         }
 
         public static string GetTemplate(string temp_path, string filename)

@@ -6,6 +6,8 @@ using #ProjectName#.Services;
 using CommonLibs;
 using CommonNetwork;
 using AutoMapper;
+using #ModelProject#;
+using #ModelProject#.ViewModels;
 
 namespace #ProjectName#.Actions
 {

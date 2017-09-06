@@ -15,13 +15,15 @@ namespace CodeGenerator
         static string m_client_path = string.Empty;
         static string m_service_name = string.Empty;
         static string m_project_name = string.Empty;
+        static Assembly m_modelAssembly = null;
 
-        public static void InitPath(string template, string projectname, string server, string client)
+        public static void InitPath(Assembly modelAssembly, string template, string projectname, string server, string client)
         {
             m_project_name = projectname;
             m_template_path = template;
             m_server_path = server;
             m_client_path = client;
+            m_modelAssembly = modelAssembly;
         }
 
         public static void GenerateFromService<T>()
@@ -32,6 +34,8 @@ namespace CodeGenerator
         public static void GenerateFromService(System.Type vType)
         {
             m_service_name = vType.Name;
+
+            string modelPrject = m_modelAssembly.FullName.Split(",")[0];
 
             //eg: User
             string className = m_service_name.Replace("Service", "");
@@ -68,36 +72,14 @@ namespace CodeGenerator
                     string methodReturnTypeName = methodReturnType.FullName;
                     bool isReturnData = methodReturnTypeName.Contains("ReturnData");
 
-                    //使用返回值结构
-                    methodReturnTypeName = CodeCommon.GetReturnTypeName(methodReturnTypeName);
-                    methodReturnTypeName = CodeCommon.GetSimpleTypeName(methodReturnTypeName);
                     //提取实际返回值类型
                     string returnTypeName = methodReturnTypeName;
-                    //api设定的返回类型
-                    if (attributes.ReturnType != null)
-                    {
-                        returnTypeName = attributes.ReturnType.FullName;
-                        returnTypeName = CodeCommon.GetReturnTypeName(returnTypeName);
-                        returnTypeName = CodeCommon.GetSimpleTypeName(returnTypeName);
-                    }
-
+                    //获取<>前的类型
+                    string innerType = returnTypeName;
                     string mapperReturn = "";
-                    if (attributes.ReturnType != null)
-                    {
-                        if (isReturnData)
-                        {
-                            mapperReturn += "var data = new ReturnData<" + returnTypeName + ">{\n";
-                            mapperReturn += "                    ErrorCode = retData.ErrorCode,\n";
-                            mapperReturn += "                    Data = Mapper.Map<" + returnTypeName + ">(retData.Data),\n";
-                            mapperReturn += "                };\n";
-                        }
-                        else
-                        {
-                            mapperReturn += "var data = Mapper.Map<" + returnTypeName + ">(retData.Data);\n";
-                        }
-                    }
-                    else
-                        mapperReturn += "var data = retData;\n";
+
+                    CodeCommon.ParseReturnType(methodReturnType, attributes.ReturnType, modelPrject,
+                        ref methodReturnTypeName, ref returnTypeName, ref mapperReturn, ref innerType);
 
                     string serverInputParams = "";
                     string serverUseParams = "";
@@ -214,6 +196,7 @@ namespace CodeGenerator
 
                     string server_action = attributes.AuthIDType != AuthIDTypeEnum.None ? serverActionAuthTemplate : serverActionTemplate;
                     server_action = server_action.Replace("#ProjectName#", m_project_name);
+                    server_action = server_action.Replace("#ModelProject#", modelPrject);
                     server_action = server_action.Replace("#ServiceName#", m_service_name);
                     server_action = server_action.Replace("#MethodName#", vMethodInfo.Name);
                     server_action = server_action.Replace("#ActionId#", attributes.ActionId.ToString());
@@ -235,6 +218,7 @@ namespace CodeGenerator
             {
                 string client_class = clientTemplate;
                 client_class = client_class.Replace("#ProjectName#", m_project_name);
+                client_class = client_class.Replace("#ModelProject#", modelPrject);
                 client_class = client_class.Replace("#ClassName#", className);
                 client_class = client_class.Replace("#Methods#", client_methods);
                 client_class = client_class.Replace("#Callbacks#", client_callbacks);

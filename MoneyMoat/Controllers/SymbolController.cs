@@ -82,6 +82,57 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        public async Task<IActionResult> GetAllAsync(string sign)
+        {
+			string design = string.Empty;
+            if (!string.IsNullOrEmpty(sign))
+            {
+                design = RsaService.DecryptToString(sign);
+            }
+            else if (Request.ContentLength != null)
+            {
+                byte[] datas = new byte[(int)Request.ContentLength];
+                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
+                design = RsaService.DecryptToString(datas, 0);
+            }
+            if (!string.IsNullOrEmpty(design))
+            {
+				var tmp = Common.QueryStringToData(design);
+				if (tmp != null)
+				{
+					var retData = await _actionService.GetAllAsync();
+					var data = new List<StockData>();
+                    for (int i = 0; i < retData.Count; i++)
+                        data.Add(Mapper.Map<StockData>(retData[i]));
+
+					if (data != null)
+					{
+						return new OkObjectResult(data);
+					}
+					else
+						return NoContent();
+				}
+				else
+					return new UnauthorizedResult();
+            }
+            else
+            {
+				var retData = await _actionService.GetAllAsync();
+				var data = new List<StockData>();
+                    for (int i = 0; i < retData.Count; i++)
+                        data.Add(Mapper.Map<StockData>(retData[i]));
+
+				if (data != null)
+				{
+					return new OkObjectResult(data);
+				}
+				else
+					return NoContent();
+            }
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> UpdateStock(string name, string symbol, string category, bool saveToDb, string sign)
         {
 			string design = string.Empty;

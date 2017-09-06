@@ -6,11 +6,13 @@ using MoneyMoat.Services;
 using CommonLibs;
 using CommonNetwork;
 using AutoMapper;
+using StockModels;
+using StockModels.ViewModels;
 
 namespace MoneyMoat.Actions
 {
 	
-    public class Action1004 : ActionBase<int>
+    public class Action1004 : ActionBase<List<FinSummaryData>>
     {
         private readonly AnalyserService m_service;
 
@@ -28,7 +30,13 @@ namespace MoneyMoat.Actions
                 var symbol = m_params.ReadString();
 
                 var retData = await m_service.CalcFinSummary(symbol);
-				var data = retData;
+				var dataList = new List<FinSummaryData>();
+                    for (int i = 0; i < retData.Data.Count; i++)
+                        dataList.Add(Mapper.Map<FinSummaryData>(retData.Data[i]));
+                    var data = new ReturnData<List<FinSummaryData>>{
+                        ErrorCode = retData.ErrorCode,
+                        Data = dataList,
+                    };
 
                 m_return = data;
             }

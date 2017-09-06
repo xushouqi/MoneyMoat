@@ -143,14 +143,15 @@ namespace MoneyMoat.Services
         }
 
         [Api(ActionId = 1004)]
-        public async Task<ReturnData<int>> CalcFinSummary(string symbol)
+        public async Task<ReturnData<List<FinSummary>>> CalcFinSummary(string symbol)
         {
-            var retData = new ReturnData<int>(0);
+            var retData = new ReturnData<List<FinSummary>>();
             var repoSummary = (IRepository<FinSummary>)_services.GetService(typeof(IRepository<FinSummary>));
             var datalist = await repoSummary.WhereToArrayAsync(t=>t.Symbol == symbol);
             if (datalist != null && datalist.Length > 0)
             {
-                List<FinSummary> tmplist = new List<FinSummary>();
+                var tmplist = new List<FinSummary>();
+
                 int count = 0;
                 var repoStatement = (IRepository<FinStatement>)_services.GetService(typeof(IRepository<FinStatement>));
                 for (int i = 0; i < datalist.Length; i++)
@@ -205,8 +206,9 @@ namespace MoneyMoat.Services
                     if (cashyoyData != null)
                         sdata.FreeCashFlowYoY = (sdata.FreeCashFlowYoY - cashyoyData.FreeCashFlowYoY) / cashyoyData.FreeCashFlowYoY;
                 }
+                retData.Data = tmplist;
+                retData.ErrorCode = ErrorCodeEnum.Success;
             }
-            retData.Data = datalist.Length;
             return retData;
         }
 
@@ -230,7 +232,7 @@ namespace MoneyMoat.Services
             var ret = await fundamentalService.UpdateAllFromIB(symbol, true);
             var retSum = await CalcFinSummary(symbol);
             if (retSum.ErrorCode == ErrorCodeEnum.Success)
-                retData.Data = retSum.Data;
+                retData.Data = retSum.Data.Count;
             return retData;
         }
     }

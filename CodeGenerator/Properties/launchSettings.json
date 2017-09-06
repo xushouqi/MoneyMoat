@@ -2,7 +2,7 @@
   "profiles": {
     "CodeGenerator": {
       "commandName": "Project",
-      "commandLineArgs": " D:\\Projects\\MoneyMoat\\MoneyMoat\\bin\\Debug\\netcoreapp2.0\\MoneyMoat.dll"
+      "commandLineArgs": "c:\\svn\\MoneyMoat\\MoneyMoat\\bin\\Debug\\netcoreapp2.0\\MoneyMoat.dll"
     }
   }
 }

@@ -34,7 +34,7 @@ namespace CodeGenerator
 
         public static void GenerateFromService(System.Type vType)
         {
-            string connectorName = vType.Name.Replace("Service", "Connector");
+            string connectorName = vType.Name.Replace("Service", "Api");
             string controllerName = vType.Name.Replace("Service", "Controller");
             //string interfaceName = "I" + vType.Name;
             string interfaceName = vType.FullName;
@@ -177,44 +177,15 @@ namespace CodeGenerator
 
                             string methodReturnTypeName = methodReturnType.FullName;
                             bool isReturnData = methodReturnTypeName.Contains("ReturnData");
-                            bool needMapper = methodReturnTypeName.Contains(modelPrject);
 
-                            //使用返回值结构
-                            methodReturnTypeName = CodeCommon.GetReturnTypeName(methodReturnTypeName);                            
-                            methodReturnTypeName = CodeCommon.GetSimpleTypeName(methodReturnTypeName);
                             //提取实际返回值类型
                             string returnTypeName = methodReturnTypeName;
-
-                            //api设定的返回类型
-                            if (attributes.ReturnType != null)
-                            {
-                                returnTypeName = attributes.ReturnType.FullName;
-                                returnTypeName = CodeCommon.GetReturnTypeName(returnTypeName);
-                                returnTypeName = CodeCommon.GetSimpleTypeName(returnTypeName);
-                            }
-                            //todo: 总是mapper类型
-                            else if (needMapper)
-                            {
-                                returnTypeName = returnTypeName + "Data";
-                            }
-
+                            //获取<>前的类型
+                            string innerType = returnTypeName;
                             string mapperReturn = "";
-                            if (needMapper)
-                            {
-                                if (isReturnData)
-                                {
-                                    mapperReturn += "var data = new ReturnData<" + returnTypeName + ">{\n";
-                                    mapperReturn += "                    ErrorCode = retData.ErrorCode,\n";
-                                    mapperReturn += "                    Data = Mapper.Map<" + returnTypeName + ">(retData.Data),\n";
-                                    mapperReturn += "                };\n";
-                                }
-                                else
-                                {
-                                    mapperReturn += "var data = Mapper.Map<" + returnTypeName + ">(retData);\n";
-                                }
-                            }
-                            else
-                                mapperReturn += "var data = retData;\n";
+
+                            CodeCommon.ParseReturnType(methodReturnType, attributes.ReturnType, modelPrject,
+                                ref methodReturnTypeName, ref returnTypeName, ref mapperReturn, ref innerType);
 
 
                             //method模版

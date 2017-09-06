@@ -2,7 +2,7 @@
 		private Action<ErrorCodeEnum, #ReturnType#> m_#MethodName#Callback = null;
 		private Action<ErrorCodeEnum, #ReturnType#> m_#MethodName#CallbackAdd = null;
 
-		void On#MethodName#CallBack(GodPackage package)
+		void On#MethodName#CallBack(WebPackage package)
 		{
 			if (m_#MethodName#Callback != null || m_#MethodName#CallbackAdd != null)
 			{
