@@ -103,10 +103,14 @@ namespace MoneyMoat.Services
                 if (!IsConnected && !m_isConnecting)
                 {
                     m_isConnecting = true;
-                    
-                    Action<DelegateResult<bool>, TimeSpan> onRetry = (exception, timespan) =>
+
+                    Action<DelegateResult<bool>, TimeSpan> onRetryForever = (exception, timespan) =>
                     {
                         m_logger.LogError("ibManager.Connect onRetry: wait: {0}s", timespan.TotalSeconds);
+                    };
+                    Action<DelegateResult<bool>, int> onRetry = (exception, timespan) =>
+                    {
+                        m_logger.LogError("ibManager.Connect onRetry: wait: {0}s", timespan);
                     };
                     Action<DelegateResult<bool>, TimeSpan> onBreak = (exception, timespan) =>
                     {
@@ -120,9 +124,11 @@ namespace MoneyMoat.Services
                         var retry = Policy
                                         .Handle<Exception>()
                                         .OrResult<bool>(t => t == false)
-                                        //.HandleResult<bool>(t => t == false)
-                                        .WaitAndRetryForever(retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
-                                                            onRetry)
+                                         //.HandleResult<bool>(t => t == false)
+                                         //.WaitAndRetryForever(retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)),
+                                         //                    onRetryForever)
+                                         .WaitAndRetry(5, retryAttempt =>
+                                                            TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)))
                                         ;
                         //重试次数过多后先断开，稍后再试
                         var circuitBreak = Policy
