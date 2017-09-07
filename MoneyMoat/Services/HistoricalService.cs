@@ -83,7 +83,7 @@ namespace MoneyMoat.Services
                                 
                                 m_repoData.Add(data);
                                 count++;
-                                if (count >= 100)
+                                if (count >= 10)
                                 {
                                     await m_repoData.SaveChangesAsync();
                                     m_logger.LogWarning("UpdateHistoricalData {0} Count={1}", symbol, count);
