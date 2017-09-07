@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Concurrent;
 using CommonLibs;
+using StockModels.ViewModels;
 
 namespace CommonNetwork
 {

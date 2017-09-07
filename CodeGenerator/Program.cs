@@ -5,40 +5,63 @@ using System.IO;
 using System.Runtime.Loader;
 using System.Reflection;
 using CommonLibs;
+using PowerArgs;
 
 namespace CodeGenerator
 {
+    public class MyArgs
+    {
+        [ArgRequired(PromptIfMissing = true)]
+        [ArgPosition(0)]
+        public string TemplatePath { get; set; }
+
+        [ArgPosition(1)]
+        [ArgRequired(PromptIfMissing = true)]
+        public string TargetDll { get; set; }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            Process pInfo = Process.GetCurrentProcess();
-            string filePath = pInfo.MainModule.FileName;
-            if (!filePath.Contains("CodeGenerator"))
-                filePath = Directory.GetCurrentDirectory();
-            else
-                filePath = filePath.Substring(0, filePath.LastIndexOf(@"\"));
-
-            if (args.Length > 0)
+            try
             {
-                string basePath = filePath;
-                int lastOfPath = filePath.LastIndexOf(@"\CodeGenerator");
+                var parsed = Args.Parse<MyArgs>(args);
+                Console.WriteLine("TemplatePath={0}, TargetDll={1}", parsed.TemplatePath, parsed.TargetDll);
+
+                Process pInfo = Process.GetCurrentProcess();
+                //运行目录
+                string runPath = pInfo.MainModule.FileName;
+                if (!runPath.Contains("CodeGenerator"))
+                    runPath = Directory.GetCurrentDirectory();
+                else
+                    runPath = runPath.Substring(0, runPath.LastIndexOf(@"\"));
+
+                //工程目录
+                string solutionPath = runPath;
+                int lastOfPath = runPath.LastIndexOf(@"\CodeGenerator");
                 if (lastOfPath > 0)
-                    basePath = filePath.Substring(0, lastOfPath);
+                    solutionPath = runPath.Substring(0, lastOfPath);
 
-                string template_path = basePath + @"\CodeGenerator\Template\";
+                //模版地址
+                string template_path = parsed.TemplatePath;
+                if (!template_path.EndsWith(@"\"))
+                    template_path += @"\";
+                Console.WriteLine("template_path={0}", template_path);
 
-                Console.WriteLine("CodeGenerator.Start, args={0}, template_path={1}", args.Length, template_path);
+                //目标项目文件
+                string dllfile = parsed.TargetDll;
 
-                string dllfile = args[0];
+                int lastOfP = dllfile.LastIndexOf(@"\");
+                //dll目录
+                var dllPath = runPath + @"\" + dllfile.Substring(0, lastOfP);
+                Console.WriteLine("dllPath={0}", dllPath);
 
                 //取项目名称
-                int lastOfP = dllfile.LastIndexOf(@"\");
                 string project_name = dllfile.Substring(lastOfP + 1, dllfile.LastIndexOf(".") - lastOfP - 1);
-
-                string solutionPath = basePath;
+                Console.WriteLine("project_name={0}", project_name);
 
                 string server_path = "";
                 string client_path = "";
@@ -48,7 +71,6 @@ namespace CodeGenerator
                 Assembly commonAssembly = null;
                 Assembly modelsAssembly = null;
 
-                var dllPath = basePath + @"\" + dllfile.Substring(0, dllfile.LastIndexOf(@"\"));
                 //加载同一目录下的所有dll
                 var files = Directory.GetFiles(dllPath, "*.dll");
                 foreach (var file in files)
@@ -121,7 +143,7 @@ namespace CodeGenerator
                 {
                     client_path = "";
 
-                    GenerateWebSocketClasses.InitPath(template_path, project_name, server_path, client_path);
+                    GenerateWebSocketClasses.InitPath(modelsAssembly, template_path, project_name, server_path, client_path);
                     GenerateWebSocketClasses.GenerateFromService(socketTypeList.ToArray());
                 }
 
@@ -153,12 +175,16 @@ namespace CodeGenerator
 
                 if (dataTypeList.Count > 0)
                 {
-                    string models_path = basePath + @"\"+ project_name + @"\ViewModels\";
+                    string models_path = solutionPath + @"\" + project_name + @"\ViewModels\";
 
                     GenerateDataModel.InitPath(template_path, project_name, server_path, models_path);
                     GenerateDataModel.GenerateFromData(dataTypeList.ToArray());
                 }
-
+            }
+            catch (ArgException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ArgUsage.GenerateUsageFromTemplate<MyArgs>());
             }
         }
     }

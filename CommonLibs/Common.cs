@@ -181,7 +181,7 @@ namespace CommonLibs
                 }
                 else
                 {
-                    Match mc = Regex.Match(stype, @"Models.[A-Za-z]*");
+                    Match mc = Regex.Match(stype, @"Models\.(?!ViewModels)[A-Za-z]*");
                     if (mc != null && mc.Length > 0)
                         clid_type = mc.Value.Substring("Models.".Length, mc.Value.Length - 0);
                 }
@@ -245,7 +245,7 @@ namespace CommonLibs
 
         static string TryParseTypeName(string methodReturnTypeName)
         {
-            var mc = GetSubTypeName(ref methodReturnTypeName, @"Models\.[A-Za-z]*");
+            var mc = GetSubTypeName(ref methodReturnTypeName, @"Models\.(?!ViewModels)[A-Za-z]*");
             if (mc == null || mc.Length == 0)
             {
                 mc = GetSubTypeName(ref methodReturnTypeName, @"System\.[A-Za-z]*");

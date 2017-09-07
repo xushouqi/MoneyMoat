@@ -264,7 +264,6 @@ namespace CodeGenerator
 
             string controllerFilename = m_server_path + @"\Controllers\" + controllerName + ".cs";
             CodeCommon.WriteFile(controllerFilename, server_controller_file);
-            Console.WriteLine("Write ServerFile: " + controllerFilename);
 
             //客户端
             if (!string.IsNullOrEmpty(m_client_path))
@@ -278,7 +277,6 @@ namespace CodeGenerator
 
                 string connectorFilename = m_client_path + connectorName + ".cs";
                 CodeCommon.WriteFile(connectorFilename, client_connector_file);
-                Console.WriteLine("Write ClientFile: " + connectorFilename);
             }
         }
 

@@ -40,9 +40,9 @@ namespace MoneyMoat.Services
         }
 
         [Api(ActionId = 1000, Tips = "獲取股票代碼")]
-        public async Task<int> UpdateStockSymbolsFromSina()
+        public async Task<int> UpdateStockSymbolsFromSina(bool saveToDb)
         {
-            return await m_symbolService.UpdateSymbolsFromSina();
+            return await m_symbolService.UpdateSymbolsFromSina(saveToDb);
         }
 
         /// <summary>

@@ -11,13 +11,15 @@ namespace CodeGenerator
         static string m_server_path = string.Empty;
         static string m_client_path = string.Empty;
         static string m_project_name = string.Empty;
+        static Assembly m_modelAssembly = null;
 
-        public static void InitPath(string template, string projectname, string server, string client)
+        public static void InitPath(Assembly modelAssembly, string template, string projectname, string server, string client)
         {
             m_project_name = projectname;
             m_template_path = template;
             m_server_path = server;
             m_client_path = client;
+            m_modelAssembly = modelAssembly;
         }
 
         public static void GenerateFromService(Type[] types)
@@ -26,6 +28,8 @@ namespace CodeGenerator
             string regActionIdByType = "";
             string defineClient = "";
             string declareClient = "";
+
+            string modelPrject = m_modelAssembly.FullName.Split(",")[0];
 
             for (int i = 0; i < types.Length; i++)
             {
@@ -87,6 +91,7 @@ namespace CodeGenerator
             //PushManager
             string pushmanager = CodeCommon.GetTemplate(m_template_path, "PushManager.txt");
             pushmanager = pushmanager.Replace("#RegActionIdByType#", regActionIdByType);
+            pushmanager = pushmanager.Replace("#ModelProject#", modelPrject);
 
             string pushFile = m_server_path + @"\Actions\" + "PushManager.cs";
             CodeCommon.WriteFile(pushFile, pushmanager);

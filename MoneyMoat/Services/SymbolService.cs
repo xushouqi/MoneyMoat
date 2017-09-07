@@ -43,7 +43,7 @@ namespace MoneyMoat.Services
 
         List<string> m_categories = new List<string>();
 
-        public async Task<int> UpdateSymbolsFromSina()
+        public async Task<int> UpdateSymbolsFromSina(bool saveToDb)
         {            
             var parser = new HtmlParser();
             var count = 0;
@@ -69,7 +69,7 @@ namespace MoneyMoat.Services
                             var name = node.InnerHtml.Replace("(" + symbol + ")", "");
                             Console.WriteLine("{0}: {1}", symbol, name);
 
-                            await UpdateStock(name, symbol, m_categories[i], false);
+                            await UpdateStock(name, symbol, m_categories[i], saveToDb);
                             count++;
                         }
                     }

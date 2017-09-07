@@ -29,11 +29,11 @@ namespace ClientApi.MoneyMoat
 				/// <summary>
         /// 獲取股票代碼
         /// </summary>
-        public static async Task<int> UpdateStockSymbolsFromSina()
+        public static async Task<int> UpdateStockSymbolsFromSina(bool saveToDb)
         {
             var content = new FormUrlEncodedContent(new Dictionary<string, string>()
             {
-				
+				{ "saveToDb", saveToDb.ToString()}
             });
 			
             string url = ClientCommon.GetUrl("MoneyMoat") + "/Analyser/UpdateStockSymbolsFromSina";

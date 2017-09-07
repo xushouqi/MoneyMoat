@@ -23,11 +23,12 @@ namespace CommonNetwork.MoneyMoat
 		}
 
 		    
-		public void SubmitUpdateStockSymbolsFromSina(Action<ErrorCodeEnum, int> callback)
+		public void SubmitUpdateStockSymbolsFromSina(bool saveToDb, Action<ErrorCodeEnum, int> callback)
 		{
 			if (m_client.CheckConnection() && m_UpdateStockSymbolsFromSinaCallback == null)
 			{
 				var pars = new PackageParams();
+			    pars.WriteByte(saveToDb);
 
 				var pardata = pars.PopBuffer();
 				pars.Dispose();
@@ -39,12 +40,13 @@ namespace CommonNetwork.MoneyMoat
 		}
 	
     
-		public async Task<ReturnData<int>> SubmitUpdateStockSymbolsFromSinaAsync()
+		public async Task<ReturnData<int>> SubmitUpdateStockSymbolsFromSinaAsync(bool saveToDb)
 		{
 			ReturnData<int> retData = null;
             if (m_client.CheckConnection())
             {
                 var pars = new PackageParams();
+			    pars.WriteByte(saveToDb);
 
                 var pardata = pars.PopBuffer();
                 pars.Dispose();

@@ -29,25 +29,43 @@ namespace CodeGenerator
             //api设定的返回类型
             if (attriReturnType != null)
             {
+                needMapper = true;
                 returnTypeName = attriReturnType.FullName;
                 returnTypeName = Common.GetReturnTypeName(returnTypeName);
                 returnTypeName = Common.GetSimpleTypeName(returnTypeName);
+                innerType = returnTypeName;
+
+                Console.WriteLine("attriReturnType.returnTypeName={0}", returnTypeName);
             }
+            
             //todo: 总是mapper类型
-            else if (needMapper)
+            if (needMapper)
             {
                 //获取List中的类型
                 var mc = Regex.Match(returnTypeName, "[A-Za-z]*(?=>)");
                 if (mc != null && mc.Length > 0)
                 {
-                    innerType = mc.Value + "Data";
+                    innerType = mc.Value;
+                    if (!innerType.Contains("Data"))
+                        innerType = innerType + "Data";
+                    Console.WriteLine("innerType={0}", innerType);
+
                     //获取<>前的类型
                     mc = Regex.Match(returnTypeName, "[A-Za-z]*(?=<)");
                     if (mc != null && mc.Length > 0)
+                    {
                         returnTypeName = mc.Value + "<" + innerType + ">";
+
+                        Console.WriteLine("获取<>前的类型.returnTypeName={0}", returnTypeName);
+                    }
                 }
                 else
-                    returnTypeName = returnTypeName + "Data";
+                {
+                    if (!returnTypeName.Contains("Data"))
+                        returnTypeName = returnTypeName + "Data";
+
+                    Console.WriteLine("returnTypeName + \"Data\"={0}", returnTypeName);
+                }
             }
 
             mapperReturn = "";
@@ -71,7 +89,7 @@ namespace CodeGenerator
                     {
                         mapperReturn += "var data = new ReturnData<" + returnTypeName + ">{\n";
                         mapperReturn += "                    ErrorCode = retData.ErrorCode,\n";
-                        mapperReturn += "                    Data = Mapper.Map<" + returnTypeName + ">(retData.Data),\n";
+                        mapperReturn += "                    Data = Mapper.Map<" + innerType + ">(retData.Data),\n";
                         mapperReturn += "                };\n";
                     }
                 }

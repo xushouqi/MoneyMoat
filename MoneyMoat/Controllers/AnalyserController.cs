@@ -35,7 +35,7 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> UpdateStockSymbolsFromSina(string sign)
+        public async Task<IActionResult> UpdateStockSymbolsFromSina(bool saveToDb, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -51,9 +51,9 @@ namespace MoneyMoat.Controllers
             if (!string.IsNullOrEmpty(design))
             {
 				var tmp = Common.QueryStringToData(design);
-				if (tmp != null)
+				if (tmp != null && tmp.ContainsKey("saveToDb"))
 				{
-					var retData = await _actionService.UpdateStockSymbolsFromSina();
+					var retData = await _actionService.UpdateStockSymbolsFromSina(bool.Parse(tmp["saveToDb"]));
 					var data = new ReturnData<int>(retData);
 
 					if (data != null)
@@ -68,7 +68,7 @@ namespace MoneyMoat.Controllers
             }
             else
             {
-				var retData = await _actionService.UpdateStockSymbolsFromSina();
+				var retData = await _actionService.UpdateStockSymbolsFromSina(saveToDb);
 				var data = new ReturnData<int>(retData);
 
 				if (data != null)

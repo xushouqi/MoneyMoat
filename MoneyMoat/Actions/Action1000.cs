@@ -27,8 +27,9 @@ namespace MoneyMoat.Actions
         {
             if (m_params != null)
             {
+                var saveToDb = m_params.ReadBool();
 
-                var retData = await m_service.UpdateStockSymbolsFromSina();
+                var retData = await m_service.UpdateStockSymbolsFromSina(saveToDb);
 				var data = new ReturnData<int>(retData);
 
                 m_return = data;
