@@ -170,7 +170,10 @@ namespace MoneyMoat.Services
         {
             int reqId = MoatCommon.GetReqId(pattern);            
             var datas = await SendRequestAsync(reqId, ()=> m_clientSocket.reqMatchingSymbols(reqId, pattern));
-            return new List<ContractDescription>(datas);
+            if (datas != null)
+                return new List<ContractDescription>(datas);
+            else
+                return null;
         }
 
         private void HandleSymbolSamplesData(SymbolSamplesMessage message)
