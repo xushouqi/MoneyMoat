@@ -54,7 +54,7 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("symbol"))
 				{
 					var retData = await _actionService.UpdateFundamentalsFromXueQiu(tmp["symbol"]);
-					var data = retData;
+					var data = new ReturnData<string>(retData);
 
 					if (data != null)
 					{
@@ -69,7 +69,7 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.UpdateFundamentalsFromXueQiu(symbol);
-				var data = retData;
+				var data = new ReturnData<string>(retData);
 
 				if (data != null)
 				{
@@ -101,7 +101,7 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("forceUpdate"))
 				{
 					var retData = await _actionService.UpdateAllFromIB(tmp["symbol"], bool.Parse(tmp["forceUpdate"]));
-					var data = retData;
+					var data = new ReturnData<int>(retData);
 
 					if (data != null)
 					{
@@ -116,7 +116,7 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.UpdateAllFromIB(symbol, forceUpdate);
-				var data = retData;
+				var data = new ReturnData<int>(retData);
 
 				if (data != null)
 				{
@@ -129,7 +129,7 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> ReadFromXmlAsync(string symbol, CommonLibs.FundamentalsReportEnum ftype, string sign)
+        public async Task<IActionResult> ReadFromXmlAsync(string symbol, StockModels.FundamentalsReportEnum ftype, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -147,8 +147,8 @@ namespace MoneyMoat.Controllers
 				var tmp = Common.QueryStringToData(design);
 				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("ftype"))
 				{
-					var retData = await _actionService.ReadFromXmlAsync(tmp["symbol"], (CommonLibs.FundamentalsReportEnum)(int.Parse(tmp["ftype"])));
-					var data = retData;
+					var retData = await _actionService.ReadFromXmlAsync(tmp["symbol"], (StockModels.FundamentalsReportEnum)(int.Parse(tmp["ftype"])));
+					var data = new ReturnData<string>(retData);
 
 					if (data != null)
 					{
@@ -163,7 +163,7 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.ReadFromXmlAsync(symbol, ftype);
-				var data = retData;
+				var data = new ReturnData<string>(retData);
 
 				if (data != null)
 				{
@@ -176,7 +176,7 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> RequestFromIBAsync(string symbol, string exchange, CommonLibs.FundamentalsReportEnum ftype, bool forceUpdate, string sign)
+        public async Task<IActionResult> RequestFromIBAsync(string symbol, string exchange, StockModels.FundamentalsReportEnum ftype, bool forceUpdate, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -194,8 +194,8 @@ namespace MoneyMoat.Controllers
 				var tmp = Common.QueryStringToData(design);
 				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("exchange") && tmp.ContainsKey("ftype") && tmp.ContainsKey("forceUpdate"))
 				{
-					var retData = await _actionService.RequestFromIBAsync(tmp["symbol"], tmp["exchange"], (CommonLibs.FundamentalsReportEnum)(int.Parse(tmp["ftype"])), bool.Parse(tmp["forceUpdate"]));
-					var data = retData;
+					var retData = await _actionService.RequestFromIBAsync(tmp["symbol"], tmp["exchange"], (StockModels.FundamentalsReportEnum)(int.Parse(tmp["ftype"])), bool.Parse(tmp["forceUpdate"]));
+					var data = new ReturnData<string>(retData);
 
 					if (data != null)
 					{
@@ -210,7 +210,7 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.RequestFromIBAsync(symbol, exchange, ftype, forceUpdate);
-				var data = retData;
+				var data = new ReturnData<string>(retData);
 
 				if (data != null)
 				{
@@ -223,7 +223,7 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> ReadParseFundamentalToDbBackend(string symbol, CommonLibs.FundamentalsReportEnum ftype, string sign)
+        public async Task<IActionResult> ReadParseFundamentalToDbBackend(string symbol, StockModels.FundamentalsReportEnum ftype, string sign)
         {
 			string design = string.Empty;
             if (!string.IsNullOrEmpty(sign))
@@ -241,8 +241,8 @@ namespace MoneyMoat.Controllers
 				var tmp = Common.QueryStringToData(design);
 				if (tmp != null && tmp.ContainsKey("symbol") && tmp.ContainsKey("ftype"))
 				{
-					var retData = await _actionService.ReadParseFundamentalToDbBackend(tmp["symbol"], (CommonLibs.FundamentalsReportEnum)(int.Parse(tmp["ftype"])));
-					var data = retData;
+					var retData = await _actionService.ReadParseFundamentalToDbBackend(tmp["symbol"], (StockModels.FundamentalsReportEnum)(int.Parse(tmp["ftype"])));
+					var data = new ReturnData<string>(retData);
 
 					if (data != null)
 					{
@@ -257,7 +257,7 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.ReadParseFundamentalToDbBackend(symbol, ftype);
-				var data = retData;
+				var data = new ReturnData<string>(retData);
 
 				if (data != null)
 				{

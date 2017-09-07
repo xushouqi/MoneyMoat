@@ -21,17 +21,17 @@ namespace CodeGenerator
             else
                 filePath = filePath.Substring(0, filePath.LastIndexOf(@"\"));
 
-            string basePath = filePath;
-            int lastOfPath = filePath.LastIndexOf(@"\CodeGenerator");
-            if (lastOfPath > 0)
-                basePath = filePath.Substring(0, lastOfPath);
-
-            Console.WriteLine("CodeGenerator.Start, args={0}, basePath={1}", args.Length, basePath);
-
-            string template_path = basePath + @"\CodeGenerator\Template\";
-
             if (args.Length > 0)
             {
+                string basePath = filePath;
+                int lastOfPath = filePath.LastIndexOf(@"\CodeGenerator");
+                if (lastOfPath > 0)
+                    basePath = filePath.Substring(0, lastOfPath);
+
+                string template_path = basePath + @"\CodeGenerator\Template\";
+
+                Console.WriteLine("CodeGenerator.Start, args={0}, template_path={1}", args.Length, template_path);
+
                 string dllfile = args[0];
 
                 //取项目名称
@@ -48,13 +48,13 @@ namespace CodeGenerator
                 Assembly commonAssembly = null;
                 Assembly modelsAssembly = null;
 
-                var dllPath = dllfile.Substring(0, dllfile.LastIndexOf(@"\"));
+                var dllPath = basePath + @"\" + dllfile.Substring(0, dllfile.LastIndexOf(@"\"));
                 //加载同一目录下的所有dll
                 var files = Directory.GetFiles(dllPath, "*.dll");
                 foreach (var file in files)
                 {
-                    var assembly = AssemblyLoadContext.Default.LoadFromAssemblyPath(file);
                     Console.WriteLine("AssemblyLoadContext dllfile={0}", file);
+                    var assembly = AssemblyLoadContext.Default.LoadFromAssemblyPath(file);
 
                     var filename = file.Substring(file.LastIndexOf(@"\") + 1);
 

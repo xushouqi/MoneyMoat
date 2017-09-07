@@ -5,23 +5,22 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using MoneyMoat;
+using StockModels;
 using System;
 
 namespace MoneyMoat.Migrations
 {
-    [DbContext(typeof(MoatDbContext))]
-    [Migration("20170904103047_finsummary4")]
-    partial class finsummary4
+    [DbContext(typeof(MainDbContext))]
+    partial class MainDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452");
 
-            modelBuilder.Entity("CommonModels.Financal", b =>
+            modelBuilder.Entity("StockModels.Financal", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,7 +45,7 @@ namespace MoneyMoat.Migrations
                     b.ToTable("Financals");
                 });
 
-            modelBuilder.Entity("CommonModels.FinStatement", b =>
+            modelBuilder.Entity("StockModels.FinStatement", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -81,7 +80,7 @@ namespace MoneyMoat.Migrations
                     b.ToTable("FinStatements");
                 });
 
-            modelBuilder.Entity("CommonModels.FinSummary", b =>
+            modelBuilder.Entity("StockModels.FinSummary", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -142,7 +141,7 @@ namespace MoneyMoat.Migrations
                     b.ToTable("FinSummarys");
                 });
 
-            modelBuilder.Entity("CommonModels.FYEstimate", b =>
+            modelBuilder.Entity("StockModels.FYEstimate", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -179,74 +178,7 @@ namespace MoneyMoat.Migrations
                     b.ToTable("FYEstimates");
                 });
 
-            modelBuilder.Entity("CommonModels.NPEstimate", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<float>("High");
-
-                    b.Property<float>("Low");
-
-                    b.Property<float>("Mean");
-
-                    b.Property<float>("Median");
-
-                    b.Property<int>("NumOfEst");
-
-                    b.Property<float>("StdDev");
-
-                    b.Property<string>("Symbol");
-
-                    b.Property<DateTime>("UpdateTime");
-
-                    b.Property<string>("type");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Symbol");
-
-                    b.ToTable("NPEstimates");
-                });
-
-            modelBuilder.Entity("CommonModels.Stock", b =>
-                {
-                    b.Property<string>("Symbol")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Category");
-
-                    b.Property<int>("CommonShareholders");
-
-                    b.Property<int>("ConId");
-
-                    b.Property<string>("Currency");
-
-                    b.Property<DateTime>("EarliestDate");
-
-                    b.Property<int>("Employees");
-
-                    b.Property<string>("Exchange");
-
-                    b.Property<float>("MarketCap");
-
-                    b.Property<string>("Name");
-
-                    b.Property<long>("SharesOut");
-
-                    b.Property<DateTime>("UpdateTime");
-
-                    b.HasKey("Symbol");
-
-                    b.HasIndex("ConId");
-
-                    b.HasIndex("Symbol");
-
-                    b.ToTable("Stocks");
-                });
-
-            modelBuilder.Entity("CommonModels.XueQiuData", b =>
+            modelBuilder.Entity("StockModels.Historical", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -299,6 +231,73 @@ namespace MoneyMoat.Migrations
                     b.HasIndex("time");
 
                     b.ToTable("XueQiuDatas");
+                });
+
+            modelBuilder.Entity("StockModels.NPEstimate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<float>("High");
+
+                    b.Property<float>("Low");
+
+                    b.Property<float>("Mean");
+
+                    b.Property<float>("Median");
+
+                    b.Property<int>("NumOfEst");
+
+                    b.Property<float>("StdDev");
+
+                    b.Property<string>("Symbol");
+
+                    b.Property<DateTime>("UpdateTime");
+
+                    b.Property<string>("type");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Symbol");
+
+                    b.ToTable("NPEstimates");
+                });
+
+            modelBuilder.Entity("StockModels.Stock", b =>
+                {
+                    b.Property<string>("Symbol")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Category");
+
+                    b.Property<int>("CommonShareholders");
+
+                    b.Property<int>("ConId");
+
+                    b.Property<string>("Currency");
+
+                    b.Property<DateTime>("EarliestDate");
+
+                    b.Property<int>("Employees");
+
+                    b.Property<string>("Exchange");
+
+                    b.Property<float>("MarketCap");
+
+                    b.Property<string>("Name");
+
+                    b.Property<long>("SharesOut");
+
+                    b.Property<DateTime>("UpdateTime");
+
+                    b.HasKey("Symbol");
+
+                    b.HasIndex("ConId");
+
+                    b.HasIndex("Symbol");
+
+                    b.ToTable("Stocks");
                 });
 #pragma warning restore 612, 618
         }

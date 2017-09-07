@@ -22,15 +22,20 @@ namespace CodeGenerator
 
         public static void GenerateFromData(Type[] types)
         {
+            string repoStr = "";
             string modelStr = "";
+            string modelPrject = string.Empty;
 
             for (int i = 0; i < types.Length; i++)
             {
                 Type ptype = types[i];
 
                 var proTypeName = ptype.FullName;
-                proTypeName = CodeCommon.GetReturnTypeName(proTypeName);
-                proTypeName = CodeCommon.GetSimpleTypeName(proTypeName);
+
+                modelPrject = ptype.FullName.Split(",")[0];
+
+                proTypeName = Common.GetReturnTypeName(proTypeName);
+                proTypeName = Common.GetSimpleTypeName(proTypeName);
                 string className = proTypeName;
 
                 string prefix = m_project_name + ".";
@@ -38,6 +43,7 @@ namespace CodeGenerator
                     className = className.Substring(prefix.Length);
 
                 modelStr += "                cfg.CreateMap<" + className + ", " + className + "Data>();\n";
+                repoStr += "            services.AddTransient<IRepository<"+ className + ">, Repository<" + className + ", MainDbContext>>();\n";
 
                 string dataStr = "";
                 int idx = 0;
@@ -53,8 +59,8 @@ namespace CodeGenerator
                         string mName = pMember.Name;
                         //字段类型
                         var mpType = pMember.PropertyType.FullName;
-                        mpType = CodeCommon.GetReturnTypeName(mpType);
-                        mpType = CodeCommon.GetSimpleTypeName(mpType);
+                        mpType = Common.GetReturnTypeName(mpType);
+                        mpType = Common.GetSimpleTypeName(mpType);
 
                         string tips = attributes.Tips;
                         if (!string.IsNullOrEmpty(tips))
@@ -101,6 +107,15 @@ namespace CodeGenerator
 
             string fileName = m_server_path + @"\Data\AutoMapperExtensions.cs";
             CodeCommon.WriteFile(fileName, server_class);
+
+            //repository
+            string repo_class = CodeCommon.GetTemplate(m_template_path, "RepositoryServiceExtensions.txt");
+            repo_class = repo_class.Replace("#ModelProject#", modelPrject);
+            repo_class = repo_class.Replace("#ProjectName#", m_project_name);
+            repo_class = repo_class.Replace("#AddRepository#", repoStr);
+
+            fileName = m_server_path + @"\Data\RepositoryServiceExtensions.cs";
+            CodeCommon.WriteFile(fileName, repo_class);
         }
     }
 }

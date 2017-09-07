@@ -13,6 +13,7 @@ namespace CommonNetwork.MoneyMoat
 		{
 			m_client = client;
 			
+            client.RegActions[1000] = OnUpdateStockSymbolsFromSinaCallBack;
             client.RegActions[1001] = OnStopAllTasksCallBack;
             client.RegActions[1002] = OnUpdateAllFundamentalsCallBack;
             client.RegActions[1003] = OnUpdateAllHistoricalsCallBack;
@@ -22,6 +23,41 @@ namespace CommonNetwork.MoneyMoat
 		}
 
 		    
+		public void SubmitUpdateStockSymbolsFromSina(Action<ErrorCodeEnum, int> callback)
+		{
+			if (m_client.CheckConnection() && m_UpdateStockSymbolsFromSinaCallback == null)
+			{
+				var pars = new PackageParams();
+
+				var pardata = pars.PopBuffer();
+				pars.Dispose();
+
+				var package = m_client.Send(1000, pardata, OnUpdateStockSymbolsFromSinaCallBack);
+				if (package != null && callback != null)
+					m_UpdateStockSymbolsFromSinaCallback = callback;
+			}
+		}
+	
+    
+		public async Task<ReturnData<int>> SubmitUpdateStockSymbolsFromSinaAsync()
+		{
+			ReturnData<int> retData = null;
+            if (m_client.CheckConnection())
+            {
+                var pars = new PackageParams();
+
+                var pardata = pars.PopBuffer();
+                pars.Dispose();
+
+                var package = await m_client.SendAsync(1000, pardata);
+                retData = new ReturnData<int>((ErrorCodeEnum)package.ErrorCode);
+				if (package.MyError == ErrorCodeEnum.Success)
+					retData.Data = ProtoBufUtils.Deserialize<int>(package.Return);              
+            }
+            return retData;
+		}
+	
+    
 		public void SubmitStopAllTasks(int delay, Action<ErrorCodeEnum, int> callback)
 		{
 			if (m_client.CheckConnection() && m_StopAllTasksCallback == null)
@@ -207,6 +243,26 @@ namespace CommonNetwork.MoneyMoat
 
 	
 		    
+		private Action<ErrorCodeEnum, int> m_UpdateStockSymbolsFromSinaCallback = null;
+		private Action<ErrorCodeEnum, int> m_UpdateStockSymbolsFromSinaCallbackAdd = null;
+
+		void OnUpdateStockSymbolsFromSinaCallBack(WebPackage package)
+		{
+			if (m_UpdateStockSymbolsFromSinaCallback != null || m_UpdateStockSymbolsFromSinaCallbackAdd != null)
+			{
+				var retData = ProtoBufUtils.Deserialize<int>(package.Return);
+
+				if (m_UpdateStockSymbolsFromSinaCallback != null)
+				{
+					m_UpdateStockSymbolsFromSinaCallback(package.MyError, retData);
+					m_UpdateStockSymbolsFromSinaCallback = null;
+				}
+			
+				if (m_UpdateStockSymbolsFromSinaCallbackAdd != null)
+					m_UpdateStockSymbolsFromSinaCallbackAdd(package.MyError, retData);
+			}
+		}
+    
 		private Action<ErrorCodeEnum, int> m_StopAllTasksCallback = null;
 		private Action<ErrorCodeEnum, int> m_StopAllTasksCallbackAdd = null;
 
@@ -308,6 +364,15 @@ namespace CommonNetwork.MoneyMoat
 		}
 
 		
+
+		public void AddToUpdateStockSymbolsFromSina(Action<ErrorCodeEnum, int> callback)
+		{
+			m_UpdateStockSymbolsFromSinaCallbackAdd += callback;
+		}
+		public void RemoveUpdateStockSymbolsFromSina(Action<ErrorCodeEnum, int> callback)
+		{
+			m_UpdateStockSymbolsFromSinaCallbackAdd -= callback;
+		}
 
 		public void AddToStopAllTasks(Action<ErrorCodeEnum, int> callback)
 		{

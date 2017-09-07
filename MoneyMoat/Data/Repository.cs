@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Z.EntityFramework.Plus;
 using CommonLibs;
 
-namespace MoneyMoat
+namespace StockModels
 {
     public class Repository<TEntity, TContext> : IRepository<TEntity>
         where TEntity : Entity
@@ -136,7 +136,7 @@ namespace MoneyMoat
             Datas.RemoveRange(datas);
             return ret;
         }
-        public async Task<int> RemoveRangeAsync(Expression<Func<TEntity, bool>> predicate)
+        public async Task<int> RemoveWhereAsync(Expression<Func<TEntity, bool>> predicate)
         {
             return await Datas.Where(predicate).DeleteAsync();
         }

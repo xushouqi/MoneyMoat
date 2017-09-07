@@ -8,4 +8,8 @@
     <PackageReference Include="protobuf-net" Version="2.3.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EnumTypes\" />
+  </ItemGroup>
+
 </Project>

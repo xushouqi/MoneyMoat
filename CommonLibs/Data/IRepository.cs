@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MoneyMoat
+namespace CommonLibs
 {
     public interface IRepository<TEntity>
     {
@@ -33,7 +33,7 @@ namespace MoneyMoat
         void Remove(TEntity data);
         bool Remove(int id);
         bool RemoveRange(params TEntity[] datas);
-        Task<int> RemoveRangeAsync(Expression<Func<TEntity, bool>> predicate);
+        Task<int> RemoveWhereAsync(Expression<Func<TEntity, bool>> predicate);
         Task SaveChangesAsync();
     }
 }

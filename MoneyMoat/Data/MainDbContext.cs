@@ -6,10 +6,10 @@ using Pomelo.EntityFrameworkCore.MySql;
 using StockModels;
 using CommonLibs;
 
-namespace MoneyMoat
+namespace StockModels
 {
     [DbContext]
-    public class MoatDbContext : DbContext
+    public class MainDbContext : DbContext
     {
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Financal> Financals { get; set; }
@@ -21,7 +21,7 @@ namespace MoneyMoat
         public DbSet<FinSummary> FinSummarys { get; set; }
         public DbSet<FinStatement> FinStatements { get; set; }
 
-        public MoatDbContext(DbContextOptions<MoatDbContext> options)
+        public MainDbContext(DbContextOptions<MainDbContext> options)
             : base(options)
         {
         }
@@ -81,9 +81,9 @@ namespace MoneyMoat
         //}
     }
 
-    public class ToDoContextFactory : IDesignTimeDbContextFactory<MoatDbContext>
+    public class ToDoContextFactory : IDesignTimeDbContextFactory<MainDbContext>
     {
-        public MoatDbContext CreateDbContext(string[] args)
+        public MainDbContext CreateDbContext(string[] args)
         {
             var cbuilder = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json");
@@ -91,9 +91,9 @@ namespace MoneyMoat
 
             var conn = config.GetConnectionString("MySql");
 
-            var builder = new DbContextOptionsBuilder<MoatDbContext>();
+            var builder = new DbContextOptionsBuilder<MainDbContext>();
             builder.UseMySql(conn);
-            return new MoatDbContext(builder.Options);
+            return new MainDbContext(builder.Options);
         }
     }
 }

@@ -43,10 +43,10 @@ namespace MoneyMoat.Services
 
         List<string> m_categories = new List<string>();
 
-        public async Task UpdateSymbolsFromSina()
+        public async Task<int> UpdateSymbolsFromSina()
         {            
             var parser = new HtmlParser();
-
+            var count = 0;
             var url = "http://vip.stock.finance.sina.com.cn/usstock/ustotal.php";
             var source = await MoatCommon.GetHttpContent(url, System.Text.Encoding.GetEncoding("gb2312"));
             if (!string.IsNullOrEmpty(source))
@@ -70,11 +70,13 @@ namespace MoneyMoat.Services
                             Console.WriteLine("{0}: {1}", symbol, name);
 
                             await UpdateStock(name, symbol, m_categories[i], false);
+                            count++;
                         }
                     }
                 }
                 await m_repoStock.SaveChangesAsync();
             }
+            return count;
         }
 
         [Api]

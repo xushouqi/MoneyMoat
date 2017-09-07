@@ -7,7 +7,6 @@ using System.Net.Http.Headers;
 using CommonLibs;
 using CommonNetwork;
 using StockModels.ViewModels;
-using System.Text;
 using Newtonsoft.Json;
 
 namespace ClientApi.MoneyMoat
@@ -76,7 +75,7 @@ namespace ClientApi.MoneyMoat
 		/// <summary>
         /// ReadFromXmlAsync
         /// </summary>
-        public static async Task<string> ReadFromXmlAsync(string symbol, CommonLibs.FundamentalsReportEnum ftype)
+        public static async Task<string> ReadFromXmlAsync(string symbol, StockModels.FundamentalsReportEnum ftype)
         {
             var content = new FormUrlEncodedContent(new Dictionary<string, string>()
             {
@@ -99,7 +98,7 @@ namespace ClientApi.MoneyMoat
 		/// <summary>
         /// RequestFromIBAsync
         /// </summary>
-        public static async Task<string> RequestFromIBAsync(string symbol, string exchange, CommonLibs.FundamentalsReportEnum ftype, bool forceUpdate)
+        public static async Task<string> RequestFromIBAsync(string symbol, string exchange, StockModels.FundamentalsReportEnum ftype, bool forceUpdate)
         {
             var content = new FormUrlEncodedContent(new Dictionary<string, string>()
             {
@@ -122,7 +121,7 @@ namespace ClientApi.MoneyMoat
 		/// <summary>
         /// ReadParseFundamentalToDbBackend
         /// </summary>
-        public static async Task<string> ReadParseFundamentalToDbBackend(string symbol, CommonLibs.FundamentalsReportEnum ftype)
+        public static async Task<string> ReadParseFundamentalToDbBackend(string symbol, StockModels.FundamentalsReportEnum ftype)
         {
             var content = new FormUrlEncodedContent(new Dictionary<string, string>()
             {

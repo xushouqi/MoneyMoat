@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MoneyMoat
+namespace CommonLibs
 {
     public class Cache<TKey, TValue> : IDisposable
     {
@@ -118,15 +118,7 @@ namespace MoneyMoat
                 InvalidateUnlocked(key);
             }
         }
-        public virtual void InvalidateDatas(List<TKey> keys)
-        {
-            lock (SyncRoot)
-            {
-                _LastCacheAccess = DateTime.Now;
-                for (int i = 0; i < keys.Count; i++)
-                    InvalidateUnlocked(keys[i]);
-            }
-        }
+
         protected void InvalidateUnlocked(TKey key)
         {
             var value = GetCacheValueUnlocked(key);

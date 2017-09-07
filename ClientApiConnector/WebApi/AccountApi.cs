@@ -7,7 +7,6 @@ using System.Net.Http.Headers;
 using CommonLibs;
 using CommonNetwork;
 using StockModels.ViewModels;
-using System.Text;
 using Newtonsoft.Json;
 
 namespace ClientApi.MoneyMoat

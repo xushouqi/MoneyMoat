@@ -102,7 +102,7 @@ namespace CodeGenerator
                             {
                                 ParameterInfo paramInfo = paramInfos[j];
                                 System.Type stype = paramInfo.ParameterType;
-                                string typestr = CodeCommon.GetSimpleTypeName(stype.ToString());
+                                string typestr = Common.GetSimpleTypeName(stype.ToString());
 
                                 //curaccnout
                                 bool skipMethd = needauthaccount && paramInfo.Name.Equals("accountId") && j == 0;

@@ -27,6 +27,29 @@ namespace ClientApi.MoneyMoat
 		*/
 
 				/// <summary>
+        /// 獲取股票代碼
+        /// </summary>
+        public static async Task<int> UpdateStockSymbolsFromSina()
+        {
+            var content = new FormUrlEncodedContent(new Dictionary<string, string>()
+            {
+				
+            });
+			
+            string url = ClientCommon.GetUrl("MoneyMoat") + "/Analyser/UpdateStockSymbolsFromSina";
+            HttpClient client = new HttpClient();
+			client.DefaultRequestHeaders.Clear();
+            
+            var response = await client.PostAsync(url, content);
+            int retData = default(int);
+            if (response.IsSuccessStatusCode)
+            {
+                string tmp = response.Content.ReadAsStringAsync().Result;
+				retData = JsonConvert.DeserializeObject<int>(tmp);
+            }
+            return retData;
+        }
+		/// <summary>
         /// 停止所有后台任务
         /// </summary>
         public static async Task<ReturnData<int>> StopAllTasks(int delay)

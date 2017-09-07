@@ -7,8 +7,8 @@ using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
 using MoneyMoat.Messages;
 using IBApi;
-using YAXLib;
 using CommonLibs;
+using StockModels;
 
 namespace MoneyMoat.Services
 {

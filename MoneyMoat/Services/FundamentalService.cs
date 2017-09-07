@@ -206,7 +206,7 @@ namespace MoneyMoat.Services
                         var obj = (ReportsFinStatements)ser.Deserialize(data);
 
                         //先删除数据
-                        await m_repoStatement.RemoveRangeAsync(t => t.Symbol == symbol);
+                        await m_repoStatement.RemoveWhereAsync(t => t.Symbol == symbol);
 
                         int count = 0;
                         for (int i = 0; i < obj.FinancialStatements.AnnualPeriods.Count; i++)
@@ -288,7 +288,7 @@ namespace MoneyMoat.Services
                         var obj = (FinancialSummary)ser.Deserialize(data);
 
                         //先删除数据
-                        await m_repoSummary.RemoveRangeAsync(t => t.Symbol == symbol);
+                        await m_repoSummary.RemoveWhereAsync(t => t.Symbol == symbol);
 
                         Dictionary<string, FinSummary> tmpDatas = new Dictionary<string, FinSummary>();
                         
@@ -434,7 +434,7 @@ namespace MoneyMoat.Services
                         }
 
                         //先删除财务数据
-                        await m_repoFin.RemoveRangeAsync(t => t.Symbol == symbol);
+                        await m_repoFin.RemoveWhereAsync(t => t.Symbol == symbol);
 
                         int count = 0;
                         //更新财务数据库
@@ -461,7 +461,7 @@ namespace MoneyMoat.Services
                         m_logger.LogWarning("{0}.Financal Saved={1}", symbol, count);
 
                         //先删除预测数据
-                        await m_repoEst.RemoveRangeAsync(t => t.Symbol == symbol);
+                        await m_repoEst.RemoveWhereAsync(t => t.Symbol == symbol);
 
                         count = 0;
                         //更新预测数据库
@@ -502,7 +502,7 @@ namespace MoneyMoat.Services
                         m_logger.LogWarning("{0}.FYEstimate Saved={1}", symbol, count);
 
                         //先删除预测数据
-                        await m_repoNPE.RemoveRangeAsync(t => t.Symbol == symbol);
+                        await m_repoNPE.RemoveWhereAsync(t => t.Symbol == symbol);
 
                         count = 0;
                         for (int i = 0; i < obj.ConsEstimates.NPEstimates.Count; i++)

@@ -1,5 +1,5 @@
 ﻿
-namespace CommonModels
+namespace StockModels
 {
     public enum CurrencyEnum
     {

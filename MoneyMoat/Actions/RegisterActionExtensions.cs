@@ -9,6 +9,7 @@ namespace MoneyMoat
     {
         public static IServiceCollection AddRegisterActions(this IServiceCollection services, IHostingEnvironment env, IConfigurationRoot config)
         {
+            services.AddTransient<Action1000>();
             services.AddTransient<Action1001>();
             services.AddTransient<Action1002>();
             services.AddTransient<Action1003>();

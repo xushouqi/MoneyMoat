@@ -44,7 +44,7 @@ namespace MoneyMoat
             string connstr = Configuration.GetConnectionString("MySQL");
             //services.AddDbContextPool<MoatDbContext>(opt =>
             //        opt.UseMySql(connstr));
-            services.AddDbContext<MoatDbContext>(opt =>
+            services.AddDbContext<MainDbContext>(opt =>
                     opt.UseMySql(connstr), ServiceLifetime.Transient);
 
             services.AddTransient<ApiExceptionFilter>();

@@ -161,105 +161,117 @@ namespace CommonLibs
             return v;
         }
 
+        public static string GetSimpleTypeName(string stype)
+        {
+            string ret = "";
+            if (stype.Contains("Dictionary"))
+            {
+                string att_str = stype.Substring(stype.LastIndexOf("["));
+                string[] atts = att_str.Split(',');
+                if (atts != null && atts.Length >= 2)
+                    //todo: 第二个参数为什么不对？
+                    ret = "Dictionary<" + GetSimpleTypeName(atts[0]) + ", " + GetSimpleTypeName(atts[0]) + ">";
+            }
+            else if (stype.Contains("System.Collections.Generic.List`1"))
+            {
+                string clid_type = "int";
+                if (stype.Contains("DateTime"))
+                {
+                    clid_type = "System.DateTime";
+                }
+                else
+                {
+                    Match mc = Regex.Match(stype, @"Models.[A-Za-z]*");
+                    if (mc != null && mc.Length > 0)
+                        clid_type = mc.Value.Substring("Models.".Length, mc.Value.Length - 0);
+                }
+                ret = "List<" + clid_type + "> ";
+            }
+            else if (stype.Contains("System.Int32[]"))
+                ret = "int[]";
+            else if (stype.Contains("System.Int32"))
+                ret = "int";
+            else if (stype.Contains("System.Int64"))
+                ret = "long";
+            else if (stype.Contains("System.Int"))
+                ret = "int";
+            else if (stype.Contains("System.String"))
+                ret = "string";
+            else if (stype.Contains("System.Single"))
+                ret = "float";
+            else if (stype.Contains("System.Double"))
+                ret = "double";
+            else if (stype.Contains("System.Bool"))
+                ret = "bool";
+            else
+            {
+                ret = stype.Replace("+", ".");
+            }
+            return ret;
+        }
 
-        //public static string GetSimpleTypeName(string stype)
-        //{
-        //    string ret = "";
-        //    if (stype.Contains("Dictionary"))
-        //    {
-        //        string att_str = stype.Substring(stype.LastIndexOf("["));
-        //        string[] atts = att_str.Split(',');
-        //        if (atts != null && atts.Length >= 2)
-        //            //todo: 第二个参数为什么不对？
-        //            ret = "Dictionary<" + GetSimpleTypeName(atts[0]) + ", " + GetSimpleTypeName(atts[0]) + ">";
-        //    }
-        //    else if (stype.Contains("System.Collections.Generic.List`1"))
-        //    {
-        //        string clid_type = "int";
-        //        if (stype.Contains("DateTime"))
-        //        {
-        //            clid_type = "System.DateTime";
-        //        }
-        //        else
-        //        {
-        //            Match mc = Regex.Match(stype, @"ZeroModels.[A-Za-z]*");
-        //            if (mc != null && mc.Length > 0)
-        //                clid_type = mc.Value.Substring(0, mc.Value.Length - 0);
-        //        }
-        //        ret = "List<" + clid_type + "> ";
-        //    }
-        //    else if (stype.Contains("System.Int32[]"))
-        //        ret = "int[]";
-        //    else if (stype.Contains("System.Int32"))
-        //        ret = "int";
-        //    else if (stype.Contains("System.Int64"))
-        //        ret = "long";
-        //    else if (stype.Contains("System.Int"))
-        //        ret = "int";
-        //    else if (stype.Contains("System.String"))
-        //        ret = "string";
-        //    else if (stype.Contains("System.Single"))
-        //        ret = "float";
-        //    else if (stype.Contains("System.Double"))
-        //        ret = "double";
-        //    else if (stype.Contains("System.Bool"))
-        //        ret = "bool";
-        //    else
-        //    {
-        //        ret = stype.Replace("+", ".");
-        //    }
-        //    return ret;
-        //}
+        public static string GetReturnTypeName(string methodReturnTypeName)
+        {
+            bool isCollections = false;
 
-        //public static string GetReturnTypeName(string methodReturnTypeName)
-        //{
-        //    string returnDataPrefix = "CommonLibs.ReturnData`1";
-        //    string collectionsPrefix = "System.Collections.Generic.List`1";
-        //    string taskPrefix = "System.Threading.Tasks.Task`1";
+            string taskPrefix = "System.Threading.Tasks.Task`1";
+            if (methodReturnTypeName.Contains(taskPrefix))
+                methodReturnTypeName = methodReturnTypeName.Substring((taskPrefix + @"[[").Length);
 
-        //    bool isCollections = false;
+            string returnDataPrefix = "[A-Za-z]*.ReturnData`1";
+            var mc1 = Regex.Match(methodReturnTypeName, returnDataPrefix);
+            if (mc1 != null && mc1.Length > 0)
+                methodReturnTypeName = methodReturnTypeName.Substring((mc1.Value + @"[[").Length);
 
-        //    if (methodReturnTypeName.Contains(taskPrefix))
-        //        methodReturnTypeName = methodReturnTypeName.Substring((taskPrefix + @"[[").Length);
+            returnDataPrefix = "[A-Za-z]*.ReturnMessage`1";
+            mc1 = Regex.Match(methodReturnTypeName, returnDataPrefix);
+            if (mc1 != null && mc1.Length > 0)
+                methodReturnTypeName = methodReturnTypeName.Substring((mc1.Value + @"[[").Length);
 
-        //    if (methodReturnTypeName.Contains(returnDataPrefix))
-        //        methodReturnTypeName = methodReturnTypeName.Substring((returnDataPrefix + @"[[").Length);
 
-        //    //是List<>
-        //    if (methodReturnTypeName.Contains(collectionsPrefix))
-        //    {
-        //        methodReturnTypeName = methodReturnTypeName.Substring((collectionsPrefix + @"[[").Length);
-        //        isCollections = true;
-        //    }
+            //是List<>
+            string collectionsPrefix = "System.Collections.Generic.List`1";
+            if (methodReturnTypeName.Contains(collectionsPrefix))
+            {
+                methodReturnTypeName = methodReturnTypeName.Substring((collectionsPrefix + @"[[").Length);
+                isCollections = true;
+            }
 
-        //    methodReturnTypeName = TryParseTypeName(methodReturnTypeName);
-        //    if (isCollections)
-        //        methodReturnTypeName = string.Format("List<{0}>", methodReturnTypeName);
-        //    return methodReturnTypeName;
-        //}
+            methodReturnTypeName = TryParseTypeName(methodReturnTypeName);
+            if (isCollections)
+                methodReturnTypeName = string.Format("List<{0}>", methodReturnTypeName);
+            return methodReturnTypeName;
+        }
 
-        //static string TryParseTypeName(string methodReturnTypeName)
-        //{
-        //    if (!GetSubTypeName(ref methodReturnTypeName, @"CommonLibs\.[A-Za-z]*"))
-        //    {
-        //        if (!GetSubTypeName(ref methodReturnTypeName, @"System\.[A-Za-z]*"))
-        //        {
-        //            GetSubTypeName(ref methodReturnTypeName, "");
-        //        }
-        //    }
-        //    return methodReturnTypeName;
-        //}
-        //static bool GetSubTypeName(ref string typeName, string pattern)
-        //{
-        //    bool ret = false;
-        //    var mc1 = Regex.Match(typeName, pattern);
-        //    if (mc1 != null && mc1.Length > 0)
-        //    {
-        //        ret = true;
-        //        typeName = mc1.Value;
-        //    }
-        //    return ret;
-        //}
+        static string TryParseTypeName(string methodReturnTypeName)
+        {
+            var mc = GetSubTypeName(ref methodReturnTypeName, @"Models\.[A-Za-z]*");
+            if (mc == null || mc.Length == 0)
+            {
+                mc = GetSubTypeName(ref methodReturnTypeName, @"System\.[A-Za-z]*");
+                if (mc == null || mc.Length == 0)
+                {
+                    GetSubTypeName(ref methodReturnTypeName, "");
+                }
+            }
+            else
+            {
+                int start = "Models.".Length;
+                methodReturnTypeName = mc.Value.Substring(start, mc.Value.Length - start);
+            }
+            return methodReturnTypeName;
+        }
+        static Match GetSubTypeName(ref string typeName, string pattern)
+        {
+            bool ret = false;
+            var mc1 = Regex.Match(typeName, pattern);
+            if (mc1 != null && mc1.Length > 0)
+            {
+                ret = true;
+                typeName = mc1.Value;
+            }
+            return mc1;
+        }
 
     }
 }

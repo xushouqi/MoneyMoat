@@ -39,9 +39,10 @@ namespace MoneyMoat.Services
             m_config = options.Value;
         }
 
-        public async Task AnalyseStock(string symbol)
+        [Api(ActionId = 1000, Tips = "獲取股票代碼")]
+        public async Task<int> UpdateStockSymbolsFromSina()
         {
-            var stock = await m_symbolService.FindAsync(symbol);
+            return await m_symbolService.UpdateSymbolsFromSina();
         }
 
         /// <summary>

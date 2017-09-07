@@ -35,6 +35,53 @@ namespace MoneyMoat.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        public async Task<IActionResult> UpdateStockSymbolsFromSina(string sign)
+        {
+			string design = string.Empty;
+            if (!string.IsNullOrEmpty(sign))
+            {
+                design = RsaService.DecryptToString(sign);
+            }
+            else if (Request.ContentLength != null)
+            {
+                byte[] datas = new byte[(int)Request.ContentLength];
+                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
+                design = RsaService.DecryptToString(datas);
+            }
+            if (!string.IsNullOrEmpty(design))
+            {
+				var tmp = Common.QueryStringToData(design);
+				if (tmp != null)
+				{
+					var retData = await _actionService.UpdateStockSymbolsFromSina();
+					var data = new ReturnData<int>(retData);
+
+					if (data != null)
+					{
+						return new OkObjectResult(data);
+					}
+					else
+						return NoContent();
+				}
+				else
+					return new UnauthorizedResult();
+            }
+            else
+            {
+				var retData = await _actionService.UpdateStockSymbolsFromSina();
+				var data = new ReturnData<int>(retData);
+
+				if (data != null)
+				{
+					return new OkObjectResult(data);
+				}
+				else
+					return NoContent();
+            }
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> StopAllTasks(int delay, string sign)
         {
 			string design = string.Empty;

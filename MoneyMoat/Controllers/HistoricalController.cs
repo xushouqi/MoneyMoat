@@ -54,7 +54,8 @@ namespace MoneyMoat.Controllers
 				if (tmp != null && tmp.ContainsKey("symbol"))
 				{
 					var retData = await _actionService.UpdateHistoricalDataFromXueQiu(tmp["symbol"]);
-					var data = Mapper.Map<HistoricalData>(retData);
+					var dataValue = Mapper.Map<HistoricalData>(retData);
+var data = new ReturnData<HistoricalData>(dataValue);
 
 					if (data != null)
 					{
@@ -69,7 +70,8 @@ namespace MoneyMoat.Controllers
             else
             {
 				var retData = await _actionService.UpdateHistoricalDataFromXueQiu(symbol);
-				var data = Mapper.Map<HistoricalData>(retData);
+				var dataValue = Mapper.Map<HistoricalData>(retData);
+var data = new ReturnData<HistoricalData>(dataValue);
 
 				if (data != null)
 				{

@@ -93,7 +93,7 @@ namespace CodeGenerator
                     {
                         ParameterInfo paramInfo = paramInfos[j];
                         System.Type stype = paramInfo.ParameterType;
-                        string typestr = CodeCommon.GetSimpleTypeName(stype.ToString());
+                        string typestr = Common.GetSimpleTypeName(stype.ToString());
 
                         bool skipMethd = false;
                         if (attributes.AuthIDType != AuthIDTypeEnum.None && j == 0)

@@ -52,16 +52,16 @@ namespace CodeGenerator
                             //返回值
                             string methodReturnTypeName = vMethodInfo.ReturnType.FullName;
                             //使用返回值结构
-                            methodReturnTypeName = CodeCommon.GetReturnTypeName(methodReturnTypeName);
-                            methodReturnTypeName = CodeCommon.GetSimpleTypeName(methodReturnTypeName);
+                            methodReturnTypeName = Common.GetReturnTypeName(methodReturnTypeName);
+                            methodReturnTypeName = Common.GetSimpleTypeName(methodReturnTypeName);
                             //提取实际返回值类型
                             string returnTypeName = methodReturnTypeName;
                             //api设定的返回类型
                             if (attributes.ReturnType != null)
                             {
                                 returnTypeName = attributes.ReturnType.FullName;
-                                returnTypeName = CodeCommon.GetReturnTypeName(returnTypeName);
-                                returnTypeName = CodeCommon.GetSimpleTypeName(returnTypeName);
+                                returnTypeName = Common.GetReturnTypeName(returnTypeName);
+                                returnTypeName = Common.GetSimpleTypeName(returnTypeName);
                             }
 
                             //注册action
