@@ -4,7 +4,7 @@
         public static async Task<#WithReturnType#> #MethodName#(#MethodParams#)
         {
             string qstr = #QueryString#;
-            byte[] datas = RsaService.EncryptFromString(qstr, 0);
+            byte[] datas = RsaService.EncryptFromString(qstr);
             var content = new ByteArrayContent(datas);
             content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
 			

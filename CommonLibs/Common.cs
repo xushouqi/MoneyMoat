@@ -17,6 +17,22 @@ namespace CommonLibs
     public class Common
     {
         /// <summary>
+        /// 根據cookie name 获取cookie value
+        /// </summary>
+        /// <param name="cookies"></param>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static string GetCookieValue(string cookies, string name)
+        {
+            string value = string.Empty;
+            string namePrefix = name + "=";
+            var mc = Regex.Match(cookies, "(?=" + namePrefix + ")[^;]*");
+            if (mc != null && mc.Length > 0)
+                value = mc.Value.Substring(namePrefix.Length);
+            return value;
+        }
+
+        /// <summary>
         /// url 编码
         /// </summary>
         /// <param name="url"></param>

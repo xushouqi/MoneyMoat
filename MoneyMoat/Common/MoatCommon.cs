@@ -29,6 +29,8 @@ namespace MoneyMoat
             return true;
         }
 
+        private static CookieContainer m_xueqiu_cookie = null;
+
         public static async Task<string> GetXueQiuContent(string url)
         {
             ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
@@ -37,9 +39,8 @@ namespace MoneyMoat
             HttpWebRequest httpRequest = (HttpWebRequest)HttpWebRequest.Create(url);
             httpRequest.Method = "GET";
             httpRequest.Timeout = 10000;
-            httpRequest.CookieContainer = new CookieContainer();
-            httpRequest.CookieContainer.Add(new Cookie("xq_a_token", "f8846a20e3a8074cd781524d47619ba6879990e2", "/", "xueqiu.com"));
-            httpRequest.CookieContainer.Add(new Cookie("xq_r_token", "562674ae525074f694a9961c5a49a644275e3b53", "/", "xueqiu.com"));
+            if (m_xueqiu_cookie != null)
+                httpRequest.CookieContainer = m_xueqiu_cookie;
 
             try
             {                
@@ -57,8 +58,25 @@ namespace MoneyMoat
                     {
                         using (var reader = new StreamReader(errorResponse.GetResponseStream()))
                         {
-                            string error = reader.ReadToEnd();
-                            Console.WriteLine("GetHttp {0} Error: {1}", url, error);
+                            result = reader.ReadToEnd();
+                            Console.WriteLine("GetHttp {0} Error: {1}", url, wex.Message);
+
+                            if (wex.Status == WebExceptionStatus.ProtocolError)
+                            {
+                                //先訪問hq獲取cookies
+                                httpRequest = (HttpWebRequest)HttpWebRequest.Create("https://xueqiu.com/hq");
+                                httpRequest.Method = "GET";
+                                var response = await httpRequest.GetResponseAsync();
+                                string cookieString = response.Headers.Get("Set-Cookie");
+
+                                m_xueqiu_cookie = new CookieContainer();
+                                var xqa = Common.GetCookieValue(cookieString, "xq_a_token");
+                                var xqr = Common.GetCookieValue(cookieString, "xq_r_token");
+                                m_xueqiu_cookie.Add(new Cookie("xq_a_token", xqa, "/", "xueqiu.com"));
+                                m_xueqiu_cookie.Add(new Cookie("xq_r_token", xqr, "/", "xueqiu.com"));
+
+                                result = await GetXueQiuContent(url);
+                            }
                         }
                     }
                 }

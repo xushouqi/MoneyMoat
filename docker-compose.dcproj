@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.0</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>be8c9984-f378-410a-8152-1c89d512e45a</ProjectGuid>
+    <ProjectGuid>574541a3-56b6-4654-8625-e4d295be6b28</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
     <DockerServiceUrl>http://localhost:{ServicePort}/api/values</DockerServiceUrl>
     <DockerServiceName>moneymoat</DockerServiceName>

@@ -55,47 +55,38 @@ namespace CommonLibs
             }
         }
 
-        public static byte[] EncryptFromString(string input, int times)
+        public static byte[] EncryptFromString(string input)
         {
             byte[] cipherBytes = null;
-            if (times < 3)
+            try
             {
-                //Encrypt
-                try
+                using (var rsa = CreateRsaFromPublicKey(PubKeyXML))
                 {
-                    using (var rsa = CreateRsaFromPublicKey(PubKeyXML))
-                    {
-                        var plainTextBytes = Encoding.UTF8.GetBytes(input);
-                        cipherBytes = rsa.Encrypt(plainTextBytes, RSAEncryptionPadding.Pkcs1);
-                    }
+                    var plainTextBytes = Encoding.UTF8.GetBytes(input);
+                    cipherBytes = rsa.Encrypt(plainTextBytes, RSAEncryptionPadding.Pkcs1);
                 }
-                catch (Exception e)
-                {
-                    Console.WriteLine(string.Format("EncryptFromString Error: ", e.Message));
-                    cipherBytes = EncryptFromString(input, times + 1);
-                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(string.Format("EncryptFromString Error: ", e.Message));
             }
             return cipherBytes;
         }
 
-        public static string DecryptToString(byte[] input, int times)
+        public static string DecryptToString(byte[] input)
         {
             string plainText = "";
-            if (times < 3)
+            try
             {
-                try
+                using (var rsa = CreateRsaFromPrivateKey(PrivKeyXml))
                 {
-                    using (var rsa = CreateRsaFromPrivateKey(PrivKeyXml))
-                    {
-                        var plainTextBytes = rsa.Decrypt(input, RSAEncryptionPadding.Pkcs1);
-                        plainText = Encoding.UTF8.GetString(plainTextBytes);
-                    }
+                    var plainTextBytes = rsa.Decrypt(input, RSAEncryptionPadding.Pkcs1);
+                    plainText = Encoding.UTF8.GetString(plainTextBytes);
                 }
-                catch (Exception e)
-                {
-                    Console.WriteLine("DecryptToString, Error={0}", e.Message);
-                    plainText = DecryptToString(input, times + 1);
-                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("DecryptToString, Error={0}", e.Message);
             }
             return plainText;
         }

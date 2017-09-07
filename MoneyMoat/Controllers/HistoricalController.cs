@@ -46,7 +46,7 @@ namespace MoneyMoat.Controllers
             {
                 byte[] datas = new byte[(int)Request.ContentLength];
                 var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
-                design = RsaService.DecryptToString(datas, 0);
+                design = RsaService.DecryptToString(datas);
             }
             if (!string.IsNullOrEmpty(design))
             {
