@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="PowerArgs" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ClientApiConnector\ClientApiConnector.csproj" />
     <ProjectReference Include="..\CommonLibs\CommonLibs.csproj" />
     <ProjectReference Include="..\CommonNetwork\CommonNetwork.csproj" />
