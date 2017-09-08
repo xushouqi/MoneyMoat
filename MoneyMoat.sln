@@ -20,6 +20,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApiConnector", "Clien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockModels", "StockModels\StockModels.csproj", "{AFEA202B-147D-4350-80FD-AF1230F46BCA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{72B3A588-865F-4323-B99F-D38F2FB110F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonServices", "CommonServices\CommonServices.csproj", "{77752019-2174-4438-BB36-29037B31B1DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,9 +54,18 @@ Global
 		{AFEA202B-147D-4350-80FD-AF1230F46BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFEA202B-147D-4350-80FD-AF1230F46BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFEA202B-147D-4350-80FD-AF1230F46BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77752019-2174-4438-BB36-29037B31B1DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77752019-2174-4438-BB36-29037B31B1DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77752019-2174-4438-BB36-29037B31B1DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77752019-2174-4438-BB36-29037B31B1DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C95FB94D-A68E-4473-9545-569EBE85CBC4} = {72B3A588-865F-4323-B99F-D38F2FB110F0}
+		{18B64BE8-C05D-4CD9-832B-7E7966C05C94} = {72B3A588-865F-4323-B99F-D38F2FB110F0}
+		{77752019-2174-4438-BB36-29037B31B1DF} = {72B3A588-865F-4323-B99F-D38F2FB110F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4335BB61-E004-43FB-9A65-5002F509AF9B}

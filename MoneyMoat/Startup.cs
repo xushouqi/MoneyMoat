@@ -11,7 +11,6 @@ using NLog.Extensions.Logging;
 using NLog.Web;
 using MoneyMoat.Services;
 using IBApi;
-using Foundatio.Caching;
 using FluentScheduler;
 using CommonNetwork;
 using StockModels;
@@ -52,7 +51,8 @@ namespace MoneyMoat
             services.AddSingleton<CommonManager>();
 
             //缓存cache
-            services.AddSingleton<ICacheClient, InMemoryCacheClient>();
+            //services.AddSingleton<CommonLibs.Cache, >();
+
             //注册数据仓库（生成代码）
             services.AddRepositoryService(Environment, Configuration);
 
