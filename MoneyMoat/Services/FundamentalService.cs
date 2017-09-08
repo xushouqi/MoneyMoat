@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 using Microsoft.Extensions.Options;
@@ -106,13 +107,19 @@ namespace MoneyMoat.Services
                  ret = await UpdateAllFromIB(stock, forceUpdate);
             return ret;
         }
-        public async Task<int> UpdateAllFromIB(Stock stock, bool forceUpdate = false)
+        public async Task<int> UpdateAllFromIB(Stock stock, bool forceUpdate)
+        {
+            return await UpdateAllFromIB(stock, forceUpdate, CancellationToken.None);
+        }
+        public async Task<int> UpdateAllFromIB(Stock stock, bool forceUpdate, CancellationToken cancelToken)
         {
             int ret = 0;
             foreach (FundamentalsReportEnum ftype in Enum.GetValues(typeof(FundamentalsReportEnum)))
             {
                 await RequestFromIBAsync(stock.Symbol, stock.Exchange, ftype, forceUpdate);
                 ret ++;
+                if (cancelToken != null && cancelToken.IsCancellationRequested)
+                    break;
             }
             return ret;
         }

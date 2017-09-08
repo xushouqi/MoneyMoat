@@ -42,6 +42,10 @@ namespace MoneyMoat.Services
         [Api]
         public async Task<Historical> UpdateHistoricalDataFromXueQiu(string symbol)
         {
+            return await UpdateHistoricalDataFromXueQiu(symbol, CancellationToken.None);
+        }
+        public async Task<Historical> UpdateHistoricalDataFromXueQiu(string symbol, CancellationToken cancelToken)
+        {
             Historical lastData = null;
             var stock = m_repoStock.Find(symbol);
             if (stock != null)

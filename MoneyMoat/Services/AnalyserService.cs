@@ -76,31 +76,43 @@ namespace MoneyMoat.Services
             var retData = new ReturnData<int>(0);
             var datalist = await m_symbolService.GetAllAsync();
             var cts = new CancellationTokenSource();
-            Task task = new Task(() => DoUpdateAllFundamentals(datalist, forceUpdate, cts.Token).Wait(), cts.Token);
-            task.Start();
+            try
+            {
+                Task task = new Task(() => DoUpdateAllFundamentals(datalist, forceUpdate, cts.Token).Wait(), cts.Token);
+                task.Start();
+            }
+            catch (TaskCanceledException e)
+            {
+                m_logger.LogWarning("UpdateAllFundamentals Canceled! {0}", e.Message);
+            }
             m_cancelTokens.Add(cts);
             retData.Data = datalist.Count;
             return retData;
         }
-        private async Task DoUpdateAllFundamentals(List<Stock> datalist, bool forceUpdate, CancellationToken token)
+        private async Task DoUpdateAllFundamentals(List<Stock> datalist, bool forceUpdate, CancellationToken cancelToken)
         {
+            List<Action> actionlist = new List<Action>();
             var tasklist = new List<Task>();
             for (int i = 0; i < datalist.Count; i++)
             {
                 var stock = datalist[i];
                 var fundamentalService = (FundamentalService)_services.GetService(typeof(FundamentalService));
-                Task task = fundamentalService.UpdateAllFromIB(stock, forceUpdate);
-                tasklist.Add(task);
-                await Task.Delay(m_config.TaskInterval);
 
-                if (tasklist.Count >= m_config.TaskMaxCount)
-                {
-                    int idx = Task.WaitAny(tasklist.ToArray());
-                    tasklist.RemoveAt(idx);
-                }
-                if (token.IsCancellationRequested)
-                    break;
+                var action = new Action(() => fundamentalService.UpdateAllFromIB(stock, forceUpdate, cancelToken).Wait());
+                actionlist.Add(action);
+
+                //Task task = fundamentalService.UpdateAllFromIB(stock, forceUpdate);
+                //tasklist.Add(task);
+                //await Task.Delay(m_config.TaskInterval);
+                //if (tasklist.Count >= m_config.TaskMaxCount)
+                //{
+                //    int idx = Task.WaitAny(tasklist.ToArray());
+                //    tasklist.RemoveAt(idx);
+                //}
+                //if (token.IsCancellationRequested)
+                //    break;
             }
+            Parallel.Invoke(new ParallelOptions(){ CancellationToken = cancelToken, MaxDegreeOfParallelism = m_config.TaskMaxCount }, actionlist.ToArray());
         }
 
         /// <summary>
@@ -115,32 +127,43 @@ namespace MoneyMoat.Services
             var retData = new ReturnData<int>(0);
             var datalist = await m_symbolService.GetAllAsync();
             var cts = new CancellationTokenSource();
-            Task task = new Task(() => DoUpdateAllHistoricals(datalist, cts.Token).Wait(), cts.Token);
-            task.Start();
+            try
+            {
+                Task task = new Task(() => DoUpdateAllHistoricals(datalist, cts.Token).Wait(), cts.Token);
+                task.Start();
+            }
+            catch(TaskCanceledException e)
+            {
+                m_logger.LogWarning("UpdateAllHistoricals Canceled! {0}", e.Message);
+            }
             m_cancelTokens.Add(cts);
             retData.Data = datalist.Count;
             return retData;
         }
-        private  async Task DoUpdateAllHistoricals(List<Stock> datalist, CancellationToken token)
+        private  async Task DoUpdateAllHistoricals(List<Stock> datalist, CancellationToken cancelToken)
         {
+            List<Action> actionlist = new List<Action>();
             var tasklist = new List<Task>();
             for (int i = 0; i < datalist.Count; i++)
             {
                 var stock = datalist[i];
                 var historicalService = (HistoricalService)_services.GetService(typeof(HistoricalService));
-                Task task = historicalService.UpdateHistoricalDataFromXueQiu(stock.Symbol);
-                tasklist.Add(task);
-                await Task.Delay(m_config.TaskInterval);
+                
+                var action = new Action(() => historicalService.UpdateHistoricalDataFromXueQiu(stock.Symbol, cancelToken).Wait());
+                actionlist.Add(action);
 
-                if (tasklist.Count >= m_config.TaskMaxCount)
-                {
-                    int idx = Task.WaitAny(tasklist.ToArray());
-                    tasklist.RemoveAt(idx);
-                }
-
-                if (token.IsCancellationRequested)
-                    break;
+                //Task task = historicalService.UpdateHistoricalDataFromXueQiu(stock.Symbol);
+                //tasklist.Add(task);
+                //await Task.Delay(m_config.TaskInterval);
+                //if (tasklist.Count >= m_config.TaskMaxCount)
+                //{
+                //    int idx = Task.WaitAny(tasklist.ToArray());
+                //    tasklist.RemoveAt(idx);
+                //}
+                //if (token.IsCancellationRequested)
+                //    break;
             }
+            Parallel.Invoke(new ParallelOptions() {CancellationToken = cancelToken, MaxDegreeOfParallelism = m_config.TaskMaxCount }, actionlist.ToArray());
         }
 
         [Api(ActionId = 1004)]
