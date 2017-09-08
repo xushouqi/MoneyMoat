@@ -32,7 +32,7 @@ namespace CommonNetwork
             )
         {
             m_assembly = Assembly.GetEntryAssembly();
-            m_project_name = m_assembly.FullName.Split(",")[0];
+            m_project_name = m_assembly.FullName.Split(',')[0];
 
             m_next = next;
             m_userManager = userManager;

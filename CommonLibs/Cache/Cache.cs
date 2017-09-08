@@ -8,15 +8,17 @@ namespace CommonLibs
     {
         protected class CacheValue<TCacheKey, TCacheValue>
         {
-            public CacheValue(TCacheValue value)
+            public CacheValue(TKey key, TCacheValue value)
             {
                 LastAccess = DateTime.Now;
                 Value = value;
+                Key = key;
             }
 
             public LinkedListNode<KeyValuePair<TCacheKey, CacheValue<TCacheKey, TCacheValue>>> IndexRef { get; set; }
             public DateTime LastAccess { get; set; }
             public TCacheValue Value { get; set; }
+            public TKey Key { get; set; }
         }
 
         protected readonly LinkedList<KeyValuePair<TKey, CacheValue<TKey, TValue>>> _IndexList = new LinkedList<KeyValuePair<TKey, CacheValue<TKey, TValue>>>();
@@ -99,7 +101,7 @@ namespace CommonLibs
             CacheValue<TKey, TValue> cacheValue = GetCacheValueUnlocked(key);
             if (cacheValue == null)
             {
-                cacheValue = new CacheValue<TKey, TValue>(value);
+                cacheValue = new CacheValue<TKey, TValue>(key, value);
                 _ValueCache[key] = cacheValue;
             }
             else
@@ -122,9 +124,13 @@ namespace CommonLibs
         protected void InvalidateUnlocked(TKey key)
         {
             var value = GetCacheValueUnlocked(key);
+            InvalidateUnlocked(value);
+        }
+        protected void InvalidateUnlocked(CacheValue<TKey, TValue> value)
+        {
             if (value != null)
             {
-                _ValueCache.Remove(key);
+                _ValueCache.Remove(value.Key);
                 _IndexList.Remove(value.IndexRef);
             }
         }
@@ -133,9 +139,25 @@ namespace CommonLibs
         {
             lock (SyncRoot)
             {
-                var toExpire = _ValueCache.Where(x => IsExpired(x.Key, x.Value.Value, x.Value.LastAccess, maxAge)).Select(x => x.Key).ToList();
-                toExpire.ForEach(InvalidateUnlocked);
+                //var toExpire = _ValueCache.Where(x => IsExpired(x.Key, x.Value.Value, x.Value.LastAccess, maxAge)).Select(x => x.Key).ToList();
+                //toExpire.ForEach(InvalidateUnlocked);
+                //var toExpire = _ValueCache.Where(x => IsExpired(x.Value, maxAge)).Select(x => x.Value).ToList();
+                //toExpire.ForEach(InvalidateUnlocked);
+
+                while(_IndexList.Count > 0 && IsExpired(_IndexList.Last.Value.Value, maxAge))
+                {
+                    InvalidateUnlocked(_IndexList.Last.Value.Value);
+                }
             }
+        }
+
+        protected virtual bool IsExpired(CacheValue<TKey, TValue> value, TimeSpan maxAge)
+        {
+            return value.LastAccess + maxAge < _LastCacheAccess;
+        }
+        protected virtual bool IsExpired(TKey key, TValue value, DateTime lastValueAccess, TimeSpan maxAge)
+        {
+            return lastValueAccess + maxAge < _LastCacheAccess;
         }
 
         public virtual void Expire(int maxSize)
@@ -144,8 +166,16 @@ namespace CommonLibs
             {
                 while (_IndexList.Count > maxSize)
                 {
-                    InvalidateUnlocked(_IndexList.Last.Value.Key);
+                    InvalidateUnlocked(_IndexList.Last.Value.Value);
                 }
+            }
+        }
+
+        public List<TKey> GetKeys()
+        {
+            lock (SyncRoot)
+            {
+                return new List<TKey>(_ValueCache.Keys);
             }
         }
 
@@ -155,19 +185,6 @@ namespace CommonLibs
             {
                 _ValueCache.Clear();
                 _IndexList.Clear();
-            }
-        }
-
-        protected virtual bool IsExpired(TKey key, TValue value, DateTime lastValueAccess, TimeSpan maxAge)
-        {
-            return lastValueAccess + maxAge < _LastCacheAccess;
-        }
-
-        public List<TKey> GetKeys()
-        {
-            lock (SyncRoot)
-            {
-                return new List<TKey>(_ValueCache.Keys);
             }
         }
 

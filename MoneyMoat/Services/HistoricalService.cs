@@ -35,6 +35,8 @@ namespace MoneyMoat.Services
             ibClient.HeadTimestamp += HandleEarliestDataPoint;
             ibClient.HistoricalData += HandleHistoricalData;
             ibClient.HistoricalDataEnd += HandleHistoricalDataEnd;
+
+            
         }
 
         [Api]
@@ -86,14 +88,15 @@ namespace MoneyMoat.Services
                                 if (count >= 10)
                                 {
                                     await m_repoData.SaveChangesAsync();
-                                    m_logger.LogWarning("UpdateHistoricalData {0} Count={1}", symbol, count);
+                                    m_logger.LogWarning("[{0}]:UpdateHistoricalData {1} Count={2}", Thread.CurrentThread.ManagedThreadId, symbol, count);
                                     count = 0;
                                 }
                             }
                             if (count >= 0)
                                 await m_repoData.SaveChangesAsync();
                         }
-                        m_logger.LogWarning("UpdateHistoricalData {0} Count={1}", symbol, count);
+                        else
+                            m_logger.LogWarning("[{0}]:UpdateHistoricalData {1} No Datas!!!", Thread.CurrentThread.ManagedThreadId, symbol);
                     }
                     catch (Exception e)
                     {
@@ -102,7 +105,7 @@ namespace MoneyMoat.Services
                     }
                 }
                 else
-                    m_logger.LogWarning("No new datas: {0}, since {1}", symbol, lastData != null? lastData.time.ToShortDateString(): "???");
+                    m_logger.LogWarning("[{0}]:No new datas: {1}, since {2}", Thread.CurrentThread.ManagedThreadId, symbol, lastData != null? lastData.time.ToShortDateString(): "???");
             }
             return lastData;
         }
