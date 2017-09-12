@@ -15,19 +15,19 @@ namespace CommonNetwork
 
         object m_lock = new object();
 
-        public virtual T UpdateUser(WebSocket socket, int accountId, string token, double expiresIn)
+        public virtual T UpdateUser(WebSocket socket, int userId, UserTypeEnum userType, string token, double expiresIn)
         {
             T data = default(T);
-            if (socket != null && accountId > 0)
+            if (socket != null && userId > 0)
             {
                 int handle = socket.GetHashCode();
-                m_useridBySocket[handle] = accountId;
-
+                m_useridBySocket.AddOrUpdate(handle, userId, (key, oldValue)=> userId);
+                
                 lock (m_lock)
                 {
-                    if (m_usersById.ContainsKey(accountId))
+                    if (m_usersById.ContainsKey(userId))
                     {
-                        data = m_usersById[accountId];
+                        data = m_usersById[userId];
                         data.SocketHandle = handle;
                         data.Token = token;
                         data.ExpireTime = DateTime.Now.AddSeconds(expiresIn);
@@ -35,16 +35,18 @@ namespace CommonNetwork
                     else
                     {
                         data = (T)Activator.CreateInstance(typeof(T));
-                        data.ID = accountId;
+                        data.ID = userId;
+                        data.Type = userType;
                         data.SocketHandle = handle;
                         data.Token = token;
                         data.ExpireTime = DateTime.Now.AddSeconds(expiresIn);
-                        m_usersById[accountId] = data;
+                        m_usersById[userId] = data;
                     }
                 }
             }
             return data;
         }
+
         public virtual int RemoveUser(WebSocket socket)
         {
             int id = 0;

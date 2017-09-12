@@ -14,6 +14,9 @@ using IBApi;
 using FluentScheduler;
 using CommonNetwork;
 using StockModels;
+using DotNetCore.CAP;
+using CommonLibs;
+using CommonServices.Caching;
 
 namespace MoneyMoat
 {
@@ -46,15 +49,39 @@ namespace MoneyMoat
             services.AddDbContext<MainDbContext>(opt =>
                     opt.UseMySql(connstr), ServiceLifetime.Transient);
 
+
+            services.AddCap(x =>
+            {
+                x.UseEntityFramework<MainDbContext>();
+
+                var settings = Configuration.Get<AppSettings>().RabbitMQConfigs;
+                // If your Message Queue is using RabbitMQ you need to add the config：
+                x.UseRabbitMQ((rabbitOpt) => rabbitOpt = new RabbitMQOptions
+                {
+                    HostName = settings.RabbitMQHostName,
+                    Port = settings.RabbitMQPort,
+                    UserName = settings.RabbitMQUsername,
+                    Password = settings.RabbitMQPassword,
+                    VirtualHost = settings.RabbitMQVHost,
+                    TopicExchangeName = "cap.default.topic",
+                });
+            });
+
             services.AddTransient<ApiExceptionFilter>();
 
             services.AddSingleton<CommonManager>();
 
-            //缓存cache
-            //services.AddSingleton<CommonLibs.Cache, >();
+            //分布缓存cache
+            //services.AddSingleton<ICacheClient<Stock>, HybridCacheClient<Stock>>();
+
+            services.AddTransient<ISubscriberService, CacheSubscriberService<Stock>>();
 
             //注册数据仓库（生成代码）
             services.AddRepositoryService(Environment, Configuration);
+            //AutoMapper
+            services.AddMapperModels(Environment, Configuration);
+            //Actions for WebSocket
+            services.AddRegisterActions(Environment, Configuration);
 
             services.AddSingleton<IUserManager<UserData>, UserManager<UserData>>();
             services.AddSingleton<IPushManager, PushManager>();
@@ -73,10 +100,6 @@ namespace MoneyMoat
             // Add framework services.
             services.AddMvc();
 
-            //AutoMapper
-            services.AddMapperModels(Environment, Configuration);
-            //Actions for WebSocket
-            services.AddRegisterActions(Environment, Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

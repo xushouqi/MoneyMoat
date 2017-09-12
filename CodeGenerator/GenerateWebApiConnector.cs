@@ -47,9 +47,9 @@ namespace CodeGenerator
             //string server_controller_method_auth_encrypt_template = CodeCommon.GetTemplate(m_template_path, "ServerControllerMethodAysncAuthEncrypt.txt");
 
             string client_connector_template = CodeCommon.GetTemplate(m_template_path, "ClientConnector.txt");
-            string client_connector_mtehod_template = CodeCommon.GetTemplate(m_template_path, "ClientConnectorMethod.txt");
-            string client_connector_mtehodget_template = CodeCommon.GetTemplate(m_template_path, "ClientConnectorMethodGet.txt");
-            string client_connector_mtehodencrypt_template = CodeCommon.GetTemplate(m_template_path, "ClientConnectorMethodEncrypt.txt");
+            string client_connector_mtehod_template = CodeCommon.GetTemplate(m_template_path, "ClientConnectorMethodEncrypt.txt");
+            //string client_connector_mtehodget_template = CodeCommon.GetTemplate(m_template_path, "ClientConnectorMethodGet.txt");
+            //string client_connector_mtehodencrypt_template = CodeCommon.GetTemplate(m_template_path, "ClientConnectorMethodEncrypt.txt");
 
             //服务端Controller里的Method群
             string server_controller_methods = "";
@@ -75,13 +75,13 @@ namespace CodeGenerator
                             var attributes = (ApiAttribute)vMethodInfo.GetCustomAttribute(typeof(ApiAttribute), false);
 
                             //需要验证account
-                            bool needauthaccount = attributes.AuthType == AuthTypeEnum.Member;
+                            bool needauthaccount = attributes.AuthPolicy == UserTypeEnum.Member;
 
                             string client_connector_method = client_connector_mtehod_template;
-                            if (attributes.Encrypt)
-                                client_connector_method = client_connector_mtehodencrypt_template;
-                            else if (attributes.IsGet)
-                                client_connector_method = client_connector_mtehodget_template;
+                            //if (attributes.Encrypt)
+                            //    client_connector_method = client_connector_mtehodencrypt_template;
+                            //else if (attributes.IsGet)
+                            //    client_connector_method = client_connector_mtehodget_template;
 
                             string clientRoute = vType.Name.Replace("Service", "/" + vMethodInfo.Name);
 
@@ -95,6 +95,7 @@ namespace CodeGenerator
                             string queryString = "";
                             //string decryptString = "";
                             string ValidDic = "";
+                            string serverUseParams = "";
 
                             //遍历入参
                             ParameterInfo[] paramInfos = vMethodInfo.GetParameters();
@@ -103,53 +104,90 @@ namespace CodeGenerator
                                 ParameterInfo paramInfo = paramInfos[j];
                                 System.Type stype = paramInfo.ParameterType;
                                 string typestr = Common.GetSimpleTypeName(stype.ToString());
-
                                 //curaccnout
-                                bool skipMethd = needauthaccount && paramInfo.Name.Equals("accountId") && j == 0;
+                                bool skipMethd = attributes.AuthPolicy != UserTypeEnum.None && paramInfo.Name.Equals("accountId");
+                                if (skipMethd)
+                                    serverUseParams = "m_accountId";
+
+                                //if (attributes.AuthIDType != AuthIDTypeEnum.None && j == 0)
+                                //{
+                                //    if (attributes.AuthIDType == AuthIDTypeEnum.AccountId && paramInfo.Name.Equals("accountId"))
+                                //    {
+                                //        skipMethd = true;
+                                //        serverUseParams = "m_accountId";
+                                //    }
+                                //    else if (attributes.AuthIDType == AuthIDTypeEnum.RoleId && paramInfo.Name.Equals("roleId"))
+                                //    {
+                                //        skipMethd = true;
+                                //        serverUseParams = "m_roleId";
+                                //    }
+                                //    else if (attributes.AuthIDType == AuthIDTypeEnum.TeamId && paramInfo.Name.Equals("teamId"))
+                                //    {
+                                //        skipMethd = true;
+                                //        serverUseParams = "m_teamId";
+                                //    }
+                                //}
+
                                 if (!skipMethd)
                                 {
-                                    methodParams += typestr + " " + paramInfo.Name;
-                                    clientMethodParams += typestr + " " + paramInfo.Name;
-                                    ValidDic += "tmp.ContainsKey(\"" + paramInfo.Name + "\")";
-
-                                    //是枚举类型
-                                    if (stype.Name.ToLower().Contains("enum"))
+                                    if (CodeCommon.CheckParamSocket(paramInfo))
                                     {
-                                        dicParams += "{ \"" + paramInfo.Name + "\", ((int)" + paramInfo.Name + ").ToString()}";
-                                        queryString += "\"" + paramInfo.Name + "=\" + ((int)" + paramInfo.Name + ").ToString()";
-
-                                        paramsFromDic += "(" + typestr + ")(int.Parse(tmp[\"" + paramInfo.Name + "\"]))";
+                                        serverUseParams += "m_socket";
+                                        skipMethd = true;
                                     }
                                     else
                                     {
-                                        dicParams += "{ \"" + paramInfo.Name + "\", " + paramInfo.Name + ".ToString()}";
-                                        queryString += "\"" + paramInfo.Name + "=\" + " + paramInfo.Name + ".ToString()";
-                                        encryptParams += paramInfo.Name + ".ToString()";
+                                        methodParams += typestr + " " + paramInfo.Name;
+                                        clientMethodParams += typestr + " " + paramInfo.Name;
+                                        ValidDic += "tmp.ContainsKey(\"" + paramInfo.Name + "\")";
 
-                                        if (typestr.ToLower().Contains("string"))
-                                            paramsFromDic += "tmp[\"" + paramInfo.Name + "\"]";
+                                        //是枚举类型
+                                        if (stype.Name.ToLower().Contains("enum"))
+                                        {
+                                            dicParams += "{ \"" + paramInfo.Name + "\", ((int)" + paramInfo.Name + ").ToString()}";
+                                            queryString += "\"" + paramInfo.Name + "=\" + ((int)" + paramInfo.Name + ").ToString()";
+
+                                            paramsFromDic += "(" + typestr + ")(int.Parse(tmp[\"" + paramInfo.Name + "\"]))";
+                                        }
                                         else
-                                            paramsFromDic += typestr + ".Parse(tmp[\"" + paramInfo.Name + "\"])";
+                                        {
+                                            dicParams += "{ \"" + paramInfo.Name + "\", " + paramInfo.Name + ".ToString()}";
+                                            queryString += "\"" + paramInfo.Name + "=\" + " + paramInfo.Name + ".ToString()";
+                                            encryptParams += paramInfo.Name + ".ToString()";
+
+                                            if (typestr.ToLower().Contains("string"))
+                                                paramsFromDic += "tmp[\"" + paramInfo.Name + "\"]";
+                                            else
+                                                paramsFromDic += typestr + ".Parse(tmp[\"" + paramInfo.Name + "\"])";
+                                        }
                                     }
                                 }
                                 else
                                     paramsFromDic += paramInfo.Name;
-                                inputParams += paramInfo.Name;
+                                if (!CodeCommon.CheckParamSocket(paramInfo))
+                                    inputParams += paramInfo.Name;
 
                                 if (j < paramInfos.Length - 1)
                                 {
-                                    if (!skipMethd)
+                                    if (paramInfos.Length > j + 1 && CodeCommon.CheckParamSocket(paramInfos[j + 1]))
                                     {
-                                        methodParams += ", ";
-                                        clientMethodParams += ", ";
-                                        dicParams += ", ";
-                                        //paramsFromDic += ", ";
-                                        queryString += "+\"&\" + ";
-                                        encryptParams += " + ";
-                                        ValidDic += " && ";
+
                                     }
-                                    inputParams += ", ";
-                                    paramsFromDic += ", ";
+                                    else
+                                    {
+                                        if (!skipMethd)
+                                        {
+                                            methodParams += ", ";
+                                            clientMethodParams += ", ";
+                                            dicParams += ", ";
+                                            //paramsFromDic += ", ";
+                                            queryString += "+\"&\" + ";
+                                            encryptParams += " + ";
+                                            ValidDic += " && ";
+                                        }
+                                        inputParams += ", ";
+                                        paramsFromDic += ", ";
+                                    }
                                 }
                             }
 
@@ -161,13 +199,15 @@ namespace CodeGenerator
                                 methodParams += ", string sign";
                             else
                                 methodParams += "string sign";
-                            if (attributes.Encrypt && !string.IsNullOrEmpty(dicParams))
+                            if (!string.IsNullOrEmpty(dicParams)
+                                //&& attributes.Encrypt
+                                )
                                 dicParams += ", { \"sign\", RsaService.Encrypt(" + encryptParams + ")}";
 
                             if (string.IsNullOrEmpty(queryString))
                                 queryString = "\"\"";
 
-                            if (attributes.AuthType != AuthTypeEnum.None)
+                            if (attributes.AuthPolicy != UserTypeEnum.None)
                             {
                                 if (!string.IsNullOrEmpty(clientMethodParams))
                                     clientMethodParams = "string token, " + clientMethodParams;
@@ -197,15 +237,15 @@ namespace CodeGenerator
                             server_controller_method = server_controller_method.Replace("#ParamsInput#", inputParams);
                             server_controller_method = server_controller_method.Replace("#MethodRetunType#", methodReturnTypeName);
                             //server_controller_method = server_controller_method.Replace("#Decrypt#", decryptString);
-                            if (attributes.AuthType == AuthTypeEnum.Member)
+                            if (attributes.AuthPolicy == UserTypeEnum.Member)
                             {
                                 server_controller_method = server_controller_method.Replace("#AuthPolicy#", "[Authorize(Policy = \"Member\")]");
                             }
-                            else if (attributes.AuthType == AuthTypeEnum.SuperAdmin)
+                            else if (attributes.AuthPolicy == UserTypeEnum.SuperAdmin)
                             {
                                 server_controller_method = server_controller_method.Replace("#AuthPolicy#", "[Authorize(Policy = \"SuperAdmin\")]");
                             }
-                            else if (attributes.AuthType == AuthTypeEnum.Admin)
+                            else if (attributes.AuthPolicy == UserTypeEnum.Admin)
                                 server_controller_method = server_controller_method.Replace("#AuthPolicy#", "[Authorize(Policy = \"Admin\")]");
                             else
                                 server_controller_method = server_controller_method.Replace("#AuthPolicy#", "[AllowAnonymous]");
@@ -217,8 +257,8 @@ namespace CodeGenerator
                             //这个必须最后
                             server_controller_method = server_controller_method.Replace("#ReturnType#", returnTypeName);
 
-                            if (attributes.IsGet)
-                                server_controller_method = server_controller_method.Replace("[HttpPost]", "[HttpGet]");
+                            //if (attributes.IsGet)
+                            //    server_controller_method = server_controller_method.Replace("[HttpPost]", "[HttpGet]");
 
                             if (!methodReturnType.FullName.Contains("Task"))
                                 server_controller_method = server_controller_method.Replace(" await ", " ");
@@ -239,7 +279,7 @@ namespace CodeGenerator
                             client_connector_method = client_connector_method.Replace("#Route#", clientRoute);
                             client_connector_method = client_connector_method.Replace("#QueryString#", queryString);
                             client_connector_method = client_connector_method.Replace("#DicParams#", dicParams);
-                            client_connector_method = client_connector_method.Replace("#TokenHeader#", attributes.AuthType != AuthTypeEnum.None ?
+                            client_connector_method = client_connector_method.Replace("#TokenHeader#", attributes.AuthPolicy != UserTypeEnum.None ?
                                                                                                         "client.DefaultRequestHeaders.Add(\"Authorization\", \"Bearer \" + token);"
                                                                                                         : "");
                             if (!string.IsNullOrEmpty(attributes.Tips))

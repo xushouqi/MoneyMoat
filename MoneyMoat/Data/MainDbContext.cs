@@ -8,7 +8,6 @@ using CommonLibs;
 
 namespace StockModels
 {
-    [DbContext]
     public class MainDbContext : DbContext
     {
         public DbSet<Stock> Stocks { get; set; }

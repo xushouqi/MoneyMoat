@@ -12,6 +12,11 @@ namespace CommonLibs
         Unknown = 1000,
         WrongTokenOrTimeout = 1001,
         NotExists,
+        UnAuthorized,
+
+        WrongPassword,
+        InvalidDataformat,
+
         NoMoney,
         NoDiamond,
         NoPower,

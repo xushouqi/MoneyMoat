@@ -109,16 +109,31 @@ namespace CommonNetwork
                                                 uid = user.ID;
                                         }
 
-                                        if (uid > 0 || atype.GetTypeInfo().IsDefined(typeof(ValidLoginAttribute), false))
+                                        if (uid > 0 || atype.GetTypeInfo().IsDefined(typeof(TryLoginAttribute), false))
                                         {
-                                            //提交参数
-                                            action.Submit(socket, uid, package);
+                                            bool validGo = true;
+                                            //需验证用户身份权限
+                                            if (atype.GetTypeInfo().IsDefined(typeof(AuthPolicyAttribute), false))
+                                            {
+                                                var attri = (AuthPolicyAttribute)atype.GetTypeInfo().GetCustomAttribute(typeof(AuthPolicyAttribute), false);
+                                                validGo = user.Type >= attri.AuthPolicy;
+                                            }
 
-                                            //执行
-                                            await action.DoAction();
+                                            byte[] result;
+                                            if (validGo)
+                                            {
+                                                //提交参数
+                                                action.Submit(socket, user, package);
 
-                                            //获取返回值
-                                            var result = action.GetResponseData();
+                                                //执行
+                                                await action.DoAction();
+
+                                                //获取返回值
+                                                result = action.GetResponseData();
+                                            }
+                                            else
+                                                result = action.GetUnAuthorizedData();
+
                                             var ia = new ArraySegment<byte>(result);
                                             //回包
                                             await SendAsync(socket, ia);

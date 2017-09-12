@@ -38,6 +38,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CommonLibs\CommonLibs.csproj" />
     <ProjectReference Include="..\CommonNetwork\CommonNetwork.csproj" />
+    <ProjectReference Include="..\CommonServices\CommonServices.csproj" />
     <ProjectReference Include="..\CSharpAPI\CSharpAPI.csproj" />
     <ProjectReference Include="..\StockModels\StockModels.csproj" />
   </ItemGroup>
@@ -54,6 +55,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DotNetCore.CAP">
+      <HintPath>..\Plugins\DotNetCore.CAP.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetCore.CAP.MySql">
+      <HintPath>..\Plugins\DotNetCore.CAP.MySql.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetCore.CAP.RabbitMQ">
+      <HintPath>..\Plugins\DotNetCore.CAP.RabbitMQ.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

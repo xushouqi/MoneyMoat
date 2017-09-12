@@ -13,4 +13,10 @@
     <ProjectReference Include="..\CommonLibs\CommonLibs.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="DotNetCore.CAP">
+      <HintPath>..\Plugins\DotNetCore.CAP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
