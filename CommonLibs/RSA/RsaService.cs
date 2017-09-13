@@ -63,7 +63,30 @@ namespace CommonLibs
                 using (var rsa = CreateRsaFromPublicKey(PubKeyXML))
                 {
                     var plainTextBytes = Encoding.UTF8.GetBytes(input);
-                    cipherBytes = rsa.Encrypt(plainTextBytes, RSAEncryptionPadding.Pkcs1);
+                    //cipherBytes = rsa.Encrypt(plainTextBytes, RSAEncryptionPadding.Pkcs1);
+
+                    //每段的长度
+                    int bufferSize = (rsa.KeySize / 8) - 11;
+                    var buffer = new byte[bufferSize];
+                    using (MemoryStream inputStream = new MemoryStream(plainTextBytes),
+                         outputStream = new MemoryStream())
+                    {
+                        while (true)
+                        {
+                            //分段加密
+                            int readSize = inputStream.Read(buffer, 0, bufferSize);
+                            if (readSize <= 0)
+                            {
+                                break;
+                            }
+
+                            var temp = new byte[readSize];
+                            Array.Copy(buffer, 0, temp, 0, readSize);
+                            var encryptedBytes = rsa.Encrypt(temp, RSAEncryptionPadding.Pkcs1);
+                            outputStream.Write(encryptedBytes, 0, encryptedBytes.Length);
+                        }
+                        cipherBytes = outputStream.ToArray();
+                    }
                 }
             }
             catch (Exception e)
@@ -80,8 +103,30 @@ namespace CommonLibs
             {
                 using (var rsa = CreateRsaFromPrivateKey(PrivKeyXml))
                 {
-                    var plainTextBytes = rsa.Decrypt(input, RSAEncryptionPadding.Pkcs1);
-                    plainText = Encoding.UTF8.GetString(plainTextBytes);
+                    //var plainTextBytes = rsa.Decrypt(input, RSAEncryptionPadding.Pkcs1);
+                    //plainText = Encoding.UTF8.GetString(plainTextBytes);
+
+                    //每段的长度
+                    int bufferSize = (rsa.KeySize / 8) - 11;
+                    var buffer = new byte[bufferSize];
+                    using (MemoryStream inputStream = new MemoryStream(input),
+                         outputStream = new MemoryStream())
+                    {
+                        while (true)
+                        {
+                            int readSize = inputStream.Read(buffer, 0, bufferSize);
+                            if (readSize <= 0)
+                            {
+                                break;
+                            }
+
+                            var temp = new byte[readSize];
+                            Array.Copy(buffer, 0, temp, 0, readSize);
+                            var rawBytes = rsa.Decrypt(temp, RSAEncryptionPadding.Pkcs1);
+                            outputStream.Write(rawBytes, 0, rawBytes.Length);
+                        }
+                        plainText = Encoding.UTF8.GetString(outputStream.ToArray());
+                    }
                 }
             }
             catch (Exception e)
