@@ -1,7 +1,7 @@
 ﻿		/// <summary>
         /// #Tips#
         /// </summary>
-        public static async Task<#WithReturnType#> #MethodName#(#MethodParams#)
+        public static async Task<#WithReturnType#> #MethodName#Async(#MethodParams#)
         {
             var content = new FormUrlEncodedContent(new Dictionary<string, string>()
             {

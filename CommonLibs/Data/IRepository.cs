@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommonLibs
 {
-    public interface IRepository<TEntity>
+    public interface IRepository<TEntity> : IDisposable
     {
         Task<List<TEntity>> GetAllAsync();
         TEntity GetDefault();

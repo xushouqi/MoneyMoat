@@ -315,7 +315,7 @@ namespace CodeGenerator
 
                 client_connector_file = client_connector_file.Replace("#Methods#", client_connector_methods);
 
-                string connectorFilename = m_client_path + connectorName + ".cs";
+                string connectorFilename = m_client_path + m_project_name + "." + connectorName + ".cs";
                 CodeCommon.WriteFile(connectorFilename, client_connector_file);
             }
         }

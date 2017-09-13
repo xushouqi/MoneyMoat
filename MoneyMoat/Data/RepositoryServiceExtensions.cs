@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using CommonLibs;
+using CommonServices.Caching;
 
 namespace StockModels
 {
@@ -21,7 +22,9 @@ namespace StockModels
             services.AddTransient<IRepository<Stock>, Repository<Stock, MainDbContext>>();
             services.AddTransient<IRepository<XueQiuQuote>, Repository<XueQiuQuote, MainDbContext>>();
 
-			return services;
+            services.AddSingleton<ICacheClient<Stock>, HybridCacheClient<Stock>>();
+
+            return services;
         }
     }
 }

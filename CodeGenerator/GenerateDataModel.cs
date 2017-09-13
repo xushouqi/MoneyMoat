@@ -22,9 +22,11 @@ namespace CodeGenerator
 
         public static void GenerateFromData(Type[] types)
         {
+            string cacheStr = "";
             string repoStr = "";
             string modelStr = "";
             string modelPrject = string.Empty;
+            string switchCache = "";
 
             for (int i = 0; i < types.Length; i++)
             {
@@ -44,6 +46,7 @@ namespace CodeGenerator
 
                 modelStr += "                cfg.CreateMap<" + className + ", " + className + "Data>();\n";
                 repoStr += "            services.AddTransient<IRepository<"+ className + ">, Repository<" + className + ", MainDbContext>>();\n";
+                cacheStr += "            services.AddSingleton<ICacheClient<" + className + ">, HybridCacheClient<" + className + ">>();\n";
 
                 string dataStr = "";
                 int idx = 0;
@@ -98,6 +101,12 @@ namespace CodeGenerator
                     string vfileName = m_models_path + className + "Data.cs";
                     CodeCommon.WriteFile(vfileName, vm_class);
                 }
+
+                //分布式cache订阅消息
+                switchCache += "                case \"" + className + "\":\n";
+                switchCache += "                    var " + className + "_client = (ICacheClient<" + className + ">)_services.GetService(typeof(ICacheClient<" + className + ">));\n";
+                switchCache += "                    await " + className + "_client.OnRemoteCacheItemExpiredAsync(message);\n";
+                switchCache += "                    break;\n";
             }
 
             //automapper
@@ -109,13 +118,26 @@ namespace CodeGenerator
             CodeCommon.WriteFile(fileName, server_class);
 
             //repository
-            string repo_class = CodeCommon.GetTemplate(m_template_path, "RepositoryServiceExtensions.txt");
+            string repo_class = CodeCommon.GetTemplate(m_template_path, "ServerRegServiceExtensions.txt");
             repo_class = repo_class.Replace("#ModelProject#", modelPrject);
             repo_class = repo_class.Replace("#ProjectName#", m_project_name);
-            repo_class = repo_class.Replace("#AddRepository#", repoStr);
+            repo_class = repo_class.Replace("#AddRepository#", repoStr +"\n"+ cacheStr);
 
-            fileName = m_server_path + @"\Data\RepositoryServiceExtensions.cs";
+            fileName = m_server_path + @"\Data\RegServiceExtensions.cs";
             CodeCommon.WriteFile(fileName, repo_class);
+
+
+            //cache subscriber
+            string subscriber_class = CodeCommon.GetTemplate(m_template_path, "ServerCacheSubscriber.txt");
+            if (!string.IsNullOrEmpty(subscriber_class))
+            {
+                subscriber_class = subscriber_class.Replace("#ModelProject#", modelPrject);
+                subscriber_class = subscriber_class.Replace("#ProjectName#", m_project_name);
+                subscriber_class = subscriber_class.Replace("#SwitchCacheClient#", switchCache);
+
+                fileName = m_server_path + @"\Data\CacheSubscriber.cs";
+                CodeCommon.WriteFile(fileName, subscriber_class);
+            }
         }
     }
 }

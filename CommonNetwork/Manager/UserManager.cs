@@ -15,19 +15,20 @@ namespace CommonNetwork
 
         object m_lock = new object();
 
-        public virtual T UpdateUser(WebSocket socket, int userId, UserTypeEnum userType, string token, double expiresIn)
+        public virtual T UpdateUser(WebSocket socket, int userId, UserTypeEnum userType, int roleId, string token, double expiresIn)
         {
             T data = default(T);
             if (socket != null && userId > 0)
             {
-                int handle = socket.GetHashCode();
-                m_useridBySocket.AddOrUpdate(handle, userId, (key, oldValue)=> userId);
-                
                 lock (m_lock)
                 {
-                    if (m_usersById.ContainsKey(userId))
+                    int handle = socket.GetHashCode();
+                    m_useridBySocket.AddOrUpdate(handle, userId, (key, oldValue) => userId);
+
+                    if (m_usersById.TryGetValue(userId, out data))
                     {
-                        data = m_usersById[userId];
+                        data.Type = userType;
+                        data.RoleId = roleId;
                         data.SocketHandle = handle;
                         data.Token = token;
                         data.ExpireTime = DateTime.Now.AddSeconds(expiresIn);
@@ -37,10 +38,11 @@ namespace CommonNetwork
                         data = (T)Activator.CreateInstance(typeof(T));
                         data.ID = userId;
                         data.Type = userType;
+                        data.RoleId = roleId;
                         data.SocketHandle = handle;
                         data.Token = token;
                         data.ExpireTime = DateTime.Now.AddSeconds(expiresIn);
-                        m_usersById[userId] = data;
+                        m_usersById.AddOrUpdate(userId, data, (key, oldValue) => data);
                     }
                 }
             }
@@ -53,12 +55,9 @@ namespace CommonNetwork
             lock (m_lock)
             {
                 int handle = socket.GetHashCode();
-                if (m_useridBySocket.ContainsKey(handle))
+                if (m_useridBySocket.TryGetValue(handle, out id))
                 {
-                    id = m_useridBySocket[handle];
-
                     T data = null;
-                    if (m_usersById.ContainsKey(id))
                         m_usersById.TryRemove(id, out data);
 
                     int tid = 0;
@@ -72,14 +71,13 @@ namespace CommonNetwork
             bool ret = false;
             lock (m_lock)
             {
-                if (m_usersById.ContainsKey(id))
+                T data = null;
+                if (m_usersById.TryGetValue(id, out data))
                 {
                     ret = true;
-                    var data = m_usersById[id];
 
                     int tid = 0;
-                    if (m_useridBySocket.ContainsKey(data.SocketHandle))
-                        m_useridBySocket.TryRemove(data.SocketHandle, out tid);
+                    m_useridBySocket.TryRemove(data.SocketHandle, out tid);
 
                     T tdata = null;
                     m_usersById.TryRemove(id, out tdata);
@@ -97,23 +95,17 @@ namespace CommonNetwork
         public virtual T GetUserData(WebSocket socket)
         {
             T user = null;
-            lock(m_lock)
-            {
-                int id = 0;
-                int handle = socket.GetHashCode();
-                m_useridBySocket.TryGetValue(handle, out id);
-                if (id > 0)
-                    m_usersById.TryGetValue(id, out user);
-            }
+            int id = 0;
+            int handle = socket.GetHashCode();
+            m_useridBySocket.TryGetValue(handle, out id);
+            if (id > 0)
+                m_usersById.TryGetValue(id, out user);
             return user;
         }
         public virtual T GetUserData(int id)
         {
             T user = null;
-            lock (m_lock)
-            {
-                m_usersById.TryGetValue(id, out user);
-            }
+            m_usersById.TryGetValue(id, out user);
             return user;
         }
     }

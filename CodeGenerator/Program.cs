@@ -83,9 +83,10 @@ namespace CodeGenerator
                     //特别指出CommonLibs
                     if (filename.Contains("CommonLibs"))
                         commonAssembly = assembly;
-                    //主程序
+                    //XXXModels
                     else if (filename.Contains("Models"))
                         modelsAssembly = assembly;
+                    //主程序
                     else if (filename.ToLower().Contains(project_name.ToLower()))
                         myAssembly = assembly;
                 }
@@ -112,29 +113,25 @@ namespace CodeGenerator
                     {
                         var tName = myType.FullName;
 
-                        //找到服务
-                        //if (tName.ToLower().Contains(serviceName.ToLower()))
+                        //恢复正确的大小写
+                        project_name = tName.Split('.')[0];
+                        server_path = solutionPath + @"\" + project_name;
+
+                        if (myType.GetTypeInfo().IsDefined(commonAssembly.GetType(typeof(WebApiAttribute).FullName), false))
                         {
-                            //恢复正确的大小写
-                            project_name = tName.Split('.')[0];
-                            server_path = solutionPath + @"\" + project_name;
+                            client_path = solutionPath + @"\ClientApiConnector\WebApi\" + project_name + @"\";
 
-                            if (myType.GetTypeInfo().IsDefined(commonAssembly.GetType(typeof(WebApiAttribute).FullName), false))
-                            {
-                                client_path = solutionPath + @"\ClientApiConnector\WebApi\";
+                            GenerateWebApiConnector.InitPath(modelsAssembly, template_path, project_name, server_path, client_path);
+                            GenerateWebApiConnector.GenerateFromService(myType);
+                        }
+                        if (myType.GetTypeInfo().IsDefined(typeof(WebSocketAttribute), false))
+                        {
+                            client_path = solutionPath + @"\ClientApiConnector\WebSocket\" + project_name + @"\";
 
-                                GenerateWebApiConnector.InitPath(modelsAssembly, template_path, project_name, server_path, client_path);
-                                GenerateWebApiConnector.GenerateFromService(myType);
-                            }
-                            if (myType.GetTypeInfo().IsDefined(typeof(WebSocketAttribute), false))
-                            {
-                                client_path = solutionPath + @"\ClientApiConnector\WebSocket\";
+                            GenerateWebSocketClient.InitPath(modelsAssembly, template_path, project_name, server_path, client_path);
+                            GenerateWebSocketClient.GenerateFromService(myType);
 
-                                GenerateWebSocketClient.InitPath(modelsAssembly, template_path, project_name, server_path, client_path);
-                                GenerateWebSocketClient.GenerateFromService(myType);
-
-                                socketTypeList.Add(myType);
-                            }
+                            socketTypeList.Add(myType);
                         }
                     }
                 }

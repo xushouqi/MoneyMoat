@@ -11,6 +11,7 @@ namespace CommonNetwork
         public string Token { get; set; }
         public DateTime ExpireTime { get; set; }
         public UserTypeEnum Type { get; set; }
+        public int RoleId { get; set; }
     }
 
 }

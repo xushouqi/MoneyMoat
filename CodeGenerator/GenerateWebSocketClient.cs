@@ -234,7 +234,7 @@ namespace CodeGenerator
                 client_class = client_class.Replace("#AddRemove#", client_regcallbackadds);
 
                 string clientFileName = m_service_name.Replace("Service", "Client");
-                clientFileName = m_client_path + clientFileName + ".cs";
+                clientFileName = m_client_path + m_project_name + "." + clientFileName + ".cs";
                 CodeCommon.WriteFile(clientFileName, client_class);
             }
             

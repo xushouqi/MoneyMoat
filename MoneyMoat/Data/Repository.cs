@@ -7,22 +7,26 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Z.EntityFramework.Plus;
-using CommonLibs;
 
-namespace StockModels
+namespace CommonLibs
 {
     public class Repository<TEntity, TContext> : IRepository<TEntity>
         where TEntity : Entity
         where TContext : DbContext
     {
         public DbSet<TEntity> Datas { get; set; }
-        
+
         protected readonly TContext m_context;
 
         public Repository(TContext context)
         {
             m_context = context;
             Datas = m_context.Set<TEntity>();
+        }
+
+        public void Dispose()
+        {
+
         }
 
         private string GetKey(int id)
@@ -47,10 +51,10 @@ namespace StockModels
         {
             var data = Datas.Find(key);
             return data;
-        }        
+        }
         public bool Any(int id)
         {
-            return Datas.Any(t=>t.GetId() == id);
+            return Datas.Any(t => t.GetId() == id);
         }
         public bool Any(string key)
         {
@@ -79,7 +83,7 @@ namespace StockModels
         }
         public IQueryable<TEntity> Where<TKey>(Expression<Func<TEntity, bool>> where, Expression<Func<TEntity, TKey>> order)
         {
-            return Datas.Where(where);
+            return Datas.Where(where).OrderBy(order);
         }
         public IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> where)
         {
@@ -122,7 +126,7 @@ namespace StockModels
         public bool Remove(int id)
         {
             bool ret = false;
-            var data =  Find(id);
+            var data = Find(id);
             if (data != null)
             {
                 ret = true;

@@ -6,7 +6,7 @@ namespace CommonNetwork
 {
     public interface IUserManager<T>
     {
-        T UpdateUser(WebSocket socket, int userId, UserTypeEnum userType, string token, double expiresIn);
+        T UpdateUser(WebSocket socket, int userId, UserTypeEnum userType, int roleId, string token, double expiresIn);
         int RemoveUser(WebSocket socket);
         bool RemoveUser(int id);
         bool ValidSocket(WebSocket socket);

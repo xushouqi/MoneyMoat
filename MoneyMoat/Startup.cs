@@ -74,14 +74,14 @@ namespace MoneyMoat
             //分布缓存cache
             //services.AddSingleton<ICacheClient<Stock>, HybridCacheClient<Stock>>();
 
-            services.AddTransient<ISubscriberService, CacheSubscriberService<Stock>>();
-
             //注册数据仓库（生成代码）
             services.AddRepositoryService(Environment, Configuration);
             //AutoMapper
             services.AddMapperModels(Environment, Configuration);
             //Actions for WebSocket
             services.AddRegisterActions(Environment, Configuration);
+            //分布式cache 注册同步消息
+            services.AddTransient<ISubscriberService, CacheSubscriber>();
 
             services.AddSingleton<IUserManager<UserData>, UserManager<UserData>>();
             services.AddSingleton<IPushManager, PushManager>();
