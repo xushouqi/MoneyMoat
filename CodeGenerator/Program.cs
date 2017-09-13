@@ -56,7 +56,9 @@ namespace CodeGenerator
 
                 int lastOfP = dllfile.LastIndexOf(@"\");
                 //dll目录
-                var dllPath = runPath + @"\" + dllfile.Substring(0, lastOfP);
+                var dllPath = dllfile.Substring(0, lastOfP);
+                if (!dllPath.Contains(":"))
+                    dllPath = runPath + @"\" + dllPath;
                 Console.WriteLine("dllPath={0}", dllPath);
 
                 //取项目名称
