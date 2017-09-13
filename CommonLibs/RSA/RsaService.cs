@@ -107,7 +107,7 @@ namespace CommonLibs
                     //plainText = Encoding.UTF8.GetString(plainTextBytes);
 
                     //每段的长度
-                    int bufferSize = (rsa.KeySize / 8) - 11;
+                    int bufferSize = (rsa.KeySize / 8);
                     var buffer = new byte[bufferSize];
                     using (MemoryStream inputStream = new MemoryStream(input),
                          outputStream = new MemoryStream())
@@ -138,20 +138,8 @@ namespace CommonLibs
 
         public static string DecryptToString(string cipherText)
         {
-            string plainText = "";
-            try
-            {
-                using (var rsa = CreateRsaFromPrivateKey(PrivKeyXml))
-                {
-                    var plainTextBytes = rsa.Decrypt(Convert.FromBase64String(cipherText), RSAEncryptionPadding.Pkcs1);
-                    plainText = Encoding.UTF8.GetString(plainTextBytes);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("DecryptToString, Error={0}", e.Message);
-            }
-            return plainText;
+            var input = Convert.FromBase64String(cipherText);
+            return DecryptToString(input);
         }
 
         private static RSA CreateRsaFromPrivateKey(string privateKey)
