@@ -73,14 +73,14 @@
 //        public NetworkStateEnum MyState = NetworkStateEnum.None;
 
 //        public UserClient UserClient = null;
-		
+
 //        private ClientSocket m_socket = null;
 
 //        public NetworkClinet()
 //        {
 //            m_socket = new ClientSocket();
 //            UserClient = new UserClient(m_socket);
-            
+
 //            m_socket.OnConnect = OnConnected;
 //            m_socket.OnDisconnect = OnDisconnect;
 //            m_socket.OnError = OnError;

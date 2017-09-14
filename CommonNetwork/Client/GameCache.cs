@@ -30,7 +30,7 @@
 //        /// 选手缓存
 //        /// </summary>
 //        public AutoExpiryCache<int, PlayerData> PlayerCaches = new AutoExpiryCache<int, PlayerData>("PlayerData", 60);
-        
+
 //        private NetworkClinet m_networkClient;
 
 //        public GameCache(NetworkClinet nclient)
