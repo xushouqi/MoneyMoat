@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <Company>Xu Shouqi</Company>
+    <Authors>Xu Shouqi</Authors>
   </PropertyGroup>
 
   <ItemGroup>

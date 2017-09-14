@@ -35,7 +35,7 @@ namespace CommonNetwork
         {
             m_socket = socket;
             m_userData = userData;
-            m_accountId = m_userData.ID;
+            m_accountId = m_userData != null ? m_userData.ID : 0;
             m_package = package;
             if (m_package.Params != null)
                 m_params = new PackageParams(m_package.Params);

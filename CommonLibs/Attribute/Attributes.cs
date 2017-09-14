@@ -27,7 +27,7 @@ namespace CommonLibs
         public Type ReturnType = null;
         //public bool IsGet = false;
         //public bool Encrypt = false;
-        public bool IsValidToken = false;
+        //public bool IsValidToken = false;
         public bool RegPushData = false;
         public UserTypeEnum AuthPolicy = UserTypeEnum.None;
         //public AuthIDTypeEnum AuthIDType = AuthIDTypeEnum.None;
@@ -50,10 +50,10 @@ namespace CommonLibs
     {
     }
 
-    [AttributeUsage(AttributeTargets.Class)]
-    public class TryLoginAttribute : System.Attribute
-    {
-    }
+    //[AttributeUsage(AttributeTargets.Class)]
+    //public class TryLoginAttribute : System.Attribute
+    //{
+    //}
 
     [AttributeUsage(AttributeTargets.Class)]
     public class AuthPolicyAttribute : System.Attribute

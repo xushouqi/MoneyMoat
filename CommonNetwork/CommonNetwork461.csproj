@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net461</TargetFramework>
     <Authors>Xu Shouqi</Authors>
     <Company>Xu Shouqi</Company>
   </PropertyGroup>
@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonLibs\CommonLibs.csproj" />
+    <ProjectReference Include="..\CommonLibs\CommonLibs461.csproj" />
   </ItemGroup>
 
 </Project>

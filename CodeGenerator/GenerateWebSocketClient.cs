@@ -208,12 +208,7 @@ namespace CodeGenerator
                     server_action = server_action.Replace("#ReturnType#", returnTypeName);
                     server_action = server_action.Replace("#MapperReturn#", mapperReturn);
 
-                    if (attributes.IsValidToken)
-                        server_action = server_action.Replace("#Attribute#", "[TryLogin]");
-                    else if (attributes.AuthPolicy != UserTypeEnum.None)
-                        server_action = server_action.Replace("#Attribute#", "[AuthPolicy(AuthPolicy = UserTypeEnum." + attributes.AuthPolicy.ToString()+ ")]");
-                    else
-                        server_action = server_action.Replace("#Attribute#", "");
+                    server_action = server_action.Replace("#Attribute#", "[AuthPolicy(AuthPolicy = UserTypeEnum." + attributes.AuthPolicy.ToString() + ")]");
 
                     string serverFileName = "Action" + attributes.ActionId.ToString();
                     serverFileName = m_server_path + @"\Actions\" + serverFileName + ".cs";

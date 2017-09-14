@@ -5,18 +5,19 @@
         {
             string qstr = #QueryString#;
             byte[] datas = RsaService.EncryptFromString(qstr);
-            var content = new ByteArrayContent(datas);
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-			
             string url = ClientCommon.GetUrl("#ServerName#") + "/#Route#";
-            HttpClient client = new HttpClient();
-			client.DefaultRequestHeaders.Clear();
-            #TokenHeader#
-            var response = await client.PostAsync(url, content);
             #WithReturnType# retData = default(#WithReturnType#);
-            if (response.IsSuccessStatusCode)
+
+            var response = await HttpWebResponseUtility.CreatePostHttpResponse(url, datas, null);
+            if (response.IsSuccessStatusCode())
             {
-                string tmp = response.Content.ReadAsStringAsync().Result;
+                int count = 0;
+                var buffer = new byte[response.ContentLength];
+                using (var responseStream = response.GetResponseStream())
+                {
+                    count = await responseStream.ReadAsync(buffer, 0, (int)response.ContentLength);
+                }
+                var tmp = Encoding.UTF8.GetString(buffer);
 				retData = JsonConvert.DeserializeObject<#WithReturnType#>(tmp);
             }
             return retData;

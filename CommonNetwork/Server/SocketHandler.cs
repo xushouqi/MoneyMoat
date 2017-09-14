@@ -90,60 +90,67 @@ namespace CommonNetwork
                             if (package != null)
                             {
                                 //调用对应的服务
-                                var actionName = string.Concat(m_project_name, "Actions.Action", package.ActionId);
+                                var actionName = string.Concat(m_project_name, ".Actions.Action", package.ActionId);
 
                                 try
                                 {
                                     Type atype = m_assembly.GetType(actionName);
-                                    var action = (IAction)m_services.GetService(atype);
-                                    if (action != null)
+                                    if (atype != null)
                                     {
-                                        int uid = 0;
-                                        var user = m_userManager.GetUserData(socket);
-                                        if (user != null)
+                                        var action = (IAction)m_services.GetService(atype);
+                                        if (action != null)
                                         {
-                                            //注册下发数据
-                                            m_pushManager.AddPushAction(user, PushToClient);
+                                            int uid = 0;
+                                            var user = m_userManager.GetUserData(socket);
+                                            if (user != null)
+                                            {
+                                                //注册下发数据
+                                                m_pushManager.AddPushAction(user, PushToClient);
 
-                                            if (package.Uid <= 0 || package.Uid == user.ID)
-                                                uid = user.ID;
-                                        }
+                                                if (package.Uid <= 0 || package.Uid == user.ID)
+                                                    uid = user.ID;
+                                            }
 
-                                        if (uid > 0 || atype.GetTypeInfo().IsDefined(typeof(TryLoginAttribute), false))
-                                        {
                                             bool validGo = true;
+                                            AuthPolicyAttribute attri = null;
                                             //需验证用户身份权限
                                             if (atype.GetTypeInfo().IsDefined(typeof(AuthPolicyAttribute), false))
                                             {
-                                                var attri = (AuthPolicyAttribute)atype.GetTypeInfo().GetCustomAttribute(typeof(AuthPolicyAttribute), false);
-                                                validGo = user.Type >= attri.AuthPolicy;
+                                                attri = (AuthPolicyAttribute)atype.GetTypeInfo().GetCustomAttribute(typeof(AuthPolicyAttribute), false);
+                                                if (attri.AuthPolicy > UserTypeEnum.None)
+                                                    validGo = user != null && user.Type >= attri.AuthPolicy;
                                             }
 
-                                            byte[] result;
-                                            if (validGo)
+                                            if (uid > 0 || (attri !=null && attri.AuthPolicy == UserTypeEnum.None))
                                             {
-                                                //提交参数
-                                                action.Submit(socket, user, package);
+                                                byte[] result;
+                                                if (validGo)
+                                                {
+                                                    //提交参数
+                                                    action.Submit(socket, user, package);
 
-                                                //执行
-                                                await action.DoAction();
+                                                    //执行
+                                                    await action.DoAction();
 
-                                                //获取返回值
-                                                result = action.GetResponseData();
+                                                    //获取返回值
+                                                    result = action.GetResponseData();
+                                                }
+                                                else
+                                                    result = action.GetUnAuthorizedData();
+
+                                                var ia = new ArraySegment<byte>(result);
+                                                //回包
+                                                await SendAsync(socket, ia);
+                                                //await socket.SendAsync(ia, WebSocketMessageType.Binary, true, CancellationToken.None);
+
+                                                //其他后续操作
+                                                await action.AfterAction();
                                             }
                                             else
-                                                result = action.GetUnAuthorizedData();
-
-                                            var ia = new ArraySegment<byte>(result);
-                                            //回包
-                                            await SendAsync(socket, ia);
-                                            //await socket.SendAsync(ia, WebSocketMessageType.Binary, true, CancellationToken.None);
-
-                                            //其他后续操作
-                                            await action.AfterAction();
+                                                m_logService.LogError(string.Format("Uid NOT Found!!! {0}", actionName));
                                         }
                                         else
-                                            m_logService.LogError(string.Format("Uid NOT Found!!! {0}", actionName));
+                                            m_logService.LogError(string.Format("{0} NOT Found!!!", actionName));
                                     }
                                     else
                                         m_logService.LogError(string.Format("{0} NOT Found!!!", actionName));

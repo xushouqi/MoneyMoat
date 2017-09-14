@@ -126,8 +126,8 @@ namespace CommonLibs
         private static ISystemClock _instance = DefaultSystemClock.Instance;
         public static ISystemClock Instance
         {
-            get => _instance ?? DefaultSystemClock.Instance;
-            set => _instance = value;
+            get { return _instance ?? DefaultSystemClock.Instance; }
+            set { _instance = value; }
         }
 
         public static TestSystemClock Test
