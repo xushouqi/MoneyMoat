@@ -34,6 +34,8 @@ namespace CodeGenerator
 
         public static void GenerateFromService(System.Type vType)
         {
+            var webapiAttri = (WebApiAttribute)vType.GetTypeInfo().GetCustomAttribute(typeof(WebApiAttribute), false);
+
             string connectorName = vType.Name.Replace("Service", "Api");
             string controllerName = vType.Name.Replace("Service", "Controller");
             //string interfaceName = "I" + vType.Name;
@@ -292,9 +294,10 @@ namespace CodeGenerator
                     }
                 }
             }
-
+                        
             //服务端Controller
             string server_controller_file = server_controller_template;
+            server_controller_file = server_controller_file.Replace("#PrivKeyName#", webapiAttri.PrivKeyName);
             server_controller_file = server_controller_file.Replace("#ControllerName#", controllerName);
             server_controller_file = server_controller_file.Replace("#ModelProject#", modelPrject);
             server_controller_file = server_controller_file.Replace("#Interface#", interfaceName);

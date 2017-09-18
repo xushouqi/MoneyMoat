@@ -20,10 +20,18 @@ namespace #ProjectName#.Controllers
     public class #ControllerName# : Controller
     {
         private readonly #Interface# _actionService;
+        private readonly ILogger _logger;
+        private readonly CommonManager _commonManager;
+        private readonly string _privKeyXml = string.Empty;
 
-        public #ControllerName#(#Interface# actionService)
+        public #ControllerName#(ILoggerFactory logFactory, 
+            CommonManager commonManager,
+            #Interface# actionService)
         {
             _actionService = actionService;
+            _logger = logFactory.CreateLogger("Error");
+            _commonManager = commonManager;
+            _privKeyXml = _commonManager.GetPrivateKey("#PrivKeyName#");
         }
 		
         private int GetCurrentAccountId()

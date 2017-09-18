@@ -3,23 +3,39 @@
         #AuthPolicy#
         public async Task<IActionResult> #MethodName#(#ParamsDeclare#)
         {
-			string design = string.Empty;
-            if (!string.IsNullOrEmpty(sign))
+            try
             {
-                design = RsaService.DecryptToString(sign);
-            }
-            else if (Request.ContentLength != null)
-            {
-                byte[] datas = new byte[(int)Request.ContentLength];
-                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
-                design = RsaService.DecryptToString(datas);
-            }
-            if (!string.IsNullOrEmpty(design))
-            {
-				var tmp = Common.QueryStringToData(design);
-				if (tmp != null#ValidDic#)
+				string design = string.Empty;
+				if (!string.IsNullOrEmpty(sign))
 				{
-					var retData = await _actionService.#MethodName#(#ParamsFromDic#);
+					design = RsaService.DecryptToString(sign, _privKeyXml);
+				}
+				else if (Request.ContentLength != null)
+				{
+					byte[] datas = new byte[(int)Request.ContentLength];
+					var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
+					design = RsaService.DecryptToString(datas, _privKeyXml);
+				}
+				if (!string.IsNullOrEmpty(design))
+				{
+					var tmp = Common.QueryStringToData(design);
+					if (tmp != null#ValidDic#)
+					{
+						var retData = await _actionService.#MethodName#(#ParamsFromDic#);
+						#MapperReturn#
+						if (data != null)
+						{
+							return new OkObjectResult(data);
+						}
+						else
+							return NoContent();
+					}
+					else
+						return new UnauthorizedResult();
+				}
+				else
+				{
+					var retData = await _actionService.#MethodName#(#ParamsInput#);
 					#MapperReturn#
 					if (data != null)
 					{
@@ -28,18 +44,11 @@
 					else
 						return NoContent();
 				}
-				else
-					return new UnauthorizedResult();
             }
-            else
+            catch(Exception e)
             {
-				var retData = await _actionService.#MethodName#(#ParamsInput#);
-				#MapperReturn#
-				if (data != null)
-				{
-					return new OkObjectResult(data);
-				}
-				else
-					return NoContent();
+                _logger.LogError(string.Format("Exception={0}\n ExceptionSource={1}\n StackTrace={2}",
+                    e.Message, e.Source, e.StackTrace));
+                return new BadRequestResult();
             }
         }

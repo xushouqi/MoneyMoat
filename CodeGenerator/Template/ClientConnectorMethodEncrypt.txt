@@ -6,19 +6,25 @@
             string qstr = #QueryString#;
             byte[] datas = RsaService.EncryptFromString(qstr);
             string url = ClientCommon.GetUrl("#ServerName#") + "/#Route#";
-            #WithReturnType# retData = default(#WithReturnType#);
+            #WithReturnType# retData = new #WithReturnType#();
+            retData.ErrorCode = ErrorCodeEnum.ResponseError;
 
             var response = await HttpWebResponseUtility.CreatePostHttpResponse(url, datas, null);
             if (response.IsSuccessStatusCode())
             {
-                int count = 0;
-                var buffer = new byte[response.ContentLength];
+				int length = 0;
+                byte[] buffer = new byte[1000];
                 using (var responseStream = response.GetResponseStream())
                 {
-                    count = await responseStream.ReadAsync(buffer, 0, (int)response.ContentLength);
+                    length = await responseStream.ReadAsync(buffer, 0, buffer.Length);
                 }
-                var tmp = Encoding.UTF8.GetString(buffer);
-				retData = JsonConvert.DeserializeObject<#WithReturnType#>(tmp);
+                if (length > 0)
+                {
+                    byte[] result = new byte[length];
+                    Array.Copy(buffer, result, length);
+                    var tmp = Encoding.UTF8.GetString(result);
+					retData = JsonConvert.DeserializeObject<#WithReturnType#>(tmp);
+                }
             }
             return retData;
         }

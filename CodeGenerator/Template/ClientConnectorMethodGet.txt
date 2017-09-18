@@ -8,7 +8,9 @@
 			client.DefaultRequestHeaders.Clear();
             #TokenHeader#
             var response = await client.GetAsync(url);
-            #WithReturnType# retData = default(#WithReturnType#);
+            #WithReturnType# retData = new #WithReturnType#();
+            retData.ErrorCode = ErrorCodeEnum.ResponseError;
+
             if (response.IsSuccessStatusCode)
             {
                 string tmp = response.Content.ReadAsStringAsync().Result;
