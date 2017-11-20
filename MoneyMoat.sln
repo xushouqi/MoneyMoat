@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{9DFCB50C-0F6
 		MoneyMoat\SQL\__efmigrationshistory.sql = MoneyMoat\SQL\__efmigrationshistory.sql
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApiConnector", "ClientApiConnector\ClientApiConnector.csproj", "{6B895BE7-6927-4D55-912D-340344A4FFB7}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockModels", "StockModels\StockModels.csproj", "{AFEA202B-147D-4350-80FD-AF1230F46BCA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{72B3A588-865F-4323-B99F-D38F2FB110F0}"
@@ -38,10 +36,6 @@ Global
 		{C9BF9314-F2B7-4E0E-93FC-C798D869D58E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9BF9314-F2B7-4E0E-93FC-C798D869D58E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9BF9314-F2B7-4E0E-93FC-C798D869D58E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6B895BE7-6927-4D55-912D-340344A4FFB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6B895BE7-6927-4D55-912D-340344A4FFB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6B895BE7-6927-4D55-912D-340344A4FFB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6B895BE7-6927-4D55-912D-340344A4FFB7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AFEA202B-147D-4350-80FD-AF1230F46BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AFEA202B-147D-4350-80FD-AF1230F46BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFEA202B-147D-4350-80FD-AF1230F46BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
