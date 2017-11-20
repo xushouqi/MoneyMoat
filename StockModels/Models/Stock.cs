@@ -6,26 +6,11 @@ using CommonLibs;
 namespace StockModels
 {
     [DataModels]
-    public class Stock : Entity
+    public class Stock : Entity<int>
     {
-        public override int GetId()
-        {
-            return ConId;
-        }
-        public override string GetKey()
-        {
-            return Symbol;
-        }
-        public override DateTime TryUpdateTime()
-        {
-            return UpdateTime = DateTime.Now;
-        }
-
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [DataView]
         public int ConId { get; set; }
-        [DataView]
-        public DateTime UpdateTime { get; set; }
 
         //[ConcurrencyCheck]
         //public DateTime RowVersion { get; set; }

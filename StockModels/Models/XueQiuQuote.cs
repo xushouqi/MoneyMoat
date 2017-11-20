@@ -7,28 +7,10 @@ using CommonLibs;
 namespace StockModels
 {
     [DataModels]
-    public class XueQiuQuote : Entity
+    public class XueQiuQuote : Entity<int>
     {
-        public override int GetId()
-        {
-            return Id;
-        }
-        public override string GetKey()
-        {
-            throw new NotImplementedException();
-        }
-        public override DateTime TryUpdateTime()
-        {
-            return UpdateTime = DateTime.Now;
-        }
-
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public DateTime UpdateTime { get; set; } = DateTime.Now;
         public string Symbol { get; set; }
-
-
+        
         public float volume { get; set; } = 0f;
         public float lot_volume { get; set; } = 0f;
         public float volumeAverage { get; set; } = 0f;

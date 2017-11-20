@@ -75,7 +75,7 @@ namespace MoneyMoat
             //services.AddSingleton<ICacheClient<Stock>, HybridCacheClient<Stock>>();
 
             //注册数据仓库（生成代码）
-            services.AddRepositoryService(Environment, Configuration);
+            //services.AddRepositoryService(Environment, Configuration);
             //AutoMapper
             services.AddMapperModels(Environment, Configuration);
             //Actions for WebSocket
@@ -120,7 +120,7 @@ namespace MoneyMoat
                     ReceiveBufferSize = 4096
                 };
                 ab.UseWebSockets(webSocketOptions);
-                ab.UseMiddleware<SocketHandler<UserData>>();
+                ab.UseMiddleware<WebSocketHandler<UserData>>();
             });
 
             var services = app.ApplicationServices;

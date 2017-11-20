@@ -38,9 +38,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommonLibs\CommonLibs.csproj" />
-    <ProjectReference Include="..\CommonNetwork\CommonNetwork.csproj" />
-    <ProjectReference Include="..\CommonServices\CommonServices.csproj" />
+    <ProjectReference Include="..\..\CommonLibs\CommonLibs\CommonLibs.csproj" />
+    <ProjectReference Include="..\..\CommonLibs\CommonNetwork\CommonNetwork.csproj" />
+    <ProjectReference Include="..\..\CommonLibs\CommonServices\CommonServices.csproj" />
     <ProjectReference Include="..\CSharpAPI\CSharpAPI.csproj" />
     <ProjectReference Include="..\StockModels\StockModels.csproj" />
   </ItemGroup>
