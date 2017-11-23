@@ -75,14 +75,17 @@ namespace MoneyMoat
             //services.AddSingleton<ICacheClient<Stock>, HybridCacheClient<Stock>>();
 
             //注册数据仓库（生成代码）
-            //services.AddRepositoryService(Environment, Configuration);
+            services.AddRegServices(Environment, Configuration);
             //AutoMapper
             services.AddMapperModels(Environment, Configuration);
             //Actions for WebSocket
             services.AddRegisterActions(Environment, Configuration);
             //分布式cache 注册同步消息
             services.AddTransient<ISubscriberService, CacheSubscriber>();
-
+            //PackageManager
+            services.AddSingleton(new PackageManager(0));
+            //UserSocketManager
+            services.AddSingleton<UserSocketManager>();
             services.AddSingleton<IUserManager<UserData>, UserManager<UserData>>();
             services.AddSingleton<IPushManager, PushManager>();
 
@@ -99,7 +102,6 @@ namespace MoneyMoat
 
             // Add framework services.
             services.AddMvc();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

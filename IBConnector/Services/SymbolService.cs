@@ -6,13 +6,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
-using MoneyMoat.Messages;
+using IBConnector.Messages;
 using IBApi;
 using AngleSharp.Parser.Html;
 using CommonLibs;
 using StockModels;
 
-namespace MoneyMoat.Services
+namespace IBConnector.Services
 {
     [WebApi]
     public class SymbolService : IBServiceBase<ContractDescription[]>

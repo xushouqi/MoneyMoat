@@ -7,14 +7,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
-using MoneyMoat.Messages;
-using MoneyMoat.Types;
-using StockModels;
 using IBApi;
 using Polly;
 using CommonLibs;
 
-namespace MoneyMoat.Services
+namespace IBConnector.Services
 {
     public class IBServiceBase<TResult>
     {

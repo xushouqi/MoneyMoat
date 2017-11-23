@@ -6,13 +6,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
-using MoneyMoat.Messages;
+using IBConnector.Messages;
 using IBApi;
 using Newtonsoft.Json;
 using CommonLibs;
 using StockModels;
 
-namespace MoneyMoat.Services
+namespace IBConnector.Services
 {
     [WebApi]
     public class HistoricalService : IBServiceBase<string>
@@ -37,81 +37,6 @@ namespace MoneyMoat.Services
             ibClient.HistoricalDataEnd += HandleHistoricalDataEnd;
 
             
-        }
-
-        [Api]
-        public async Task<Historical> UpdateHistoricalDataFromXueQiu(string symbol)
-        {
-            return await UpdateHistoricalDataFromXueQiu(symbol, CancellationToken.None);
-        }
-        public async Task<Historical> UpdateHistoricalDataFromXueQiu(string symbol, CancellationToken cancelToken)
-        {
-            Historical lastData = null;
-            var stock = m_repoStock.Find(symbol);
-            if (stock != null)
-            {
-                DateTime beijingNow = DateTime.Now.ToBeijingTime();
-                //只取前一天的数据（当前数据有可能未完成）
-                long to = beijingNow.AddDays(-1).ToTimeStamp();
-                //not close
-                if (beijingNow.Hour < 6)
-                    to = beijingNow.AddDays(-2).ToTimeStamp();
-                long from = stock.EarliestDate.ToTimeStamp();
-
-                //取已有数据的最新一条
-                lastData = await m_repoData.MaxAsync(t => t.Symbol == symbol, t => t.time);
-                if (lastData != null)
-                    from = lastData.time.AddDays(1).ToTimeStamp();
-
-                var url = "https://xueqiu.com/stock/forchartk/stocklist.json?symbol=" + symbol + "&period=1day&type=normal&begin="+ from + "&end="+ to;
-                var source = await MoatCommon.GetXueQiuContent(url);
-                if (!string.IsNullOrEmpty(source))
-                {
-                    JsonConvert.DefaultSettings = () => new JsonSerializerSettings
-                    {
-                        DateTimeZoneHandling = DateTimeZoneHandling.Local,
-                        DateFormatString = "ddd MMM dd HH:mm:ss zzz yyyy",
-                    };
-
-                    try
-                    {
-                        int count = 0;
-                        var obj = JsonConvert.DeserializeObject<XueQiuHistorical>(source);
-                        if (obj.chartlist.Count > 0)
-                        {
-                            for (int i = 0; i < obj.chartlist.Count; i++)
-                            {
-                                var data = obj.chartlist[i];
-                                data.Symbol = symbol;
-                                
-                                if (lastData == null || lastData.time < data.time)
-                                    lastData = data;
-                                
-                                m_repoData.Add(data);
-                                count++;
-                                if (count >= 10)
-                                {
-                                    await m_repoData.SaveChangesAsync();
-                                    m_logger.LogWarning("[{0}]:UpdateHistoricalData {1} Count={2}", Thread.CurrentThread.ManagedThreadId, symbol, count);
-                                    count = 0;
-                                }
-                            }
-                            if (count >= 0)
-                                await m_repoData.SaveChangesAsync();
-                        }
-                        else
-                            m_logger.LogWarning("[{0}]:UpdateHistoricalData {1} No Datas!!!", Thread.CurrentThread.ManagedThreadId, symbol);
-                    }
-                    catch (Exception e)
-                    {
-                        m_logger.LogError("UpdateHistoricalData Error: {0}\n{1}",
-                             e.Message, e.StackTrace);
-                    }
-                }
-                else
-                    m_logger.LogWarning("[{0}]:No new datas: {1}, since {2}", Thread.CurrentThread.ManagedThreadId, symbol, lastData != null? lastData.time.ToShortDateString(): "???");
-            }
-            return lastData;
         }
 
         public async Task<string> RequestEarliestDataPointAsync(string symbol, string exchange)

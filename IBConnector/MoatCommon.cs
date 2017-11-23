@@ -9,7 +9,7 @@ using System.Net;
 using System.Threading.Tasks;
 using StockModels;
 
-namespace MoneyMoat
+namespace IBConnector
 {
     public class MoatCommon
     {

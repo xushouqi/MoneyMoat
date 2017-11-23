@@ -147,7 +147,7 @@ namespace MoneyMoat.Services
         [Api]
         public async Task<string> RequestFromIBAsync(string symbol, string exchange, FundamentalsReportEnum ftype, bool forceUpdate = false)
         {
-            int reqId = MoatCommon.GetReqId(symbol);
+            int reqId = m_commonManager.GetReqId(symbol);
             var contract = MoatCommon.GetStockContract(symbol, exchange);
             var data = await SendRequestAsync(reqId, ()=> m_clientSocket.reqFundamentalData(reqId, contract, ftype.ToString(), new List<TagValue>()));
             if (!string.IsNullOrEmpty(data))

@@ -5,12 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Logging;
-using MoneyMoat.Messages;
+using IBConnector.Messages;
 using IBApi;
 using CommonLibs;
 using StockModels;
 
-namespace MoneyMoat.Services
+namespace IBConnector.Services
 {
     [WebApi]
     public class ScannerService : IBServiceBase<string>
