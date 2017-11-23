@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "CodeGenerator": {
-      "commandName": "Project",
-      "commandLineArgs": " C:\\SVN\\MoneyMoat\\CodeGenerator\\Template C:\\SVN\\EClub\\Servers\\EClubServer\\bin\\Debug\\netcoreapp2.0\\EClubServer.dll"
-    }
-  }
-}

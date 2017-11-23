@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CommonLibs;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Cors;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
@@ -20,15 +21,19 @@ namespace MoneyMoat.Controllers
     public class ScannerController : Controller
     {
         private readonly MoneyMoat.Services.ScannerService _actionService;
+        private readonly ILogger _logger;
 
-        public ScannerController(MoneyMoat.Services.ScannerService actionService)
+        public ScannerController(ILoggerFactory logFactory, 
+            MoneyMoat.Services.ScannerService actionService)
         {
             _actionService = actionService;
+            _logger = logFactory.CreateLogger("Error");
         }
 		
         private int GetCurrentAccountId()
         {
-            int accountid = int.Parse(User.Claims.First().Value);
+            int accountid = -1;
+            int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier).Value, out accountid);
             return accountid;
         }
 

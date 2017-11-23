@@ -1,9 +1,0 @@
-﻿
-		public void AddTo#MethodName#(Action<ErrorCodeEnum, #ReturnType#> callback)
-		{
-			m_#MethodName#CallbackAdd += callback;
-		}
-		public void Remove#MethodName#(Action<ErrorCodeEnum, #ReturnType#> callback)
-		{
-			m_#MethodName#CallbackAdd -= callback;
-		}

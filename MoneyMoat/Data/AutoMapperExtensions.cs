@@ -1,11 +1,12 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using StockModels.ViewModels;
 using AutoMapper;
 using CommonLibs;
+using StockModels;
+using StockModels.ViewModels;
 
-namespace StockModels
+namespace MoneyMoat
 {
     public static class AutoMapperExtensions
     {

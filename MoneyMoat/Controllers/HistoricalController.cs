@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CommonLibs;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Cors;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
@@ -20,15 +21,19 @@ namespace MoneyMoat.Controllers
     public class HistoricalController : Controller
     {
         private readonly MoneyMoat.Services.HistoricalService _actionService;
+        private readonly ILogger _logger;
 
-        public HistoricalController(MoneyMoat.Services.HistoricalService actionService)
+        public HistoricalController(ILoggerFactory logFactory, 
+            MoneyMoat.Services.HistoricalService actionService)
         {
             _actionService = actionService;
+            _logger = logFactory.CreateLogger("Error");
         }
 		
         private int GetCurrentAccountId()
         {
-            int accountid = int.Parse(User.Claims.First().Value);
+            int accountid = -1;
+            int.TryParse(User.FindFirst(ClaimTypes.NameIdentifier).Value, out accountid);
             return accountid;
         }
 
@@ -37,23 +42,41 @@ namespace MoneyMoat.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> UpdateHistoricalDataFromXueQiu(string symbol, string sign)
         {
-			string design = string.Empty;
-            if (!string.IsNullOrEmpty(sign))
+            try
             {
-                design = RsaService.DecryptToString(sign);
-            }
-            else if (Request.ContentLength != null)
-            {
-                byte[] datas = new byte[(int)Request.ContentLength];
-                var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
-                design = RsaService.DecryptToString(datas);
-            }
-            if (!string.IsNullOrEmpty(design))
-            {
-				var tmp = Common.QueryStringToData(design);
-				if (tmp != null && tmp.ContainsKey("symbol"))
+				string design = string.Empty;
+				if (!string.IsNullOrEmpty(sign))
 				{
-					var retData = await _actionService.UpdateHistoricalDataFromXueQiu(tmp["symbol"]);
+					design = RsaService.DecryptToString(sign, "");
+				}
+				else if (Request.ContentLength != null)
+				{
+					byte[] datas = new byte[(int)Request.ContentLength];
+					var ret = Request.Body.Read(datas, 0, (int)Request.ContentLength);
+					design = RsaService.DecryptToString(datas, "");
+				}
+				if (!string.IsNullOrEmpty(design))
+				{
+					var tmp = Common.QueryStringToData(design);
+					if (tmp != null && tmp.ContainsKey("symbol"))
+					{
+						var retData = await _actionService.UpdateHistoricalDataFromXueQiu(tmp["symbol"]);
+						var dataValue = Mapper.Map<HistoricalData>(retData);
+var data = new ReturnData<HistoricalData>(dataValue);
+
+						if (data != null)
+						{
+							return new OkObjectResult(data);
+						}
+						else
+							return NoContent();
+					}
+					else
+						return new UnauthorizedResult();
+				}
+				else
+				{
+					var retData = await _actionService.UpdateHistoricalDataFromXueQiu(symbol);
 					var dataValue = Mapper.Map<HistoricalData>(retData);
 var data = new ReturnData<HistoricalData>(dataValue);
 
@@ -64,21 +87,12 @@ var data = new ReturnData<HistoricalData>(dataValue);
 					else
 						return NoContent();
 				}
-				else
-					return new UnauthorizedResult();
             }
-            else
+            catch(Exception e)
             {
-				var retData = await _actionService.UpdateHistoricalDataFromXueQiu(symbol);
-				var dataValue = Mapper.Map<HistoricalData>(retData);
-var data = new ReturnData<HistoricalData>(dataValue);
-
-				if (data != null)
-				{
-					return new OkObjectResult(data);
-				}
-				else
-					return NoContent();
+                _logger.LogError(string.Format("Exception={0}\n ExceptionSource={1}\n StackTrace={2}",
+                    e.Message, e.Source, e.StackTrace));
+                return new BadRequestResult();
             }
         }
 

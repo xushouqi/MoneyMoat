@@ -11,7 +11,7 @@ using StockModels.ViewModels;
 
 namespace MoneyMoat.Actions
 {
-	
+	[AuthPolicy(AuthPolicy = UserTypeEnum.None)]
     public class Action1003 : ActionBase<int>
     {
         private readonly AnalyserService m_service;

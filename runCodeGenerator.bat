@@ -1,2 +1,1 @@
-dotnet CodeGenerator\bin\Debug\netcoreapp2.0\codegenerator.dll C:\SVN\MoneyMoat\CodeGenerator\Template MoneyMoat\bin\Debug\netcoreapp2.0\moneymoat.dll
-pause
+dotnet ..\CommonLibs\CodeGenerator\bin\Debug\netcoreapp2.0\CodeGenerator.dll -c false -t ..\CommonLibs\CodeGenerator\Template -d MoneyMoat\bin\Debug\netcoreapp2.0\MoneyMoat.dll

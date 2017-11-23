@@ -1,17 +1,17 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Text;
+using Newtonsoft.Json;
 using CommonLibs;
 using CommonNetwork;
-using #ModelProject#.ViewModels;
-using Newtonsoft.Json;
+using StockModels.ViewModels;
 
-namespace ClientApi.#ServerName#
+namespace ClientApi.MoneyMoat
 {
-    public class #ClassName#
+    public class ScannerApi
     {
 		/*
         private static HttpClient _client = new HttpClient();
@@ -26,6 +26,6 @@ namespace ClientApi.#ServerName#
         }
 		*/
 
-		#Methods#
+		
     }
 }
