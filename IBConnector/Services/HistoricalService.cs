@@ -19,18 +19,18 @@ namespace IBConnector.Services
     {
         public const int HISTORICAL_ID_BASE = 30000000;
 
-        private readonly IRepository<Stock> m_repoStock;
-        private readonly IRepository<Historical> m_repoData;
+        //private readonly IRepository<Stock> m_repoStock;
+        //private readonly IRepository<Historical> m_repoData;
         private int activeReqId = 0;
 
         public HistoricalService(IBManager ibmanager,
                         CommonManager commonManager,
-                        IRepository<Stock> repoStock,
-                        IRepository<Historical> repoData,
+                        //IRepository<Stock> repoStock,
+                        //IRepository<Historical> repoData,
                         ILogger<IBManager> logger) : base(ibmanager, logger, commonManager)
         {
-            m_repoStock = repoStock;
-            m_repoData = repoData;
+            //m_repoStock = repoStock;
+            //m_repoData = repoData;
 
             ibClient.HeadTimestamp += HandleEarliestDataPoint;
             ibClient.HistoricalData += HandleHistoricalData;

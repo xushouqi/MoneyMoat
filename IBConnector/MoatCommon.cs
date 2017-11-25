@@ -119,11 +119,11 @@ namespace IBConnector
             return result;
         }
 
-        public static string GetFundamentalFilePath(string symbol, FundamentalsReportEnum ftype)
-        {
-            string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Fundamentals", symbol, ftype.ToString() + ".xml");
-            return filepath;
-        }
+        //public static string GetFundamentalFilePath(string symbol, FundamentalsReportEnum ftype)
+        //{
+        //    string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Fundamentals", symbol, ftype.ToString() + ".xml");
+        //    return filepath;
+        //}
         public static void WriteFile(string filepath, string content)
         {
             string path = filepath.Substring(0, filepath.LastIndexOf(@"\"));

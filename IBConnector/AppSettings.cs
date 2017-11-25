@@ -10,8 +10,10 @@ namespace IBConnector
         public string GatewayHost { get; set; }
         public int GatewayPort { get; set; }
 
-        public int TaskInterval { get; set; }
-        public int TaskMaxCount { get; set; }
+        public string FundamentalPath { get; set; }
+
+        //public int TaskInterval { get; set; }
+        //public int TaskMaxCount { get; set; }
 
     }
     public class ConnectionString

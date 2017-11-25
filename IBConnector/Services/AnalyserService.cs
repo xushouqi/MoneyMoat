@@ -38,11 +38,11 @@ namespace IBConnector.Services
             m_config = options.Value;
         }
 
-        [Api(ActionId = 1000, Tips = "獲取股票代碼")]
-        public async Task<int> UpdateStockSymbolsFromSina(bool saveToDb)
-        {
-            return await m_symbolService.UpdateSymbolsFromSina(saveToDb);
-        }
+        //[Api(ActionId = 1000, Tips = "獲取股票代碼")]
+        //public async Task<int> UpdateStockSymbolsFromSina(bool saveToDb)
+        //{
+        //    return await m_symbolService.UpdateSymbolsFromSina(saveToDb);
+        //}
 
         /// <summary>
         /// 停止所有后台任务
@@ -69,50 +69,50 @@ namespace IBConnector.Services
         /// <param name="interval">启动间隔</param>
         /// <param name="count">同时启动数量</param>
         /// <returns></returns>
-        [Api(ActionId = 1002, Tips = "更新所有基本面数据")]
-        public async Task<ReturnData<int>> UpdateAllFundamentals(bool forceUpdate)
-        {
-            var retData = new ReturnData<int>(0);
-            var datalist = await m_symbolService.GetAllAsync();
-            var cts = new CancellationTokenSource();
-            try
-            {
-                Task task = new Task(() => DoUpdateAllFundamentals(datalist, forceUpdate, cts.Token).Wait(), cts.Token);
-                task.Start();
-            }
-            catch (TaskCanceledException e)
-            {
-                m_logger.LogWarning("UpdateAllFundamentals Canceled! {0}", e.Message);
-            }
-            m_cancelTokens.Add(cts);
-            retData.Data = datalist.Count;
-            return retData;
-        }
-        private async Task DoUpdateAllFundamentals(List<Stock> datalist, bool forceUpdate, CancellationToken cancelToken)
-        {
-            List<Action> actionlist = new List<Action>();
-            var tasklist = new List<Task>();
-            for (int i = 0; i < datalist.Count; i++)
-            {
-                var stock = datalist[i];
-                var fundamentalService = (FundamentalService)_services.GetService(typeof(FundamentalService));
+        //[Api(ActionId = 1002, Tips = "更新所有基本面数据")]
+        //public async Task<ReturnData<int>> UpdateAllFundamentals(bool forceUpdate)
+        //{
+        //    var retData = new ReturnData<int>(0);
+        //    var datalist = await m_symbolService.GetAllAsync();
+        //    var cts = new CancellationTokenSource();
+        //    try
+        //    {
+        //        Task task = new Task(() => DoUpdateAllFundamentals(datalist, forceUpdate, cts.Token).Wait(), cts.Token);
+        //        task.Start();
+        //    }
+        //    catch (TaskCanceledException e)
+        //    {
+        //        m_logger.LogWarning("UpdateAllFundamentals Canceled! {0}", e.Message);
+        //    }
+        //    m_cancelTokens.Add(cts);
+        //    retData.Data = datalist.Count;
+        //    return retData;
+        //}
+        //private async Task DoUpdateAllFundamentals(List<Stock> datalist, bool forceUpdate, CancellationToken cancelToken)
+        //{
+        //    List<Action> actionlist = new List<Action>();
+        //    var tasklist = new List<Task>();
+        //    for (int i = 0; i < datalist.Count; i++)
+        //    {
+        //        var stock = datalist[i];
+        //        var fundamentalService = (FundamentalService)_services.GetService(typeof(FundamentalService));
 
-                var action = new Action(() => fundamentalService.UpdateAllFromIB(stock, forceUpdate, cancelToken).Wait());
-                actionlist.Add(action);
+        //        var action = new Action(() => fundamentalService.UpdateAllFromIB(stock, forceUpdate, cancelToken).Wait());
+        //        actionlist.Add(action);
 
-                //Task task = fundamentalService.UpdateAllFromIB(stock, forceUpdate);
-                //tasklist.Add(task);
-                //await Task.Delay(m_config.TaskInterval);
-                //if (tasklist.Count >= m_config.TaskMaxCount)
-                //{
-                //    int idx = Task.WaitAny(tasklist.ToArray());
-                //    tasklist.RemoveAt(idx);
-                //}
-                //if (token.IsCancellationRequested)
-                //    break;
-            }
-            Parallel.Invoke(new ParallelOptions(){ CancellationToken = cancelToken, MaxDegreeOfParallelism = m_config.TaskMaxCount }, actionlist.ToArray());
-        }
+        //        //Task task = fundamentalService.UpdateAllFromIB(stock, forceUpdate);
+        //        //tasklist.Add(task);
+        //        //await Task.Delay(m_config.TaskInterval);
+        //        //if (tasklist.Count >= m_config.TaskMaxCount)
+        //        //{
+        //        //    int idx = Task.WaitAny(tasklist.ToArray());
+        //        //    tasklist.RemoveAt(idx);
+        //        //}
+        //        //if (token.IsCancellationRequested)
+        //        //    break;
+        //    }
+        //    Parallel.Invoke(new ParallelOptions(){ CancellationToken = cancelToken, MaxDegreeOfParallelism = m_config.TaskMaxCount }, actionlist.ToArray());
+        //}
 
         [Api(ActionId = 1004)]
         public async Task<ReturnData<List<FinSummary>>> CalcFinSummary(string symbol)
@@ -196,16 +196,16 @@ namespace IBConnector.Services
                                               && t.coaCode == coaCode);
         }
 
-        [Api(ActionId = 1005)]
-        public async Task<ReturnData<int>> UpdateAndCalcFundamental(string symbol)
-        {
-            var retData = new ReturnData<int>(0);
-            var fundamentalService = (FundamentalService)_services.GetService(typeof(FundamentalService));
-            var ret = await fundamentalService.UpdateAllFromIB(symbol, true);
-            var retSum = await CalcFinSummary(symbol);
-            if (retSum.ErrorCode == ErrorCodeEnum.Success)
-                retData.Data = retSum.Data.Count;
-            return retData;
-        }
+        //[Api(ActionId = 1005)]
+        //public async Task<ReturnData<int>> UpdateAndCalcFundamental(string symbol)
+        //{
+        //    var retData = new ReturnData<int>(0);
+        //    var fundamentalService = (FundamentalService)_services.GetService(typeof(FundamentalService));
+        //    var ret = await fundamentalService.UpdateAllFromIB(symbol, true);
+        //    var retSum = await CalcFinSummary(symbol);
+        //    if (retSum.ErrorCode == ErrorCodeEnum.Success)
+        //        retData.Data = retSum.Data.Count;
+        //    return retData;
+        //}
     }
 }

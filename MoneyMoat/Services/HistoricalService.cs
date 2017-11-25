@@ -35,8 +35,6 @@ namespace MoneyMoat.Services
             ibClient.HeadTimestamp += HandleEarliestDataPoint;
             ibClient.HistoricalData += HandleHistoricalData;
             ibClient.HistoricalDataEnd += HandleHistoricalDataEnd;
-
-            
         }
 
         [Api]

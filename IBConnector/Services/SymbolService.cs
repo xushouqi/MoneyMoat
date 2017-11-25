@@ -17,17 +17,17 @@ namespace IBConnector.Services
     [WebApi]
     public class SymbolService : IBServiceBase<ContractDescription[]>
     {
-        private readonly HistoricalService m_historicalService;
-        private readonly IRepository<Stock> m_repoStock;
+        //private readonly HistoricalService m_historicalService;
+        //private readonly IRepository<Stock> m_repoStock;
 
         public SymbolService(IBManager ibmanager,
                         CommonManager commonManager,
-                        HistoricalService historicalService,
-                        IRepository<Stock> repoStock,
+                        //HistoricalService historicalService,
+                        //IRepository<Stock> repoStock,
                         ILogger<IBManager> logger) : base(ibmanager, logger, commonManager)
         {
-            m_historicalService = historicalService;
-            m_repoStock = repoStock;
+            //m_historicalService = historicalService;
+            //m_repoStock = repoStock;
 
             ibClient.SymbolSamples += HandleSymbolSamplesData;
 
@@ -43,123 +43,123 @@ namespace IBConnector.Services
 
         List<string> m_categories = new List<string>();
 
-        public async Task<int> UpdateSymbolsFromSina(bool saveToDb)
-        {            
-            var parser = new HtmlParser();
-            var count = 0;
-            var url = "http://vip.stock.finance.sina.com.cn/usstock/ustotal.php";
-            var source = await MoatCommon.GetHttpContent(url, System.Text.Encoding.GetEncoding("gb2312"));
-            if (!string.IsNullOrEmpty(source))
-            {            
-                var document = parser.Parse(source);
+        //public async Task<int> UpdateSymbolsFromSina(bool saveToDb)
+        //{            
+        //    var parser = new HtmlParser();
+        //    var count = 0;
+        //    var url = "http://vip.stock.finance.sina.com.cn/usstock/ustotal.php";
+        //    var source = await MoatCommon.GetHttpContent(url, System.Text.Encoding.GetEncoding("gb2312"));
+        //    if (!string.IsNullOrEmpty(source))
+        //    {            
+        //        var document = parser.Parse(source);
 
-                var blocklist = document.All.Where(t => t.ClassName == "col_div").ToArray();
-                for (int i = 0; i < blocklist.Length; i++)
-                {
-                    var body = blocklist[i];
-                    var hrefs = body.GetElementsByTagName("a");
-                    for (int j = 0; j < hrefs.Length; j++)
-                    {
-                        var node = hrefs[j];
+        //        var blocklist = document.All.Where(t => t.ClassName == "col_div").ToArray();
+        //        for (int i = 0; i < blocklist.Length; i++)
+        //        {
+        //            var body = blocklist[i];
+        //            var hrefs = body.GetElementsByTagName("a");
+        //            for (int j = 0; j < hrefs.Length; j++)
+        //            {
+        //                var node = hrefs[j];
                         
-                        var match = Regex.Match(node.InnerHtml, @"(?<=\().*?(?=\))");
-                        if (match.Success)
-                        {
-                            var symbol = match.Value;
-                            var name = node.InnerHtml.Replace("(" + symbol + ")", "");
-                            Console.WriteLine("{0}: {1}", symbol, name);
+        //                var match = Regex.Match(node.InnerHtml, @"(?<=\().*?(?=\))");
+        //                if (match.Success)
+        //                {
+        //                    var symbol = match.Value;
+        //                    var name = node.InnerHtml.Replace("(" + symbol + ")", "");
+        //                    Console.WriteLine("{0}: {1}", symbol, name);
 
-                            await UpdateStock(name, symbol, m_categories[i], saveToDb);
-                            count++;
-                        }
-                    }
-                }
-                await m_repoStock.SaveChangesAsync();
-            }
-            return count;
-        }
+        //                    await UpdateStock(name, symbol, m_categories[i], saveToDb);
+        //                    count++;
+        //                }
+        //            }
+        //        }
+        //        //await m_repoStock.SaveChangesAsync();
+        //    }
+        //    return count;
+        //}
 
-        [Api]
-        public async Task<Stock> FindAsync(string symbol)
-        {
-            Stock data = await UpdateStock(symbol, symbol, "", true);
-            return data;
-        }
+        //[Api]
+        //public async Task<Stock> FindAsync(string symbol)
+        //{
+        //    Stock data = await UpdateStock(symbol, symbol, "", true);
+        //    return data;
+        //}
 
-        [Api]
-        public async Task<List<Stock>> GetAllAsync()
-        {
-            return await m_repoStock.GetAllAsync();
-        }
-        public async Task Update(Stock data)
-        {
-            m_repoStock.Update(data);
-            await m_repoStock.SaveChangesAsync();
-        }
+        //[Api]
+        //public async Task<List<Stock>> GetAllAsync()
+        //{
+        //    return await m_repoStock.GetAllAsync();
+        //}
+        //public async Task Update(Stock data)
+        //{
+        //    m_repoStock.Update(data);
+        //    await m_repoStock.SaveChangesAsync();
+        //}
 
-        [Api]
-        public async Task<Stock> UpdateStock(string name, string symbol, string category, bool saveToDb)
-        {
-            Stock data = m_repoStock.Find(symbol);
-            if (data == null)
-            {
-                var resuls = await SearchSymbolsAsync(symbol);
-                if (resuls != null && resuls.Count > 0)
-                {
-                    m_logger.LogError("SearchSymbolsAsync, count={0}", resuls.Count);
+        //[Api]
+        //public async Task<Stock> UpdateStock(string name, string symbol, string category, bool saveToDb)
+        //{
+        //    Stock data = m_repoStock.Find(symbol);
+        //    if (data == null)
+        //    {
+        //        var resuls = await SearchSymbolsAsync(symbol);
+        //        if (resuls != null && resuls.Count > 0)
+        //        {
+        //            m_logger.LogError("SearchSymbolsAsync, count={0}", resuls.Count);
 
-                    for (int c = 0; c < resuls.Count; c++)
-                    {
-                        var detail = resuls[c];
-                        if (symbol.Equals(detail.Contract.Symbol))
-                        {
-                            try
-                            {
-                                var exchange = detail.Contract.PrimaryExch;
-                                if (exchange.Contains("NASDAQ"))
-                                    exchange = ExchangeEnum.ISLAND.ToString();
+        //            for (int c = 0; c < resuls.Count; c++)
+        //            {
+        //                var detail = resuls[c];
+        //                if (symbol.Equals(detail.Contract.Symbol))
+        //                {
+        //                    try
+        //                    {
+        //                        var exchange = detail.Contract.PrimaryExch;
+        //                        if (exchange.Contains("NASDAQ"))
+        //                            exchange = ExchangeEnum.ISLAND.ToString();
 
-                                if (exchange.Equals(ExchangeEnum.ISLAND.ToString()) || exchange.Equals(ExchangeEnum.NYSE.ToString()))
-                                {
-                                    //获取最早上市时间
-                                    var his = await m_historicalService.RequestEarliestDataPointAsync(symbol, exchange);
-                                    var earliestDate = new DateTime();
-                                    if (!string.IsNullOrEmpty(his))
-                                    {
-                                        his = his.Insert(4, "-").Insert(7, "-");
-                                        earliestDate = DateTime.Parse(his);
-                                    }
+        //                        if (exchange.Equals(ExchangeEnum.ISLAND.ToString()) || exchange.Equals(ExchangeEnum.NYSE.ToString()))
+        //                        {
+        //                            var earliestDate = new DateTime(2010, 1, 1);
+        //                            //获取最早上市时间
+        //                            //var his = await m_historicalService.RequestEarliestDataPointAsync(symbol, exchange);
+        //                            //if (!string.IsNullOrEmpty(his))
+        //                            //{
+        //                            //    his = his.Insert(4, "-").Insert(7, "-");
+        //                            //    earliestDate = DateTime.Parse(his);
+        //                            //}
 
-                                    data = new Stock
-                                    {
-                                        Name = name,
-                                        Symbol = detail.Contract.Symbol,
-                                        ConId = detail.Contract.ConId,
-                                        Currency = detail.Contract.Currency,
-                                        Exchange = exchange,
-                                        EarliestDate = earliestDate,
-                                        Category = category,
-                                    };
-                                    m_repoStock.Add(data);
-                                    if (saveToDb)
-                                        await m_repoStock.SaveChangesAsync();
+        //                            data = new Stock
+        //                            {
+        //                                Name = name,
+        //                                Symbol = detail.Contract.Symbol,
+        //                                ConId = detail.Contract.ConId,
+        //                                Currency = detail.Contract.Currency,
+        //                                Exchange = exchange,
+        //                                EarliestDate = earliestDate,
+        //                                Category = category,
+        //                            };
+        //                            m_repoStock.Add(data);
+        //                            if (saveToDb)
+        //                                await m_repoStock.SaveChangesAsync();
 
-                                    m_logger.LogWarning("Stock, Saved={0}, earliestDate={1}", symbol, earliestDate);
-                                    break;
-                                }
-                            }
-                            catch (Exception e)
-                            {
-                                m_logger.LogError("UpdateStockToDb Error: {0}: {1}\n{2}", symbol, e.Message, e.StackTrace);
-                            }
-                        }
-                    }
-                }
-                else
-                    m_logger.LogError("{0}:{1} Not Found!!!", name, symbol);
-            }
-            return data;
-        }
+        //                            m_logger.LogWarning("Stock, Saved={0}, earliestDate={1}", symbol, earliestDate);
+        //                            break;
+        //                        }
+        //                    }
+        //                    catch (Exception e)
+        //                    {
+        //                        m_logger.LogError("UpdateStockToDb Error: {0}: {1}\n{2}", symbol, e.Message, e.StackTrace);
+        //                    }
+        //                }
+        //            }
+        //        }
+        //        else
+        //            m_logger.LogError("{0}:{1} Not Found!!!", name, symbol);
+        //    }
+        //    return data;
+        //}
 
         /// <summary>
         /// 搜索股票代码
