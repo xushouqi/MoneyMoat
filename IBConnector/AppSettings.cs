@@ -12,6 +12,9 @@ namespace IBConnector
 
         public string FundamentalPath { get; set; }
 
+        public string XueQiuUsername { get; set; }
+        public string XueQiuPassword { get; set; }
+
         //public int TaskInterval { get; set; }
         //public int TaskMaxCount { get; set; }
 

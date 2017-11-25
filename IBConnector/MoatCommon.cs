@@ -119,6 +119,13 @@ namespace IBConnector
             return result;
         }
 
+        public static void ConsoleWriteAlert(string line)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(line);
+            Console.ForegroundColor = ConsoleColor.Green;
+        }
+
         //public static string GetFundamentalFilePath(string symbol, FundamentalsReportEnum ftype)
         //{
         //    string filepath = Path.Combine(Directory.GetCurrentDirectory(), "Fundamentals", symbol, ftype.ToString() + ".xml");

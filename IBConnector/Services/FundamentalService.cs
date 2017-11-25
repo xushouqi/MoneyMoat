@@ -130,9 +130,22 @@ namespace IBConnector.Services
         [Api(CmdName = "watchlist")]
         public async Task<XueQiuStock[]> UpdateXueQiuWatchlist()
         {
+            var username = m_config.XueQiuUsername;
+            var password = m_config.XueQiuPassword;
+            if (string.IsNullOrEmpty(username))
+            {
+                Console.Write("Username:");
+                username = Console.ReadLine().Trim();
+            }
+            if (string.IsNullOrEmpty(password))
+            {
+                Console.Write("Password:");
+                password = Console.ReadLine().Trim();
+            }
+
             XueQiuStock[] stockList = null;
             string loginUrl = "https://xueqiu.com/snowman/login";
-            CookieCollection cookie = await HttpUtility.LoginXueQiu(loginUrl, "13381692650", "9624009", null);
+            CookieCollection cookie = await HttpUtility.LoginXueQiu(loginUrl, username, password, null);
             if (cookie != null)
             {
                 string url = "https://xueqiu.com/v4/stock/portfolio/stocks.json?size=1000&tuid=3933580273&pid=-6&category=2&type=6";
@@ -144,10 +157,14 @@ namespace IBConnector.Services
                     for (int i = 0; i < stockList.Length; i++)
                     {
                         var stock = stockList[i];
-                        Console.WriteLine("{0}[{1}]", stock.code, stock.exchange);
+                        Console.WriteLine("{0} - [{1}]", stock.code, stock.exchange);
                     }
                 }
+                else
+                    MoatCommon.ConsoleWriteAlert("No content!");
             }
+            else
+                MoatCommon.ConsoleWriteAlert("Wrong username or password!");
             return stockList;
         }
 

@@ -31,6 +31,8 @@ namespace IBConnector
                 settings.GatewayHost = Configuration.GetSection("GatewayHost").Value;
                 settings.GatewayPort = int.Parse(Configuration.GetSection("GatewayPort").Value);
                 settings.FundamentalPath = Configuration.GetSection("FundamentalPath").Value;
+                settings.XueQiuUsername = Configuration.GetSection("XueQiuUsername").Value;
+                settings.XueQiuPassword = Configuration.GetSection("XueQiuPassword").Value;
             });
 
             var app = new MyApp(services);
@@ -107,26 +109,19 @@ namespace IBConnector
                                                 if (canInvoke)
                                                     method.Invoke(inst, parList.ToArray());
                                                 else
-                                                    ConsoleWriteAlert("Wrong parameters!");
+                                                    MoatCommon.ConsoleWriteAlert("Wrong parameters!");
                                                 break;
                                             }
                                         }
                                     }
                                 }
                                 else
-                                    ConsoleWriteAlert("No command!");
+                                    MoatCommon.ConsoleWriteAlert("No command!");
                             }
                         }
                     }
                 }
             }
-        }
-
-        static void ConsoleWriteAlert(string line)
-        {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(line);
-            Console.ForegroundColor = ConsoleColor.Green;
         }
 
         public class MyApp
