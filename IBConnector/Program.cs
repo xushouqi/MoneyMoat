@@ -56,7 +56,8 @@ namespace IBConnector
                 {
                     var arlist = line.Split(" ");
                     var servicePrefix = MethodBase.GetCurrentMethod().DeclaringType.Namespace + ".Services";
-    
+
+                    bool findMethod = false;
                     //当前程序集
                     var curAssem = Assembly.GetEntryAssembly();
                     var types = curAssem.GetTypes();
@@ -68,57 +69,52 @@ namespace IBConnector
                         if (typeInfo.IsDefined(typeof(WebApiAttribute)))
                         {
                             var attr = (WebApiAttribute)typeInfo.GetCustomAttribute(typeof(WebApiAttribute), false);
-                            //命令匹配服务
-                            if (attr.CmdName.Equals(arlist[0]))
+
+                            var cmd = arlist[0];
+                            //所有方法
+                            var methods = typeInfo.GetMethods();
+                            for (int j = 0; j < methods.Length; j++)
                             {
-                                if (arlist.Length > 1)
+                                var method = methods[j];
+                                if (method.IsDefined(typeof(ApiAttribute)))
                                 {
-                                    var cmd = arlist[1];
-                                    //所有方法
-                                    var methods = typeInfo.GetMethods();
-                                    for (int j = 0; j < methods.Length; j++)
+                                    var matt = (ApiAttribute)method.GetCustomAttribute(typeof(ApiAttribute));
+                                    //api方法
+                                    if (matt.CmdName.Equals(cmd))
                                     {
-                                        var method = methods[j];
-                                        if (method.IsDefined(typeof(ApiAttribute)))
+                                        findMethod = true;
+                                        //获取服务实例
+                                        var inst = app.ServiceProvider.GetRequiredService(ctype);
+                                        bool canInvoke = true;
+                                        var parList = new List<object>();
+                                        //所有参数
+                                        var mParams = method.GetParameters();
+                                        for (int m = 0; m < mParams.Length; m++)
                                         {
-                                            var matt = (ApiAttribute)method.GetCustomAttribute(typeof(ApiAttribute));
-                                            //api方法
-                                            if (matt.CmdName.Equals(cmd))
+                                            var par = mParams[m];
+                                            //命令行中的参数
+                                            if (arlist.Length > m + 2)
+                                                parList.Add(arlist[m + 2]);
+                                            //用默认值
+                                            else if (par.HasDefaultValue)
+                                                parList.Add(par.DefaultValue);
+                                            else
                                             {
-                                                //获取服务实例
-                                                var inst = app.ServiceProvider.GetRequiredService(ctype);
-                                                bool canInvoke = true;
-                                                var parList = new List<object>();
-                                                //所有参数
-                                                var mParams = method.GetParameters();
-                                                for (int m = 0; m < mParams.Length; m++)
-                                                {
-                                                    var par = mParams[m];
-                                                    //命令行中的参数
-                                                    if (arlist.Length > m + 2)
-                                                        parList.Add(arlist[m + 2]);
-                                                    //用默认值
-                                                    else if (par.HasDefaultValue)
-                                                        parList.Add(par.DefaultValue);
-                                                    else
-                                                    {
-                                                        canInvoke = false;
-                                                        break;
-                                                    }
-                                                }
-                                                if (canInvoke)
-                                                    method.Invoke(inst, parList.ToArray());
-                                                else
-                                                    MoatCommon.ConsoleWriteAlert("Wrong parameters!");
+                                                canInvoke = false;
                                                 break;
                                             }
                                         }
+                                        if (canInvoke)
+                                            method.Invoke(inst, parList.ToArray());
+                                        else
+                                            MoatCommon.ConsoleWriteAlert("Wrong parameters!");
+                                        break;
                                     }
                                 }
-                                else
-                                    MoatCommon.ConsoleWriteAlert("No command!");
                             }
                         }
+                        if (findMethod)
+                            break;
                     }
                 }
             }

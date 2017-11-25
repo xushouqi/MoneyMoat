@@ -18,7 +18,7 @@ using StockModels;
 
 namespace IBConnector.Services
 {
-    [WebApi(CmdName = "fnd")]
+    [WebApi]
     public class FundamentalService : IBServiceBase<string>
     {
         //private readonly SymbolService m_symbolService;
@@ -115,7 +115,7 @@ namespace IBConnector.Services
         //{
         //    return await UpdateAllFromIB(stock, forceUpdate, CancellationToken.None);
         //}
-        [Api(CmdName = "update")]
+        [Api(CmdName = "fundamental")]
         public async Task<int> UpdateAllFromIB(string symbol, string exchange = "SMART", bool forceUpdate = false)
         {
             int ret = 0;
@@ -168,7 +168,7 @@ namespace IBConnector.Services
             return stockList;
         }
 
-        [Api(CmdName = "updatewatchlist")]
+        [Api(CmdName = "updateall")]
         public async Task<int> UpdateFundamentalsByWatchlist(bool forceUpdate = false)
         {
             int ret = 0;
